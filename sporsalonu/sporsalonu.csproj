@@ -1,0 +1,379 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{772EA182-5EB8-4172-9D70-8027A31E67E9}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>sporsalonu</RootNamespace>
+    <AssemblyName>sporsalonu</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <PublishUrl>C:\Users\zynls\Desktop\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <AutorunEnabled>true</AutorunEnabled>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>7C4FD14261D91546DAA8A257921FD6B650C93A5B</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>sporsalonu_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ana_sayfa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ana_sayfa.Designer.cs">
+      <DependentUpon>ana_sayfa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formlar\anaSayfa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formlar\anaSayfa.Designer.cs">
+      <DependentUpon>anaSayfa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formlar\copKutusu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formlar\copKutusu.Designer.cs">
+      <DependentUpon>copKutusu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formlar\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formlar\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formlar\formTasarımAnasayfa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formlar\formTasarımAnasayfa.Designer.cs">
+      <DependentUpon>formTasarımAnasayfa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formlar\giris.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formlar\giris.Designer.cs">
+      <DependentUpon>giris.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formlar\kullaniciEkle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formlar\kullaniciEkle.Designer.cs">
+      <DependentUpon>kullaniciEkle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formlar\kullaniciGuncelle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formlar\kullaniciGuncelle.Designer.cs">
+      <DependentUpon>kullaniciGuncelle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formlar\olcuTurGuncelle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formlar\olcuTurGuncelle.Designer.cs">
+      <DependentUpon>olcuTurGuncelle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formlar\olcuturuEkle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formlar\olcuturuEkle.Designer.cs">
+      <DependentUpon>olcuturuEkle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formlar\satis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formlar\satis.Designer.cs">
+      <DependentUpon>satis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formlar\silinecekler.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formlar\silinecekler.Designer.cs">
+      <DependentUpon>silinecekler.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formlar\sinifEkle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formlar\sinifEkle.Designer.cs">
+      <DependentUpon>sinifEkle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formlar\sinifGuncelle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formlar\sinifGuncelle.Designer.cs">
+      <DependentUpon>sinifGuncelle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formlar\siniflar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formlar\siniflar.Designer.cs">
+      <DependentUpon>siniflar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formlar\tanimlama_kullanici.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formlar\tanimlama_kullanici.Designer.cs">
+      <DependentUpon>tanimlama_kullanici.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formlar\tanimlama_olcu_tur.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formlar\tanimlama_olcu_tur.Designer.cs">
+      <DependentUpon>tanimlama_olcu_tur.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formlar\uyeAra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formlar\uyeAra.Designer.cs">
+      <DependentUpon>uyeAra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formlar\uyeDetaylari.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formlar\uyeDetaylari.Designer.cs">
+      <DependentUpon>uyeDetaylari.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formlar\uyeEkle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formlar\uyeEkle.Designer.cs">
+      <DependentUpon>uyeEkle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formlar\uyeler.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formlar\uyeler.Designer.cs">
+      <DependentUpon>uyeler.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="siniflar\sqlSinif.cs" />
+    <EmbeddedResource Include="ana_sayfa.resx">
+      <DependentUpon>ana_sayfa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formlar\anaSayfa.resx">
+      <DependentUpon>anaSayfa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formlar\copKutusu.resx">
+      <DependentUpon>copKutusu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formlar\formTasarımAnasayfa.resx">
+      <DependentUpon>formTasarımAnasayfa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formlar\giris.resx">
+      <DependentUpon>giris.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formlar\kullaniciEkle.resx">
+      <DependentUpon>kullaniciEkle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formlar\kullaniciGuncelle.resx">
+      <DependentUpon>kullaniciGuncelle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formlar\olcuTurGuncelle.resx">
+      <DependentUpon>olcuTurGuncelle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formlar\olcuturuEkle.resx">
+      <DependentUpon>olcuturuEkle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formlar\satis.resx">
+      <DependentUpon>satis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formlar\silinecekler.resx">
+      <DependentUpon>silinecekler.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formlar\sinifEkle.resx">
+      <DependentUpon>sinifEkle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formlar\sinifGuncelle.resx">
+      <DependentUpon>sinifGuncelle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formlar\siniflar.resx">
+      <DependentUpon>siniflar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formlar\tanimlama_kullanici.resx">
+      <DependentUpon>tanimlama_kullanici.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formlar\tanimlama_olcu_tur.resx">
+      <DependentUpon>tanimlama_olcu_tur.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formlar\uyeAra.resx">
+      <DependentUpon>uyeAra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formlar\uyeDetaylari.resx">
+      <DependentUpon>uyeDetaylari.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formlar\uyeEkle.resx">
+      <DependentUpon>uyeEkle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formlar\uyeler.resx">
+      <DependentUpon>uyeler.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resimler\büyüklogo_arkplanlı.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resimler\küçüklogo_arkaplansız.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resimler\açık_ev.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resimler\işletme.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resimler\tanımlamalar.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resimler\kampanyalar.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resimler\sınıflar.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resimler\üyelik_seçenekleri.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resimler\üye_işlemleri.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resimler\raporlar.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resimler\kullanıcı.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resimler\sifre.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resimler\menu.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resimler\arama.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resimler\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resimler\logo108px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="resimler\buyuk.ico" />
+    <Content Include="resimler\cop_kutusu.ico" />
+    <Content Include="resimler\düzenle.png" />
+    <Content Include="resimler\ekle.ico" />
+    <Content Include="resimler\ekle_32px.ico" />
+    <Content Include="resimler\geri.ico" />
+    <Content Include="resimler\guncelle.ico" />
+    <Content Include="resimler\guncelle_48px.ico" />
+    <Content Include="resimler\icons8_delete_4.ico" />
+    <Content Include="resimler\kapa.ico" />
+    <Content Include="resimler\kapa_32px.ico" />
+    <Content Include="resimler\kucuk.ico" />
+    <Content Include="resimler\kullanıcı_.ico" />
+    <Content Include="resimler\max_32px.ico" />
+    <Content Include="resimler\min_32px.ico" />
+    <Content Include="resimler\ok.ico" />
+    <Content Include="resimler\sil.ico" />
+    <Content Include="resimler\sil_32px.ico" />
+    <Content Include="resimler\sil_48px.ico" />
+    <Content Include="resimler\uye.jpg" />
+    <Content Include="resimler\uye_.png" />
+    <Content Include="resimler\yenile.ico" />
+    <Content Include="resimler\yenile_32px.ico" />
+    <Content Include="resimler\yenile_48px.ico" />
+    <Content Include="resimler\yeni_raporlar.ico" />
+    <Content Include="resimler\şahinlogo.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

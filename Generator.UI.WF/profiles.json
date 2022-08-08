@@ -1,0 +1,48 @@
+[
+  {
+    "Id": 1,
+    "UserName": "Clearing",
+    "Password": "123456",
+    "ObjectEntity": {
+      "ValidFlag": "1",
+      "GenerateUIFlag": "1",
+      "UIPathSuffix": "0",
+      "ObjectId": "",
+      "ObjectType": "CUSTOMSQL",
+      "ProfileId": "CLEARING_BACKOFFICE_V2",
+      "RepositoryName": "E_M_C",
+      "SchemaName": "EMC",
+      "OracleSchemaName": "CMS_EMC",
+      "Text": "",
+      "OracleText": "",
+      "ResultCollectionFlag": "1",
+      "SpcallFlag": "0",
+      "IgnoreDefaultColumnsFlag": "0",
+      "LocalTransactionFlag": "1",
+      "CustomPagedFlag": "0"
+    }
+  },
+  {
+    "Id": 1,
+    "UserName": "ClearingV2",
+    "Password": "123456",
+    "ObjectEntity": {
+      "ValidFlag": "1",
+      "GenerateUIFlag": "1",
+      "UIPathSuffix": "0",
+      "ObjectId": "null",
+      "ObjectType": "CustomSQL",
+      "ProfileId": "CLEARING_BACKOFFICE_V2",
+      "RepositoryName": "E_M_C",
+      "SchemaName": "EMC",
+      "OracleSchemaName": "CMS_EMC",
+      "Text": "null",
+      "OracleText": "null",
+      "ResultCollectionFlag": "1",
+      "SpcallFlag": "0",
+      "IgnoreDefaultColumnsFlag": "0",
+      "LocalTransactionFlag": "1",
+      "CustomPagedFlag": "0"
+    }
+  }
+]

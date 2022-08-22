@@ -16,14 +16,16 @@ namespace Generator.UI.WF
 {
     public partial class FormObjectAddUpdate : Form
     {
-        public FormObjectAddUpdate(Profile profile)
+        public FormObjectAddUpdate(Profile profile, IObjectEntityService objectEntityService)
         {
             _profile = profile;
+            _objectEntityService = objectEntityService;
             InitializeComponent();
         }
+        //private IObjectEntityService _objectEntityService = new ObjectEntityService(new EfObjectEntityDal());
 
         private Profile _profile;
-        private IObjectEntityService _objectEntityService = new ObjectEntityService(new EfObjectEntityDal());
+        private readonly IObjectEntityService _objectEntityService;
 
         private void FillObjectId()
         {
@@ -111,7 +113,7 @@ namespace Generator.UI.WF
 
         private bool CheckIfObjectExists(string objectId)
         {
-            var result = !_objectEntityService.GetByObjectId(objectId).Any();
+            var result = _objectEntityService.GetByObjectId(objectId).Any();
             return result;
         }
 
@@ -141,9 +143,9 @@ namespace Generator.UI.WF
             {
                 height += dr.Height;
             }
-            if (height > PanelPresentation.Height-50)
+            if (height > PanelPresentation.Height-130)
             {
-                DgwObject.Height = PanelPresentation.Height-50;
+                DgwObject.Height = PanelPresentation.Height-130;
             }
             else
             {
@@ -207,11 +209,49 @@ namespace Generator.UI.WF
 
         private void DgwObject_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            
         }
 
         private void CbxSchemaName_SelectedIndexChanged(object sender, EventArgs e)
         {
             FilterObject();
+        }
+
+        private void BtnParametre_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnResultAdd_Click(object sender, EventArgs e)
+        {
+            FormResultAdd formResult = new FormResultAdd(TbxObjectId.Text, TbxProfileId.Text, TbxSchemaName.Text);
+            formResult.Show();
+        }
+
+        private void DgwObject_CellEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            TbxObjectId.Text = DgwObject.CurrentRow.Cells[3].Value.ToString();
+            TbxProfileId.Text = DgwObject.CurrentRow.Cells[5].Value.ToString();
+            TbxSchemaName.Text = DgwObject.CurrentRow.Cells[7].Value.ToString();
+            if (DgwObject.CurrentRow.Cells[10].Value != null)
+                TbxOracleText.Text = DgwObject.CurrentRow.Cells[10].Value.ToString();
+        }
+
+        private void TbxOracleText_MouseClick(object sender, MouseEventArgs e)
+        {
+            //FormViewText _formViewText = new FormViewText();
+            //_formViewText.TextValue = TbxOracleText.Text;
+            //_formViewText.Show();
+        }
+
+        private void TbxOracleText_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FormObjectAddUpdate_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

@@ -11,7 +11,7 @@ namespace Generator.DataAccess.EntitiyFramework
 
     public class EfEntityRepositoryBase<TEntity, TContext> : IEntityRepository<TEntity> where TEntity : class, IEntity, new() where TContext : DbContext, new()
     {
-        public List<TEntity> GetAll(Expression<Func<TEntity, bool>>? filter = null)
+        public List<TEntity> GetAll(Expression<Func<TEntity, bool>> filter = null)
         {
             using var context = new TContext();
             return filter == null ? context.Set<TEntity>().ToList() : context.Set<TEntity>().Where(filter).ToList();
@@ -25,12 +25,17 @@ namespace Generator.DataAccess.EntitiyFramework
 
         public void Add(TEntity entity)
         {
-            using (var context = new TContext())
-            {
-                var addedEntity = context.Entry(entity);
-                addedEntity.State = EntityState.Added;
-                context.SaveChanges();
-            }
+            using var context = new TContext();
+            var addedEntity = context.Entry(entity);
+            addedEntity.State = EntityState.Added;
+            context.SaveChanges();
+        }
+
+        public void AddRange(IEnumerable<TEntity> entities)
+        {
+            using var context = new TContext();
+            context.Set<TEntity>().AddRange(entities);  
+            context.SaveChanges();
         }
 
         public void Update(TEntity entity)
@@ -38,6 +43,12 @@ namespace Generator.DataAccess.EntitiyFramework
             using var context = new TContext();
             var updatedEntity = context.Entry(entity);
             updatedEntity.State = EntityState.Modified;
+            context.SaveChanges();
+        }
+        public void UpdateRange(IEnumerable<TEntity> entities)
+        {
+            using var context = new TContext();
+            context.Set<TEntity>().UpdateRange(entities);
             context.SaveChanges();
         }
 
@@ -48,5 +59,12 @@ namespace Generator.DataAccess.EntitiyFramework
             deletedEntity.State = EntityState.Deleted;
             context.SaveChanges();
         }
+        public void DeleteRange(IEnumerable<TEntity> entities)
+        {
+            using var context = new TContext();
+            context.Set<TEntity>().RemoveRange(entities);
+            context.SaveChanges();
+        }
+
     }
 }

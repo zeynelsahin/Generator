@@ -8,6 +8,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using Autofac;
 using Generator.Business.Abstract;
 using Generator.Business.Concrete;
 using Generator.Business.Constants;
@@ -39,13 +40,13 @@ namespace Generator.UI.WF
             if (profile!=null)
             {
                 this.Hide();
-                FormObjectAddUpdate formHomeScreen = new FormObjectAddUpdate(profile);
+                FormObjectAddUpdate formHomeScreen = new FormObjectAddUpdate(profile,new ObjectEntityService(new EfObjectEntityDal()));
                 formHomeScreen.Show();
             }
             else
             {
                 LblMessage.Text = Messages.UserNotFound;
-            }
+            }                                                                                                                                                                                                                                                                                                                                                                                                                                                            
         }
 
         private void FormLogin_Load(object sender, EventArgs e)

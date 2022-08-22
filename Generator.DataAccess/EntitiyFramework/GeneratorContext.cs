@@ -8,19 +8,42 @@ namespace Generator.DataAccess.EntitiyFramework
     public class GeneratorContext : DbContext
     {
         public DbSet<ObjectEntity> Objects { get; set; }
+        public DbSet<ObjectResult> ObjectResults { get; set; }
+        public DbSet<ObjectParameter> ObjectParameters{ get; set; }
 
         //public DbSet<ObjectParameter> Type { get; set; }
         //public DbSet<ObjectResult> ObjectResults { get; set; }
         //public DbSet<ServiceMethod> ServiceMethods { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-
+             modelBuilder.Entity<ObjectResult>()
+                .HasKey(c => new {c.ObjectId,c.ProfileId,c.ResultId});
             modelBuilder.Entity<ObjectEntity>()
                 .HasKey(c => new { c.ObjectId, c.ProfileId, c.SchemaName });
             modelBuilder.HasDefaultSchema("CGEN");
+            modelBuilder.Entity<ObjectParameter>()
+                .HasKey(c=>new {c.ObjectId,c.ProfileId,c.ParameterId});
 
+            //TABLE NAME
             modelBuilder.Entity<ObjectEntity>().ToTable("OBJECTS");
+            modelBuilder.Entity<ObjectResult>().ToTable("OBJECT_RESULTS");
+            modelBuilder.Entity<ObjectParameter>().ToTable("OBJECT_PARAMETERS");
 
+
+            //ObjectParameter
+            modelBuilder.Entity<ObjectParameter>().Property(s=>s.ObjectId).HasColumnName("OBJECT_ID");
+            modelBuilder.Entity<ObjectParameter>().Property(s=>s.ProfileId).HasColumnName("PROFILE_ID");
+            modelBuilder.Entity<ObjectParameter>().Property(s=>s.ParameterId).HasColumnName("PARAMETER_ID");
+            modelBuilder.Entity<ObjectParameter>().Property(s=>s.DataType).HasColumnName("DATA_TYPE");
+            modelBuilder.Entity<ObjectParameter>().Property(s=>s.InputOutput).HasColumnName("INPUT_OUTPUT");
+            modelBuilder.Entity<ObjectParameter>().Property(s=>s.NullableFlag).HasColumnName("NULLABLE_FLAG");
+            //ObjectResult
+            modelBuilder.Entity<ObjectResult>().Property(s => s.ObjectId).HasColumnName("OBJECT_ID");
+            modelBuilder.Entity<ObjectResult>().Property(s => s.ProfileId).HasColumnName("PROFILE_ID");
+            modelBuilder.Entity<ObjectResult>().Property(s => s.ResultId).HasColumnName("RESULT_ID");
+            modelBuilder.Entity<ObjectResult>().Property(s => s.DataType).HasColumnName("DATA_TYPE");
+            modelBuilder.Entity<ObjectResult>().Property(s => s.NullableFlag).HasColumnName("NULLABLE_FLAG");
+            modelBuilder.Entity<ObjectResult>().Property(s => s.ObjectId).HasColumnName("OBJECT_ID");
             //Object
             modelBuilder.Entity<ObjectEntity>().Property(s => s.ValidFlag).HasColumnName("VALID_FLAG");
             modelBuilder.Entity<ObjectEntity>().Property(s => s.GenerateUIFlag).HasColumnName("GENERATE_UI_FLAG");

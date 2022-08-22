@@ -5,5 +5,6 @@ namespace Generator.DataAccess.Abstract
 {
     public interface IObjectResultDal: IEntityRepository<ObjectResult>
     {
+        
     }
 }

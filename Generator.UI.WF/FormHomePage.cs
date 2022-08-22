@@ -14,5 +14,11 @@ namespace Generator.UI.WF
         {
             InitializeComponent();
         }
+
+        private void BtnUxGenerate_Click(object sender, EventArgs e)
+        {
+            FormUxGenerator formUxGenerator= new FormUxGenerator();
+            formUxGenerator.Show();
+        }
     }
 }

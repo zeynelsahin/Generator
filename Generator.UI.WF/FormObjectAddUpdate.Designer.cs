@@ -29,14 +29,14 @@ namespace Generator.UI.WF
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.PanelPresentation = new System.Windows.Forms.Panel();
             this.label25 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.BtnResultAdd = new System.Windows.Forms.Button();
             this.label24 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.BtnParametre = new System.Windows.Forms.Button();
             this.CbxSchemaName = new System.Windows.Forms.ComboBox();
             this.label23 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
@@ -128,9 +128,9 @@ namespace Generator.UI.WF
             // PanelPresentation
             // 
             this.PanelPresentation.Controls.Add(this.label25);
-            this.PanelPresentation.Controls.Add(this.button2);
+            this.PanelPresentation.Controls.Add(this.BtnResultAdd);
             this.PanelPresentation.Controls.Add(this.label24);
-            this.PanelPresentation.Controls.Add(this.button1);
+            this.PanelPresentation.Controls.Add(this.BtnParametre);
             this.PanelPresentation.Controls.Add(this.CbxSchemaName);
             this.PanelPresentation.Controls.Add(this.label23);
             this.PanelPresentation.Controls.Add(this.label16);
@@ -150,7 +150,7 @@ namespace Generator.UI.WF
             this.PanelPresentation.ForeColor = System.Drawing.Color.Black;
             this.PanelPresentation.Location = new System.Drawing.Point(0, 438);
             this.PanelPresentation.Name = "PanelPresentation";
-            this.PanelPresentation.Size = new System.Drawing.Size(1281, 362);
+            this.PanelPresentation.Size = new System.Drawing.Size(1281, 363);
             this.PanelPresentation.TabIndex = 27;
             // 
             // label25
@@ -161,24 +161,25 @@ namespace Generator.UI.WF
             this.label25.Enabled = false;
             this.label25.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label25.ForeColor = System.Drawing.Color.Silver;
-            this.label25.Location = new System.Drawing.Point(984, 9);
+            this.label25.Location = new System.Drawing.Point(1051, 9);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(106, 23);
             this.label25.TabIndex = 326;
             this.label25.Text = "Result Ekle\r\n";
             // 
-            // button2
+            // BtnResultAdd
             // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Image = global::Generator.UI.WF.Properties.Resources.ekle_32px;
-            this.button2.Location = new System.Drawing.Point(950, 3);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(32, 32);
-            this.button2.TabIndex = 325;
-            this.button2.UseVisualStyleBackColor = true;
+            this.BtnResultAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnResultAdd.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnResultAdd.FlatAppearance.BorderSize = 0;
+            this.BtnResultAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnResultAdd.Image = global::Generator.UI.WF.Properties.Resources.ekle_32px;
+            this.BtnResultAdd.Location = new System.Drawing.Point(1014, 5);
+            this.BtnResultAdd.Name = "BtnResultAdd";
+            this.BtnResultAdd.Size = new System.Drawing.Size(31, 32);
+            this.BtnResultAdd.TabIndex = 325;
+            this.BtnResultAdd.UseVisualStyleBackColor = true;
+            this.BtnResultAdd.Click += new System.EventHandler(this.BtnResultAdd_Click);
             // 
             // label24
             // 
@@ -188,24 +189,25 @@ namespace Generator.UI.WF
             this.label24.Enabled = false;
             this.label24.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label24.ForeColor = System.Drawing.Color.Silver;
-            this.label24.Location = new System.Drawing.Point(778, 9);
+            this.label24.Location = new System.Drawing.Point(859, 10);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(150, 23);
             this.label24.TabIndex = 324;
             this.label24.Text = "Parametre Ekle";
             // 
-            // button1
+            // BtnParametre
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Image = global::Generator.UI.WF.Properties.Resources.ekle_32px;
-            this.button1.Location = new System.Drawing.Point(744, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(32, 32);
-            this.button1.TabIndex = 323;
-            this.button1.UseVisualStyleBackColor = true;
+            this.BtnParametre.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnParametre.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnParametre.FlatAppearance.BorderSize = 0;
+            this.BtnParametre.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnParametre.Image = global::Generator.UI.WF.Properties.Resources.ekle_32px;
+            this.BtnParametre.Location = new System.Drawing.Point(829, 7);
+            this.BtnParametre.Name = "BtnParametre";
+            this.BtnParametre.Size = new System.Drawing.Size(31, 32);
+            this.BtnParametre.TabIndex = 323;
+            this.BtnParametre.UseVisualStyleBackColor = true;
+            this.BtnParametre.Click += new System.EventHandler(this.BtnParametre_Click);
             // 
             // CbxSchemaName
             // 
@@ -216,9 +218,9 @@ namespace Generator.UI.WF
             this.CbxSchemaName.FormattingEnabled = true;
             this.CbxSchemaName.Items.AddRange(new object[] {
             "Tümü"});
-            this.CbxSchemaName.Location = new System.Drawing.Point(778, 78);
+            this.CbxSchemaName.Location = new System.Drawing.Point(779, 77);
             this.CbxSchemaName.Name = "CbxSchemaName";
-            this.CbxSchemaName.Size = new System.Drawing.Size(182, 29);
+            this.CbxSchemaName.Size = new System.Drawing.Size(183, 29);
             this.CbxSchemaName.TabIndex = 321;
             this.CbxSchemaName.SelectedIndexChanged += new System.EventHandler(this.CbxSchemaName_SelectedIndexChanged);
             // 
@@ -229,7 +231,7 @@ namespace Generator.UI.WF
             this.label23.Enabled = false;
             this.label23.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label23.ForeColor = System.Drawing.Color.Silver;
-            this.label23.Location = new System.Drawing.Point(774, 53);
+            this.label23.Location = new System.Drawing.Point(774, 52);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(148, 23);
             this.label23.TabIndex = 322;
@@ -243,7 +245,7 @@ namespace Generator.UI.WF
             this.label16.Enabled = false;
             this.label16.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label16.ForeColor = System.Drawing.Color.Silver;
-            this.label16.Location = new System.Drawing.Point(1210, 10);
+            this.label16.Location = new System.Drawing.Point(1207, 9);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(48, 23);
             this.label16.TabIndex = 308;
@@ -256,9 +258,9 @@ namespace Generator.UI.WF
             this.BtnEkle.FlatAppearance.BorderSize = 0;
             this.BtnEkle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnEkle.Image = global::Generator.UI.WF.Properties.Resources.ekle_32px;
-            this.BtnEkle.Location = new System.Drawing.Point(1164, 6);
+            this.BtnEkle.Location = new System.Drawing.Point(1171, 5);
             this.BtnEkle.Name = "BtnEkle";
-            this.BtnEkle.Size = new System.Drawing.Size(32, 32);
+            this.BtnEkle.Size = new System.Drawing.Size(31, 32);
             this.BtnEkle.TabIndex = 306;
             this.BtnEkle.UseVisualStyleBackColor = true;
             this.BtnEkle.Click += new System.EventHandler(this.BtnEkle_Click);
@@ -272,7 +274,7 @@ namespace Generator.UI.WF
             this.CbxProfileId.FormattingEnabled = true;
             this.CbxProfileId.Items.AddRange(new object[] {
             "Tümü"});
-            this.CbxProfileId.Location = new System.Drawing.Point(401, 78);
+            this.CbxProfileId.Location = new System.Drawing.Point(401, 77);
             this.CbxProfileId.Name = "CbxProfileId";
             this.CbxProfileId.Size = new System.Drawing.Size(354, 29);
             this.CbxProfileId.TabIndex = 319;
@@ -285,7 +287,7 @@ namespace Generator.UI.WF
             this.label20.Enabled = false;
             this.label20.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label20.ForeColor = System.Drawing.Color.Silver;
-            this.label20.Location = new System.Drawing.Point(397, 53);
+            this.label20.Location = new System.Drawing.Point(397, 52);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(77, 23);
             this.label20.TabIndex = 320;
@@ -299,7 +301,7 @@ namespace Generator.UI.WF
             this.label21.Enabled = false;
             this.label21.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label21.ForeColor = System.Drawing.Color.Silver;
-            this.label21.Location = new System.Drawing.Point(1158, 49);
+            this.label21.Location = new System.Drawing.Point(1159, 49);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(38, 23);
             this.label21.TabIndex = 318;
@@ -313,7 +315,7 @@ namespace Generator.UI.WF
             this.LblSonuc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
             this.LblSonuc.Location = new System.Drawing.Point(0, 0);
             this.LblSonuc.Name = "LblSonuc";
-            this.LblSonuc.Size = new System.Drawing.Size(1281, 40);
+            this.LblSonuc.Size = new System.Drawing.Size(1281, 39);
             this.LblSonuc.TabIndex = 307;
             this.LblSonuc.Text = "Sonuç";
             this.LblSonuc.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -329,7 +331,7 @@ namespace Generator.UI.WF
             this.BtnSql.Image = global::Generator.UI.WF.Properties.Resources.yenile_32px;
             this.BtnSql.Location = new System.Drawing.Point(1164, 74);
             this.BtnSql.Name = "BtnSql";
-            this.BtnSql.Size = new System.Drawing.Size(32, 32);
+            this.BtnSql.Size = new System.Drawing.Size(31, 32);
             this.BtnSql.TabIndex = 317;
             this.BtnSql.UseVisualStyleBackColor = true;
             // 
@@ -342,7 +344,7 @@ namespace Generator.UI.WF
             this.CbxOjectId.FormattingEnabled = true;
             this.CbxOjectId.Items.AddRange(new object[] {
             "Tümü"});
-            this.CbxOjectId.Location = new System.Drawing.Point(12, 78);
+            this.CbxOjectId.Location = new System.Drawing.Point(11, 77);
             this.CbxOjectId.Name = "CbxOjectId";
             this.CbxOjectId.Size = new System.Drawing.Size(354, 29);
             this.CbxOjectId.TabIndex = 211;
@@ -355,7 +357,7 @@ namespace Generator.UI.WF
             this.label10.Enabled = false;
             this.label10.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label10.ForeColor = System.Drawing.Color.Silver;
-            this.label10.Location = new System.Drawing.Point(8, 53);
+            this.label10.Location = new System.Drawing.Point(9, 52);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(97, 23);
             this.label10.TabIndex = 212;
@@ -373,36 +375,37 @@ namespace Generator.UI.WF
             this.DgwObject.BackgroundColor = System.Drawing.Color.White;
             this.DgwObject.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DgwObject.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle1.NullValue = null;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DgwObject.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle4.NullValue = null;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DgwObject.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.DgwObject.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(231)))), ((int)(((byte)(228)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DgwObject.DefaultCellStyle = dataGridViewCellStyle2;
-            this.DgwObject.Location = new System.Drawing.Point(12, 128);
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(231)))), ((int)(((byte)(228)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DgwObject.DefaultCellStyle = dataGridViewCellStyle5;
+            this.DgwObject.Location = new System.Drawing.Point(11, 129);
             this.DgwObject.Name = "DgwObject";
             this.DgwObject.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgwObject.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgwObject.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.DgwObject.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DgwObject.Size = new System.Drawing.Size(1257, 160);
+            this.DgwObject.Size = new System.Drawing.Size(1257, 162);
             this.DgwObject.TabIndex = 1;
             this.DgwObject.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgwObject_CellDoubleClick);
+            this.DgwObject.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgwObject_CellEnter);
             this.DgwObject.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.DgwObject_DataBindingComplete);
             // 
             // LblAdet
@@ -411,7 +414,7 @@ namespace Generator.UI.WF
             this.LblAdet.AutoSize = true;
             this.LblAdet.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.LblAdet.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
-            this.LblAdet.Location = new System.Drawing.Point(47, 306);
+            this.LblAdet.Location = new System.Drawing.Point(24, 308);
             this.LblAdet.Name = "LblAdet";
             this.LblAdet.Size = new System.Drawing.Size(109, 30);
             this.LblAdet.TabIndex = 81;
@@ -426,9 +429,9 @@ namespace Generator.UI.WF
             this.BtnOracle.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.BtnOracle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
             this.BtnOracle.Image = global::Generator.UI.WF.Properties.Resources.yenile_32px;
-            this.BtnOracle.Location = new System.Drawing.Point(1058, 74);
+            this.BtnOracle.Location = new System.Drawing.Point(1059, 74);
             this.BtnOracle.Name = "BtnOracle";
-            this.BtnOracle.Size = new System.Drawing.Size(32, 32);
+            this.BtnOracle.Size = new System.Drawing.Size(31, 32);
             this.BtnOracle.TabIndex = 305;
             this.BtnOracle.UseVisualStyleBackColor = true;
             // 
@@ -440,7 +443,7 @@ namespace Generator.UI.WF
             this.label17.Enabled = false;
             this.label17.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label17.ForeColor = System.Drawing.Color.Silver;
-            this.label17.Location = new System.Drawing.Point(1052, 48);
+            this.label17.Location = new System.Drawing.Point(1051, 49);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(74, 23);
             this.label17.TabIndex = 307;
@@ -451,7 +454,7 @@ namespace Generator.UI.WF
             this.label_copadet.AutoSize = true;
             this.label_copadet.Dock = System.Windows.Forms.DockStyle.Right;
             this.label_copadet.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label_copadet.Location = new System.Drawing.Point(1281, 40);
+            this.label_copadet.Location = new System.Drawing.Point(1281, 39);
             this.label_copadet.Name = "label_copadet";
             this.label_copadet.Size = new System.Drawing.Size(0, 24);
             this.label_copadet.TabIndex = 73;
@@ -488,10 +491,10 @@ namespace Generator.UI.WF
             this.PanelFourth.Controls.Add(this.label11);
             this.PanelFourth.Controls.Add(this.panel11);
             this.PanelFourth.Dock = System.Windows.Forms.DockStyle.Left;
-            this.PanelFourth.Location = new System.Drawing.Point(960, 40);
+            this.PanelFourth.Location = new System.Drawing.Point(960, 39);
             this.PanelFourth.Margin = new System.Windows.Forms.Padding(0);
             this.PanelFourth.Name = "PanelFourth";
-            this.PanelFourth.Size = new System.Drawing.Size(320, 398);
+            this.PanelFourth.Size = new System.Drawing.Size(320, 399);
             this.PanelFourth.TabIndex = 309;
             // 
             // TbxLocalTransactionFlag
@@ -504,7 +507,7 @@ namespace Generator.UI.WF
             this.TbxLocalTransactionFlag.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
             this.TbxLocalTransactionFlag.Location = new System.Drawing.Point(27, 336);
             this.TbxLocalTransactionFlag.Name = "TbxLocalTransactionFlag";
-            this.TbxLocalTransactionFlag.Size = new System.Drawing.Size(268, 30);
+            this.TbxLocalTransactionFlag.Size = new System.Drawing.Size(269, 30);
             this.TbxLocalTransactionFlag.TabIndex = 304;
             this.TbxLocalTransactionFlag.Text = "123";
             // 
@@ -515,7 +518,7 @@ namespace Generator.UI.WF
             this.panel20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
             this.panel20.Location = new System.Drawing.Point(27, 368);
             this.panel20.Name = "panel20";
-            this.panel20.Size = new System.Drawing.Size(268, 2);
+            this.panel20.Size = new System.Drawing.Size(269, 3);
             this.panel20.TabIndex = 316;
             // 
             // panel17
@@ -525,7 +528,7 @@ namespace Generator.UI.WF
             this.panel17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
             this.panel17.Location = new System.Drawing.Point(27, 276);
             this.panel17.Name = "panel17";
-            this.panel17.Size = new System.Drawing.Size(268, 2);
+            this.panel17.Size = new System.Drawing.Size(269, 3);
             this.panel17.TabIndex = 315;
             // 
             // TbxCustomPagedFlag
@@ -536,9 +539,9 @@ namespace Generator.UI.WF
             this.TbxCustomPagedFlag.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TbxCustomPagedFlag.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.TbxCustomPagedFlag.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
-            this.TbxCustomPagedFlag.Location = new System.Drawing.Point(27, 244);
+            this.TbxCustomPagedFlag.Location = new System.Drawing.Point(27, 245);
             this.TbxCustomPagedFlag.Name = "TbxCustomPagedFlag";
-            this.TbxCustomPagedFlag.Size = new System.Drawing.Size(268, 30);
+            this.TbxCustomPagedFlag.Size = new System.Drawing.Size(269, 30);
             this.TbxCustomPagedFlag.TabIndex = 303;
             this.TbxCustomPagedFlag.Text = "123";
             // 
@@ -549,7 +552,7 @@ namespace Generator.UI.WF
             this.panel18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
             this.panel18.Location = new System.Drawing.Point(27, 276);
             this.panel18.Name = "panel18";
-            this.panel18.Size = new System.Drawing.Size(268, 2);
+            this.panel18.Size = new System.Drawing.Size(269, 3);
             this.panel18.TabIndex = 314;
             // 
             // label18
@@ -570,9 +573,9 @@ namespace Generator.UI.WF
             this.panel15.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
-            this.panel15.Location = new System.Drawing.Point(30, 82);
+            this.panel15.Location = new System.Drawing.Point(30, 81);
             this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(268, 2);
+            this.panel15.Size = new System.Drawing.Size(269, 3);
             this.panel15.TabIndex = 312;
             // 
             // panel5
@@ -582,7 +585,7 @@ namespace Generator.UI.WF
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
             this.panel5.Location = new System.Drawing.Point(27, 177);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(268, 2);
+            this.panel5.Size = new System.Drawing.Size(269, 3);
             this.panel5.TabIndex = 312;
             // 
             // TbxIgnoreDefaultCollumnsFlag
@@ -593,9 +596,9 @@ namespace Generator.UI.WF
             this.TbxIgnoreDefaultCollumnsFlag.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TbxIgnoreDefaultCollumnsFlag.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.TbxIgnoreDefaultCollumnsFlag.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
-            this.TbxIgnoreDefaultCollumnsFlag.Location = new System.Drawing.Point(27, 145);
+            this.TbxIgnoreDefaultCollumnsFlag.Location = new System.Drawing.Point(27, 144);
             this.TbxIgnoreDefaultCollumnsFlag.Name = "TbxIgnoreDefaultCollumnsFlag";
-            this.TbxIgnoreDefaultCollumnsFlag.Size = new System.Drawing.Size(268, 30);
+            this.TbxIgnoreDefaultCollumnsFlag.Size = new System.Drawing.Size(269, 30);
             this.TbxIgnoreDefaultCollumnsFlag.TabIndex = 302;
             this.TbxIgnoreDefaultCollumnsFlag.Text = "123";
             // 
@@ -606,7 +609,7 @@ namespace Generator.UI.WF
             this.panel21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
             this.panel21.Location = new System.Drawing.Point(27, 177);
             this.panel21.Name = "panel21";
-            this.panel21.Size = new System.Drawing.Size(268, 2);
+            this.panel21.Size = new System.Drawing.Size(269, 3);
             this.panel21.TabIndex = 311;
             // 
             // label15
@@ -629,7 +632,7 @@ namespace Generator.UI.WF
             this.label14.Enabled = false;
             this.label14.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label14.ForeColor = System.Drawing.Color.Silver;
-            this.label14.Location = new System.Drawing.Point(24, 120);
+            this.label14.Location = new System.Drawing.Point(24, 119);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(271, 22);
             this.label14.TabIndex = 309;
@@ -643,9 +646,9 @@ namespace Generator.UI.WF
             this.TbxSpcallFlag.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TbxSpcallFlag.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.TbxSpcallFlag.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
-            this.TbxSpcallFlag.Location = new System.Drawing.Point(30, 50);
+            this.TbxSpcallFlag.Location = new System.Drawing.Point(30, 49);
             this.TbxSpcallFlag.Name = "TbxSpcallFlag";
-            this.TbxSpcallFlag.Size = new System.Drawing.Size(268, 30);
+            this.TbxSpcallFlag.Size = new System.Drawing.Size(269, 30);
             this.TbxSpcallFlag.TabIndex = 305;
             this.TbxSpcallFlag.Text = "123";
             // 
@@ -667,9 +670,9 @@ namespace Generator.UI.WF
             this.panel11.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
-            this.panel11.Location = new System.Drawing.Point(30, 82);
+            this.panel11.Location = new System.Drawing.Point(30, 81);
             this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(268, 2);
+            this.panel11.Size = new System.Drawing.Size(269, 3);
             this.panel11.TabIndex = 310;
             // 
             // PanelThird
@@ -690,10 +693,10 @@ namespace Generator.UI.WF
             this.PanelThird.Controls.Add(this.label5);
             this.PanelThird.Controls.Add(this.panel29);
             this.PanelThird.Dock = System.Windows.Forms.DockStyle.Left;
-            this.PanelThird.Location = new System.Drawing.Point(640, 40);
+            this.PanelThird.Location = new System.Drawing.Point(640, 39);
             this.PanelThird.Margin = new System.Windows.Forms.Padding(0);
             this.PanelThird.Name = "PanelThird";
-            this.PanelThird.Size = new System.Drawing.Size(320, 398);
+            this.PanelThird.Size = new System.Drawing.Size(320, 399);
             this.PanelThird.TabIndex = 308;
             // 
             // panel14
@@ -703,7 +706,7 @@ namespace Generator.UI.WF
             this.panel14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
             this.panel14.Location = new System.Drawing.Point(23, 266);
             this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(262, 2);
+            this.panel14.Size = new System.Drawing.Size(261, 3);
             this.panel14.TabIndex = 316;
             // 
             // TbxResultCollectionFlag
@@ -716,7 +719,7 @@ namespace Generator.UI.WF
             this.TbxResultCollectionFlag.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
             this.TbxResultCollectionFlag.Location = new System.Drawing.Point(23, 234);
             this.TbxResultCollectionFlag.Name = "TbxResultCollectionFlag";
-            this.TbxResultCollectionFlag.Size = new System.Drawing.Size(262, 30);
+            this.TbxResultCollectionFlag.Size = new System.Drawing.Size(261, 30);
             this.TbxResultCollectionFlag.TabIndex = 304;
             this.TbxResultCollectionFlag.Text = "123";
             // 
@@ -740,7 +743,7 @@ namespace Generator.UI.WF
             this.panel16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
             this.panel16.Location = new System.Drawing.Point(23, 266);
             this.panel16.Name = "panel16";
-            this.panel16.Size = new System.Drawing.Size(262, 2);
+            this.panel16.Size = new System.Drawing.Size(261, 3);
             this.panel16.TabIndex = 315;
             // 
             // TbxOracleSchemaName
@@ -751,9 +754,9 @@ namespace Generator.UI.WF
             this.TbxOracleSchemaName.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TbxOracleSchemaName.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.TbxOracleSchemaName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
-            this.TbxOracleSchemaName.Location = new System.Drawing.Point(23, 50);
+            this.TbxOracleSchemaName.Location = new System.Drawing.Point(23, 49);
             this.TbxOracleSchemaName.Name = "TbxOracleSchemaName";
-            this.TbxOracleSchemaName.Size = new System.Drawing.Size(262, 30);
+            this.TbxOracleSchemaName.Size = new System.Drawing.Size(261, 30);
             this.TbxOracleSchemaName.TabIndex = 305;
             this.TbxOracleSchemaName.Text = "123";
             // 
@@ -762,9 +765,9 @@ namespace Generator.UI.WF
             this.panel9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
-            this.panel9.Location = new System.Drawing.Point(23, 82);
+            this.panel9.Location = new System.Drawing.Point(23, 81);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(262, 2);
+            this.panel9.Size = new System.Drawing.Size(261, 3);
             this.panel9.TabIndex = 310;
             // 
             // panel10
@@ -772,9 +775,9 @@ namespace Generator.UI.WF
             this.panel10.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
-            this.panel10.Location = new System.Drawing.Point(23, 176);
+            this.panel10.Location = new System.Drawing.Point(23, 175);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(262, 2);
+            this.panel10.Size = new System.Drawing.Size(261, 3);
             this.panel10.TabIndex = 314;
             // 
             // TbxText
@@ -788,7 +791,7 @@ namespace Generator.UI.WF
             this.TbxText.Location = new System.Drawing.Point(23, 143);
             this.TbxText.Multiline = true;
             this.TbxText.Name = "TbxText";
-            this.TbxText.Size = new System.Drawing.Size(262, 31);
+            this.TbxText.Size = new System.Drawing.Size(261, 32);
             this.TbxText.TabIndex = 303;
             this.TbxText.Text = "123";
             // 
@@ -797,9 +800,9 @@ namespace Generator.UI.WF
             this.panel13.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
-            this.panel13.Location = new System.Drawing.Point(23, 176);
+            this.panel13.Location = new System.Drawing.Point(23, 175);
             this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(262, 2);
+            this.panel13.Size = new System.Drawing.Size(261, 3);
             this.panel13.TabIndex = 313;
             // 
             // label13
@@ -809,7 +812,7 @@ namespace Generator.UI.WF
             this.label13.Enabled = false;
             this.label13.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label13.ForeColor = System.Drawing.Color.Silver;
-            this.label13.Location = new System.Drawing.Point(20, 307);
+            this.label13.Location = new System.Drawing.Point(20, 308);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(116, 23);
             this.label13.TabIndex = 307;
@@ -839,18 +842,20 @@ namespace Generator.UI.WF
             this.TbxOracleText.Location = new System.Drawing.Point(23, 340);
             this.TbxOracleText.Multiline = true;
             this.TbxOracleText.Name = "TbxOracleText";
-            this.TbxOracleText.Size = new System.Drawing.Size(262, 29);
+            this.TbxOracleText.Size = new System.Drawing.Size(261, 28);
             this.TbxOracleText.TabIndex = 302;
             this.TbxOracleText.Text = "123";
+            this.TbxOracleText.MouseClick += new System.Windows.Forms.MouseEventHandler(this.TbxOracleText_MouseClick);
+            this.TbxOracleText.TextChanged += new System.EventHandler(this.TbxOracleText_TextChanged);
             // 
             // panel12
             // 
             this.panel12.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
-            this.panel12.Location = new System.Drawing.Point(23, 371);
+            this.panel12.Location = new System.Drawing.Point(23, 374);
             this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(262, 2);
+            this.panel12.Size = new System.Drawing.Size(261, 3);
             this.panel12.TabIndex = 306;
             // 
             // label5
@@ -873,7 +878,7 @@ namespace Generator.UI.WF
             this.panel29.Location = new System.Drawing.Point(310, 0);
             this.panel29.Margin = new System.Windows.Forms.Padding(0);
             this.panel29.Name = "panel29";
-            this.panel29.Size = new System.Drawing.Size(10, 398);
+            this.panel29.Size = new System.Drawing.Size(10, 399);
             this.panel29.TabIndex = 301;
             // 
             // PanelSecond
@@ -891,10 +896,10 @@ namespace Generator.UI.WF
             this.PanelSecond.Controls.Add(this.panel6);
             this.PanelSecond.Controls.Add(this.panel27);
             this.PanelSecond.Dock = System.Windows.Forms.DockStyle.Left;
-            this.PanelSecond.Location = new System.Drawing.Point(320, 40);
+            this.PanelSecond.Location = new System.Drawing.Point(320, 39);
             this.PanelSecond.Margin = new System.Windows.Forms.Padding(0);
             this.PanelSecond.Name = "PanelSecond";
-            this.PanelSecond.Size = new System.Drawing.Size(320, 398);
+            this.PanelSecond.Size = new System.Drawing.Size(320, 399);
             this.PanelSecond.TabIndex = 307;
             // 
             // label22
@@ -918,9 +923,9 @@ namespace Generator.UI.WF
             this.TbxProfileId.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TbxProfileId.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.TbxProfileId.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
-            this.TbxProfileId.Location = new System.Drawing.Point(23, 50);
+            this.TbxProfileId.Location = new System.Drawing.Point(23, 49);
             this.TbxProfileId.Name = "TbxProfileId";
-            this.TbxProfileId.Size = new System.Drawing.Size(262, 30);
+            this.TbxProfileId.Size = new System.Drawing.Size(261, 30);
             this.TbxProfileId.TabIndex = 313;
             this.TbxProfileId.Text = "123";
             // 
@@ -929,9 +934,9 @@ namespace Generator.UI.WF
             this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
-            this.panel4.Location = new System.Drawing.Point(23, 82);
+            this.panel4.Location = new System.Drawing.Point(23, 81);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(262, 2);
+            this.panel4.Size = new System.Drawing.Size(261, 3);
             this.panel4.TabIndex = 314;
             // 
             // CbxObjectType
@@ -947,7 +952,7 @@ namespace Generator.UI.WF
             "CUSTOMSQL",
             "TABLE",
             "SEQUENCE"});
-            this.CbxObjectType.Location = new System.Drawing.Point(23, 338);
+            this.CbxObjectType.Location = new System.Drawing.Point(23, 339);
             this.CbxObjectType.Name = "CbxObjectType";
             this.CbxObjectType.Size = new System.Drawing.Size(264, 32);
             this.CbxObjectType.TabIndex = 302;
@@ -988,7 +993,7 @@ namespace Generator.UI.WF
             this.TbxSchemaName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
             this.TbxSchemaName.Location = new System.Drawing.Point(23, 236);
             this.TbxSchemaName.Name = "TbxSchemaName";
-            this.TbxSchemaName.Size = new System.Drawing.Size(262, 30);
+            this.TbxSchemaName.Size = new System.Drawing.Size(261, 30);
             this.TbxSchemaName.TabIndex = 304;
             this.TbxSchemaName.Text = "123";
             // 
@@ -999,7 +1004,7 @@ namespace Generator.UI.WF
             this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
             this.panel8.Location = new System.Drawing.Point(23, 268);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(262, 2);
+            this.panel8.Size = new System.Drawing.Size(261, 3);
             this.panel8.TabIndex = 308;
             // 
             // label6
@@ -1025,7 +1030,7 @@ namespace Generator.UI.WF
             this.TbxRepositoryName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
             this.TbxRepositoryName.Location = new System.Drawing.Point(23, 140);
             this.TbxRepositoryName.Name = "TbxRepositoryName";
-            this.TbxRepositoryName.Size = new System.Drawing.Size(262, 30);
+            this.TbxRepositoryName.Size = new System.Drawing.Size(261, 30);
             this.TbxRepositoryName.TabIndex = 303;
             this.TbxRepositoryName.Text = "123";
             // 
@@ -1036,7 +1041,7 @@ namespace Generator.UI.WF
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
             this.panel6.Location = new System.Drawing.Point(23, 172);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(262, 2);
+            this.panel6.Size = new System.Drawing.Size(261, 3);
             this.panel6.TabIndex = 306;
             // 
             // panel27
@@ -1046,7 +1051,7 @@ namespace Generator.UI.WF
             this.panel27.Location = new System.Drawing.Point(310, 0);
             this.panel27.Margin = new System.Windows.Forms.Padding(0);
             this.panel27.Name = "panel27";
-            this.panel27.Size = new System.Drawing.Size(10, 398);
+            this.panel27.Size = new System.Drawing.Size(10, 399);
             this.panel27.TabIndex = 301;
             // 
             // PanelFirst
@@ -1065,10 +1070,10 @@ namespace Generator.UI.WF
             this.PanelFirst.Controls.Add(this.TbxObjectId);
             this.PanelFirst.Controls.Add(this.label3);
             this.PanelFirst.Dock = System.Windows.Forms.DockStyle.Left;
-            this.PanelFirst.Location = new System.Drawing.Point(0, 40);
+            this.PanelFirst.Location = new System.Drawing.Point(0, 39);
             this.PanelFirst.Margin = new System.Windows.Forms.Padding(0);
             this.PanelFirst.Name = "PanelFirst";
-            this.PanelFirst.Size = new System.Drawing.Size(320, 398);
+            this.PanelFirst.Size = new System.Drawing.Size(320, 399);
             this.PanelFirst.TabIndex = 211;
             // 
             // label1
@@ -1078,7 +1083,7 @@ namespace Generator.UI.WF
             this.label1.Enabled = false;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.Silver;
-            this.label1.Location = new System.Drawing.Point(12, 115);
+            this.label1.Location = new System.Drawing.Point(11, 116);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(166, 22);
             this.label1.TabIndex = 230;
@@ -1089,9 +1094,9 @@ namespace Generator.UI.WF
             this.panel7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
-            this.panel7.Location = new System.Drawing.Point(24, 78);
+            this.panel7.Location = new System.Drawing.Point(24, 77);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(262, 2);
+            this.panel7.Size = new System.Drawing.Size(261, 3);
             this.panel7.TabIndex = 226;
             // 
             // TbxValidFlag
@@ -1104,7 +1109,7 @@ namespace Generator.UI.WF
             this.TbxValidFlag.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
             this.TbxValidFlag.Location = new System.Drawing.Point(24, 46);
             this.TbxValidFlag.Name = "TbxValidFlag";
-            this.TbxValidFlag.Size = new System.Drawing.Size(262, 30);
+            this.TbxValidFlag.Size = new System.Drawing.Size(261, 30);
             this.TbxValidFlag.TabIndex = 4;
             this.TbxValidFlag.Text = "123";
             // 
@@ -1115,7 +1120,7 @@ namespace Generator.UI.WF
             this.panel19.Location = new System.Drawing.Point(310, 0);
             this.panel19.Margin = new System.Windows.Forms.Padding(0);
             this.panel19.Name = "panel19";
-            this.panel19.Size = new System.Drawing.Size(10, 398);
+            this.panel19.Size = new System.Drawing.Size(10, 399);
             this.panel19.TabIndex = 301;
             // 
             // label4
@@ -1125,7 +1130,7 @@ namespace Generator.UI.WF
             this.label4.Enabled = false;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label4.ForeColor = System.Drawing.Color.Silver;
-            this.label4.Location = new System.Drawing.Point(12, 21);
+            this.label4.Location = new System.Drawing.Point(11, 21);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(100, 22);
             this.label4.TabIndex = 227;
@@ -1138,7 +1143,7 @@ namespace Generator.UI.WF
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
             this.panel1.Location = new System.Drawing.Point(24, 172);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(262, 2);
+            this.panel1.Size = new System.Drawing.Size(261, 3);
             this.panel1.TabIndex = 229;
             // 
             // TbxGenerateUIFlag
@@ -1151,7 +1156,7 @@ namespace Generator.UI.WF
             this.TbxGenerateUIFlag.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
             this.TbxGenerateUIFlag.Location = new System.Drawing.Point(24, 140);
             this.TbxGenerateUIFlag.Name = "TbxGenerateUIFlag";
-            this.TbxGenerateUIFlag.Size = new System.Drawing.Size(262, 30);
+            this.TbxGenerateUIFlag.Size = new System.Drawing.Size(261, 30);
             this.TbxGenerateUIFlag.TabIndex = 5;
             this.TbxGenerateUIFlag.Text = "123";
             // 
@@ -1162,7 +1167,7 @@ namespace Generator.UI.WF
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
             this.panel2.Location = new System.Drawing.Point(24, 269);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(262, 2);
+            this.panel2.Size = new System.Drawing.Size(261, 3);
             this.panel2.TabIndex = 232;
             // 
             // TbxUIPathSuffix
@@ -1173,9 +1178,9 @@ namespace Generator.UI.WF
             this.TbxUIPathSuffix.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TbxUIPathSuffix.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.TbxUIPathSuffix.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
-            this.TbxUIPathSuffix.Location = new System.Drawing.Point(24, 237);
+            this.TbxUIPathSuffix.Location = new System.Drawing.Point(24, 238);
             this.TbxUIPathSuffix.Name = "TbxUIPathSuffix";
-            this.TbxUIPathSuffix.Size = new System.Drawing.Size(262, 30);
+            this.TbxUIPathSuffix.Size = new System.Drawing.Size(261, 30);
             this.TbxUIPathSuffix.TabIndex = 6;
             this.TbxUIPathSuffix.Text = "123";
             // 
@@ -1186,7 +1191,7 @@ namespace Generator.UI.WF
             this.label2.Enabled = false;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.Silver;
-            this.label2.Location = new System.Drawing.Point(12, 212);
+            this.label2.Location = new System.Drawing.Point(11, 213);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(125, 22);
             this.label2.TabIndex = 233;
@@ -1197,9 +1202,9 @@ namespace Generator.UI.WF
             this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
-            this.panel3.Location = new System.Drawing.Point(24, 370);
+            this.panel3.Location = new System.Drawing.Point(24, 371);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(262, 2);
+            this.panel3.Size = new System.Drawing.Size(261, 3);
             this.panel3.TabIndex = 235;
             // 
             // TbxObjectId
@@ -1210,9 +1215,9 @@ namespace Generator.UI.WF
             this.TbxObjectId.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TbxObjectId.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.TbxObjectId.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
-            this.TbxObjectId.Location = new System.Drawing.Point(24, 338);
+            this.TbxObjectId.Location = new System.Drawing.Point(24, 339);
             this.TbxObjectId.Name = "TbxObjectId";
-            this.TbxObjectId.Size = new System.Drawing.Size(262, 30);
+            this.TbxObjectId.Size = new System.Drawing.Size(261, 30);
             this.TbxObjectId.TabIndex = 1;
             this.TbxObjectId.Text = "123";
             // 
@@ -1223,7 +1228,7 @@ namespace Generator.UI.WF
             this.label3.Enabled = false;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.Color.Silver;
-            this.label3.Location = new System.Drawing.Point(12, 313);
+            this.label3.Location = new System.Drawing.Point(11, 312);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(97, 23);
             this.label3.TabIndex = 236;
@@ -1237,7 +1242,7 @@ namespace Generator.UI.WF
             this.label19.ForeColor = System.Drawing.Color.White;
             this.label19.Location = new System.Drawing.Point(0, 0);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(1281, 40);
+            this.label19.Size = new System.Drawing.Size(1281, 39);
             this.label19.TabIndex = 306;
             this.label19.Text = "Object Ekle";
             this.label19.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -1257,15 +1262,16 @@ namespace Generator.UI.WF
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1281, 800);
+            this.ClientSize = new System.Drawing.Size(1281, 801);
             this.Controls.Add(this.PanelPresentation);
             this.Controls.Add(this.PanelTop);
             this.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
-            this.Margin = new System.Windows.Forms.Padding(5);
+            this.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.Name = "FormObjectAddUpdate";
             this.ShowIcon = false;
             this.Text = "Nesne Ekle";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormObjectAddUpdate_FormClosing);
             this.Load += new System.EventHandler(this.FormObjectAddUpdate_Load);
             this.SizeChanged += new System.EventHandler(this.FormObjectAddUpdate_SizeChanged);
             this.PanelPresentation.ResumeLayout(false);
@@ -1368,8 +1374,8 @@ namespace Generator.UI.WF
         private System.Windows.Forms.ComboBox CbxSchemaName;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button BtnResultAdd;
         private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button BtnParametre;
     }
 }

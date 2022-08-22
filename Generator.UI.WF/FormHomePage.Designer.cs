@@ -38,7 +38,7 @@ namespace Generator.UI.WF
             this.button21 = new System.Windows.Forms.Button();
             this.button22 = new System.Windows.Forms.Button();
             this.button_uyelikislemleri = new System.Windows.Forms.Button();
-            this.button_sınıflar = new System.Windows.Forms.Button();
+            this.BtnUxGenerate = new System.Windows.Forms.Button();
             this.panel_tanımlamalar = new System.Windows.Forms.Panel();
             this.button_kullanici = new System.Windows.Forms.Button();
             this.button_olcuturu = new System.Windows.Forms.Button();
@@ -83,7 +83,7 @@ namespace Generator.UI.WF
             this.panel_solarka.Controls.Add(this.panel_rapor);
             this.panel_solarka.Controls.Add(this.panel_uyelikislem);
             this.panel_solarka.Controls.Add(this.button_uyelikislemleri);
-            this.panel_solarka.Controls.Add(this.button_sınıflar);
+            this.panel_solarka.Controls.Add(this.BtnUxGenerate);
             this.panel_solarka.Controls.Add(this.panel_tanımlamalar);
             this.panel_solarka.Controls.Add(this.button_tanımlamalar);
             this.panel_solarka.Controls.Add(this.panel_isletme);
@@ -220,25 +220,26 @@ namespace Generator.UI.WF
             this.button_uyelikislemleri.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button_uyelikislemleri.UseVisualStyleBackColor = false;
             // 
-            // button_sınıflar
+            // BtnUxGenerate
             // 
-            this.button_sınıflar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(231)))), ((int)(((byte)(228)))));
-            this.button_sınıflar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button_sınıflar.FlatAppearance.BorderSize = 0;
-            this.button_sınıflar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_sınıflar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button_sınıflar.Image = global::Generator.UI.WF.Properties.Resources.tanımlamalar;
-            this.button_sınıflar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button_sınıflar.Location = new System.Drawing.Point(0, 314);
-            this.button_sınıflar.Margin = new System.Windows.Forms.Padding(0);
-            this.button_sınıflar.Name = "button_sınıflar";
-            this.button_sınıflar.Padding = new System.Windows.Forms.Padding(1, 0, 0, 0);
-            this.button_sınıflar.Size = new System.Drawing.Size(224, 42);
-            this.button_sınıflar.TabIndex = 7;
-            this.button_sınıflar.TabStop = false;
-            this.button_sınıflar.Text = "  Frontend Generate";
-            this.button_sınıflar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button_sınıflar.UseVisualStyleBackColor = false;
+            this.BtnUxGenerate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(231)))), ((int)(((byte)(228)))));
+            this.BtnUxGenerate.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BtnUxGenerate.FlatAppearance.BorderSize = 0;
+            this.BtnUxGenerate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnUxGenerate.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.BtnUxGenerate.Image = global::Generator.UI.WF.Properties.Resources.tanımlamalar;
+            this.BtnUxGenerate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnUxGenerate.Location = new System.Drawing.Point(0, 314);
+            this.BtnUxGenerate.Margin = new System.Windows.Forms.Padding(0);
+            this.BtnUxGenerate.Name = "BtnUxGenerate";
+            this.BtnUxGenerate.Padding = new System.Windows.Forms.Padding(1, 0, 0, 0);
+            this.BtnUxGenerate.Size = new System.Drawing.Size(224, 42);
+            this.BtnUxGenerate.TabIndex = 7;
+            this.BtnUxGenerate.TabStop = false;
+            this.BtnUxGenerate.Text = "  Frontend Generate";
+            this.BtnUxGenerate.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BtnUxGenerate.UseVisualStyleBackColor = false;
+            this.BtnUxGenerate.Click += new System.EventHandler(this.BtnUxGenerate_Click);
             // 
             // panel_tanımlamalar
             // 
@@ -638,7 +639,7 @@ namespace Generator.UI.WF
         private System.Windows.Forms.Button button21;
         private System.Windows.Forms.Button button22;
         private System.Windows.Forms.Button button_uyelikislemleri;
-        private System.Windows.Forms.Button button_sınıflar;
+        private System.Windows.Forms.Button BtnUxGenerate;
         private System.Windows.Forms.Panel panel_tanımlamalar;
         private System.Windows.Forms.Button button_olcuturu;
         private System.Windows.Forms.Button button_tanımlamalar;

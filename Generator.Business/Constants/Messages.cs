@@ -8,7 +8,7 @@ namespace Generator.Business.Constants
     {
         public static string UserCountGreaterThan1 = "Kullanıcı sayısı birden fazla";
         public static string UserNotFound = "Kullanıcı adı veya şifre hatalı";
-        public static string ProfileNotFound ="Profile bulunamadı";
-        public static string ObjectIdAlreadyExists="Object id daha önce tanımlanmış";
+        public static string ProfileNotFound = "Profile bulunamadı";
+        public static string ObjectIdAlreadyExists = "Object id daha önce tanımlanmış";
     }
 }

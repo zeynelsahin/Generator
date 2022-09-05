@@ -28,8 +28,12 @@ namespace Generator.UI.WF
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label_copadet = new System.Windows.Forms.Label();
             this.PanelTop = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.BtnResultBul = new System.Windows.Forms.Button();
             this.PanelThird = new System.Windows.Forms.Panel();
+            this.label25 = new System.Windows.Forms.Label();
             this.PanelSecond = new System.Windows.Forms.Panel();
+            this.BtnResultAdd = new System.Windows.Forms.Button();
             this.PanelFirst = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label19 = new System.Windows.Forms.Label();
@@ -38,11 +42,7 @@ namespace Generator.UI.WF
             this.LblAdet = new System.Windows.Forms.Label();
             this.DgwObject = new System.Windows.Forms.DataGridView();
             this.LblSonuc = new System.Windows.Forms.Label();
-            this.BtnResultAdd = new System.Windows.Forms.Button();
-            this.label25 = new System.Windows.Forms.Label();
             this.PanelPresentation = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.BtnResultBul = new System.Windows.Forms.Button();
             this.PanelTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgwObject)).BeginInit();
             this.PanelPresentation.SuspendLayout();
@@ -60,8 +60,12 @@ namespace Generator.UI.WF
             // 
             // PanelTop
             // 
+            this.PanelTop.Controls.Add(this.label2);
+            this.PanelTop.Controls.Add(this.BtnResultBul);
             this.PanelTop.Controls.Add(this.PanelThird);
+            this.PanelTop.Controls.Add(this.label25);
             this.PanelTop.Controls.Add(this.PanelSecond);
+            this.PanelTop.Controls.Add(this.BtnResultAdd);
             this.PanelTop.Controls.Add(this.PanelFirst);
             this.PanelTop.Controls.Add(this.panel1);
             this.PanelTop.Controls.Add(this.label_copadet);
@@ -73,6 +77,35 @@ namespace Generator.UI.WF
             this.PanelTop.TabIndex = 26;
             this.PanelTop.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelTop_Paint);
             // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Enabled = false;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.ForeColor = System.Drawing.Color.Silver;
+            this.label2.Location = new System.Drawing.Point(998, 9);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(124, 23);
+            this.label2.TabIndex = 330;
+            this.label2.Text = "Resultları Bul";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // BtnResultBul
+            // 
+            this.BtnResultBul.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnResultBul.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnResultBul.FlatAppearance.BorderSize = 0;
+            this.BtnResultBul.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnResultBul.Image = global::Generator.UI.WF.Properties.Resources.arama;
+            this.BtnResultBul.Location = new System.Drawing.Point(960, 5);
+            this.BtnResultBul.Name = "BtnResultBul";
+            this.BtnResultBul.Size = new System.Drawing.Size(32, 32);
+            this.BtnResultBul.TabIndex = 329;
+            this.BtnResultBul.UseVisualStyleBackColor = true;
+            this.BtnResultBul.Click += new System.EventHandler(this.BtnResultBul_Click);
+            // 
             // PanelThird
             // 
             this.PanelThird.Dock = System.Windows.Forms.DockStyle.Left;
@@ -82,6 +115,21 @@ namespace Generator.UI.WF
             this.PanelThird.Size = new System.Drawing.Size(499, 196);
             this.PanelThird.TabIndex = 320;
             // 
+            // label25
+            // 
+            this.label25.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label25.AutoSize = true;
+            this.label25.BackColor = System.Drawing.Color.Transparent;
+            this.label25.Enabled = false;
+            this.label25.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label25.ForeColor = System.Drawing.Color.Silver;
+            this.label25.Location = new System.Drawing.Point(1180, 9);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(261, 23);
+            this.label25.TabIndex = 326;
+            this.label25.Text = "Resultları Veritabanına Ekle\r\n";
+            this.label25.Click += new System.EventHandler(this.label25_Click);
+            // 
             // PanelSecond
             // 
             this.PanelSecond.Dock = System.Windows.Forms.DockStyle.Left;
@@ -90,6 +138,20 @@ namespace Generator.UI.WF
             this.PanelSecond.Name = "PanelSecond";
             this.PanelSecond.Size = new System.Drawing.Size(499, 196);
             this.PanelSecond.TabIndex = 314;
+            // 
+            // BtnResultAdd
+            // 
+            this.BtnResultAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnResultAdd.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnResultAdd.FlatAppearance.BorderSize = 0;
+            this.BtnResultAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnResultAdd.Image = global::Generator.UI.WF.Properties.Resources.ekle_32px;
+            this.BtnResultAdd.Location = new System.Drawing.Point(1146, 3);
+            this.BtnResultAdd.Name = "BtnResultAdd";
+            this.BtnResultAdd.Size = new System.Drawing.Size(32, 32);
+            this.BtnResultAdd.TabIndex = 325;
+            this.BtnResultAdd.UseVisualStyleBackColor = true;
+            this.BtnResultAdd.Click += new System.EventHandler(this.BtnResultAdd_Click);
             // 
             // PanelFirst
             // 
@@ -201,41 +263,8 @@ namespace Generator.UI.WF
             this.LblSonuc.Text = "Sonuc";
             this.LblSonuc.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // BtnResultAdd
-            // 
-            this.BtnResultAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BtnResultAdd.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnResultAdd.FlatAppearance.BorderSize = 0;
-            this.BtnResultAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnResultAdd.Image = global::Generator.UI.WF.Properties.Resources.ekle_32px;
-            this.BtnResultAdd.Location = new System.Drawing.Point(1201, 7);
-            this.BtnResultAdd.Name = "BtnResultAdd";
-            this.BtnResultAdd.Size = new System.Drawing.Size(32, 32);
-            this.BtnResultAdd.TabIndex = 325;
-            this.BtnResultAdd.UseVisualStyleBackColor = true;
-            this.BtnResultAdd.Click += new System.EventHandler(this.BtnResultAdd_Click);
-            // 
-            // label25
-            // 
-            this.label25.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label25.AutoSize = true;
-            this.label25.BackColor = System.Drawing.Color.Transparent;
-            this.label25.Enabled = false;
-            this.label25.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label25.ForeColor = System.Drawing.Color.Silver;
-            this.label25.Location = new System.Drawing.Point(1235, 13);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(261, 23);
-            this.label25.TabIndex = 326;
-            this.label25.Text = "Resultları Veritabanına Ekle\r\n";
-            this.label25.Click += new System.EventHandler(this.label25_Click);
-            // 
             // PanelPresentation
             // 
-            this.PanelPresentation.Controls.Add(this.label2);
-            this.PanelPresentation.Controls.Add(this.BtnResultBul);
-            this.PanelPresentation.Controls.Add(this.label25);
-            this.PanelPresentation.Controls.Add(this.BtnResultAdd);
             this.PanelPresentation.Controls.Add(this.LblSonuc);
             this.PanelPresentation.Controls.Add(this.DgwObject);
             this.PanelPresentation.Controls.Add(this.LblAdet);
@@ -245,35 +274,6 @@ namespace Generator.UI.WF
             this.PanelPresentation.Name = "PanelPresentation";
             this.PanelPresentation.Size = new System.Drawing.Size(1499, 552);
             this.PanelPresentation.TabIndex = 27;
-            // 
-            // label2
-            // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Enabled = false;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.ForeColor = System.Drawing.Color.Silver;
-            this.label2.Location = new System.Drawing.Point(1053, 13);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(124, 23);
-            this.label2.TabIndex = 330;
-            this.label2.Text = "Resultları Bul";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
-            // 
-            // BtnResultBul
-            // 
-            this.BtnResultBul.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BtnResultBul.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnResultBul.FlatAppearance.BorderSize = 0;
-            this.BtnResultBul.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnResultBul.Image = global::Generator.UI.WF.Properties.Resources.arama;
-            this.BtnResultBul.Location = new System.Drawing.Point(1015, 9);
-            this.BtnResultBul.Name = "BtnResultBul";
-            this.BtnResultBul.Size = new System.Drawing.Size(32, 32);
-            this.BtnResultBul.TabIndex = 329;
-            this.BtnResultBul.UseVisualStyleBackColor = true;
-            this.BtnResultBul.Click += new System.EventHandler(this.BtnResultBul_Click);
             // 
             // FormResultAdd
             // 

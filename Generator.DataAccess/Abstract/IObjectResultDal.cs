@@ -3,8 +3,7 @@ using Generator.Entities;
 
 namespace Generator.DataAccess.Abstract
 {
-    public interface IObjectResultDal: IEntityRepository<ObjectResult>
+    public interface IObjectResultDal : IEntityRepository<ObjectResult>
     {
-        
     }
 }

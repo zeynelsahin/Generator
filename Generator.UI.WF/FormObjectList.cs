@@ -22,7 +22,5 @@ namespace Generator.UI.WF
 
         private Profile _profile;
         private IObjectEntityService _objectEntityService = new ObjectEntityService(new EfObjectEntityDal());
-
-      
     }
 }

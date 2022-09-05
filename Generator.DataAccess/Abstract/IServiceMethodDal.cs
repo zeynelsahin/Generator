@@ -6,7 +6,7 @@ using Generator.Entities;
 
 namespace Generator.DataAccess.Abstract
 {
-    public interface IServiceMethodDal: IEntityRepository<ServiceMethod>
+    public interface IServiceMethodDal : IEntityRepository<ServiceMethod>
     {
     }
 }

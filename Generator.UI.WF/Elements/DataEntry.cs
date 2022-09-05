@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Generator.UI.WF.Elements
 {
-    public class DataEntry: BaseElement
+    public class DataEntry : BaseElement
     {
         public override string ToString()
         {

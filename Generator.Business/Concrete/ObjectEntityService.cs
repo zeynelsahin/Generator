@@ -7,7 +7,7 @@ using Generator.Entities;
 
 namespace Generator.Business.Concrete
 {
-    public class ObjectEntityService: IObjectEntityService
+    public class ObjectEntityService : IObjectEntityService
     {
         private readonly IObjectEntityDal _objectEntityDal;
 
@@ -21,29 +21,41 @@ namespace Generator.Business.Concrete
             _objectEntityDal.Add(objectEntity);
         }
 
-        public List<ObjectEntity> GetByObjectId(string objectId, string profileId = null,string schemaName=null)
+        public List<ObjectEntity> GetByObjectId(string objectId, string profileId = null, string schemaName = null)
         {
             List<ObjectEntity> result;
-            if (profileId!=null)
+            if (profileId != null)
             {
-                if (schemaName!=null)
+                if (schemaName != null)
                 {
                     result = _objectEntityDal.GetAll(entity => entity.ObjectId == objectId && entity.ProfileId == profileId && entity.SchemaName == schemaName);
                     return result;
                 }
+
                 result = _objectEntityDal.GetAll(entity => entity.ObjectId == objectId && entity.ProfileId == profileId);
                 return result;
             }
 
-            if (schemaName!=null)
+            if (schemaName != null)
             {
-                result = _objectEntityDal.GetAll(entity => entity.ObjectId == objectId  && entity.SchemaName == schemaName);
+                result = _objectEntityDal.GetAll(entity => entity.ObjectId == objectId && entity.SchemaName == schemaName);
                 return result;
             }
-        
+
             result = _objectEntityDal.GetAll(entity => entity.ObjectId == objectId);
             return result;
+        }
 
+        public List<string> GetAllByProfileId(string profileId)
+        {
+            var result = _objectEntityDal.GetAll(entity => entity.ProfileId == profileId).OrderBy(p => p.ObjectId).Select(entity => entity.ObjectId).ToList();
+            return result ?? null;
+        }
+
+        public List<ObjectEntity> GetByProfileId(string profileId)
+        {
+            var result = _objectEntityDal.GetAll(entity => entity.ProfileId == profileId);
+            return result;
         }
 
         public List<string> GetAllObjectId()
@@ -70,13 +82,34 @@ namespace Generator.Business.Concrete
             return result;
         }
 
-        public string GetOracleTextBy(string objectId, string profileId, string schemaName)
+        public string GetOracleText(string objectId, string profileId, string schemaName)
         {
-            var result = _objectEntityDal.Get(entity =>
-                entity.ObjectId == objectId);
+            try
+            {
+                var result = _objectEntityDal.Get(entity =>
+                    entity.ObjectId == objectId && entity.ProfileId == profileId && entity.SchemaName == schemaName);
+                return result.OracleText;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
 
-            return result.OracleText;
+        public List<string> GetColumnsName(string tableName)
+        {
+            return _objectEntityDal.ColumnNames(tableName);
+        }
 
+        public List<OracleColumn> GetOracleColumns(string tableName)
+        {
+            return _objectEntityDal.ColumnNamesAndType(tableName);
+        }
+
+        public string GetObjectType(string objectId, string profileId)
+        {
+            var result= _objectEntityDal.Get(p =>  p.ProfileId == profileId&& p.ObjectId == objectId);
+            return result.ObjectType;
         }
     }
 }

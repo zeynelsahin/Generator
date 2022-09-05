@@ -8,9 +8,10 @@ namespace Generator.UI.WF.Elements
     {
         public string Key { get; set; }
         public string Text { get; set; }
+
         public override string ToString()
         {
-            return $"\n<parameter key=\"{Key}\">{Text}<\n/parameter> " ;
+            return $"<parameter key=\"{Key}\">{Text}</parameter> ";
         }
     }
 }

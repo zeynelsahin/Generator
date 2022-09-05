@@ -10,6 +10,5 @@ namespace Generator.DataAccess.Concrete
 {
     public class EfObjectResultDal : EfEntityRepositoryBase<ObjectResult, GeneratorContext>, IObjectResultDal
     {
-       
     }
 }

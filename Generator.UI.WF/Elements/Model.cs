@@ -4,13 +4,13 @@ namespace Generator.UI.WF.Elements
 {
     public class Model
     {
-        public List<Field> Fields { get; set; }
+        public List<Field> Fields { get; set; } = new List<Field>();
 
         public override string ToString()
         {
-            string xml = "";
+            var xml = "";
             Fields.ForEach(field => { xml += field.ToString(); });
-            return "\n<model>"+xml+"\n</model>";
+            return "\n<model>" + xml + "\n</model>";
         }
     }
 }

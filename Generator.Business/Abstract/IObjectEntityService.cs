@@ -1,5 +1,4 @@
-﻿
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Generator.Entities;
 
 namespace Generator.Business.Abstract
@@ -7,8 +6,9 @@ namespace Generator.Business.Abstract
     public interface IObjectEntityService
     {
         void Add(ObjectEntity objectEntity);
-        List<ObjectEntity> GetByObjectId(string objectId,string profileId=null,string schemaName=null);
+        List<ObjectEntity> GetByObjectId(string objectId, string profileId = null, string schemaName = null);
         List<string> GetAllByProfileId(string profileId);
+        List<ObjectEntity> GetByProfileId(string profileId);
         List<string> GetAllObjectId();
         List<ObjectEntity> GetByObjectIdContains(string objectId);
 
@@ -17,6 +17,8 @@ namespace Generator.Business.Abstract
         string GetOracleText(string objectId, string profileId, string schemaName);
 
         List<string> GetColumnsName(string tableName);
+        List<OracleColumn> GetOracleColumns(string tableName);
 
+        string GetObjectType(string objectId,string profileId);
     }
 }

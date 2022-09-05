@@ -8,7 +8,7 @@ namespace Generator.UI.WF.Elements
     {
         public string ShowStatus { get; set; }
         public string Height { get; set; }
-
+        public string StatusColorFieldId { get; set; }
         public List<Field> Fields { get; set; } = null;
         public List<Column> Columns { get; set; } = null;
 
@@ -32,6 +32,7 @@ namespace Generator.UI.WF.Elements
                 Columns.ForEach(column => { grid += column.ToString(); });
                 grid += "\n<row-template/>";
             }
+
             grid += "</grid-view>";
             return grid;
         }

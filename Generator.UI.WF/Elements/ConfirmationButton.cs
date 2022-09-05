@@ -21,15 +21,12 @@ namespace Generator.UI.WF.Elements
 
         public override string ToString()
         {
-            string xml =
+            var xml =
                 $"\n<confirmation-button id=\"BtnBatchFix\" action-code=\"BtnBatchFix\" message=\"Are you sure you want to update?\" icon-css=\"save\" text=\"Toplu Düzelt\" type-css=\"Success\" alignment=\"Right\">";
             ConfirmationItems.ForEach(item =>
             {
                 xml += $"<confirmation-item confirmation-button=\"{item.ConfirmationButton}\"";
-                if (item.ActionCode != null)
-                {
-                    xml += $" action-code=\"{ActionCode}\"/>";
-                }
+                if (item.ActionCode != null) xml += $" action-code=\"{ActionCode}\"/>";
             });
 
             xml += "</confirmation-button>";

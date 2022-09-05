@@ -7,7 +7,7 @@ using Generator.Entities;
 
 namespace Generator.DataAccess.Concrete
 {
-    public class EfServiceMethodDal: EfEntityRepositoryBase<ServiceMethod,GeneratorContext>,IServiceMethodDal
+    public class EfServiceMethodDal : EfEntityRepositoryBase<ServiceMethod, GeneratorContext>, IServiceMethodDal
     {
     }
 }

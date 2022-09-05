@@ -18,6 +18,9 @@ namespace Generator.Business.Abstract
 
         string FindParameterType(string parameterName);
 
-        List<ObjectResult> GetAllByObjectId(string objectId);
+        List<ObjectResult> GetAllByObjectId(string objectId, string profileId);
+        List<string> GetResultIdByObjectId(string objectId, string profileId);
+        List<OracleColumn> GetAll(string objectId, string profileId);
+        
     }
 }

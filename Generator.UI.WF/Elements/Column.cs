@@ -8,9 +8,8 @@
 
         public override string ToString()
         {
-            if (LinkButton == null)
-                return $"<\ncol id=\"{Id}\"  field-id=\"{FieldId}\"  text=\"{Text}\" width=\"{Witdh}\"/>";
-            return $"<\ncol id=\"{Id}\"  field-id=\"{FieldId}\"  text=\"{Text}\"  width=\"{Witdh}\">" + LinkButton.ToString() + "\n</col>";
+            if (LinkButton == null) return $"\n<col id=\"{Id}\" field-id=\"{FieldId}\" text=\"{Text}\" width=\"{Witdh}\"/>";
+            return $"\n<col id=\"{Id}\" field-id=\"{FieldId}\" text=\"{Text}\" width=\"{Witdh}\">" + LinkButton.ToString() + "\n</col>";
         }
     }
 }

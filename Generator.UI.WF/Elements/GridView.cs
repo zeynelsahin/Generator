@@ -11,14 +11,18 @@
 
         public override string ToString()
         {
-            string xml = "";
-            xml += $"\n<grid-view id =\"{Id}\" show-status=\"{ShowStatus}\" text=\"{Text}\" height=\"{Height}\">";
-            if (CommandBar != null)
+            var xml = "";
+            xml += $"\n<grid-view id =\"{Id}\" show-status=\"{ShowStatus}\"";
+            if (StatusColorFieldId!=null)
             {
-                xml += CommandBar.ToString();
+                xml += $" status-color-field-id=\"{StatusColorFieldId}\"";
             }
+            xml += $" text=\"{Text}\" height=\"{Height}\">";
+            if (CommandBar != null) xml += CommandBar.ToString();
 
+            xml += Model.ToString();
             xml += RowTemplate.ToString();
+            xml+=$"\n</grid-view>";
             return xml;
         }
     }

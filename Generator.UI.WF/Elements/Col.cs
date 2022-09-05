@@ -9,16 +9,13 @@ namespace Generator.UI.WF.Elements
     {
         public string Size { get; set; }
         public string HelperCss { get; set; }
-        public List<IElement> Element { get; set; }
+        public IElement Element { get; set; }
 
         public override string ToString()
         {
-            string xml = $"\n<col size=\"{Size}\"";
-            if (HelperCss != null)
-            {
-                xml += $" helper-css=\"{HelperCss}\"";
-            }
-            
+            var xml = $"\n<col size=\"{Size}\">";
+            if (HelperCss != null) xml += $" helper-css=\"{HelperCss}\"";
+
             xml += Element.ToString() + "\n</col>";
             return xml;
         }

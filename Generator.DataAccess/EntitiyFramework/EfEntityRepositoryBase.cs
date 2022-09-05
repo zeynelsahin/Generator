@@ -8,7 +8,6 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Generator.DataAccess.EntitiyFramework
 {
-
     public class EfEntityRepositoryBase<TEntity, TContext> : IEntityRepository<TEntity> where TEntity : class, IEntity, new() where TContext : DbContext, new()
     {
         public List<TEntity> GetAll(Expression<Func<TEntity, bool>> filter = null)
@@ -34,7 +33,7 @@ namespace Generator.DataAccess.EntitiyFramework
         public void AddRange(IEnumerable<TEntity> entities)
         {
             using var context = new TContext();
-            context.Set<TEntity>().AddRange(entities);  
+            context.Set<TEntity>().AddRange(entities);
             context.SaveChanges();
         }
 
@@ -45,6 +44,7 @@ namespace Generator.DataAccess.EntitiyFramework
             updatedEntity.State = EntityState.Modified;
             context.SaveChanges();
         }
+
         public void UpdateRange(IEnumerable<TEntity> entities)
         {
             using var context = new TContext();
@@ -59,12 +59,12 @@ namespace Generator.DataAccess.EntitiyFramework
             deletedEntity.State = EntityState.Deleted;
             context.SaveChanges();
         }
+
         public void DeleteRange(IEnumerable<TEntity> entities)
         {
             using var context = new TContext();
             context.Set<TEntity>().RemoveRange(entities);
             context.SaveChanges();
         }
-
     }
 }

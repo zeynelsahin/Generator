@@ -29,6 +29,7 @@ namespace Generator.UI.WF
 
         private void FillObjectId()
         {
+            CbxOjectId.DataSource = null;
             var objectIdList = new List<string>()
             {
                 "Hiçbiri"
@@ -37,6 +38,7 @@ namespace Generator.UI.WF
             objectIdList.AddRange(result);
             CbxOjectId.DataSource = objectIdList;
         }
+
         private void FillProfileId()
         {
             var objectIdList = new List<string>()
@@ -103,6 +105,7 @@ namespace Generator.UI.WF
             };
             return objectEntity;
         }
+
         private void FormObjectAddUpdate_Load(object sender, EventArgs e)
         {
             FillProfile();
@@ -120,54 +123,43 @@ namespace Generator.UI.WF
         private void BtnEkle_Click(object sender, EventArgs e)
         {
             var objectEntity = NewObjectEntity();
-            bool objectExists = CheckIfObjectExists(objectEntity.ObjectId);
+            var objectExists = CheckIfObjectExists(objectEntity.ObjectId);
 
-            if (objectExists)
-            {
-                LblSonuc.Text = "Sonuç : " + Messages.ObjectIdAlreadyExists;
-            }
+            if (objectExists) LblSonuc.Text = "Sonuç : " + Messages.ObjectIdAlreadyExists;
 
             try
             {
                 _objectEntityService.Add(objectEntity);
-
             }
-            catch(Exception exception)
+            catch (Exception exception)
             {
             }
         }
-        public void DatagridLabelSize( )//datagridview in boyutunu ayarlar
+
+        public void DatagridLabelSize() //datagridview in boyutunu ayarlar
         {
-            int height = 41;
-            foreach (DataGridViewRow dr in DgwObject.Rows)
-            {
-                height += dr.Height;
-            }
-            if (height > PanelPresentation.Height-130)
-            {
-                DgwObject.Height = PanelPresentation.Height-130;
-            }
+            var height = 41;
+            foreach (DataGridViewRow dr in DgwObject.Rows) height += dr.Height;
+            if (height > PanelPresentation.Height - 130)
+                DgwObject.Height = PanelPresentation.Height - 130;
             else
-            {
                 DgwObject.Height = height;
-            }
             LblAdet.Top = DgwObject.Bottom + 10;
         }
+
         private void DgwObject_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
-
             DatagridLabelSize();
             LblAdet.Text = "Toplam : " + DgwObject.RowCount;
         }
 
         private void panel23_Paint(object sender, PaintEventArgs e)
         {
-
         }
 
         private void FormObjectAddUpdate_SizeChanged(object sender, EventArgs e)
         {
-            var width = PanelTop.Width/4;
+            var width = PanelTop.Width / 4;
             PanelFirst.Width = width;
             PanelSecond.Width = width;
             PanelThird.Width = width;
@@ -182,24 +174,20 @@ namespace Generator.UI.WF
                 DgwObject.DataSource = null;
                 return;
             }
+
             var selectedObjectId = CbxOjectId.SelectedItem.ToString();
             var selectedProfileId = CbxProfileId.SelectedItem.ToString();
             var selectedSchemaName = CbxSchemaName.SelectedItem.ToString();
-            if (selectedProfileId=="Tümü")
-            {
-                selectedProfileId = null;
-            }
+            if (selectedProfileId == "Tümü") selectedProfileId = null;
 
-            if (selectedSchemaName=="Tümü")
-            {
-                selectedSchemaName = null;
-            }
-            var result = _objectEntityService.GetByObjectId(selectedObjectId,selectedProfileId,selectedSchemaName);
+            if (selectedSchemaName == "Tümü") selectedSchemaName = null;
+            var result = _objectEntityService.GetByObjectId(selectedObjectId, selectedProfileId, selectedSchemaName);
             DgwObject.DataSource = result;
         }
+
         private void CbxOjectId_SelectedIndexChanged(object sender, EventArgs e)
         {
-           FilterObject();
+            FilterObject();
         }
 
         private void CbxProfileId_SelectedIndexChanged(object sender, EventArgs e)
@@ -209,7 +197,6 @@ namespace Generator.UI.WF
 
         private void DgwObject_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            
         }
 
         private void CbxSchemaName_SelectedIndexChanged(object sender, EventArgs e)
@@ -219,12 +206,13 @@ namespace Generator.UI.WF
 
         private void BtnParametre_Click(object sender, EventArgs e)
         {
-
+            var parameterAdd = new FormParameterAdd(CbxOjectId.SelectedItem.ToString(),TbxProfileId.Text,TbxSchemaName.Text);
+            parameterAdd.Show();
         }
 
         private void BtnResultAdd_Click(object sender, EventArgs e)
         {
-            FormResultAdd formResult = new FormResultAdd(TbxObjectId.Text, TbxProfileId.Text, TbxSchemaName.Text);
+            var formResult = new FormResultAdd(TbxObjectId.Text, TbxProfileId.Text, TbxSchemaName.Text);
             formResult.Show();
         }
 
@@ -246,12 +234,22 @@ namespace Generator.UI.WF
 
         private void TbxOracleText_TextChanged(object sender, EventArgs e)
         {
-
         }
 
         private void FormObjectAddUpdate_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void BtnOracle_Click(object sender, EventArgs e)
+        {
+            FillObjectId();
+        }
+
+        private void BtnUxGenerator_Click(object sender, EventArgs e)
+        {
+            FormUxGenerator formUxGenerator= new FormUxGenerator();
+            formUxGenerator.Show();
         }
     }
 }

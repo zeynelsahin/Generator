@@ -29,10 +29,13 @@ namespace Generator.UI.WF
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.PanelPresentation = new System.Windows.Forms.Panel();
+            this.label26 = new System.Windows.Forms.Label();
+            this.BtnUxGenerator = new System.Windows.Forms.Button();
+            this.BtnOracle = new System.Windows.Forms.Button();
             this.label25 = new System.Windows.Forms.Label();
             this.BtnResultAdd = new System.Windows.Forms.Button();
             this.label24 = new System.Windows.Forms.Label();
@@ -50,7 +53,6 @@ namespace Generator.UI.WF
             this.label10 = new System.Windows.Forms.Label();
             this.DgwObject = new System.Windows.Forms.DataGridView();
             this.LblAdet = new System.Windows.Forms.Label();
-            this.BtnOracle = new System.Windows.Forms.Button();
             this.label17 = new System.Windows.Forms.Label();
             this.label_copadet = new System.Windows.Forms.Label();
             this.PanelTop = new System.Windows.Forms.Panel();
@@ -127,6 +129,9 @@ namespace Generator.UI.WF
             // 
             // PanelPresentation
             // 
+            this.PanelPresentation.Controls.Add(this.label26);
+            this.PanelPresentation.Controls.Add(this.BtnUxGenerator);
+            this.PanelPresentation.Controls.Add(this.BtnOracle);
             this.PanelPresentation.Controls.Add(this.label25);
             this.PanelPresentation.Controls.Add(this.BtnResultAdd);
             this.PanelPresentation.Controls.Add(this.label24);
@@ -144,7 +149,6 @@ namespace Generator.UI.WF
             this.PanelPresentation.Controls.Add(this.label10);
             this.PanelPresentation.Controls.Add(this.DgwObject);
             this.PanelPresentation.Controls.Add(this.LblAdet);
-            this.PanelPresentation.Controls.Add(this.BtnOracle);
             this.PanelPresentation.Controls.Add(this.label17);
             this.PanelPresentation.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PanelPresentation.ForeColor = System.Drawing.Color.Black;
@@ -152,6 +156,50 @@ namespace Generator.UI.WF
             this.PanelPresentation.Name = "PanelPresentation";
             this.PanelPresentation.Size = new System.Drawing.Size(1281, 363);
             this.PanelPresentation.TabIndex = 27;
+            // 
+            // label26
+            // 
+            this.label26.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label26.AutoSize = true;
+            this.label26.BackColor = System.Drawing.Color.Transparent;
+            this.label26.Enabled = false;
+            this.label26.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label26.ForeColor = System.Drawing.Color.Silver;
+            this.label26.Location = new System.Drawing.Point(440, 9);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(34, 23);
+            this.label26.TabIndex = 328;
+            this.label26.Text = "Ux";
+            // 
+            // BtnUxGenerator
+            // 
+            this.BtnUxGenerator.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnUxGenerator.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnUxGenerator.FlatAppearance.BorderSize = 0;
+            this.BtnUxGenerator.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnUxGenerator.Image = global::Generator.UI.WF.Properties.Resources.ekle_32px;
+            this.BtnUxGenerator.Location = new System.Drawing.Point(410, 6);
+            this.BtnUxGenerator.Name = "BtnUxGenerator";
+            this.BtnUxGenerator.Size = new System.Drawing.Size(31, 32);
+            this.BtnUxGenerator.TabIndex = 327;
+            this.BtnUxGenerator.UseVisualStyleBackColor = true;
+            this.BtnUxGenerator.Click += new System.EventHandler(this.BtnUxGenerator_Click);
+            // 
+            // BtnOracle
+            // 
+            this.BtnOracle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnOracle.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnOracle.FlatAppearance.BorderSize = 0;
+            this.BtnOracle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnOracle.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.BtnOracle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
+            this.BtnOracle.Image = global::Generator.UI.WF.Properties.Resources.yenile_32px;
+            this.BtnOracle.Location = new System.Drawing.Point(9, 6);
+            this.BtnOracle.Name = "BtnOracle";
+            this.BtnOracle.Size = new System.Drawing.Size(31, 32);
+            this.BtnOracle.TabIndex = 305;
+            this.BtnOracle.UseVisualStyleBackColor = true;
+            this.BtnOracle.Click += new System.EventHandler(this.BtnOracle_Click);
             // 
             // label25
             // 
@@ -375,32 +423,32 @@ namespace Generator.UI.WF
             this.DgwObject.BackgroundColor = System.Drawing.Color.White;
             this.DgwObject.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DgwObject.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle4.NullValue = null;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DgwObject.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.NullValue = null;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DgwObject.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.DgwObject.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(231)))), ((int)(((byte)(228)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DgwObject.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(231)))), ((int)(((byte)(228)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DgwObject.DefaultCellStyle = dataGridViewCellStyle2;
             this.DgwObject.Location = new System.Drawing.Point(11, 129);
             this.DgwObject.Name = "DgwObject";
             this.DgwObject.ReadOnly = true;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgwObject.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgwObject.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.DgwObject.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DgwObject.Size = new System.Drawing.Size(1257, 162);
             this.DgwObject.TabIndex = 1;
@@ -419,21 +467,6 @@ namespace Generator.UI.WF
             this.LblAdet.Size = new System.Drawing.Size(109, 30);
             this.LblAdet.TabIndex = 81;
             this.LblAdet.Text = "Toplam ";
-            // 
-            // BtnOracle
-            // 
-            this.BtnOracle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BtnOracle.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnOracle.FlatAppearance.BorderSize = 0;
-            this.BtnOracle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnOracle.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.BtnOracle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
-            this.BtnOracle.Image = global::Generator.UI.WF.Properties.Resources.yenile_32px;
-            this.BtnOracle.Location = new System.Drawing.Point(1059, 74);
-            this.BtnOracle.Name = "BtnOracle";
-            this.BtnOracle.Size = new System.Drawing.Size(31, 32);
-            this.BtnOracle.TabIndex = 305;
-            this.BtnOracle.UseVisualStyleBackColor = true;
             // 
             // label17
             // 
@@ -1377,5 +1410,7 @@ namespace Generator.UI.WF
         private System.Windows.Forms.Button BtnResultAdd;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Button BtnParametre;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Button BtnUxGenerator;
     }
 }

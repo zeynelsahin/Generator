@@ -7,8 +7,9 @@ namespace Generator.Business.Abstract
 {
     public interface IObjectParameterService
     {
-      void Add(ObjectParameter objectEntity);
-      List<ObjectParameter> GetAllByObjectId(string objectId);
+        void Add(ObjectParameter objectEntity);
+        List<string> GetAllByObjectId(string objectId, string profileId);
         string FindParameterType(string parameterName);
+        List<OracleColumn> GetAll(string objectId, string profileId);
     }
 }

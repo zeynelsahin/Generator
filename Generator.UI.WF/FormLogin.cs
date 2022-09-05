@@ -26,6 +26,7 @@ namespace Generator.UI.WF
         }
 
         private List<Profile> _profiles;
+
         private void BtnLogin_Click(object sender, EventArgs e)
         {
             if (_profiles == null)
@@ -37,16 +38,16 @@ namespace Generator.UI.WF
             var profile = _profiles.FirstOrDefault(profile =>
                 profile.UserName == TbxUserName.Text && profile.Password == TbxPassword.Text);
 
-            if (profile!=null)
+            if (profile != null)
             {
-                this.Hide();
-                FormObjectAddUpdate formHomeScreen = new FormObjectAddUpdate(profile,new ObjectEntityService(new EfObjectEntityDal()));
+                Hide();
+                var formHomeScreen = new FormObjectAddUpdate(profile, new ObjectEntityService(new EfObjectEntityDal()));
                 formHomeScreen.Show();
             }
             else
             {
                 LblMessage.Text = Messages.UserNotFound;
-            }                                                                                                                                                                                                                                                                                                                                                                                                                                                            
+            }
         }
 
         private void FormLogin_Load(object sender, EventArgs e)
@@ -54,7 +55,7 @@ namespace Generator.UI.WF
             // profiles.json profiller çekliyor
             try
             {
-                string jsonString = File.ReadAllText(@"../../../profiles.json");
+                var jsonString = File.ReadAllText(@"../../../profiles.json");
                 _profiles = JsonConvert.DeserializeObject<List<Profile>>(jsonString);
                 LblMessage.Text = "";
             }
@@ -62,31 +63,22 @@ namespace Generator.UI.WF
             {
                 _profiles = null;
             }
-
         }
 
         private void TbxUserName_TextChanged(object sender, EventArgs e)
         {
             if (TbxUserName.Text != "")
-            {
                 LblUserName.Hide();
-            }
             else
-            {
                 LblUserName.Show();
-            }
         }
 
         private void TbxPassword_TextChanged(object sender, EventArgs e)
         {
             if (TbxPassword.Text != "")
-            {
                 LblPassword.Hide();
-            }
             else
-            {
                 LblPassword.Show();
-            }
         }
     }
 }

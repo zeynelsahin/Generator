@@ -5,15 +5,14 @@ namespace Generator.UI.WF.Elements
 {
     public class Row
     {
-        public List<IElement> Elements { get; set; }//Şuanlık col list
+        public List<IElement> Elements { get; set; } = new List<IElement>();
+
         public override string ToString()
         {
-            string xml = "";
-            
-            Elements.ForEach(element =>
-            {
-                xml+=element.ToString();
-            });
+            var xml = "\n<row>";
+
+            Elements.ForEach(element => { xml += element.ToString(); });
+            xml += "\n</row>";
             return xml;
         }
     }

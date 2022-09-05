@@ -16,6 +16,7 @@ namespace Generator.UI.WF
         }
 
         public string TextValue { get; set; }
+
         private void FormViewText_Load(object sender, EventArgs e)
         {
             Text.Text = TextValue;

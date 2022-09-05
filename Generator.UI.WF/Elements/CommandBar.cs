@@ -7,7 +7,7 @@
 
         public override string ToString()
         {
-            return $"<command-bar show-searchbox=\"{ShowSearchBox}\" excel-export=\"{ExcelExport}\"/>";
+            return $"\n<command-bar show-searchbox=\"{ShowSearchBox}\" excel-export=\"{ExcelExport}\"/>";
         }
     }
 }

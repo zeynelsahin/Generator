@@ -7,7 +7,7 @@ using Generator.Entities;
 
 namespace Generator.DataAccess.Concrete
 {
-    public class EfObjectParameterDal: EfEntityRepositoryBase<ObjectParameter,GeneratorContext> , IObjectParameterDal
+    public class EfObjectParameterDal : EfEntityRepositoryBase<ObjectParameter, GeneratorContext>, IObjectParameterDal
     {
     }
 }

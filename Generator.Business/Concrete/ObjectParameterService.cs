@@ -24,13 +24,20 @@ namespace Generator.Business.Concrete
 
         public string FindParameterType(string parameterName)
         {
-            var result=_objectParameterDal.GetAll().LastOrDefault(p=>p.ParameterId==parameterName);
-            return result!=null? result.DataType:null;
+            var result = _objectParameterDal.GetAll().LastOrDefault(p => p.ParameterId == parameterName);
+            return result != null ? result.DataType : null;
         }
 
-        public List<ObjectParameter> GetAllByObjectId(string objectId)
+        public List<OracleColumn> GetAll(string objectId, string profileId)
         {
-            var result = _objectParameterDal.GetAll(p => p.ObjectId == objectId);
+            var result = _objectParameterDal.GetAll(p => p.ObjectId == objectId && p.ProfileId == profileId).ToList();
+            var oracleColumn = result.Select(parameter => new OracleColumn() { DataType = parameter.DataType, Name = parameter.ParameterId }).ToList();
+            return oracleColumn;
+        }
+
+        public List<string> GetAllByObjectId(string objectId, string profileId)
+        {
+            var result = _objectParameterDal.GetAll(p => p.ObjectId == objectId && p.ProfileId == profileId).Select(p => p.ParameterId).ToList();
             return result;
         }
     }

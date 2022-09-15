@@ -303,19 +303,19 @@ namespace Generator.UI.WF
         private System.Windows.Forms.Panel PanelTop;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
-        private System.Windows.Forms.Label label19;
         private System.Windows.Forms.TextBox Tbx;
         private System.Windows.Forms.Label LblAdet;
         private System.Windows.Forms.DataGridView DgwObject;
         private System.Windows.Forms.Label LblSonuc;
-        private System.Windows.Forms.Button BtnResultAdd;
-        private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Panel PanelPresentation;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button BtnResultBul;
         private System.Windows.Forms.Panel PanelSecond;
         private System.Windows.Forms.Panel PanelFirst;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel PanelThird;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button BtnResultBul;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Button BtnResultAdd;
+        private System.Windows.Forms.Label label19;
     }
 }

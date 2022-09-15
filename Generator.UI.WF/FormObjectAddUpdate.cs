@@ -206,7 +206,7 @@ namespace Generator.UI.WF
 
         private void BtnParametre_Click(object sender, EventArgs e)
         {
-            var parameterAdd = new FormParameterAdd(CbxOjectId.SelectedItem.ToString(),TbxProfileId.Text,TbxSchemaName.Text);
+            var parameterAdd = new FormParameterAndResultAdd(CbxOjectId.SelectedItem.ToString(),TbxProfileId.Text,TbxSchemaName.Text);
             parameterAdd.Show();
         }
 
@@ -244,6 +244,7 @@ namespace Generator.UI.WF
         private void BtnOracle_Click(object sender, EventArgs e)
         {
             FillObjectId();
+
         }
 
         private void BtnUxGenerator_Click(object sender, EventArgs e)

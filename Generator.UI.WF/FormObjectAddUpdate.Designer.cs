@@ -36,8 +36,6 @@ namespace Generator.UI.WF
             this.label26 = new System.Windows.Forms.Label();
             this.BtnUxGenerator = new System.Windows.Forms.Button();
             this.BtnOracle = new System.Windows.Forms.Button();
-            this.label25 = new System.Windows.Forms.Label();
-            this.BtnResultAdd = new System.Windows.Forms.Button();
             this.label24 = new System.Windows.Forms.Label();
             this.BtnParametre = new System.Windows.Forms.Button();
             this.CbxSchemaName = new System.Windows.Forms.ComboBox();
@@ -132,8 +130,6 @@ namespace Generator.UI.WF
             this.PanelPresentation.Controls.Add(this.label26);
             this.PanelPresentation.Controls.Add(this.BtnUxGenerator);
             this.PanelPresentation.Controls.Add(this.BtnOracle);
-            this.PanelPresentation.Controls.Add(this.label25);
-            this.PanelPresentation.Controls.Add(this.BtnResultAdd);
             this.PanelPresentation.Controls.Add(this.label24);
             this.PanelPresentation.Controls.Add(this.BtnParametre);
             this.PanelPresentation.Controls.Add(this.CbxSchemaName);
@@ -201,34 +197,6 @@ namespace Generator.UI.WF
             this.BtnOracle.UseVisualStyleBackColor = true;
             this.BtnOracle.Click += new System.EventHandler(this.BtnOracle_Click);
             // 
-            // label25
-            // 
-            this.label25.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label25.AutoSize = true;
-            this.label25.BackColor = System.Drawing.Color.Transparent;
-            this.label25.Enabled = false;
-            this.label25.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label25.ForeColor = System.Drawing.Color.Silver;
-            this.label25.Location = new System.Drawing.Point(1051, 9);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(106, 23);
-            this.label25.TabIndex = 326;
-            this.label25.Text = "Result Ekle\r\n";
-            // 
-            // BtnResultAdd
-            // 
-            this.BtnResultAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BtnResultAdd.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnResultAdd.FlatAppearance.BorderSize = 0;
-            this.BtnResultAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnResultAdd.Image = global::Generator.UI.WF.Properties.Resources.ekle_32px;
-            this.BtnResultAdd.Location = new System.Drawing.Point(1014, 5);
-            this.BtnResultAdd.Name = "BtnResultAdd";
-            this.BtnResultAdd.Size = new System.Drawing.Size(31, 32);
-            this.BtnResultAdd.TabIndex = 325;
-            this.BtnResultAdd.UseVisualStyleBackColor = true;
-            this.BtnResultAdd.Click += new System.EventHandler(this.BtnResultAdd_Click);
-            // 
             // label24
             // 
             this.label24.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -237,11 +205,11 @@ namespace Generator.UI.WF
             this.label24.Enabled = false;
             this.label24.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label24.ForeColor = System.Drawing.Color.Silver;
-            this.label24.Location = new System.Drawing.Point(859, 10);
+            this.label24.Location = new System.Drawing.Point(866, 14);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(150, 23);
+            this.label24.Size = new System.Drawing.Size(253, 23);
             this.label24.TabIndex = 324;
-            this.label24.Text = "Parametre Ekle";
+            this.label24.Text = "Parameter And Result Add";
             // 
             // BtnParametre
             // 
@@ -293,11 +261,11 @@ namespace Generator.UI.WF
             this.label16.Enabled = false;
             this.label16.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label16.ForeColor = System.Drawing.Color.Silver;
-            this.label16.Location = new System.Drawing.Point(1207, 9);
+            this.label16.Location = new System.Drawing.Point(1196, 15);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(48, 23);
+            this.label16.Size = new System.Drawing.Size(50, 23);
             this.label16.TabIndex = 308;
-            this.label16.Text = "Ekle";
+            this.label16.Text = "Add";
             // 
             // BtnEkle
             // 
@@ -306,7 +274,7 @@ namespace Generator.UI.WF
             this.BtnEkle.FlatAppearance.BorderSize = 0;
             this.BtnEkle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnEkle.Image = global::Generator.UI.WF.Properties.Resources.ekle_32px;
-            this.BtnEkle.Location = new System.Drawing.Point(1171, 5);
+            this.BtnEkle.Location = new System.Drawing.Point(1159, 9);
             this.BtnEkle.Name = "BtnEkle";
             this.BtnEkle.Size = new System.Drawing.Size(31, 32);
             this.BtnEkle.TabIndex = 306;
@@ -365,8 +333,6 @@ namespace Generator.UI.WF
             this.LblSonuc.Name = "LblSonuc";
             this.LblSonuc.Size = new System.Drawing.Size(1281, 39);
             this.LblSonuc.TabIndex = 307;
-            this.LblSonuc.Text = "Sonuç";
-            this.LblSonuc.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // BtnSql
             // 
@@ -464,9 +430,9 @@ namespace Generator.UI.WF
             this.LblAdet.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
             this.LblAdet.Location = new System.Drawing.Point(24, 308);
             this.LblAdet.Name = "LblAdet";
-            this.LblAdet.Size = new System.Drawing.Size(109, 30);
+            this.LblAdet.Size = new System.Drawing.Size(70, 30);
             this.LblAdet.TabIndex = 81;
-            this.LblAdet.Text = "Toplam ";
+            this.LblAdet.Text = "Total";
             // 
             // label17
             // 
@@ -1277,7 +1243,7 @@ namespace Generator.UI.WF
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(1281, 39);
             this.label19.TabIndex = 306;
-            this.label19.Text = "Object Ekle";
+            this.label19.Text = "Object Add";
             this.label19.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // dataGridViewImageColumn1
@@ -1303,7 +1269,7 @@ namespace Generator.UI.WF
             this.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.Name = "FormObjectAddUpdate";
             this.ShowIcon = false;
-            this.Text = "Nesne Ekle";
+            this.Text = "Object Add";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormObjectAddUpdate_FormClosing);
             this.Load += new System.EventHandler(this.FormObjectAddUpdate_Load);
             this.SizeChanged += new System.EventHandler(this.FormObjectAddUpdate_SizeChanged);
@@ -1406,8 +1372,6 @@ namespace Generator.UI.WF
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.ComboBox CbxSchemaName;
         private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.Button BtnResultAdd;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Button BtnParametre;
         private System.Windows.Forms.Label label26;

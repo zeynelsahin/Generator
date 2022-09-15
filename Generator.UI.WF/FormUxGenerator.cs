@@ -169,7 +169,7 @@ namespace Generator.UI.WF
                 {
                     if (serviceMethods.GetMethodFlag == '1') tableService.Add("Get");
 
-                    if (serviceMethods.DeleteMethodFlag == '1') tableService.Add("Delete");
+                    //if (serviceMethods.DeleteMethodFlag == '1') tableService.Add("Delete");
 
                     if (serviceMethods.CreateMethodFlag == '1') tableService.Add("Create");
 
@@ -339,9 +339,9 @@ namespace Generator.UI.WF
                         case "Update":
                             method.MethodName = $"Update{objectId}";
                             break;
-                        case "Delete":
-                            method.MethodName = $"Delete{objectId}";
-                            break;
+                        //case "Delete":
+                        //    method.MethodName = $"Delete{objectId}";
+                        //    break;
                     }
 
                     method.ServiceName = $"get{objectId}";
@@ -427,14 +427,21 @@ namespace Generator.UI.WF
             }
             else if (CbxObjectType.SelectedItem.ToString() == "CUSTOMSQL")
             {
-                var method = new GetGridApiMethod
+                var method = new GetGridApiMethod();
+                method.MethodName = TbxGridName.Text;
+                if (objectId[0].ToString() == "G" && objectId[1].ToString() == "e" && objectId[2].ToString() == "t")
                 {
-                    MethodName = TbxGridName.Text,
-                    ServiceName = $"get{objectId}",
-                    PropName = TbxGridName.Text + "Grid",
-                    ParameterName = "Get" + TbxGridName.Text + "Param",
-                    ResultName = TbxGridName.Text + "Result"
-                };
+                    method.ServiceName = objectId;
+                    method.ParameterName = TbxGridName.Text + "Param";
+                }
+                else
+                {
+                    method.ServiceName = $"get{objectId}";
+                    method.ParameterName = "Get" + TbxGridName.Text + "Param";
+
+                }
+                method.PropName = TbxGridName.Text + "Grid";
+                method.ResultName = TbxGridName.Text + "Result";
                 GridJavaScriptParams(method);
                 javaScript = method.ToString();
             }
@@ -574,7 +581,6 @@ namespace Generator.UI.WF
                 parameters = parameters.NameConfigure();
                 parameters.ForEach(p => { ClbColumnNames.Items.Add(p, true); });
             }
-
         }
 
         private void CbxObject_SelectedIndexChanged(object sender, EventArgs e)

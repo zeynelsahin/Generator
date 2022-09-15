@@ -47,9 +47,9 @@ namespace Generator.Business.Concrete
             _objectResultDal.UpdateRange(entities);
         }
 
-        public string FindParameterType(string parameterName)
+        public string FindResultType(string resultId)
         {
-            var result = _objectResultDal.GetAll().LastOrDefault(s => s.ResultId == parameterName);
+            var result = _objectResultDal.GetAll().LastOrDefault(s => s.ResultId == resultId);
             return result != null ? result.DataType : null;
         }
 
@@ -69,11 +69,14 @@ namespace Generator.Business.Concrete
         {
             var list = new List<OracleColumn>();
             var result = _objectResultDal.GetAll(p => p.ObjectId == objectId && profileId == p.ProfileId).ToList();
-            result.ForEach(p =>
-            {
-                list.Add(new OracleColumn { DataType = p.DataType, Name = p.ResultId });
-            });
+            result.ForEach(p => { list.Add(new OracleColumn { DataType = p.DataType, Name = p.ResultId }); });
             return list;
+        }
+
+        public ObjectResult FindResult(string resultId)
+        {
+            var result = _objectResultDal.GetAll().LastOrDefault(p => p.ResultId == resultId);
+            return result ?? new ObjectResult();
         }
     }
 }

@@ -43,15 +43,18 @@ namespace Generator.UI.WF
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
             this.TabGridCreate = new System.Windows.Forms.TabPage();
             this.panel8 = new System.Windows.Forms.Panel();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.RtbxGrid = new System.Windows.Forms.RichTextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.BtnGetParameter = new System.Windows.Forms.Button();
             this.CbxActionCode = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
             this.CbxStatusColor = new System.Windows.Forms.ComboBox();
@@ -69,9 +72,9 @@ namespace Generator.UI.WF
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.BtnGetParameter = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
             this.CbxCrudMethod = new System.Windows.Forms.ComboBox();
-            this.BtnJavaScriptCreate = new System.Windows.Forms.Button();
             this.BtnClearAllCheck = new System.Windows.Forms.Button();
             this.BtnRemoveCheck = new System.Windows.Forms.Button();
             this.BtnCheckAll = new System.Windows.Forms.Button();
@@ -82,6 +85,7 @@ namespace Generator.UI.WF
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
             this.BtnGridCreate = new System.Windows.Forms.Button();
+            this.BtnJavaScriptCreate = new System.Windows.Forms.Button();
             this.CbxObjectType = new System.Windows.Forms.ComboBox();
             this.CbxObjectId = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -115,6 +119,15 @@ namespace Generator.UI.WF
             this.Label = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SearchPage = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label4 = new System.Windows.Forms.Label();
+            this.NextPage = new System.Windows.Forms.TabPage();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewComboBoxColumn1 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.dataGridViewComboBoxColumn2 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.dataGridViewComboBoxColumn3 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.dataGridViewComboBoxColumn4 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.Modal = new System.Windows.Forms.TabPage();
             this.TabView = new System.Windows.Forms.TabPage();
             this.LblViewTotal = new System.Windows.Forms.Label();
             this.DgwView = new System.Windows.Forms.DataGridView();
@@ -182,6 +195,8 @@ namespace Generator.UI.WF
             ((System.ComponentModel.ISupportInitialize)(this.DgwComboBoxes)).BeginInit();
             this.tabPage7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgwUserControl)).BeginInit();
+            this.NextPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.TabView.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgwView)).BeginInit();
             this.tabPage8.SuspendLayout();
@@ -280,22 +295,6 @@ namespace Generator.UI.WF
             this.groupBox7.TabIndex = 363;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Properties";
-            // 
-            // BtnGetParameter
-            // 
-            this.BtnGetParameter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BtnGetParameter.BackColor = System.Drawing.Color.Transparent;
-            this.BtnGetParameter.FlatAppearance.BorderSize = 3;
-            this.BtnGetParameter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnGetParameter.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.BtnGetParameter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
-            this.BtnGetParameter.Location = new System.Drawing.Point(873, 40);
-            this.BtnGetParameter.Name = "BtnGetParameter";
-            this.BtnGetParameter.Size = new System.Drawing.Size(150, 42);
-            this.BtnGetParameter.TabIndex = 366;
-            this.BtnGetParameter.Text = "Parameter Get";
-            this.BtnGetParameter.UseVisualStyleBackColor = false;
-            this.BtnGetParameter.Click += new System.EventHandler(this.BtnGetParameter_Click);
             // 
             // CbxActionCode
             // 
@@ -509,6 +508,22 @@ namespace Generator.UI.WF
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Utilities";
             // 
+            // BtnGetParameter
+            // 
+            this.BtnGetParameter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnGetParameter.BackColor = System.Drawing.Color.Transparent;
+            this.BtnGetParameter.FlatAppearance.BorderSize = 3;
+            this.BtnGetParameter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnGetParameter.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.BtnGetParameter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
+            this.BtnGetParameter.Location = new System.Drawing.Point(873, 40);
+            this.BtnGetParameter.Name = "BtnGetParameter";
+            this.BtnGetParameter.Size = new System.Drawing.Size(150, 42);
+            this.BtnGetParameter.TabIndex = 366;
+            this.BtnGetParameter.Text = "Parameter Get";
+            this.BtnGetParameter.UseVisualStyleBackColor = false;
+            this.BtnGetParameter.Click += new System.EventHandler(this.BtnGetParameter_Click);
+            // 
             // label12
             // 
             this.label12.AutoSize = true;
@@ -533,22 +548,6 @@ namespace Generator.UI.WF
             this.CbxCrudMethod.Name = "CbxCrudMethod";
             this.CbxCrudMethod.Size = new System.Drawing.Size(354, 29);
             this.CbxCrudMethod.TabIndex = 364;
-            // 
-            // BtnJavaScriptCreate
-            // 
-            this.BtnJavaScriptCreate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BtnJavaScriptCreate.BackColor = System.Drawing.Color.Transparent;
-            this.BtnJavaScriptCreate.FlatAppearance.BorderSize = 3;
-            this.BtnJavaScriptCreate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnJavaScriptCreate.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.BtnJavaScriptCreate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
-            this.BtnJavaScriptCreate.Location = new System.Drawing.Point(1344, 49);
-            this.BtnJavaScriptCreate.Name = "BtnJavaScriptCreate";
-            this.BtnJavaScriptCreate.Size = new System.Drawing.Size(178, 42);
-            this.BtnJavaScriptCreate.TabIndex = 363;
-            this.BtnJavaScriptCreate.Text = "JavaScript Create";
-            this.BtnJavaScriptCreate.UseVisualStyleBackColor = false;
-            this.BtnJavaScriptCreate.Click += new System.EventHandler(this.BtnJavaScriptCreate_Click);
             // 
             // BtnClearAllCheck
             // 
@@ -723,6 +722,22 @@ namespace Generator.UI.WF
             this.BtnGridCreate.UseVisualStyleBackColor = false;
             this.BtnGridCreate.Click += new System.EventHandler(this.BtnGridCreate_Click);
             // 
+            // BtnJavaScriptCreate
+            // 
+            this.BtnJavaScriptCreate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnJavaScriptCreate.BackColor = System.Drawing.Color.Transparent;
+            this.BtnJavaScriptCreate.FlatAppearance.BorderSize = 3;
+            this.BtnJavaScriptCreate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnJavaScriptCreate.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.BtnJavaScriptCreate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
+            this.BtnJavaScriptCreate.Location = new System.Drawing.Point(1344, 49);
+            this.BtnJavaScriptCreate.Name = "BtnJavaScriptCreate";
+            this.BtnJavaScriptCreate.Size = new System.Drawing.Size(178, 42);
+            this.BtnJavaScriptCreate.TabIndex = 363;
+            this.BtnJavaScriptCreate.Text = "JavaScript Create";
+            this.BtnJavaScriptCreate.UseVisualStyleBackColor = false;
+            this.BtnJavaScriptCreate.Click += new System.EventHandler(this.BtnJavaScriptCreate_Click);
+            // 
             // CbxObjectType
             // 
             this.CbxObjectType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(231)))), ((int)(((byte)(228)))));
@@ -849,6 +864,8 @@ namespace Generator.UI.WF
             this.TabElement.Controls.Add(this.tabPage5);
             this.TabElement.Controls.Add(this.tabPage6);
             this.TabElement.Controls.Add(this.tabPage7);
+            this.TabElement.Controls.Add(this.NextPage);
+            this.TabElement.Controls.Add(this.Modal);
             this.TabElement.Controls.Add(this.TabView);
             this.TabElement.Controls.Add(this.tabPage8);
             this.TabElement.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -1160,6 +1177,117 @@ namespace Generator.UI.WF
             this.label4.TabIndex = 272;
             this.label4.Text = "Toplam ";
             // 
+            // NextPage
+            // 
+            this.NextPage.Controls.Add(this.dataGridView1);
+            this.NextPage.Location = new System.Drawing.Point(4, 32);
+            this.NextPage.Name = "NextPage";
+            this.NextPage.Padding = new System.Windows.Forms.Padding(3);
+            this.NextPage.Size = new System.Drawing.Size(1504, 566);
+            this.NextPage.TabIndex = 5;
+            this.NextPage.Text = "Next Page";
+            this.NextPage.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Century Gothic", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle14.NullValue = null;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn8,
+            this.dataGridViewComboBoxColumn1,
+            this.dataGridViewComboBoxColumn2,
+            this.dataGridViewComboBoxColumn3,
+            this.dataGridViewComboBoxColumn4});
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Century Gothic", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(231)))), ((int)(((byte)(228)))));
+            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle16;
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.dataGridView1.Location = new System.Drawing.Point(3, 3);
+            this.dataGridView1.Name = "dataGridView1";
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Century Gothic", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle17;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(1498, 141);
+            this.dataGridView1.TabIndex = 271;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "Id";
+            this.dataGridViewTextBoxColumn7.HeaderText = "Id";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.Width = 243;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "Text";
+            this.dataGridViewTextBoxColumn8.HeaderText = "Text";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.Width = 243;
+            // 
+            // dataGridViewComboBoxColumn1
+            // 
+            this.dataGridViewComboBoxColumn1.HeaderText = "Key Field";
+            this.dataGridViewComboBoxColumn1.Name = "dataGridViewComboBoxColumn1";
+            this.dataGridViewComboBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewComboBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGridViewComboBoxColumn1.Width = 242;
+            // 
+            // dataGridViewComboBoxColumn2
+            // 
+            this.dataGridViewComboBoxColumn2.HeaderText = "Value Field";
+            this.dataGridViewComboBoxColumn2.Name = "dataGridViewComboBoxColumn2";
+            this.dataGridViewComboBoxColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewComboBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGridViewComboBoxColumn2.Width = 243;
+            // 
+            // dataGridViewComboBoxColumn3
+            // 
+            this.dataGridViewComboBoxColumn3.DataPropertyName = "ObjectId";
+            dataGridViewCellStyle15.BackColor = System.Drawing.Color.White;
+            this.dataGridViewComboBoxColumn3.DefaultCellStyle = dataGridViewCellStyle15;
+            this.dataGridViewComboBoxColumn3.HeaderText = "Obeject Id";
+            this.dataGridViewComboBoxColumn3.Name = "dataGridViewComboBoxColumn3";
+            this.dataGridViewComboBoxColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGridViewComboBoxColumn3.Width = 243;
+            // 
+            // dataGridViewComboBoxColumn4
+            // 
+            this.dataGridViewComboBoxColumn4.HeaderText = "Profile Id";
+            this.dataGridViewComboBoxColumn4.Name = "dataGridViewComboBoxColumn4";
+            this.dataGridViewComboBoxColumn4.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewComboBoxColumn4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGridViewComboBoxColumn4.Width = 243;
+            // 
+            // Modal
+            // 
+            this.Modal.Location = new System.Drawing.Point(4, 32);
+            this.Modal.Name = "Modal";
+            this.Modal.Size = new System.Drawing.Size(1504, 566);
+            this.Modal.TabIndex = 6;
+            this.Modal.Text = "Modal";
+            this.Modal.UseVisualStyleBackColor = true;
+            // 
             // TabView
             // 
             this.TabView.Controls.Add(this.LblViewTotal);
@@ -1192,37 +1320,37 @@ namespace Generator.UI.WF
             this.DgwView.BackgroundColor = System.Drawing.Color.White;
             this.DgwView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DgwView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Century Gothic", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle14.NullValue = null;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DgwView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Century Gothic", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle18.NullValue = null;
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DgwView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle18;
             this.DgwView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgwView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4,
             this.ElementTypeView,
             this.Size});
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Century Gothic", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(231)))), ((int)(((byte)(228)))));
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DgwView.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle19.Font = new System.Drawing.Font("Century Gothic", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
+            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(231)))), ((int)(((byte)(228)))));
+            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DgwView.DefaultCellStyle = dataGridViewCellStyle19;
             this.DgwView.Dock = System.Windows.Forms.DockStyle.Top;
             this.DgwView.Location = new System.Drawing.Point(3, 3);
             this.DgwView.Name = "DgwView";
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("Century Gothic", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgwView.RowHeadersDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
+            dataGridViewCellStyle20.Font = new System.Drawing.Font("Century Gothic", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle20.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgwView.RowHeadersDefaultCellStyle = dataGridViewCellStyle20;
             this.DgwView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DgwView.Size = new System.Drawing.Size(1498, 525);
             this.DgwView.TabIndex = 4;
@@ -1820,6 +1948,8 @@ namespace Generator.UI.WF
             this.tabPage7.ResumeLayout(false);
             this.tabPage7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgwUserControl)).EndInit();
+            this.NextPage.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.TabView.ResumeLayout(false);
             this.TabView.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgwView)).EndInit();
@@ -1956,5 +2086,14 @@ namespace Generator.UI.WF
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TabPage NextPage;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewComboBoxColumn1;
+        private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewComboBoxColumn2;
+        private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewComboBoxColumn3;
+        private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewComboBoxColumn4;
+        private System.Windows.Forms.TabPage Modal;
     }
 }

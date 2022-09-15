@@ -43,10 +43,9 @@ namespace Generator.UI.WF
             InitializeComponent();
         }
 
-        private List<string> resultList = new List<string>();
         private IObjectEntityService _objectEntityService = new ObjectEntityService(new EfObjectEntityDal());
         private IObjectResultService _objecResultService = new ObjectResultService(new EfObjectResultDal());
-
+        private List<string> resultList = new List<string>();
         private ComboBox CreateComboBox()
         {
             //Combobox
@@ -137,7 +136,7 @@ namespace Generator.UI.WF
             return string.IsNullOrWhiteSpace(sqlText) ? null : sqlText;
         }
 
-        private string SqlTextFormat(string sqlText)
+        private string ResultSqlTextFormat(string sqlText)
         {
             var unionIndex = sqlText.IndexOf("union");
             if (unionIndex != -1) sqlText = sqlText.Substring(0, unionIndex);
@@ -160,6 +159,7 @@ namespace Generator.UI.WF
 
         private List<string> GetResulList(string straightSqlText)
         {
+            List<string> resultList = new List<string>();
             var caseIs = false;
             var tables = new List<string>();
             var column = "";
@@ -233,7 +233,7 @@ namespace Generator.UI.WF
             //NameConfigure();
             for (var i = 0; i < resultList.Count; i++)
             {
-                var resultType = _objecResultService.FindParameterType(resultList[i]);
+                var resultType = _objecResultService.FindResultType(resultList[i]);
                 var panel = CreateResultPanel();
                 var name = "Result" + index;
                 var comboBox = CreateComboBox();
@@ -337,7 +337,7 @@ namespace Generator.UI.WF
             var sqlText = GetSqlText();
             if (sqlText == null) return;
 
-            var straightSqlText = SqlTextFormat(sqlText);
+            var straightSqlText = ResultSqlTextFormat(sqlText);
 
             var resultList = GetResulList(straightSqlText);
 

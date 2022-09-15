@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Text;
 using Generator.Entities;
 
@@ -16,11 +17,13 @@ namespace Generator.Business.Abstract
 
         void UpdateRange(IEnumerable<ObjectResult> entities);
 
-        string FindParameterType(string parameterName);
+        string FindResultType(string resultId);
 
         List<ObjectResult> GetAllByObjectId(string objectId, string profileId);
         List<string> GetResultIdByObjectId(string objectId, string profileId);
         List<OracleColumn> GetAll(string objectId, string profileId);
-        
+
+        ObjectResult FindResult(string resultId);
+
     }
 }

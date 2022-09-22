@@ -6,7 +6,7 @@ namespace Generator.Business.Abstract
     public interface IObjectEntityService
     {
         void Add(ObjectEntity objectEntity);
-        List<ObjectEntity> GetByObjectId(string objectId, string profileId = null, string schemaName = null);
+        List<ObjectEntity> GetAllOrFilter(string objectId=null, string profileId = null, string schemaName = null);
         List<string> GetAllByProfileId(string profileId);
         List<ObjectEntity> GetByProfileId(string profileId);
         List<string> GetAllObjectId();

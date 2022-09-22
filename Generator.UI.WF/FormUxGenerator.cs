@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -307,9 +308,9 @@ namespace Generator.UI.WF
         {
             if (string.IsNullOrWhiteSpace(CbxObjectId.Text)) return true;
 
-            var objects = _objectEntityService.GetByObjectId(CbxObjectId.SelectedItem.ToString(), CbxProfileId.SelectedItem.ToString());
+            var objects = _objectEntityService.GetAllOrFilter(CbxObjectId.SelectedItem.ToString(), CbxProfileId.SelectedItem.ToString());
             DgwObject.DataSource = objects;
-            CbxObjectType.SelectedItem = DgwObject.CurrentRow.Cells[4].Value.ToString();
+            CbxObjectType.SelectedItem = DgwObject.CurrentRow!.Cells[4].Value.ToString();
             //
             return false;
         }
@@ -339,9 +340,9 @@ namespace Generator.UI.WF
                         case "Update":
                             method.MethodName = $"Update{objectId}";
                             break;
-                        //case "Delete":
-                        //    method.MethodName = $"Delete{objectId}";
-                        //    break;
+                            //case "Delete":
+                            //    method.MethodName = $"Delete{objectId}";
+                            //    break;
                     }
 
                     method.ServiceName = $"get{objectId}";
@@ -438,8 +439,8 @@ namespace Generator.UI.WF
                 {
                     method.ServiceName = $"get{objectId}";
                     method.ParameterName = "Get" + TbxGridName.Text + "Param";
-
                 }
+
                 method.PropName = TbxGridName.Text + "Grid";
                 method.ResultName = TbxGridName.Text + "Result";
                 GridJavaScriptParams(method);
@@ -454,7 +455,36 @@ namespace Generator.UI.WF
             foreach (var param in ClbColumnNames.CheckedItems)
                 method.Parameter.Params.Add(new Param() { Key = param.ToString(), Value = param.ToString() });
         }
+        private void JavaScriptParams(ApiRequestMethod method, IList paramList)
+        {
+            foreach (var param in paramList)
+                method.Parameter.Params.Add(new Param() { Key = param.ToString(), Value = param.ToString() });
+        }
 
+        private GetComboBoxApiMethod CreateComboBoxJavaScript(string objectId, string objectType, string propName)
+        {
+            objectId = objectId.NameConfigure();
+            var method = new GetComboBoxApiMethod();
+            if (objectType == "TABLE")
+            {
+                method.ServiceName = $"get{objectId}";
+                method.ResultName = objectId + "List";
+                method.Parameter.Params.Add(new Param() { Key = "ValidFlag", Value = "ValidFlag" });
+            }
+            else if (objectType == "CUSTOMSQL")
+            {
+                method.ServiceName = $"{objectId.CamelCaseConfigure()}";
+                method.ResultName = objectId + "Result";
+                var parameters = _objectParameterService.GetAllByObjectId(CbxContentJSObjectId.SelectedItem.ToString(), CbxContentJSProfileId.SelectedItem.ToString());
+                parameters = parameters.NameConfigure();
+                JavaScriptParams(method, parameters);
+            }
+
+            method.MethodName = "Fill" + objectId;
+            method.PropName = propName;
+
+            return method;
+        }
         private string ComboBoxJavaScript()
         {
             var javaScript = "";
@@ -748,6 +778,7 @@ namespace Generator.UI.WF
 
                 var comboBoxService = (DataGridViewComboBoxCell)DgwComboBoxes.CurrentRow.Cells[4];
                 comboBoxService.DataSource = GetObjectIdList(profileId);
+
 
                 if (DgwComboBoxes.CurrentRow.Cells[4].Value != null)
                 {
@@ -1246,6 +1277,51 @@ namespace Generator.UI.WF
 
         private void BtnExport_Click(object sender, EventArgs e)
         {
+        }
+
+        private void CbxContentJSProfileId_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (CbxContentJSProfileId.SelectedIndex != 0)
+            {
+                CbxContentJSObjectId.DataSource = GetObjectIdList(CbxContentJSProfileId.SelectedItem.ToString());
+            }
+            else if (CbxContentJSProfileId.SelectedIndex == 0)
+            {
+                CbxContentJSObjectId.DataSource = null;
+            }
+
+            CbxContentJSObjectId.Focus();
+        }
+
+        private void CbxContentJSObjectId_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (CbxContentJSObjectId.SelectedIndex != 0 && CbxContentJSObjectId.SelectedIndex != -1)
+            {
+                var objectType = _objectEntityService.GetObjectType(CbxContentJSObjectId.SelectedItem.ToString(), CbxContentJSProfileId.SelectedItem.ToString());
+                CbxContentJSObjectType.SelectedItem = objectType;
+
+                var result = ParameterList(CbxContentJSObjectId.SelectedItem.ToString(), CbxContentJSProfileId.SelectedItem.ToString(), CbxContentJSObjectType.SelectedItem.ToString());
+                result.ForEach(p =>
+                {
+                    CbxKeyField.Items.Add(p.Name);
+                    CbxValueField.Items.Add(p.Name);
+                });
+            }
+
+        }
+
+        private void groupBox9_Enter_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnContentJSCreate_Click(object sender, EventArgs e)
+        {
+            if (CbxContentJSObjectId.SelectedItem != null && CbxContentJSObjectType.SelectedItem != null)
+            {
+                var javaScript = CreateComboBoxJavaScript(CbxContentJSObjectId.SelectedItem.ToString(), CbxContentJSObjectType.SelectedItem.ToString(), TbxPropName.Text);
+                RtbxSingleJavaScript.Text = javaScript.ToString();
+            }
         }
     }
 }

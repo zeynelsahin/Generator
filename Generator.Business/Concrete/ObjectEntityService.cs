@@ -21,28 +21,22 @@ namespace Generator.Business.Concrete
             _objectEntityDal.Add(objectEntity);
         }
 
-        public List<ObjectEntity> GetByObjectId(string objectId, string profileId = null, string schemaName = null)
+        public List<ObjectEntity> GetAllOrFilter(string objectId=null, string profileId = null, string schemaName = null)
         {
-            List<ObjectEntity> result;
+            List<ObjectEntity> result = _objectEntityDal.GetAll();
             if (profileId != null)
             {
-                if (schemaName != null)
-                {
-                    result = _objectEntityDal.GetAll(entity => entity.ObjectId == objectId && entity.ProfileId == profileId && entity.SchemaName == schemaName);
-                    return result;
-                }
-
-                result = _objectEntityDal.GetAll(entity => entity.ObjectId == objectId && entity.ProfileId == profileId);
-                return result;
+                result = result.Where(p => p.ProfileId == profileId).ToList();
             }
-
             if (schemaName != null)
             {
-                result = _objectEntityDal.GetAll(entity => entity.ObjectId == objectId && entity.SchemaName == schemaName);
-                return result;
+                result = result.Where(p => p.SchemaName==schemaName).ToList();
             }
 
-            result = _objectEntityDal.GetAll(entity => entity.ObjectId == objectId);
+            if (objectId!=null)
+            {
+                result = result.Where(p => p.ObjectId==objectId).ToList();
+            }
             return result;
         }
 

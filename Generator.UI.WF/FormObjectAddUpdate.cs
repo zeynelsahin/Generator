@@ -43,7 +43,7 @@ namespace Generator.UI.WF
         {
             var objectIdList = new List<string>()
             {
-                "Tümü"
+                "Hiçbiri"
             };
             var result = _objectEntityService.GetAllProfileId();
             objectIdList.AddRange(result);
@@ -54,7 +54,7 @@ namespace Generator.UI.WF
         {
             var objectIdList = new List<string>()
             {
-                "Tümü"
+                "Hiçbiri"
             };
             var result = _objectEntityService.GetAllSchemaName();
             objectIdList.AddRange(result);
@@ -106,17 +106,19 @@ namespace Generator.UI.WF
             return objectEntity;
         }
 
+        private bool canFilter = false;
         private void FormObjectAddUpdate_Load(object sender, EventArgs e)
         {
             FillProfile();
             FillObjectId();
             FillProfileId();
             FillSchemaName();
+            canFilter = true;
         }
 
         private bool CheckIfObjectExists(string objectId)
         {
-            var result = _objectEntityService.GetByObjectId(objectId).Any();
+            var result = _objectEntityService.GetAllOrFilter(objectId).Any();
             return result;
         }
 
@@ -169,20 +171,14 @@ namespace Generator.UI.WF
 
         private void FilterObject()
         {
-            if (CbxOjectId.SelectedIndex == 0)
+            if (canFilter == true)
             {
-                DgwObject.DataSource = null;
-                return;
+                var selectedObjectId = CbxOjectId.SelectedIndex == 0 ? null : CbxOjectId.SelectedItem.ToString();
+                var selectedProfileId = CbxProfileId.SelectedIndex == 0 ? null : CbxProfileId.SelectedItem.ToString();
+                var selectedSchemaName = CbxSchemaName.SelectedIndex == 0 ? null : CbxSchemaName.SelectedItem.ToString();
+                var result = _objectEntityService.GetAllOrFilter(selectedObjectId, selectedProfileId, selectedSchemaName);
+                DgwObject.DataSource = result;
             }
-
-            var selectedObjectId = CbxOjectId.SelectedItem.ToString();
-            var selectedProfileId = CbxProfileId.SelectedItem.ToString();
-            var selectedSchemaName = CbxSchemaName.SelectedItem.ToString();
-            if (selectedProfileId == "Tümü") selectedProfileId = null;
-
-            if (selectedSchemaName == "Tümü") selectedSchemaName = null;
-            var result = _objectEntityService.GetByObjectId(selectedObjectId, selectedProfileId, selectedSchemaName);
-            DgwObject.DataSource = result;
         }
 
         private void CbxOjectId_SelectedIndexChanged(object sender, EventArgs e)
@@ -206,7 +202,7 @@ namespace Generator.UI.WF
 
         private void BtnParametre_Click(object sender, EventArgs e)
         {
-            var parameterAdd = new FormParameterAndResultAdd(CbxOjectId.SelectedItem.ToString(),TbxProfileId.Text,TbxSchemaName.Text);
+            var parameterAdd = new FormParameterAndResultAdd(CbxOjectId.SelectedItem.ToString(), TbxProfileId.Text, TbxSchemaName.Text);
             parameterAdd.Show();
         }
 
@@ -249,7 +245,7 @@ namespace Generator.UI.WF
 
         private void BtnUxGenerator_Click(object sender, EventArgs e)
         {
-            FormUxGenerator formUxGenerator= new FormUxGenerator();
+            FormUxGenerator formUxGenerator = new FormUxGenerator();
             formUxGenerator.Show();
         }
     }

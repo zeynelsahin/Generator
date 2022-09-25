@@ -9,7 +9,7 @@
             javaScript += "{\n";
             javaScript += $"this.$View.AlertSuccess(\"Successfull upated.\");\n";
             javaScript += "}\nelse{\n";
-            javaScript += $"this.$View.AlertError(\"Failed add\");\n";
+            javaScript += $"this.$View.AlertError(\"Failed updated\");\n";
             javaScript += "}\n}\n});\n}";
             return javaScript;
         }

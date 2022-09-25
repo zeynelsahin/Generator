@@ -9,7 +9,7 @@ namespace Generator.UI.WF.Elements
 
         public override string ToString()
         {
-            var xml = "\n<row>";
+            var xml = "<row>";
 
             Elements.ForEach(element => { xml += element.ToString(); });
             xml += "\n</row>";

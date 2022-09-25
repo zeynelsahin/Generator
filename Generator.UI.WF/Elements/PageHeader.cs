@@ -1,13 +1,26 @@
-﻿namespace Generator.UI.WF.Elements
+﻿using Generator.UI.WF.Models;
+using System.Collections.Generic;
+
+namespace Generator.UI.WF.Elements
 {
-    public class PageHeader
+    public class PageHeader : IElement
     {
         public string Title { get; set; }
-        public string Childes { get; set; }
+        public List<Button> Buttons { get; set; } = new List<Button>();
 
         public override string ToString()
         {
-            return $"\n<page-header title=\"{Title}\">" + Childes + "\n<page-header>";
+            string xml = $"\n<page-header title=\"{Title}\">";
+            if (Buttons.Count > 0)
+            {
+                foreach (var button in Buttons)
+                {
+                    xml += button.ToString();
+                }
+            }
+
+            xml += "\n</page-header>";
+            return xml;
         }
     }
 }

@@ -43,6 +43,7 @@ namespace Generator.UI.WF
 
         private void FormUxGenerator_Load(object sender, EventArgs e)
         {
+            CreateDefaultHeader();
             var comboBox = (DataGridViewComboBoxColumn)DgwComboBoxes.Columns[5];
             List<string> profiles = new List<string>()
             {
@@ -52,81 +53,80 @@ namespace Generator.UI.WF
             comboBox.DataSource = profiles;
         }
 
+        private void BtnAdd_Click(object sender, EventArgs e)
+        {
+            DgwHeader.Rows.Add("Add", "Add", "Add", "Success", "right", "add");
+        }
+
+        private void BtnUpdate_Click(object sender, EventArgs e)
+        {
+            DgwHeader.Rows.Add("Update", "Update", "Update", "Warning", "right", "edit");
+        }
+
+        private void BtnSave_Click(object sender, EventArgs e)
+        {
+            DgwHeader.Rows.Add("Save", "Save", "Save", "Success", "right", "save");
+        }
+
+        private void BtnUpdateQuestion_Click(object sender, EventArgs e)
+        {
+            //DgwHeader.Rows.Add("Add","Add","Add","Success","right","add");
+        }
+
+        private void BtnShowDetail_Click(object sender, EventArgs e)
+        {
+            DgwHeader.Rows.Add("ShowDetail", "Show Detail", "ShowDetail", "", "right", "");
+        }
+
+        private void BtnDelete_Click(object sender, EventArgs e)
+        {
+            DgwHeader.Rows.Add("Delete", "Delete", "Delete", "Danger", "right", "delete");
+        }
+
+        private void BtnClear_Click(object sender, EventArgs e)
+        {
+            DgwHeader.Rows.Add("Clear", "Clear", "Clear", "Danger", "right", "clear");
+        }
+
+        private void BtnList_Click(object sender, EventArgs e)
+        {
+            DgwHeader.Rows.Add("List", "List", "List", "Success", "right", "list");
+        }
+
+        private void CreateDefaultHeader()
+        {
+            DgwHeader.Rows.Add("Clear", "Clear", "Clear", "Danger", "right", "clear");
+            DgwHeader.Rows.Add("Update", "Update", "Update", "Warning", "right", "edit");
+            DgwHeader.Rows.Add("Add", "Add", "Add", "Success", "right", "add");
+            DgwHeader.Rows.Add("List", "List", "List", "Success", "right", "list");
+        }
+
+        private PageHeader CreatePageHeader()
+        {
+            var pageHeader = new PageHeader()
+            { Title = TbxTitle.Text };
+
+
+            foreach (DataGridViewRow item in DgwHeader.Rows)
+                if (item.Index != DgwHeader.Rows.Count - 1)
+                {
+                    pageHeader.Buttons.Add(new Button
+                    {
+                        Id = item.Cells[0].Value.ToString(),
+                        Text = item.Cells[1].Value.ToString(),
+                        ActionCode = item.Cells[2].Value.ToString(),
+                        TypeCss = item.Cells[3].Value.ToString(),
+                        Alignment = item.Cells[4].Value.ToString(),
+                        IconCss = item.Cells[5].Value.ToString()
+                    });
+                }
+
+            return pageHeader;
+        }
+
         private void BtnHeaderCreate_Click(object sender, EventArgs e)
         {
-            var headerChild = "";
-            var button = new Button()
-            {
-                Alignment = "right"
-            };
-            if (ChckbAdd.Checked)
-            {
-                button.ActionCode = "Add";
-                button.Text = "Add";
-                button.Id = "Add";
-                button.TypeCss = "Success";
-                button.IconCss = "add";
-                headerChild += button.ToString();
-            }
-
-            if (ChckbList.Checked)
-            {
-                button.ActionCode = "List";
-                button.Text = "List";
-                button.Id = "List";
-                button.TypeCss = "Primary";
-                button.IconCss = "list";
-                headerChild += button.ToString();
-            }
-
-            if (ChckbUpdate.Checked)
-            {
-                button.ActionCode = "Update";
-                button.Text = "Update";
-                button.Id = "Update";
-                button.TypeCss = "Warning";
-                button.IconCss = "edit";
-                headerChild += button.ToString();
-            }
-
-
-            if (ChckbUpdateQuestion.Checked)
-            {
-                button.ActionCode = "Update";
-                button.Text = "Update";
-                button.Id = "Update";
-                button.TypeCss = "Warning";
-                button.IconCss = "edit";
-                headerChild += button.ToString();
-            }
-
-            if (ChckbDelete.Checked)
-            {
-                button.ActionCode = "Delete";
-                button.Text = "Delete";
-                button.Id = "Delete";
-                button.TypeCss = "Danger";
-                button.IconCss = "clear";
-                headerChild += button.ToString();
-            }
-
-            if (ChckbClear.Checked)
-            {
-                button.ActionCode = "Clear";
-                button.Text = "Clear";
-                button.Id = "Clear";
-                button.TypeCss = "Danger";
-                button.IconCss = "clear";
-                headerChild += button.ToString();
-            }
-
-            var pageHeader = new PageHeader()
-            {
-                Title = TbxTitle.Text,
-                Childes = headerChild
-            };
-
-            RtbxPrensentation.Text = pageHeader.ToString();
+            RtbxPrensentation.Text = CreatePageHeader().ToString();
         }
 
 
@@ -164,6 +164,12 @@ namespace Generator.UI.WF
                 CbxCrudMethod.DataSource = null;
                 GetColumnNameList();
                 TbxGridName.Text = CbxObjectId.SelectedItem.ToString().NameConfigure();
+                var getIndex = TbxGridName.Text.IndexOf("Get");
+                if (getIndex != -1)
+                {
+                    TbxGridName.Text = TbxGridName.Text.Substring(3);
+                }
+
                 var tableService = new List<string>() { "Tümü" };
                 var serviceMethods = _serviceMethodService.GetByObjectId(CbxObjectId.SelectedItem.ToString(), CbxProfileId.SelectedItem.ToString());
                 if (serviceMethods.CustomMethodFlag == '0')
@@ -365,7 +371,7 @@ namespace Generator.UI.WF
                     {
                         if (item.ToString() == "Get")
                         {
-                            method.MethodName = "Get" + TbxGridName.Text + "List";
+                            method.MethodName = "Fill" + TbxGridName.Text + "List";
                             method.ServiceName = $"get{objectId}";
                             method.PropName = TbxGridName.Text + "Grid";
                             method.ParameterName = TbxGridName.Text + "Request";
@@ -429,7 +435,7 @@ namespace Generator.UI.WF
             else if (CbxObjectType.SelectedItem.ToString() == "CUSTOMSQL")
             {
                 var method = new GetGridApiMethod();
-                method.MethodName = TbxGridName.Text;
+                method.MethodName = "Fill" + TbxGridName.Text + "List";
                 if (objectId[0].ToString() == "G" && objectId[1].ToString() == "e" && objectId[2].ToString() == "t")
                 {
                     method.ServiceName = objectId;
@@ -455,6 +461,7 @@ namespace Generator.UI.WF
             foreach (var param in ClbColumnNames.CheckedItems)
                 method.Parameter.Params.Add(new Param() { Key = param.ToString(), Value = param.ToString() });
         }
+
         private void JavaScriptParams(ApiRequestMethod method, IList paramList)
         {
             foreach (var param in paramList)
@@ -485,6 +492,7 @@ namespace Generator.UI.WF
 
             return method;
         }
+
         private string ComboBoxJavaScript()
         {
             var javaScript = "";
@@ -518,9 +526,10 @@ namespace Generator.UI.WF
             return javaScript;
         }
 
-        private void BtnGridCreate_Click(object sender, EventArgs e)
+        private GridView CreateGridView()
         {
             var dateList = new List<string>();
+            var otherList = new List<string>();
             var rowTemplate = new RowTemplate();
             foreach (var item in ClbColumnNames.CheckedItems)
             {
@@ -530,12 +539,16 @@ namespace Generator.UI.WF
                 column.LinkButton = CbxLinkButton.SelectedItem.ToString() == item.ToString() ? new LinkButton() { ActionCode = CbxActionCode.Text.ToString() } : null;
 
                 rowTemplate.Columns.Add(column);
-                if (item.ToString()!.Contains("Date")) dateList.Add(item.ToString());
+                if (item.ToString()!.Contains("Date"))
+                    dateList.Add(item.ToString());
+                else
+                    otherList.Add(item.ToString());
             }
 
 
             var model = new Model() { };
             dateList.ForEach(s => model.Fields.Add(new Field() { Id = s.ToString(), DataSource = s.ToString(), Type = Types.Date }));
+            otherList.ForEach(s => model.Fields.Add(new Field() { Id = s.ToString(), DataSource = s.ToString() }));
 
             var commandBar = new CommandBar()
             {
@@ -546,7 +559,7 @@ namespace Generator.UI.WF
 
             var gridView = new GridView()
             {
-                Id = CbxObjectId.SelectedItem.ToString().NameConfigure() + "Grid",
+                Id = TbxGridName.Text + "Grid",
                 Text = TbxGridName.Text + "Grid",
                 Height = TbxHeight.Text,
                 ShowStatus = "true",
@@ -559,8 +572,13 @@ namespace Generator.UI.WF
                 gridView.StatusColorFieldId = CbxStatusColor.SelectedItem.ToString();
             }
 
+            return gridView;
+        }
+
+        private void BtnGridCreate_Click(object sender, EventArgs e)
+        {
             RtbxGrid.Text = "";
-            RtbxGrid.Text += gridView.ToString();
+            RtbxGrid.Text += CreateGridView().ToString();
         }
 
         private void BtnCheckAll_Click(object sender, EventArgs e)
@@ -977,13 +995,13 @@ namespace Generator.UI.WF
             return new UserControlElement();
         }
 
-        private void BtnContentCreate_Click(object sender, EventArgs e)
+        private ContentBlock CreateContent()
         {
             // string[] row = new string[] { "1", "Product 1", BasicElementType.CheckBox.ToString() };
             // DgwContent.Rows.Add(row);
             var row = new Row();
             var size = 0;
-            if (DgwView.RowCount <= 2) return;
+
             var contentBlock = new ContentBlock();
             for (var i = 0; i < DgwView.Rows.Count - 1; i++)
             {
@@ -1062,7 +1080,13 @@ namespace Generator.UI.WF
             }
 
             contentBlock.Rows.Add(row);
-            ResultText.Text = contentBlock.ToString();
+            return contentBlock;
+        }
+
+        private void BtnContentCreate_Click(object sender, EventArgs e)
+        {
+            if (DgwView.RowCount <= 2) return;
+            ResultText.Text = CreateContent().ToString();
         }
 
         private void DgwView_CellEndEdit(object sender, DataGridViewCellEventArgs e)
@@ -1307,12 +1331,10 @@ namespace Generator.UI.WF
                     CbxValueField.Items.Add(p.Name);
                 });
             }
-
         }
 
         private void groupBox9_Enter_1(object sender, EventArgs e)
         {
-
         }
 
         private void BtnContentJSCreate_Click(object sender, EventArgs e)
@@ -1322,6 +1344,32 @@ namespace Generator.UI.WF
                 var javaScript = CreateComboBoxJavaScript(CbxContentJSObjectId.SelectedItem.ToString(), CbxContentJSObjectType.SelectedItem.ToString(), TbxPropName.Text);
                 RtbxSingleJavaScript.Text = javaScript.ToString();
             }
+        }
+
+        private void BtnPathName_Click(object sender, EventArgs e)
+        {
+            using FolderBrowserDialog folderDlg = new FolderBrowserDialog();
+            folderDlg.ShowNewFolderButton = true;
+            // Show the FolderBrowserDialog.  
+            DialogResult result = folderDlg.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                // textBox3.Text = folderDlg.SelectedPath;
+            }
+        }
+
+        private void groupBox5_Enter(object sender, EventArgs e)
+        {
+        }
+
+        private void DgwHeader_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+            LblHeaderTotal.Text = "Toplam : " + DgwHeader.Rows.Count.ToString();
+        }
+
+        private void DgwHeader_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
+        {
+            LblHeaderTotal.Text = "Toplam : " + DgwHeader.Rows.Count.ToString();
         }
     }
 }

@@ -187,7 +187,7 @@ namespace Generator.UI.WF
             }
         }
 
-        private List<OracleColumn> ParameterList(string objectId, string profileId, string objectType)
+        private List<OracleColumn> ResultList(string objectId, string profileId, string objectType)
         {
             var columnNames = new List<OracleColumn>();
 
@@ -214,7 +214,7 @@ namespace Generator.UI.WF
                 var objectType = _objectEntityService.GetObjectType(CbxObject.SelectedItem.ToString(), CbxProfile.SelectedItem.ToString());
                 CbxObjectType.SelectedItem = objectType;
                 DgwContent.Rows.Clear();
-                var columnNames = ParameterList(CbxObject.SelectedItem.ToString(), CbxProfile.SelectedItem.ToString(), CbxObjectType.SelectedItem.ToString());
+                var columnNames = ResultList(CbxObject.SelectedItem.ToString(), CbxProfile.SelectedItem.ToString(), CbxObjectType.SelectedItem.ToString());
                 columnNames.ForEach(column =>
                 {
                     var dataType = "";
@@ -503,7 +503,7 @@ namespace Generator.UI.WF
                 var id = row.Cells[0].Value;
                 var keyField = row.Cells[2].Value;
                 var valueField = row.Cells[3].Value;
-                var objectId = row.Cells[4].Value.ToString().NameConfigure();
+                var objectId = row.Cells[4].Value.ToString().NameConfigure().RemoveGet();
                 var objectType = _objectEntityService.GetObjectType(row.Cells[4].Value.ToString(), row.Cells[5].Value.ToString());
                 if (objectType == "TABLE")
                 {
@@ -513,6 +513,11 @@ namespace Generator.UI.WF
                 else if (objectType == "CUSTOMSQL")
                 {
                     method.ServiceName = $"{row.Cells[4].Value.ToString().CamelCaseConfigure()}";
+                    var parameters = _objectParameterService.GetAllByObjectId(objectId, row.Cells[5].Value.ToString());
+                    if (parameters != null)
+                    {
+                        JavaScriptParams(method, parameters);
+                    }
                     method.ResultName = objectId + "Result";
                 }
 
@@ -782,64 +787,6 @@ namespace Generator.UI.WF
             }
         }
 
-        private void DgwComboBoxes_CellEndEdit(object sender, DataGridViewCellEventArgs e)
-        {
-            if (DgwComboBoxes.Rows.Count > 1)
-            {
-                if (DgwComboBoxes.CurrentRow != null)
-                {
-                    var dgwComboBoxes = DgwComboBoxes.CurrentRow.Cells[5].Value?.ToString();
-                    if (dgwComboBoxes == null) return;
-                }
-
-                var profileId = DgwComboBoxes.CurrentRow.Cells[5].Value.ToString();
-
-                var comboBoxService = (DataGridViewComboBoxCell)DgwComboBoxes.CurrentRow.Cells[4];
-                comboBoxService.DataSource = GetObjectIdList(profileId);
-
-
-                if (DgwComboBoxes.CurrentRow.Cells[4].Value != null)
-                {
-                    var objectTye = GetObjectType(DgwComboBoxes.CurrentRow.Cells[4].Value.ToString(), profileId);
-                    var result = ParameterList(DgwComboBoxes.CurrentRow.Cells[4].Value.ToString(), profileId, objectTye);
-                    var list = new List<string>();
-                    var comboBoxKey = (DataGridViewComboBoxCell)DgwComboBoxes.CurrentRow.Cells["KeyField"];
-                    var comboBoxValue = (DataGridViewComboBoxCell)DgwComboBoxes.CurrentRow.Cells["ValueField"];
-
-                    result.ForEach(p => { list.Add(p.Name.NameConfigure()); });
-                    // DgwComboBoxes.CurrentRow.Cells[3].Value = null;
-                    // DgwComboBoxes.CurrentRow.Cells[2].Value = null;
-                    comboBoxKey.DataSource = null;
-                    comboBoxValue.DataSource = null;
-                    comboBoxKey.DataSource = list;
-                    comboBoxValue.DataSource = list;
-
-
-                    if (DgwComboBoxes.CurrentRow.Cells[3].Value == null && DgwComboBoxes.CurrentRow.Cells[2].Value == null)
-                    {
-                        if (list.Count <= 2)
-                            list.ForEach(p =>
-                            {
-                                if (!p.ToLower().Contains("description"))
-                                {
-                                    DgwComboBoxes.CurrentRow.Cells[2].Value = p;
-                                }
-                                else
-                                {
-                                    DgwComboBoxes.CurrentRow.Cells[3].Value = p;
-                                }
-                            });
-                        else
-                            list.ForEach(p =>
-                            {
-                                if (p.ToLower().Contains("description")) DgwComboBoxes.CurrentRow.Cells[3].Value = p;
-
-                                if (p.ToLower().Contains("type")) DgwComboBoxes.CurrentRow.Cells[2].Value = p;
-                            });
-                    }
-                }
-            }
-        }
 
 
         private void TabElement_KeyDown(object sender, KeyEventArgs e)
@@ -1324,7 +1271,7 @@ namespace Generator.UI.WF
                 var objectType = _objectEntityService.GetObjectType(CbxContentJSObjectId.SelectedItem.ToString(), CbxContentJSProfileId.SelectedItem.ToString());
                 CbxContentJSObjectType.SelectedItem = objectType;
 
-                var result = ParameterList(CbxContentJSObjectId.SelectedItem.ToString(), CbxContentJSProfileId.SelectedItem.ToString(), CbxContentJSObjectType.SelectedItem.ToString());
+                var result = ResultList(CbxContentJSObjectId.SelectedItem.ToString(), CbxContentJSProfileId.SelectedItem.ToString(), CbxContentJSObjectType.SelectedItem.ToString());
                 result.ForEach(p =>
                 {
                     CbxKeyField.Items.Add(p.Name);
@@ -1370,6 +1317,56 @@ namespace Generator.UI.WF
         private void DgwHeader_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
         {
             LblHeaderTotal.Text = "Toplam : " + DgwHeader.Rows.Count.ToString();
+        }
+
+        private void DgwComboBoxes_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            if (DgwComboBoxes.Rows.Count > 1)
+            {
+                var columnIndex = ((DataGridView)sender).CurrentCell.ColumnIndex;
+                var rowIndex = ((DataGridView)sender).CurrentCell.RowIndex;
+                if (columnIndex == 5)
+                {
+                    var profileId = DgwComboBoxes.Rows[rowIndex].Cells[5].Value.ToString();
+                    var comboBoxService = (DataGridViewComboBoxCell)DgwComboBoxes.Rows[rowIndex].Cells[4];
+                    comboBoxService.DataSource = GetObjectIdList(profileId);
+                    comboBoxService.Value = "Hiçbiri";
+                }
+
+                else if (columnIndex == 4)
+                {
+                    var profileId = DgwComboBoxes.Rows[rowIndex].Cells[5].Value.ToString();
+                    var objectTye = GetObjectType(DgwComboBoxes.Rows[rowIndex].Cells[4].Value.ToString(), profileId);
+                    var result = ResultList(DgwComboBoxes.Rows[rowIndex].Cells[4].Value.ToString(), profileId, objectTye);
+                    var list = new List<string>();
+                    var comboBoxKey = (DataGridViewComboBoxCell)DgwComboBoxes.Rows[rowIndex].Cells["KeyField"];
+                    var comboBoxValue = (DataGridViewComboBoxCell)DgwComboBoxes.Rows[rowIndex].Cells["ValueField"];
+
+                    result.ForEach(p => { list.Add(p.Name.NameConfigure()); });
+                    comboBoxKey.DataSource = list;
+                    comboBoxValue.DataSource = list;
+
+                    if (list.Count <= 2)
+                        list.ForEach(p =>
+                        {
+                            if (!p.ToLower().Contains("description"))
+                            {
+                                DgwComboBoxes.Rows[rowIndex].Cells[2].Value = p;
+                            }
+                            else
+                            {
+                                DgwComboBoxes.Rows[rowIndex].Cells[3].Value = p;
+                            }
+                        });
+                    else
+                        list.ForEach(p =>
+                        {
+                            if (p.ToLower().Contains("description")) DgwComboBoxes.Rows[rowIndex].Cells[3].Value = p;
+
+                            if (p.ToLower().Contains("type")) DgwComboBoxes.Rows[rowIndex].Cells[2].Value = p;
+                        });
+                }
+            }
         }
     }
 }

@@ -148,5 +148,25 @@ namespace Generator.UI.WF
 
             return yeniSt;
         }
+        public static char ConvertChar(this object value)
+        {
+            if ((bool)value)
+            {
+                return '1';
+            }
+            else
+            {
+                return '0';
+            }
+        }
+        public static string RemoveGet(this string result)
+        {
+            var index = result.ToLower().IndexOf("get");
+            if (index != -1)
+            {
+                result = result.Substring(2);
+            }
+            return result;
+        }
     }
 }

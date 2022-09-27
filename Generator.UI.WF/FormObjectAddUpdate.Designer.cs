@@ -33,6 +33,8 @@ namespace Generator.UI.WF
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.PanelPresentation = new System.Windows.Forms.Panel();
+            this.label25 = new System.Windows.Forms.Label();
+            this.BtnServiceMethodAdd = new System.Windows.Forms.Button();
             this.label26 = new System.Windows.Forms.Label();
             this.BtnUxGenerator = new System.Windows.Forms.Button();
             this.BtnOracle = new System.Windows.Forms.Button();
@@ -127,6 +129,8 @@ namespace Generator.UI.WF
             // 
             // PanelPresentation
             // 
+            this.PanelPresentation.Controls.Add(this.label25);
+            this.PanelPresentation.Controls.Add(this.BtnServiceMethodAdd);
             this.PanelPresentation.Controls.Add(this.label26);
             this.PanelPresentation.Controls.Add(this.BtnUxGenerator);
             this.PanelPresentation.Controls.Add(this.BtnOracle);
@@ -152,6 +156,34 @@ namespace Generator.UI.WF
             this.PanelPresentation.Name = "PanelPresentation";
             this.PanelPresentation.Size = new System.Drawing.Size(1281, 363);
             this.PanelPresentation.TabIndex = 27;
+            // 
+            // label25
+            // 
+            this.label25.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label25.AutoSize = true;
+            this.label25.BackColor = System.Drawing.Color.Transparent;
+            this.label25.Enabled = false;
+            this.label25.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label25.ForeColor = System.Drawing.Color.Silver;
+            this.label25.Location = new System.Drawing.Point(577, 14);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(199, 23);
+            this.label25.TabIndex = 330;
+            this.label25.Text = "Service Method Add";
+            // 
+            // BtnServiceMethodAdd
+            // 
+            this.BtnServiceMethodAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnServiceMethodAdd.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnServiceMethodAdd.FlatAppearance.BorderSize = 0;
+            this.BtnServiceMethodAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnServiceMethodAdd.Image = global::Generator.UI.WF.Properties.Resources.ekle_32px;
+            this.BtnServiceMethodAdd.Location = new System.Drawing.Point(540, 7);
+            this.BtnServiceMethodAdd.Name = "BtnServiceMethodAdd";
+            this.BtnServiceMethodAdd.Size = new System.Drawing.Size(31, 32);
+            this.BtnServiceMethodAdd.TabIndex = 329;
+            this.BtnServiceMethodAdd.UseVisualStyleBackColor = true;
+            this.BtnServiceMethodAdd.Click += new System.EventHandler(this.BtnServiceMethodAdd_Click);
             // 
             // label26
             // 
@@ -1376,5 +1408,7 @@ namespace Generator.UI.WF
         private System.Windows.Forms.Button BtnParametre;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Button BtnUxGenerator;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Button BtnServiceMethodAdd;
     }
 }

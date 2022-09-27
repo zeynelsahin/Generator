@@ -248,5 +248,11 @@ namespace Generator.UI.WF
             FormUxGenerator formUxGenerator = new FormUxGenerator();
             formUxGenerator.Show();
         }
+
+        private void BtnServiceMethodAdd_Click(object sender, EventArgs e)
+        {
+            FormServiceMethodAdd form= new FormServiceMethodAdd(TbxObjectId.Text,TbxProfileId.Text,CbxObjectType.Text);
+            form.Show();
+        }
     }
 }

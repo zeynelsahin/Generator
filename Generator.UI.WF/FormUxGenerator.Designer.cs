@@ -1356,7 +1356,7 @@ namespace Generator.UI.WF
             this.DgwComboBoxes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DgwComboBoxes.Size = new System.Drawing.Size(1498, 530);
             this.DgwComboBoxes.TabIndex = 270;
-            this.DgwComboBoxes.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgwComboBoxes_CellEndEdit);
+            this.DgwComboBoxes.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgwComboBoxes_CellValueChanged);
             this.DgwComboBoxes.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.DgwComboBoxes_RowsAdded);
             this.DgwComboBoxes.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.DgwComboBoxes_RowsRemoved);
             // 

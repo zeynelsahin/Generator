@@ -10,7 +10,6 @@
         {
             var javaScript = "";
             javaScript += $"\n{MethodName}() ";
-            javaScript += "{\n";
             if (Parameter.Params.Count > 0)
             {
                 javaScript += "let input = {";

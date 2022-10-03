@@ -11,6 +11,7 @@
             xml += Header.ToString();
             xml += Content.ToString();
             xml += GridContent.ToString();
+            xml += "</ux-page>";
             return xml;
         }
     }

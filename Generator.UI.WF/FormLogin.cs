@@ -7,6 +7,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Windows.Forms;
 using Autofac;
 using Generator.Business.Abstract;
@@ -14,7 +15,6 @@ using Generator.Business.Concrete;
 using Generator.Business.Constants;
 using Generator.DataAccess.Concrete;
 using Generator.Entities;
-using Newtonsoft.Json;
 
 namespace Generator.UI.WF
 {
@@ -56,7 +56,7 @@ namespace Generator.UI.WF
             try
             {
                 var jsonString = File.ReadAllText(@"../../../profiles.json");
-                _profiles = JsonConvert.DeserializeObject<List<Profile>>(jsonString);
+                _profiles = JsonSerializer.Deserialize<List<Profile>>(jsonString);
                 LblMessage.Text = "";
             }
             catch

@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace Generator.UI.WF.JavaScriptGenerate
+﻿namespace Generator.Entities
 {
     public class StaticMethod
     {

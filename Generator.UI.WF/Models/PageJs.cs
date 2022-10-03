@@ -6,12 +6,12 @@ namespace Generator.UI.WF.Models
 {
     public class PageJs
     {
-        private List<ApiRequestMethod> ApiRequestMethods { get; set; }
-        private GetGridApiMethod GetGridApiMethod { get; set; } = new GetGridApiMethod();
-        private CreateApiMethod CreateApiMethod { get; set; }
-        private UpdateApiMethod UpdateApiMethod { get; set; }
-        private PageXml PageXml { get; set; } = null;
-        private string PageName { get; set; }
+        public List<ApiRequestMethod> ApiRequestMethods { get; set; }
+        public GetGridApiMethod GetGridApiMethod { get; set; } = new GetGridApiMethod();
+        public CreateApiMethod CreateApiMethod { get; set; }
+        public UpdateApiMethod UpdateApiMethod { get; set; }
+        public PageXml PageXml { get; set; } = null;
+        public string PageName { get; set; }
 
         public override string ToString()
         {
@@ -19,8 +19,8 @@ namespace Generator.UI.WF.Models
 
             javaScript += $"\n   \"use strict\";\n";
             javaScript += $"$$.{PageName}Controller = class {PageName}Controller extends $$.Controller";
-            javaScript += "{\n   constructor(view,page,context,prop);";
-            javaScript += "Load() {\n";
+            javaScript += "{\n   constructor(view,page,context,prop);\n";
+            javaScript += "\nLoad() {\n";
             if (PageXml != null)
             {
                 javaScript += "this.$Prop.Update.Disable();\n";
@@ -30,14 +30,14 @@ namespace Generator.UI.WF.Models
 
             if (GetGridApiMethod != null)
             {
-                javaScript += $"this.{GetGridApiMethod.MethodName}();\n";
+                javaScript += $"this.{GetGridApiMethod.MethodName}();";
             }
 
             if (ApiRequestMethods.Count > 1)
             {
                 javaScript += "this.FillCombos();\n}\n";
                 javaScript += "FillCombos() {\n";
-                javaScript = ApiRequestMethods.Aggregate(javaScript, (current, requestMethod) => current + $"this.{requestMethod.MethodName}()\n;");
+                javaScript = ApiRequestMethods.Aggregate(javaScript, (current, requestMethod) => current + $"this.{requestMethod.MethodName}();\n");
                 javaScript += "}\n";
             }
             else
@@ -50,7 +50,7 @@ namespace Generator.UI.WF.Models
             if (CreateApiMethod != null) javaScript += CreateApiMethod.ToString();
             if (UpdateApiMethod != null) javaScript += UpdateApiMethod.ToString();
 
-            javaScript = "\nEventHandler(eventName, arg1) {\n";
+            javaScript += "\nEventHandler(eventName, arg1) {\n";
             javaScript += "var recordInfo = arg1;\n";
             javaScript += "switch (eventName) {\n";
             javaScript += "  case 'Clear':\n";
@@ -82,7 +82,7 @@ namespace Generator.UI.WF.Models
                 javaScript += $"this.{UpdateApiMethod.MethodName}();\n";
                 javaScript += "break;\n";
             }
-
+            javaScript+="}\n}\n}\n})();";
             return javaScript;
         }
     }

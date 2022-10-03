@@ -2,30 +2,50 @@
 
 namespace Generator.UI.WF.JavaScriptGenerate
 {
-    public class KeyValueStaticMethod : StaticMethod
+    public class KeyValueStaticMethod<TKeyType, TValueType> : StaticMethod
     {
-        public Dictionary<string, string> StaticList { get; set; } = new Dictionary<string, string>();
-        public string Key { get; set; }
-        public string Value { get; set; }
+        public List<TKeyType> KeyList { get; set; } = new List<TKeyType>();
+        public List<TValueType> ValueList { get; set; } = new List<TValueType>();
 
+        public string GetValue(object value)
+        {
+            if (value.GetType() == typeof(string))
+            {
+                return $"\"{value}\"";
+
+            }
+            else if (value.GetType() == typeof(int))
+            {
+                return $"{value}";
+            }
+            else
+            {
+                return "Type is null";
+            }
+        }
         public override string ToString()
         {
             var javaScript = "";
-            javaScript += $"{MethodName}() ";
+            javaScript += $"{MethodName}List() ";
             javaScript += "{\n";
-            javaScript += $"let {ResultName} = [";
+            javaScript += $"let {MethodName} = [";
 
-            foreach (var item in StaticList)
+            for (int i = 0; i < KeyList.Count; i++)
             {
                 javaScript += "\n{";
-                javaScript += $"{Key}:{item.Key}, {Value}:\"{item.Value}\"";
-                javaScript += "}";
+                javaScript += $"{KeyName}: {GetValue(KeyList[i])}: {ValueName}: {GetValue(ValueList[i])}";
+                if (KeyList.Count != KeyList.Count - 1)
+                {
+                    javaScript += "},";
+                }
+                else
+                {
+                    javaScript += "}";
+                }
             }
 
             javaScript += "\n];";
-
-            javaScript += $"this.$Prop.{PropName}.Fill(results.{ResultName});\n";
-            javaScript += "}\n}\n});\n}";
+            javaScript += "\n}";
             return javaScript;
         }
     }

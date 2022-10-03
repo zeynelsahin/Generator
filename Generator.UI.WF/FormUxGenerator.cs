@@ -3,9 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Net.Http;
-using System.Reflection.Metadata.Ecma335;
-using System.Threading.Tasks;
+using System.Text.Json;
 using System.Windows.Forms;
 using Generator.Business.Abstract;
 using Generator.Business.Concrete;
@@ -28,13 +26,13 @@ namespace Generator.UI.WF
             InitializeComponent();
         }
 
-        private async Task Deneme()
-        {
-            var httpClient = new HttpClient();
-            var response = await httpClient.GetAsync("https://localhost:5001/backoffice/api/getCurrencyDef");
-            var deneme = response.EnsureSuccessStatusCode();
-            var responseBody = response.Content.ReadAsStringAsync();
-        }
+        // private async Task Deneme()
+        // {
+        //     var httpClient = new HttpClient();
+        //     var response = await httpClient.GetAsync("https://localhost:5001/backoffice/api/getCurrencyDef");
+        //     var deneme = response.EnsureSuccessStatusCode();
+        //     var responseBody = response.Content.ReadAsStringAsync();
+        // }
 
         private readonly IObjectEntityService _objectEntityService = new ObjectEntityService(new EfObjectEntityDal());
         private readonly IObjectResultService _objectResultService = new ObjectResultService(new EfObjectResultDal());
@@ -44,13 +42,34 @@ namespace Generator.UI.WF
         private void FormUxGenerator_Load(object sender, EventArgs e)
         {
             CreateDefaultHeader();
-            var comboBox = (DataGridViewComboBoxColumn)DgwComboBoxes.Columns[5];
-            List<string> profiles = new List<string>()
-            {
-                "MerchantBackOffice",
-                "ISS_PRM"
-            };
-            comboBox.DataSource = profiles;
+            LoadMethodTypes();
+            LoadDirectoryPaths();
+            Deneme();
+        }
+
+        private void LoadMethodTypes()
+        {
+            var comboBoxServiceType = (DataGridViewComboBoxColumn)DgwComboBoxes.Columns[6];
+            var methodTypes = File.ReadAllText(@"../../../JsonFiles/MethodTypes.json");
+            var methodTypeList = JsonSerializer.Deserialize<List<string>>(methodTypes);
+            comboBoxServiceType.DataSource = methodTypeList;
+        }
+
+        private void LoadProfiles(int rowIndex)
+        {
+            var comboBoxProfileType = (DataGridViewComboBoxCell)DgwComboBoxes.Rows[rowIndex].Cells[5];
+            var profiles = File.ReadAllText(@"../../../JsonFiles/ObjectProfiles.json");
+            var profileList = JsonSerializer.Deserialize<List<string>>(profiles);
+            comboBoxProfileType.DataSource = profileList;
+        }
+
+        private void LoadDirectoryPaths()
+        {
+            var jsonString = File.ReadAllText(@"../../../JsonFiles/DirectoryPath.json");
+            var list = JsonSerializer.Deserialize<List<DirectoryPath>>(jsonString, new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
+            CbxApplication.DataSource = list;
+            CbxApplication.DisplayMember = "Application";
+            CbxApplication.ValueMember = "Path";
         }
 
         private void BtnAdd_Click(object sender, EventArgs e)
@@ -145,16 +164,11 @@ namespace Generator.UI.WF
             CbxObjectId.Focus();
         }
 
-
         private List<string> GetObjectIdList(string profileId)
         {
             var objects = new List<string>() { "Hiçbiri" };
             objects.AddRange(_objectEntityService.GetAllByProfileId(profileId.ToString()));
             return objects;
-        }
-
-        private void tabPage2_Click(object sender, EventArgs e)
-        {
         }
 
         private void CbxObjectId_SelectedIndexChanged(object sender, EventArgs e)
@@ -182,6 +196,7 @@ namespace Generator.UI.WF
 
                     if (serviceMethods.ModifyMethodFlag == '1') tableService.Add("Modify");
                 }
+
 
                 CbxCrudMethod.DataSource = tableService;
             }
@@ -246,7 +261,7 @@ namespace Generator.UI.WF
 
                 ClbColumnNames.Items.Clear();
                 var columnNames = new List<string>();
-                columnNames.Add("Hiçbiri");
+                //columnNames.Add("Hiçbiri");
                 if (CbxObjectType.SelectedItem.ToString() == "TABLE")
                 {
                     columnNames.AddRange(_objectEntityService.GetColumnsName(CbxObjectId.SelectedItem.ToString()));
@@ -260,34 +275,38 @@ namespace Generator.UI.WF
                     var columnNamesCopy = new List<string>();
                     columnNames.ForEach(s => columnNamesCopy.Add(s));
                     CbxStatusColor.DataSource = columnNamesCopy;
+                    if (columnNamesCopy.Contains("VALID_FLAG"))
+                    {
+                        CbxStatusColor.SelectedValue = "VALID_FLAG";
+                    }
                 }
                 else if (CbxObjectType.SelectedItem.ToString() == "CUSTOMSQL")
                 {
                     var result = _objectResultService.GetAllByObjectId(CbxObjectId.SelectedItem.ToString(), CbxProfileId.SelectedItem.ToString());
                     result.ForEach(result => columnNames.Add(result.ResultId));
                     columnNames = columnNames.NameConfigure();
-                    var parameters = _objectParameterService.GetAllByObjectId(CbxObjectId.SelectedItem.ToString(), CbxProfileId.SelectedItem.ToString());
+                    //var parameters = _objectParameterService.GetAllByObjectId(CbxObjectId.SelectedItem.ToString(), CbxProfileId.SelectedItem.ToString());
                     var columnNamesCopy = new List<string>();
                     columnNames.ForEach(s => columnNamesCopy.Add(s));
                     columnNames.ForEach(p =>
                     {
                         if (p == "Hiçbiri") return;
-                        ClbColumnNames.Items.Add(p, false);
+                        ClbColumnNames.Items.Add(p, true);
                     });
-                    if (parameters != null)
-                    {
-                        for (var i = 0; i < ClbColumnNames.Items.Count; i++)
-                        {
-                            for (var j = 0; j < parameters.Count; j++)
-                            {
-                                var name = ClbColumnNames.Items[i];
-                                if (name.ToString() == parameters[j].NameConfigure())
-                                {
-                                    ClbColumnNames.SetItemCheckState(i, CheckState.Checked);
-                                }
-                            }
-                        }
-                    }
+                    //if (parameters != null)
+                    //{
+                    //    for (var i = 0; i < ClbColumnNames.Items.Count; i++)
+                    //    {
+                    //        for (var j = 0; j < parameters.Count; j++)
+                    //        {
+                    //            var name = ClbColumnNames.Items[i];
+                    //            if (name.ToString() == parameters[j].NameConfigure())
+                    //            {
+                    //                ClbColumnNames.SetItemCheckState(i, CheckState.Checked);
+                    //            }
+                    //        }
+                    //    }
+                    //}
 
                     CbxLinkButton.DataSource = columnNames;
                     columnNames.ForEach(s => columnNamesCopy.Add(s));
@@ -358,46 +377,49 @@ namespace Generator.UI.WF
             }
         }
 
-        private string GridJavaScript()
+        private GridJavaScriptMethod GridJavaScript()
         {
-            var javaScript = "";
+            GridJavaScriptMethod gridJavaScriptMethod = new GridJavaScriptMethod();
             var objectId = CbxObjectId.SelectedItem.ToString().NameConfigure();
             if (CbxObjectType.SelectedItem.ToString() == "TABLE")
             {
-                var method = new GetGridApiMethod();
                 if (CbxCrudMethod.SelectedItem.ToString() == "Tümü")
                 {
                     foreach (var item in CbxCrudMethod.Items)
                     {
                         if (item.ToString() == "Get")
                         {
-                            method.MethodName = "Fill" + TbxGridName.Text + "List";
-                            method.ServiceName = $"get{objectId}";
-                            method.PropName = TbxGridName.Text + "Grid";
-                            method.ParameterName = TbxGridName.Text + "Request";
-                            method.ResultName = TbxGridName.Text + "Result";
-                            // GridJavaScriptParams(method);
-                            javaScript += method.ToString();
+                            var get = new GetGridApiMethod
+                            {
+                                MethodName = "Fill" + TbxGridName.Text + "List",
+                                ServiceName = $"get{objectId}",
+                                PropName = TbxGridName.Text + "Grid",
+                                ParameterName = TbxGridName.Text + "Request",
+                                ResultName = TbxGridName.Text + "Result"
+                            };
+                            gridJavaScriptMethod.GetGridApiMethod = get;
                         }
                         else if (item.ToString() == "Create")
                         {
-                            var create = new CreateApiMethod();
-                            create.MethodName = "Create" + TbxGridName.Text;
-                            create.ServiceName = $"create{objectId}";
-                            create.ParameterName = TbxGridName.Text.UnifiedCaseConfigure();
+                            var create = new CreateApiMethod
+                            {
+                                MethodName = "Create" + TbxGridName.Text,
+                                ServiceName = $"create{objectId}",
+                                ParameterName = TbxGridName.Text.UnifiedCaseConfigure()
+                            };
                             GridJavaScriptParams(create);
-                            javaScript += create.ToString();
+                            gridJavaScriptMethod.CreateApiMethod = create;
                         }
                         else if (item.ToString() == "Modify")
                         {
-                            var update = new UpdateApiMethod
+                            var modify = new UpdateApiMethod
                             {
                                 MethodName = "Update" + TbxGridName.Text,
                                 ServiceName = $"modify{objectId}",
                                 ParameterName = TbxGridName.Text.UnifiedCaseConfigure()
                             };
-                            GridJavaScriptParams(update);
-                            javaScript += update.ToString();
+                            GridJavaScriptParams(modify);
+                            gridJavaScriptMethod.UpdateApiMethod = modify;
                         }
                         else if (item.ToString() == "Delete")
                         {
@@ -405,7 +427,6 @@ namespace Generator.UI.WF
                         }
                     }
                 }
-
                 else
                 {
                     if (CbxCrudMethod.SelectedItem.ToString() == "Create")
@@ -417,43 +438,45 @@ namespace Generator.UI.WF
                             ParameterName = TbxGridName.Text.UnifiedCaseConfigure()
                         };
                         GridJavaScriptParams(create);
-                        javaScript = create.ToString();
+                        gridJavaScriptMethod.CreateApiMethod = create;
                     }
                     else if (CbxCrudMethod.SelectedItem.ToString() == "Modify")
                     {
-                        var update = new UpdateApiMethod
+                        var modify = new UpdateApiMethod
                         {
                             MethodName = "Update" + TbxGridName.Text,
                             ServiceName = $"modify{objectId}",
                             ParameterName = TbxGridName.Text.UnifiedCaseConfigure()
                         };
-                        GridJavaScriptParams(update);
-                        javaScript = update.ToString();
+                        GridJavaScriptParams(modify);
+                        gridJavaScriptMethod.UpdateApiMethod = modify;
                     }
                 }
             }
             else if (CbxObjectType.SelectedItem.ToString() == "CUSTOMSQL")
             {
-                var method = new GetGridApiMethod();
-                method.MethodName = "Fill" + TbxGridName.Text + "List";
+                var get = new GetGridApiMethod
+                {
+                    MethodName = "Fill" + TbxGridName.Text + "List"
+                };
                 if (objectId[0].ToString() == "G" && objectId[1].ToString() == "e" && objectId[2].ToString() == "t")
                 {
-                    method.ServiceName = objectId;
-                    method.ParameterName = TbxGridName.Text + "Param";
+                    get.ServiceName = objectId;
+                    get.ParameterName = TbxGridName.Text + "Param";
                 }
                 else
                 {
-                    method.ServiceName = $"get{objectId}";
-                    method.ParameterName = "Get" + TbxGridName.Text + "Param";
+                    get.ServiceName = $"get{objectId}";
+                    get.ParameterName = "Get" + TbxGridName.Text + "Param";
                 }
 
-                method.PropName = TbxGridName.Text + "Grid";
-                method.ResultName = TbxGridName.Text + "Result";
-                GridJavaScriptParams(method);
-                javaScript = method.ToString();
+                get.PropName = TbxGridName.Text + "Grid";
+                get.ResultName = TbxGridName.Text + "Result";
+                GridJavaScriptParams(get);
+                gridJavaScriptMethod.GetGridApiMethod = get;
             }
 
-            return javaScript;
+            return gridJavaScriptMethod;
         }
 
         private void GridJavaScriptParams(ApiRequestMethod method)
@@ -476,7 +499,7 @@ namespace Generator.UI.WF
             {
                 method.ServiceName = $"get{objectId}";
                 method.ResultName = objectId + "List";
-                method.Parameter.Params.Add(new Param() { Key = "ValidFlag", Value = "ValidFlag" });
+                //method.Parameter.Params.Add(new Param() { Key = "ValidFlag", Value = "ValidFlag" });
             }
             else if (objectType == "CUSTOMSQL")
             {
@@ -492,13 +515,15 @@ namespace Generator.UI.WF
 
             return method;
         }
+        //Object dönülüp liste veya class olarak dönüş yapılabilir farklı metodlarda yazılabilir.
 
-        private string ComboBoxJavaScript()
+        private List<ApiRequestMethod> ComboBoxJavaScript()
         {
-            var javaScript = "";
-            var method = new GetComboBoxApiMethod();
+            List<ApiRequestMethod> getComboBoxApiMethods = new List<ApiRequestMethod>();
             for (int i = 0; i < DgwComboBoxes.Rows.Count - 1; i++)
             {
+                var method = new GetComboBoxApiMethod();
+
                 var row = DgwComboBoxes.Rows[i];
                 var id = row.Cells[0].Value;
                 var keyField = row.Cells[2].Value;
@@ -518,17 +543,54 @@ namespace Generator.UI.WF
                     {
                         JavaScriptParams(method, parameters);
                     }
+
                     method.ResultName = objectId + "Result";
                 }
 
                 method.MethodName = "Fill" + objectId;
                 method.PropName = id.ToString();
-                javaScript += "\n";
-                javaScript += method.ToString();
+                getComboBoxApiMethods.Add(method);
             }
 
+            return getComboBoxApiMethods;
+        }
 
-            return javaScript;
+        private List<ApiRequestMethod> UserControlJavaScript()
+        {
+            List<ApiRequestMethod> getComboBoxApiMethods = new List<ApiRequestMethod>();
+            for (int i = 0; i < DgwComboBoxes.Rows.Count - 1; i++)
+            {
+                var method = new GetComboBoxApiMethod();
+
+                var row = DgwComboBoxes.Rows[i];
+                var id = row.Cells[0].Value;
+                var keyField = row.Cells[2].Value;
+                var valueField = row.Cells[3].Value;
+                var objectId = row.Cells[4].Value.ToString().NameConfigure().RemoveGet();
+                var objectType = _objectEntityService.GetObjectType(row.Cells[4].Value.ToString(), row.Cells[5].Value.ToString());
+                if (objectType == "TABLE")
+                {
+                    method.ServiceName = $"get{objectId}";
+                    method.ResultName = objectId + "List";
+                }
+                else if (objectType == "CUSTOMSQL")
+                {
+                    method.ServiceName = $"{row.Cells[4].Value.ToString().CamelCaseConfigure()}";
+                    var parameters = _objectParameterService.GetAllByObjectId(objectId, row.Cells[5].Value.ToString());
+                    if (parameters != null)
+                    {
+                        JavaScriptParams(method, parameters);
+                    }
+
+                    method.ResultName = objectId + "Result";
+                }
+
+                method.MethodName = "Fill" + objectId;
+                method.PropName = id.ToString();
+                getComboBoxApiMethods.Add(method);
+            }
+
+            return getComboBoxApiMethods;
         }
 
         private GridView CreateGridView()
@@ -549,7 +611,6 @@ namespace Generator.UI.WF
                 else
                     otherList.Add(item.ToString());
             }
-
 
             var model = new Model() { };
             dateList.ForEach(s => model.Fields.Add(new Field() { Id = s.ToString(), DataSource = s.ToString(), Type = Types.Date }));
@@ -609,31 +670,10 @@ namespace Generator.UI.WF
                     ClbColumnNames.SetItemChecked(i, false);
         }
 
-
         private void BtnJavaScriptCreate_Click(object sender, EventArgs e)
         {
             RtbxGrid.Text = null;
-            RtbxGrid.Text = GridJavaScript();
-        }
-
-
-        private void groupBox2_Enter(object sender, EventArgs e)
-        {
-        }
-
-        private void groupBox9_Enter(object sender, EventArgs e)
-        {
-        }
-
-        private void BtnGetParameter_Click(object sender, EventArgs e)
-        {
-            if (CbxObjectId.SelectedItem != null)
-            {
-                ClbColumnNames.Items.Clear();
-                var parameters = _objectParameterService.GetAllByObjectId(CbxObjectId.SelectedItem.ToString(), CbxProfileId.SelectedItem.ToString());
-                parameters = parameters.NameConfigure();
-                parameters.ForEach(p => { ClbColumnNames.Items.Add(p, true); });
-            }
+            RtbxGrid.Text = GridJavaScript().ToString();
         }
 
         private void CbxObject_SelectedIndexChanged(object sender, EventArgs e)
@@ -686,10 +726,6 @@ namespace Generator.UI.WF
             {
                 isComboBoxAddView = status;
             }
-        }
-
-        private void DgwComboBoxFill()
-        {
         }
 
         private void CbxProfile_SelectedIndexChanged(object sender, EventArgs e)
@@ -768,6 +804,7 @@ namespace Generator.UI.WF
                         row.CreateCells(DgwComboBoxes);
                         row.Cells[0].Value = item.Cells[0].Value;
                         row.Cells[1].Value = item.Cells[1].Value;
+                        row.Cells[6].Value = "Service Method";
                         DgwComboBoxes.Rows.Add(row);
                         DgwContent.Rows.Remove(item);
                     }
@@ -786,8 +823,6 @@ namespace Generator.UI.WF
                     }
             }
         }
-
-
 
         private void TabElement_KeyDown(object sender, KeyEventArgs e)
         {
@@ -835,7 +870,11 @@ namespace Generator.UI.WF
 
         private void BtnContentJavaScript_Click(object sender, EventArgs e)
         {
-            ResultText.Text = ComboBoxJavaScript();
+            ResultText.Text = null;
+            foreach (var item in ComboBoxJavaScript())
+            {
+                ResultText.Text += item.ToString();
+            }
         }
 
         private void NullExceptionMessage(string nullCells, bool multiple)
@@ -1036,10 +1075,6 @@ namespace Generator.UI.WF
             ResultText.Text = CreateContent().ToString();
         }
 
-        private void DgwView_CellEndEdit(object sender, DataGridViewCellEventArgs e)
-        {
-        }
-
         private void TabElement_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (TabElement.SelectedTab == TabView)
@@ -1167,7 +1202,6 @@ namespace Generator.UI.WF
             LblViewTotal.Text = $"Toplam : {DgwView.Rows.Count - 1}";
         }
 
-
         public void DatagridLabelSize() //datagridview in boyutunu ayarlar
         {
             var height = 41;
@@ -1177,10 +1211,6 @@ namespace Generator.UI.WF
             else
                 DgwObject.Height = height;
             LblContextTotal.Top = DgwContent.Bottom + 10;
-        }
-
-        private void FormUxGenerator_SizeChanged(object sender, EventArgs e)
-        {
         }
 
         private void TabMain_SelectedIndexChanged(object sender, EventArgs e)
@@ -1194,60 +1224,86 @@ namespace Generator.UI.WF
                 CbxProfileId.Focus();
             }
         }
-        // void Metin_Yaz(string text)
-        // {
-        //     SaveFileDialog save = new SaveFileDialog();
-        //     save.CreatePrompt = true; // dosya yoksa üret
-        //     save.OverwritePrompt = true; // üzerine yazma uyarısı
-        //     save.Title = "Metin Dosyaları";
-        //     save.DefaultExt = "txt";
-        //     save.Filter = "txt Dosyaları (*.txt)|*.txt|Tüm Dosyalar(*.*)|*.*";
-        //     if (save.ShowDialog() == DialogResult.OK)
-        //     {
-        //         if (chk_altina_ekle.CheckState == CheckState.Checked)
-        //         {
-        //             // Burada AppandText metodunu kullanmak için FileStream kullandık. Bunun amacı farklı yöntemleri görmenizi istememdir.
-        //             FileStream fs = new FileStream(save.FileName, FileMode.OpenOrCreate, FileAccess.Write);
-        //             fs.Close();
-        //             File.AppendAllText(save.FileName, Environment.NewLine + txt_yazilacak_metin.Text);
-        //         }
-        //         else
-        //         {
-        //             if (File.Exists(save.FileName))
-        //             {
-        //                 StreamReader Oku = new StreamReader(save.FileName);
-        //                 string okunan = Oku.ReadToEnd();
-        //                 Oku.Close();
-        //                 if (okunan.Trim() != string.Empty)
-        //                 {
-        //                     switch (MessageBox.Show("Seçtiğiniz belge boş değil. Üzerine yazmak istiyorsanız -EVET-, ekrana getirmek istiyorsanız -HAYIR-, işlemi iptal etmek istiyorsanız -VAZGEÇ-'i seçin"
-        //                     , "İşlem Seçin", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question))
-        //                     {
-        //                         case DialogResult.Cancel:
-        //                             break;
-        //                         case DialogResult.Yes:
-        //                             StreamWriter Kayit = new StreamWriter(save.FileName);
-        //                             Kayit.WriteLine(text);
-        //                             Kayit.Close();
-        //                             break;
-        //                         case DialogResult.No:
-        //                             txt_yazilacak_metin.Text = okunan;
-        //                             break;
-        //                     }
-        //                 }
-        //             }
-        //             else
-        //             {
-        //                 StreamWriter Kayit = new StreamWriter(save.FileName);
-        //                 Kayit.WriteLine(text);
-        //                 Kayit.Close();
-        //             }
-        //         }
-        //     }
-        // }
+
+        void PageFilesCreate(string path, string fileName, PageXml pageXml, PageJs pageJs)
+        {
+            string xmlPath = Path.Combine(path, fileName + ".xml");
+            string jsPath = Path.Combine(path, fileName + ".xml.js");
+
+            if (File.Exists(xmlPath))
+            {
+                if (CbxOverrideWriteFile.Checked)
+                {
+                    File.WriteAllText(xmlPath, pageXml.ToString());
+                }
+                else
+                {
+                    File.WriteAllText(Path.Combine(path, fileName + "_Copy.xml"), pageXml.ToString());
+                }
+            }
+            else
+            {
+                File.WriteAllText(xmlPath, pageXml.ToString());
+            }
+
+            if (File.Exists(xmlPath))
+            {
+                if (CbxOverrideWriteFile.Checked)
+                {
+                    File.WriteAllText(jsPath, pageJs.ToString());
+                }
+                else
+                {
+                    File.WriteAllText(Path.Combine(path, fileName + "_Copy.xml.js"), pageJs.ToString());
+                }
+            }
+            else
+            {
+                File.WriteAllText(jsPath, pageJs.ToString());
+            }
+        }
+
+        private PageXml PageXmlCreate()
+        {
+            if (CbxExportXML.Checked)
+            {
+                var pageXml = new PageXml
+                {
+                    Header = CreatePageHeader(),
+                    Content = CreateContent(),
+                    GridContent = CreateGridView()
+                };
+                return pageXml;
+            }
+
+            return null;
+        }
+
+        private PageJs PageJsCreate()
+        {
+            if (CbxJavaScriptExport.Checked)
+            {
+                var gridMethod = GridJavaScript();
+                var pageJs = new PageJs()
+                {
+                    ApiRequestMethods = ComboBoxJavaScript(),
+                    CreateApiMethod = gridMethod.CreateApiMethod,
+                    GetGridApiMethod = gridMethod.GetGridApiMethod,
+                    UpdateApiMethod = gridMethod.UpdateApiMethod,
+                    PageName = TbxPageName.Text
+                };
+                return pageJs;
+            }
+
+            return null;
+        }
 
         private void BtnExport_Click(object sender, EventArgs e)
         {
+            var pageXml = PageXmlCreate();
+            var pageJs = PageJsCreate();
+
+            PageFilesCreate(TbxPath.Text, TbxPageName.Text, pageXml, pageJs);
         }
 
         private void CbxContentJSProfileId_SelectedIndexChanged(object sender, EventArgs e)
@@ -1280,19 +1336,6 @@ namespace Generator.UI.WF
             }
         }
 
-        private void groupBox9_Enter_1(object sender, EventArgs e)
-        {
-        }
-
-        private void BtnContentJSCreate_Click(object sender, EventArgs e)
-        {
-            if (CbxContentJSObjectId.SelectedItem != null && CbxContentJSObjectType.SelectedItem != null)
-            {
-                var javaScript = CreateComboBoxJavaScript(CbxContentJSObjectId.SelectedItem.ToString(), CbxContentJSObjectType.SelectedItem.ToString(), TbxPropName.Text);
-                RtbxSingleJavaScript.Text = javaScript.ToString();
-            }
-        }
-
         private void BtnPathName_Click(object sender, EventArgs e)
         {
             using FolderBrowserDialog folderDlg = new FolderBrowserDialog();
@@ -1305,10 +1348,6 @@ namespace Generator.UI.WF
             }
         }
 
-        private void groupBox5_Enter(object sender, EventArgs e)
-        {
-        }
-
         private void DgwHeader_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
             LblHeaderTotal.Text = "Toplam : " + DgwHeader.Rows.Count.ToString();
@@ -1319,14 +1358,154 @@ namespace Generator.UI.WF
             LblHeaderTotal.Text = "Toplam : " + DgwHeader.Rows.Count.ToString();
         }
 
-        private void DgwComboBoxes_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        private void BtnContentJSCreate_Click(object sender, EventArgs e)
+        {
+            if (CbxContentJSObjectId.SelectedItem != null && CbxContentJSObjectType.SelectedItem != null)
+            {
+                var javaScript = CreateComboBoxJavaScript(CbxContentJSObjectId.SelectedItem.ToString(), CbxContentJSObjectType.SelectedItem.ToString(), TbxPropName.Text);
+                RtbxSingleJavaScript.Text = javaScript.ToString();
+            }
+        }
+
+        private void LoadStaticMethod(int rowIndex)
+        {
+            var jsonString = File.ReadAllText(@"../../../JsonFiles/StaticMethods.json");
+            var jsonNode = System.Text.Json.Nodes.JsonNode.Parse(jsonString);
+            var comboBoxMethod = (DataGridViewComboBoxCell)DgwComboBoxes.Rows[rowIndex].Cells[4];
+            List<string> methodList = jsonNode.AsArray().Select(p => p.AsObject()["MethodName"].ToString()).ToList();
+            comboBoxMethod.DataSource = methodList;
+            //foreach (var item in jsonNode.AsArray())
+            //{
+            //    var s = item.AsObject();
+            //    var stype = s["KeyName"];
+            //    var keyList = s[stype.ToString()];
+            //    var KeyListType = keyList.ToJsonString();
+
+            //}
+        }
+
+        private void GetStaticMethodKeyValue(int rowIndex)
+        {
+            List<string> list = new List<string>();
+            var jsonString = File.ReadAllText(@"../../../JsonFiles/StaticMethods.json");
+            var jsonNode = System.Text.Json.Nodes.JsonNode.Parse(jsonString);
+
+            var comboBoxKey = (DataGridViewComboBoxCell)DgwComboBoxes.Rows[rowIndex].Cells["KeyField"];
+            var comboBoxValue = (DataGridViewComboBoxCell)DgwComboBoxes.Rows[rowIndex].Cells["ValueField"];
+
+            var methodList = jsonNode.AsArray().Select(p => p.AsObject()["MethodName"]).ToList();
+            foreach (var node in jsonNode.AsArray())
+            {
+                var item = node.AsObject();
+                var methodName = item["MethodName"].ToString();
+                if (DgwComboBoxes.Rows[rowIndex].Cells[4].Value.ToString() == methodName)
+                {
+                    if (item["ValueName"] != null)
+                    {
+                        list.Add(item["ValueName"].ToString());
+                    }
+                    if (item["KeyName"] != null)
+                    {
+                        list.Add(item["KeyName"].ToString());
+                    }
+                    comboBoxValue.DataSource = list;
+                    if (item["ValueName"] != null)
+                    {
+                        comboBoxKey.Value = item["ValueName"].ToString();
+                    }
+                    if (item["KeyName"] != null)
+                    {
+                        comboBoxKey.Value = item["KeyName"].ToString();
+                    }
+                    return;
+
+                }
+            }
+        }
+        private Type GetTypeValueKey(string typeName)
+        {
+            if (typeName == "string")
+            {
+                return typeof(string);
+            }
+            else if (typeName == "int")
+            {
+                return typeof(int);
+            }
+            else
+            {
+                return typeof(string);
+            }
+        }
+        private void Deneme()
+        {
+            var jsonString = File.ReadAllText(@"../../../JsonFiles/StaticMethods.json");
+            var jsonNode = System.Text.Json.Nodes.JsonNode.Parse(jsonString);
+            for (int i = 0; i < DgwComboBoxes.Rows.Count - 1; i++)
+            {
+                foreach (var node in jsonNode.AsArray())
+                {
+                    var item = node.AsObject();
+
+                    if (DgwComboBoxes.Rows[i].Cells[4].Value.ToString() == item["MethodName"].ToString())
+                    {
+                        var valueTypeName = item[item["ValueType"].ToString()].ToString();
+                        var keyTypeName = item[item["KeyType"].ToString()].ToString();
+                        Type valueType = GetTypeValueKey(valueTypeName);
+                        Type keyType = GetTypeValueKey(keyTypeName);
+
+                        if (item["ValueName"] != null)
+                        {
+                            var deneme = item["ValueName"].GetType();
+                        }
+                        if (item["KeyName"] != null)
+                        {
+                            var deneme2 = item["Number"];
+                            var deneme3 = deneme2[0].GetType();
+                        }
+                        return;
+
+                    }
+                }
+            }
+
+        }
+        private void DgwComboBoxes_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
             if (DgwComboBoxes.Rows.Count > 1)
             {
                 var columnIndex = ((DataGridView)sender).CurrentCell.ColumnIndex;
                 var rowIndex = ((DataGridView)sender).CurrentCell.RowIndex;
-                if (columnIndex == 5)
+                if (columnIndex == 6)
                 {
+                    var comboBoxKey = (DataGridViewComboBoxCell)DgwComboBoxes.Rows[rowIndex].Cells["KeyField"];
+                    var comboBoxValue = (DataGridViewComboBoxCell)DgwComboBoxes.Rows[rowIndex].Cells["ValueField"];
+                    var comboBoxProfile = (DataGridViewComboBoxCell)DgwComboBoxes.Rows[rowIndex].Cells[5];
+                    DgwComboBoxes.Rows[rowIndex].Cells[4].Value = null;
+                    comboBoxProfile.Value = null;
+                    comboBoxKey.Value = null;
+                    comboBoxValue.Value = null;
+                    comboBoxKey.DataSource = null;
+                    comboBoxValue.DataSource = null;
+                    comboBoxProfile.DataSource = null;
+                    if (DgwComboBoxes.Rows[rowIndex].Cells[6].Value == null)
+                    {
+                        return;
+                    }
+
+                    var methodType = DgwComboBoxes.Rows[rowIndex].Cells[6].Value.ToString();
+                    if (methodType == "Service Method")
+                    {
+                        LoadProfiles(rowIndex);
+                    }
+                    else if (methodType == "Static Method")
+                    {
+                        LoadStaticMethod(rowIndex);
+                    }
+                }
+                else if (columnIndex == 5)
+                {
+                    if (DgwComboBoxes.Rows[rowIndex].Cells[5].Value == null) return;
                     var profileId = DgwComboBoxes.Rows[rowIndex].Cells[5].Value.ToString();
                     var comboBoxService = (DataGridViewComboBoxCell)DgwComboBoxes.Rows[rowIndex].Cells[4];
                     comboBoxService.DataSource = GetObjectIdList(profileId);
@@ -1335,38 +1514,100 @@ namespace Generator.UI.WF
 
                 else if (columnIndex == 4)
                 {
-                    var profileId = DgwComboBoxes.Rows[rowIndex].Cells[5].Value.ToString();
-                    var objectTye = GetObjectType(DgwComboBoxes.Rows[rowIndex].Cells[4].Value.ToString(), profileId);
-                    var result = ResultList(DgwComboBoxes.Rows[rowIndex].Cells[4].Value.ToString(), profileId, objectTye);
-                    var list = new List<string>();
-                    var comboBoxKey = (DataGridViewComboBoxCell)DgwComboBoxes.Rows[rowIndex].Cells["KeyField"];
-                    var comboBoxValue = (DataGridViewComboBoxCell)DgwComboBoxes.Rows[rowIndex].Cells["ValueField"];
-
-                    result.ForEach(p => { list.Add(p.Name.NameConfigure()); });
-                    comboBoxKey.DataSource = list;
-                    comboBoxValue.DataSource = list;
-
-                    if (list.Count <= 2)
-                        list.ForEach(p =>
+                    if (DgwComboBoxes.Rows[rowIndex].Cells[6].Value == null) return;
+                    if (DgwComboBoxes.Rows[rowIndex].Cells[6].Value.ToString() == "Service Method")
+                    {
+                        if (DgwComboBoxes.Rows[rowIndex].Cells[5].Value == null) return;
+                        var comboBoxKey = (DataGridViewComboBoxCell)DgwComboBoxes.Rows[rowIndex].Cells["KeyField"];
+                        var comboBoxValue = (DataGridViewComboBoxCell)DgwComboBoxes.Rows[rowIndex].Cells["ValueField"];
+                        if (DgwComboBoxes.Rows[rowIndex].Cells[4].Value.ToString() == "Hiçbiri")
                         {
-                            if (!p.ToLower().Contains("description"))
-                            {
-                                DgwComboBoxes.Rows[rowIndex].Cells[2].Value = p;
-                            }
-                            else
-                            {
-                                DgwComboBoxes.Rows[rowIndex].Cells[3].Value = p;
-                            }
-                        });
-                    else
-                        list.ForEach(p =>
-                        {
-                            if (p.ToLower().Contains("description")) DgwComboBoxes.Rows[rowIndex].Cells[3].Value = p;
+                            comboBoxKey.Value = null;
+                            comboBoxValue.Value = null;
+                            comboBoxKey.DataSource = null;
+                            comboBoxValue.DataSource = null;
+                            return;
+                        }
 
-                            if (p.ToLower().Contains("type")) DgwComboBoxes.Rows[rowIndex].Cells[2].Value = p;
-                        });
+                        var profileId = DgwComboBoxes.Rows[rowIndex].Cells[5].Value.ToString();
+                        var objectTye = GetObjectType(DgwComboBoxes.Rows[rowIndex].Cells[4].Value.ToString(), profileId);
+                        var result = ResultList(DgwComboBoxes.Rows[rowIndex].Cells[4].Value.ToString(), profileId, objectTye);
+                        var list = new List<string>();
+
+
+                        result.ForEach(p => { list.Add(p.Name.NameConfigure()); });
+                        comboBoxKey.Value = null;
+                        comboBoxValue.Value = null;
+                        comboBoxKey.DataSource = list;
+                        comboBoxValue.DataSource = list;
+
+                        if (list.Count <= 2)
+                            list.ForEach(p =>
+                            {
+                                if (!p.ToLower().Contains("description"))
+                                {
+                                    DgwComboBoxes.Rows[rowIndex].Cells[2].Value = p;
+                                }
+                                else
+                                {
+                                    DgwComboBoxes.Rows[rowIndex].Cells[3].Value = p;
+                                }
+                            });
+                        else
+                            list.ForEach(p =>
+                            {
+                                if (p.ToLower().Contains("description")) DgwComboBoxes.Rows[rowIndex].Cells[3].Value = p;
+
+                                if (p.ToLower().Contains("type")) DgwComboBoxes.Rows[rowIndex].Cells[2].Value = p;
+                            });
+                    }
+                    else if (DgwComboBoxes.Rows[rowIndex].Cells[6].Value.ToString() == "Static Method")
+                    {
+                        GetStaticMethodKeyValue(rowIndex);
+                    }
                 }
             }
+        }
+
+        private string GetCbxApplicationValue()
+        {
+            return CbxApplication.SelectedValue.GetType() == typeof(DirectoryPath) ? ((DirectoryPath)CbxApplication.SelectedValue).Path : CbxApplication.SelectedValue.ToString();
+        }
+
+        private void CbxApplication_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var path = GetCbxApplicationValue();
+            TbxPath.Text = Path.GetFullPath(path);
+            CbxFolder.Items.Clear();
+            foreach (var file in Directory.EnumerateDirectories(@path))
+            {
+                CbxFolder.Items.Add(Path.GetFileName(file));
+            }
+        }
+
+        private void CbxFolder_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            TbxPath.Text = Path.Combine(TbxPath.Text, CbxFolder.SelectedItem.ToString()!);
+        }
+
+        private void BtnPath_Click(object sender, EventArgs e)
+        {
+            using var folderBrowser = new FolderBrowserDialog();
+            folderBrowser.SelectedPath = GetCbxApplicationValue();
+            DialogResult result = folderBrowser.ShowDialog();
+            if (result == DialogResult.OK && !string.IsNullOrWhiteSpace(folderBrowser.SelectedPath))
+            {
+                TbxPath.Text = folderBrowser.SelectedPath;
+            }
+        }
+
+        private void CreateStaticMethod()
+        {
+        }
+
+        private void DgwComboBoxes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

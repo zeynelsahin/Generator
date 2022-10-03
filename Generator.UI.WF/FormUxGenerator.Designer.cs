@@ -30,29 +30,25 @@ namespace Generator.UI.WF
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle37 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle38 = new System.Windows.Forms.DataGridViewCellStyle();
             this.TabGridCreate = new System.Windows.Forms.TabPage();
             this.panel8 = new System.Windows.Forms.Panel();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
@@ -76,7 +72,6 @@ namespace Generator.UI.WF
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.BtnGetParameter = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
             this.CbxCrudMethod = new System.Windows.Forms.ComboBox();
             this.BtnClearAllCheck = new System.Windows.Forms.Button();
@@ -98,10 +93,21 @@ namespace Generator.UI.WF
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.RtbxSingleJavaScript = new System.Windows.Forms.RichTextBox();
+            this.groupBox17 = new System.Windows.Forms.GroupBox();
+            this.checkBox4 = new System.Windows.Forms.CheckBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.panel14 = new System.Windows.Forms.Panel();
+            this.label27 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label28 = new System.Windows.Forms.Label();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.label31 = new System.Windows.Forms.Label();
+            this.comboBox5 = new System.Windows.Forms.ComboBox();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
             this.checkBox6 = new System.Windows.Forms.CheckBox();
             this.label22 = new System.Windows.Forms.Label();
-            this.BtnContentJSXmlCreate = new System.Windows.Forms.Button();
             this.TbxPropName = new System.Windows.Forms.TextBox();
             this.panel11 = new System.Windows.Forms.Panel();
             this.label21 = new System.Windows.Forms.Label();
@@ -122,42 +128,36 @@ namespace Generator.UI.WF
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.DgwContent = new System.Windows.Forms.DataGridView();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Text = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TextContent = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ElementType = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.LblContextTotal = new System.Windows.Forms.Label();
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.DgwComboBoxes = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdComboBox = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TextComboBox = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.KeyField = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.ValueField = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.ObjectId = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.ProfileIdComboBox = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.MethodType = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.LblComboBoxTotal = new System.Windows.Forms.Label();
             this.tabPage7 = new System.Windows.Forms.TabPage();
             this.DgwUserControl = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdUserControl = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GetActionCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Label = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SearchPage = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label4 = new System.Windows.Forms.Label();
             this.NextPage = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewComboBoxColumn1 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.dataGridViewComboBoxColumn2 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.dataGridViewComboBoxColumn3 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.dataGridViewComboBoxColumn4 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.Modal = new System.Windows.Forms.TabPage();
             this.TabView = new System.Windows.Forms.TabPage();
             this.LblViewTotal = new System.Windows.Forms.Label();
             this.DgwView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdView = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TextView = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ElementTypeView = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.Size = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SizeView = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage8 = new System.Windows.Forms.TabPage();
             this.ResultText = new System.Windows.Forms.RichTextBox();
             this.groupBox11 = new System.Windows.Forms.GroupBox();
@@ -203,24 +203,23 @@ namespace Generator.UI.WF
             this.FileExport = new System.Windows.Forms.TabPage();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
             this.groupBox14 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label24 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.BtnPath = new System.Windows.Forms.Button();
             this.label25 = new System.Windows.Forms.Label();
             this.groupBox12 = new System.Windows.Forms.GroupBox();
             this.label26 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.CbxFolder = new System.Windows.Forms.ComboBox();
             this.label23 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.CbxApplication = new System.Windows.Forms.ComboBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.CbxOverrideWriteFile = new System.Windows.Forms.CheckBox();
             this.label5 = new System.Windows.Forms.Label();
             this.TbxPath = new System.Windows.Forms.TextBox();
             this.panel12 = new System.Windows.Forms.Panel();
             this.BtnExport = new System.Windows.Forms.Button();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
-            this.checkBox5 = new System.Windows.Forms.CheckBox();
+            this.CbxJavaScriptExport = new System.Windows.Forms.CheckBox();
+            this.CbxExportXML = new System.Windows.Forms.CheckBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.TbxPageName = new System.Windows.Forms.TextBox();
             this.panel10 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
             this.TabGridCreate.SuspendLayout();
@@ -236,6 +235,7 @@ namespace Generator.UI.WF
             this.groupBox2.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.groupBox8.SuspendLayout();
+            this.groupBox17.SuspendLayout();
             this.groupBox9.SuspendLayout();
             this.TabContent.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -247,8 +247,6 @@ namespace Generator.UI.WF
             ((System.ComponentModel.ISupportInitialize)(this.DgwComboBoxes)).BeginInit();
             this.tabPage7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgwUserControl)).BeginInit();
-            this.NextPage.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.TabView.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgwView)).BeginInit();
             this.tabPage8.SuspendLayout();
@@ -276,8 +274,9 @@ namespace Generator.UI.WF
             this.TabGridCreate.Controls.Add(this.PanelDgw);
             this.TabGridCreate.Controls.Add(this.groupBox2);
             this.TabGridCreate.Location = new System.Drawing.Point(4, 29);
+            this.TabGridCreate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TabGridCreate.Name = "TabGridCreate";
-            this.TabGridCreate.Padding = new System.Windows.Forms.Padding(3);
+            this.TabGridCreate.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TabGridCreate.Size = new System.Drawing.Size(1534, 752);
             this.TabGridCreate.TabIndex = 0;
             this.TabGridCreate.Text = "Grid Create";
@@ -287,10 +286,11 @@ namespace Generator.UI.WF
             // 
             this.panel8.Controls.Add(this.groupBox4);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel8.Location = new System.Drawing.Point(298, 489);
+            this.panel8.Location = new System.Drawing.Point(297, 487);
+            this.panel8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel8.Name = "panel8";
             this.panel8.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.panel8.Size = new System.Drawing.Size(1233, 262);
+            this.panel8.Size = new System.Drawing.Size(1234, 262);
             this.panel8.TabIndex = 367;
             // 
             // groupBox4
@@ -300,21 +300,23 @@ namespace Generator.UI.WF
             this.groupBox4.Font = new System.Drawing.Font("Century Gothic", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.groupBox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
             this.groupBox4.Location = new System.Drawing.Point(10, 0);
+            this.groupBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(1223, 262);
+            this.groupBox4.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox4.Size = new System.Drawing.Size(1224, 262);
             this.groupBox4.TabIndex = 363;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Result";
             // 
             // RtbxGrid
             // 
-            this.RtbxGrid.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
             this.RtbxGrid.BackColor = System.Drawing.Color.White;
             this.RtbxGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.RtbxGrid.Location = new System.Drawing.Point(3, 28);
+            this.RtbxGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.RtbxGrid.Location = new System.Drawing.Point(3, 27);
+            this.RtbxGrid.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.RtbxGrid.Name = "RtbxGrid";
-            this.RtbxGrid.Size = new System.Drawing.Size(1217, 231);
+            this.RtbxGrid.Size = new System.Drawing.Size(1218, 233);
             this.RtbxGrid.TabIndex = 366;
             this.RtbxGrid.Text = "";
             // 
@@ -322,10 +324,11 @@ namespace Generator.UI.WF
             // 
             this.panel2.Controls.Add(this.groupBox7);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(298, 227);
+            this.panel2.Location = new System.Drawing.Point(297, 225);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
             this.panel2.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.panel2.Size = new System.Drawing.Size(1233, 262);
+            this.panel2.Size = new System.Drawing.Size(1234, 262);
             this.panel2.TabIndex = 365;
             // 
             // groupBox7
@@ -345,12 +348,14 @@ namespace Generator.UI.WF
             this.groupBox7.Controls.Add(this.panel4);
             this.groupBox7.Controls.Add(this.CbxLinkButton);
             this.groupBox7.Controls.Add(this.label2);
-            this.groupBox7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox7.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox7.Font = new System.Drawing.Font("Century Gothic", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.groupBox7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
             this.groupBox7.Location = new System.Drawing.Point(10, 0);
+            this.groupBox7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(1223, 262);
+            this.groupBox7.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox7.Size = new System.Drawing.Size(1224, 262);
             this.groupBox7.TabIndex = 363;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Properties";
@@ -364,7 +369,8 @@ namespace Generator.UI.WF
             this.CbxActionCode.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
             this.CbxActionCode.FormattingEnabled = true;
             this.CbxActionCode.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.CbxActionCode.Location = new System.Drawing.Point(349, 87);
+            this.CbxActionCode.Location = new System.Drawing.Point(348, 88);
+            this.CbxActionCode.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CbxActionCode.Name = "CbxActionCode";
             this.CbxActionCode.Size = new System.Drawing.Size(268, 29);
             this.CbxActionCode.TabIndex = 372;
@@ -391,6 +397,7 @@ namespace Generator.UI.WF
             this.CbxStatusColor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
             this.CbxStatusColor.FormattingEnabled = true;
             this.CbxStatusColor.Location = new System.Drawing.Point(662, 85);
+            this.CbxStatusColor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CbxStatusColor.Name = "CbxStatusColor";
             this.CbxStatusColor.Size = new System.Drawing.Size(268, 29);
             this.CbxStatusColor.TabIndex = 371;
@@ -400,7 +407,8 @@ namespace Generator.UI.WF
             this.checkBox3.AutoSize = true;
             this.checkBox3.Checked = true;
             this.checkBox3.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox3.Location = new System.Drawing.Point(716, 189);
+            this.checkBox3.Location = new System.Drawing.Point(678, 189);
+            this.checkBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.checkBox3.Name = "checkBox3";
             this.checkBox3.Size = new System.Drawing.Size(151, 28);
             this.checkBox3.TabIndex = 370;
@@ -413,6 +421,7 @@ namespace Generator.UI.WF
             this.checkBox2.Checked = true;
             this.checkBox2.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox2.Location = new System.Drawing.Point(977, 189);
+            this.checkBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.checkBox2.Name = "checkBox2";
             this.checkBox2.Size = new System.Drawing.Size(142, 28);
             this.checkBox2.TabIndex = 369;
@@ -439,7 +448,7 @@ namespace Generator.UI.WF
             this.label8.Enabled = false;
             this.label8.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label8.ForeColor = System.Drawing.Color.Silver;
-            this.label8.Location = new System.Drawing.Point(349, 154);
+            this.label8.Location = new System.Drawing.Point(348, 154);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(70, 22);
             this.label8.TabIndex = 366;
@@ -451,9 +460,10 @@ namespace Generator.UI.WF
             this.TbxHeight.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TbxHeight.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.TbxHeight.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
-            this.TbxHeight.Location = new System.Drawing.Point(349, 182);
+            this.TbxHeight.Location = new System.Drawing.Point(348, 182);
+            this.TbxHeight.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TbxHeight.Name = "TbxHeight";
-            this.TbxHeight.Size = new System.Drawing.Size(268, 30);
+            this.TbxHeight.Size = new System.Drawing.Size(267, 30);
             this.TbxHeight.TabIndex = 364;
             this.TbxHeight.Text = "650";
             this.TbxHeight.WordWrap = false;
@@ -461,9 +471,10 @@ namespace Generator.UI.WF
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
-            this.panel7.Location = new System.Drawing.Point(349, 214);
+            this.panel7.Location = new System.Drawing.Point(348, 214);
+            this.panel7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(268, 3);
+            this.panel7.Size = new System.Drawing.Size(267, 2);
             this.panel7.TabIndex = 365;
             // 
             // label7
@@ -485,6 +496,7 @@ namespace Generator.UI.WF
             this.checkBox1.Checked = true;
             this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox1.Location = new System.Drawing.Point(977, 88);
+            this.checkBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(205, 28);
             this.checkBox1.TabIndex = 363;
@@ -497,9 +509,10 @@ namespace Generator.UI.WF
             this.TbxGridName.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TbxGridName.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.TbxGridName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
-            this.TbxGridName.Location = new System.Drawing.Point(21, 177);
+            this.TbxGridName.Location = new System.Drawing.Point(21, 178);
+            this.TbxGridName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TbxGridName.Name = "TbxGridName";
-            this.TbxGridName.Size = new System.Drawing.Size(268, 30);
+            this.TbxGridName.Size = new System.Drawing.Size(267, 30);
             this.TbxGridName.TabIndex = 356;
             this.TbxGridName.Text = "PermissinProfile";
             this.TbxGridName.WordWrap = false;
@@ -508,8 +521,9 @@ namespace Generator.UI.WF
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
             this.panel4.Location = new System.Drawing.Point(21, 209);
+            this.panel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(268, 3);
+            this.panel4.Size = new System.Drawing.Size(267, 2);
             this.panel4.TabIndex = 357;
             // 
             // CbxLinkButton
@@ -521,7 +535,8 @@ namespace Generator.UI.WF
             this.CbxLinkButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
             this.CbxLinkButton.FormattingEnabled = true;
             this.CbxLinkButton.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.CbxLinkButton.Location = new System.Drawing.Point(21, 87);
+            this.CbxLinkButton.Location = new System.Drawing.Point(21, 88);
+            this.CbxLinkButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CbxLinkButton.Name = "CbxLinkButton";
             this.CbxLinkButton.Size = new System.Drawing.Size(268, 29);
             this.CbxLinkButton.TabIndex = 360;
@@ -543,45 +558,31 @@ namespace Generator.UI.WF
             // 
             this.panel1.Controls.Add(this.groupBox6);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(298, 116);
+            this.panel1.Location = new System.Drawing.Point(297, 114);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.panel1.Size = new System.Drawing.Size(1233, 111);
+            this.panel1.Size = new System.Drawing.Size(1234, 111);
             this.panel1.TabIndex = 364;
             // 
             // groupBox6
             // 
-            this.groupBox6.Controls.Add(this.BtnGetParameter);
             this.groupBox6.Controls.Add(this.label12);
             this.groupBox6.Controls.Add(this.CbxCrudMethod);
             this.groupBox6.Controls.Add(this.BtnClearAllCheck);
             this.groupBox6.Controls.Add(this.BtnRemoveCheck);
             this.groupBox6.Controls.Add(this.BtnCheckAll);
-            this.groupBox6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox6.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox6.Font = new System.Drawing.Font("Century Gothic", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.groupBox6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
             this.groupBox6.Location = new System.Drawing.Point(10, 0);
+            this.groupBox6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(1223, 111);
+            this.groupBox6.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox6.Size = new System.Drawing.Size(1224, 111);
             this.groupBox6.TabIndex = 363;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Utilities";
-            // 
-            // BtnGetParameter
-            // 
-            this.BtnGetParameter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BtnGetParameter.BackColor = System.Drawing.Color.Transparent;
-            this.BtnGetParameter.FlatAppearance.BorderSize = 3;
-            this.BtnGetParameter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnGetParameter.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.BtnGetParameter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
-            this.BtnGetParameter.Location = new System.Drawing.Point(873, 40);
-            this.BtnGetParameter.Name = "BtnGetParameter";
-            this.BtnGetParameter.Size = new System.Drawing.Size(150, 42);
-            this.BtnGetParameter.TabIndex = 366;
-            this.BtnGetParameter.Text = "Parameter Get";
-            this.BtnGetParameter.UseVisualStyleBackColor = false;
-            this.BtnGetParameter.Click += new System.EventHandler(this.BtnGetParameter_Click);
             // 
             // label12
             // 
@@ -603,7 +604,8 @@ namespace Generator.UI.WF
             this.CbxCrudMethod.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.CbxCrudMethod.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
             this.CbxCrudMethod.FormattingEnabled = true;
-            this.CbxCrudMethod.Location = new System.Drawing.Point(496, 53);
+            this.CbxCrudMethod.Location = new System.Drawing.Point(496, 52);
+            this.CbxCrudMethod.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CbxCrudMethod.Name = "CbxCrudMethod";
             this.CbxCrudMethod.Size = new System.Drawing.Size(354, 29);
             this.CbxCrudMethod.TabIndex = 364;
@@ -615,6 +617,7 @@ namespace Generator.UI.WF
             this.BtnClearAllCheck.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.BtnClearAllCheck.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.BtnClearAllCheck.Location = new System.Drawing.Point(21, 40);
+            this.BtnClearAllCheck.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BtnClearAllCheck.Name = "BtnClearAllCheck";
             this.BtnClearAllCheck.Size = new System.Drawing.Size(149, 42);
             this.BtnClearAllCheck.TabIndex = 355;
@@ -628,9 +631,10 @@ namespace Generator.UI.WF
             this.BtnRemoveCheck.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnRemoveCheck.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.BtnRemoveCheck.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.BtnRemoveCheck.Location = new System.Drawing.Point(313, 40);
+            this.BtnRemoveCheck.Location = new System.Drawing.Point(312, 40);
+            this.BtnRemoveCheck.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BtnRemoveCheck.Name = "BtnRemoveCheck";
-            this.BtnRemoveCheck.Size = new System.Drawing.Size(146, 42);
+            this.BtnRemoveCheck.Size = new System.Drawing.Size(147, 42);
             this.BtnRemoveCheck.TabIndex = 362;
             this.BtnRemoveCheck.Text = "Remove Check";
             this.BtnRemoveCheck.UseVisualStyleBackColor = true;
@@ -643,8 +647,9 @@ namespace Generator.UI.WF
             this.BtnCheckAll.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.BtnCheckAll.ForeColor = System.Drawing.Color.Blue;
             this.BtnCheckAll.Location = new System.Drawing.Point(189, 40);
+            this.BtnCheckAll.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BtnCheckAll.Name = "BtnCheckAll";
-            this.BtnCheckAll.Size = new System.Drawing.Size(106, 42);
+            this.BtnCheckAll.Size = new System.Drawing.Size(105, 42);
             this.BtnCheckAll.TabIndex = 356;
             this.BtnCheckAll.Text = "All Check";
             this.BtnCheckAll.UseVisualStyleBackColor = true;
@@ -656,9 +661,11 @@ namespace Generator.UI.WF
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Left;
             this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
-            this.groupBox1.Location = new System.Drawing.Point(3, 116);
+            this.groupBox1.Location = new System.Drawing.Point(3, 114);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(295, 633);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox1.Size = new System.Drawing.Size(294, 636);
             this.groupBox1.TabIndex = 336;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Table Column Names";
@@ -672,20 +679,18 @@ namespace Generator.UI.WF
             this.ClbColumnNames.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
             this.ClbColumnNames.FormattingEnabled = true;
             this.ClbColumnNames.HorizontalScrollbar = true;
-            this.ClbColumnNames.Items.AddRange(new object[] {
-            "Deneme",
-            "Deneme",
-            "Deneme"});
-            this.ClbColumnNames.Location = new System.Drawing.Point(3, 28);
+            this.ClbColumnNames.Location = new System.Drawing.Point(3, 27);
+            this.ClbColumnNames.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ClbColumnNames.Name = "ClbColumnNames";
-            this.ClbColumnNames.Size = new System.Drawing.Size(289, 602);
+            this.ClbColumnNames.Size = new System.Drawing.Size(288, 607);
             this.ClbColumnNames.TabIndex = 324;
             // 
             // PanelDgw
             // 
             this.PanelDgw.Controls.Add(this.DgwObject);
             this.PanelDgw.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PanelDgw.Location = new System.Drawing.Point(3, 116);
+            this.PanelDgw.Location = new System.Drawing.Point(3, 114);
+            this.PanelDgw.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PanelDgw.Name = "PanelDgw";
             this.PanelDgw.Size = new System.Drawing.Size(1528, 0);
             this.PanelDgw.TabIndex = 338;
@@ -699,33 +704,34 @@ namespace Generator.UI.WF
             this.DgwObject.BackgroundColor = System.Drawing.Color.White;
             this.DgwObject.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DgwObject.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle1.NullValue = null;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DgwObject.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle20.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle20.NullValue = null;
+            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DgwObject.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle20;
             this.DgwObject.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(231)))), ((int)(((byte)(228)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DgwObject.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle21.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle21.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
+            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(231)))), ((int)(((byte)(228)))));
+            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DgwObject.DefaultCellStyle = dataGridViewCellStyle21;
             this.DgwObject.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DgwObject.Location = new System.Drawing.Point(0, 0);
+            this.DgwObject.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DgwObject.Name = "DgwObject";
             this.DgwObject.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgwObject.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
+            dataGridViewCellStyle22.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle22.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgwObject.RowHeadersDefaultCellStyle = dataGridViewCellStyle22;
             this.DgwObject.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DgwObject.Size = new System.Drawing.Size(1528, 0);
             this.DgwObject.TabIndex = 2;
@@ -744,13 +750,14 @@ namespace Generator.UI.WF
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox2.Font = new System.Drawing.Font("Century Gothic", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.groupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
-            this.groupBox2.Location = new System.Drawing.Point(3, 3);
+            this.groupBox2.Location = new System.Drawing.Point(3, 2);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1528, 113);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox2.Size = new System.Drawing.Size(1528, 112);
             this.groupBox2.TabIndex = 337;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Search Table";
-            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // label3
             // 
@@ -759,7 +766,7 @@ namespace Generator.UI.WF
             this.label3.Enabled = false;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.Color.Silver;
-            this.label3.Location = new System.Drawing.Point(799, 37);
+            this.label3.Location = new System.Drawing.Point(798, 38);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(123, 23);
             this.label3.TabIndex = 326;
@@ -773,7 +780,8 @@ namespace Generator.UI.WF
             this.BtnGridCreate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnGridCreate.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.BtnGridCreate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
-            this.BtnGridCreate.Location = new System.Drawing.Point(1178, 49);
+            this.BtnGridCreate.Location = new System.Drawing.Point(1180, 49);
+            this.BtnGridCreate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BtnGridCreate.Name = "BtnGridCreate";
             this.BtnGridCreate.Size = new System.Drawing.Size(150, 42);
             this.BtnGridCreate.TabIndex = 357;
@@ -789,9 +797,10 @@ namespace Generator.UI.WF
             this.BtnJavaScriptCreate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnJavaScriptCreate.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.BtnJavaScriptCreate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
-            this.BtnJavaScriptCreate.Location = new System.Drawing.Point(1344, 49);
+            this.BtnJavaScriptCreate.Location = new System.Drawing.Point(1346, 49);
+            this.BtnJavaScriptCreate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BtnJavaScriptCreate.Name = "BtnJavaScriptCreate";
-            this.BtnJavaScriptCreate.Size = new System.Drawing.Size(178, 42);
+            this.BtnJavaScriptCreate.Size = new System.Drawing.Size(177, 42);
             this.BtnJavaScriptCreate.TabIndex = 363;
             this.BtnJavaScriptCreate.Text = "JavaScript Create";
             this.BtnJavaScriptCreate.UseVisualStyleBackColor = false;
@@ -810,6 +819,7 @@ namespace Generator.UI.WF
             "CUSTOMSQL",
             "SEQUENCE"});
             this.CbxObjectType.Location = new System.Drawing.Point(801, 62);
+            this.CbxObjectType.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CbxObjectType.Name = "CbxObjectType";
             this.CbxObjectType.Size = new System.Drawing.Size(354, 29);
             this.CbxObjectType.TabIndex = 325;
@@ -824,6 +834,7 @@ namespace Generator.UI.WF
             this.CbxObjectId.FormattingEnabled = true;
             this.CbxObjectId.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.CbxObjectId.Location = new System.Drawing.Point(410, 62);
+            this.CbxObjectId.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CbxObjectId.Name = "CbxObjectId";
             this.CbxObjectId.Size = new System.Drawing.Size(354, 29);
             this.CbxObjectId.TabIndex = 319;
@@ -836,7 +847,7 @@ namespace Generator.UI.WF
             this.label10.Enabled = false;
             this.label10.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label10.ForeColor = System.Drawing.Color.Silver;
-            this.label10.Location = new System.Drawing.Point(408, 37);
+            this.label10.Location = new System.Drawing.Point(408, 38);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(97, 23);
             this.label10.TabIndex = 320;
@@ -849,7 +860,7 @@ namespace Generator.UI.WF
             this.label1.Enabled = false;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.Silver;
-            this.label1.Location = new System.Drawing.Point(29, 37);
+            this.label1.Location = new System.Drawing.Point(30, 38);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(89, 23);
             this.label1.TabIndex = 322;
@@ -868,6 +879,7 @@ namespace Generator.UI.WF
             "MerchantBackoffice",
             "ISS_PRM"});
             this.CbxProfileId.Location = new System.Drawing.Point(31, 62);
+            this.CbxProfileId.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CbxProfileId.Name = "CbxProfileId";
             this.CbxProfileId.Size = new System.Drawing.Size(354, 29);
             this.CbxProfileId.TabIndex = 321;
@@ -876,13 +888,15 @@ namespace Generator.UI.WF
             // tabPage4
             // 
             this.tabPage4.Controls.Add(this.groupBox8);
+            this.tabPage4.Controls.Add(this.groupBox17);
             this.tabPage4.Controls.Add(this.groupBox9);
             this.tabPage4.Location = new System.Drawing.Point(4, 29);
+            this.tabPage4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage4.Size = new System.Drawing.Size(1534, 752);
             this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "Content JavaScript";
+            this.tabPage4.Text = "One Service";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
             // groupBox8
@@ -891,10 +905,11 @@ namespace Generator.UI.WF
             this.groupBox8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox8.Font = new System.Drawing.Font("Century Gothic", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.groupBox8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
-            this.groupBox8.Location = new System.Drawing.Point(3, 202);
+            this.groupBox8.Location = new System.Drawing.Point(3, 400);
+            this.groupBox8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox8.Name = "groupBox8";
             this.groupBox8.Padding = new System.Windows.Forms.Padding(35);
-            this.groupBox8.Size = new System.Drawing.Size(1528, 547);
+            this.groupBox8.Size = new System.Drawing.Size(1528, 350);
             this.groupBox8.TabIndex = 374;
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Result";
@@ -905,16 +920,197 @@ namespace Generator.UI.WF
             this.RtbxSingleJavaScript.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.RtbxSingleJavaScript.Dock = System.Windows.Forms.DockStyle.Fill;
             this.RtbxSingleJavaScript.Location = new System.Drawing.Point(35, 60);
+            this.RtbxSingleJavaScript.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.RtbxSingleJavaScript.Name = "RtbxSingleJavaScript";
-            this.RtbxSingleJavaScript.Size = new System.Drawing.Size(1458, 452);
+            this.RtbxSingleJavaScript.Size = new System.Drawing.Size(1458, 255);
             this.RtbxSingleJavaScript.TabIndex = 366;
             this.RtbxSingleJavaScript.Text = "";
+            // 
+            // groupBox17
+            // 
+            this.groupBox17.Controls.Add(this.checkBox4);
+            this.groupBox17.Controls.Add(this.label24);
+            this.groupBox17.Controls.Add(this.textBox1);
+            this.groupBox17.Controls.Add(this.panel14);
+            this.groupBox17.Controls.Add(this.label27);
+            this.groupBox17.Controls.Add(this.comboBox1);
+            this.groupBox17.Controls.Add(this.label28);
+            this.groupBox17.Controls.Add(this.comboBox2);
+            this.groupBox17.Controls.Add(this.button2);
+            this.groupBox17.Controls.Add(this.label31);
+            this.groupBox17.Controls.Add(this.comboBox5);
+            this.groupBox17.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupBox17.Font = new System.Drawing.Font("Century Gothic", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.groupBox17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
+            this.groupBox17.Location = new System.Drawing.Point(3, 201);
+            this.groupBox17.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox17.Name = "groupBox17";
+            this.groupBox17.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox17.Size = new System.Drawing.Size(1528, 199);
+            this.groupBox17.TabIndex = 375;
+            this.groupBox17.TabStop = false;
+            this.groupBox17.Text = "Static Values JavaScript";
+            // 
+            // checkBox4
+            // 
+            this.checkBox4.AutoSize = true;
+            this.checkBox4.Checked = true;
+            this.checkBox4.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox4.Location = new System.Drawing.Point(410, 145);
+            this.checkBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.checkBox4.Name = "checkBox4";
+            this.checkBox4.Size = new System.Drawing.Size(145, 28);
+            this.checkBox4.TabIndex = 373;
+            this.checkBox4.Text = "Parameters";
+            this.checkBox4.UseVisualStyleBackColor = true;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.BackColor = System.Drawing.Color.Transparent;
+            this.label24.Enabled = false;
+            this.label24.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label24.ForeColor = System.Drawing.Color.Silver;
+            this.label24.Location = new System.Drawing.Point(30, 110);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(113, 22);
+            this.label24.TabIndex = 372;
+            this.label24.Text = "Prop Name";
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.White;
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox1.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
+            this.textBox1.Location = new System.Drawing.Point(30, 138);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(356, 30);
+            this.textBox1.TabIndex = 370;
+            this.textBox1.WordWrap = false;
+            // 
+            // panel14
+            // 
+            this.panel14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
+            this.panel14.Location = new System.Drawing.Point(30, 170);
+            this.panel14.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel14.Name = "panel14";
+            this.panel14.Size = new System.Drawing.Size(356, 2);
+            this.panel14.TabIndex = 371;
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.BackColor = System.Drawing.Color.Transparent;
+            this.label27.Enabled = false;
+            this.label27.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label27.ForeColor = System.Drawing.Color.Silver;
+            this.label27.Location = new System.Drawing.Point(787, 38);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(113, 23);
+            this.label27.TabIndex = 369;
+            this.label27.Text = "Value Field";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(231)))), ((int)(((byte)(228)))));
+            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBox1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.comboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Hiçbiri",
+            "Tümü",
+            "MerchantBackoffice",
+            "ISS_PRM"});
+            this.comboBox1.Location = new System.Drawing.Point(789, 62);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(354, 29);
+            this.comboBox1.TabIndex = 368;
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.BackColor = System.Drawing.Color.Transparent;
+            this.label28.Enabled = false;
+            this.label28.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label28.ForeColor = System.Drawing.Color.Silver;
+            this.label28.Location = new System.Drawing.Point(408, 38);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(94, 23);
+            this.label28.TabIndex = 367;
+            this.label28.Text = "Key Field";
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(231)))), ((int)(((byte)(228)))));
+            this.comboBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBox2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.comboBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "Hiçbiri",
+            "Tümü",
+            "MerchantBackoffice",
+            "ISS_PRM"});
+            this.comboBox2.Location = new System.Drawing.Point(410, 62);
+            this.comboBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(354, 29);
+            this.comboBox2.TabIndex = 366;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.Transparent;
+            this.button2.FlatAppearance.BorderSize = 3;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
+            this.button2.Location = new System.Drawing.Point(1327, 56);
+            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(175, 39);
+            this.button2.TabIndex = 363;
+            this.button2.Text = "JavaScript Create";
+            this.button2.UseVisualStyleBackColor = false;
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.BackColor = System.Drawing.Color.Transparent;
+            this.label31.Enabled = false;
+            this.label31.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label31.ForeColor = System.Drawing.Color.Silver;
+            this.label31.Location = new System.Drawing.Point(30, 38);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(89, 23);
+            this.label31.TabIndex = 322;
+            this.label31.Text = "Profile Id";
+            // 
+            // comboBox5
+            // 
+            this.comboBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(231)))), ((int)(((byte)(228)))));
+            this.comboBox5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBox5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.comboBox5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
+            this.comboBox5.FormattingEnabled = true;
+            this.comboBox5.Items.AddRange(new object[] {
+            "Hiçbiri",
+            "Tümü",
+            "MerchantBackoffice",
+            "ISS_PRM"});
+            this.comboBox5.Location = new System.Drawing.Point(31, 62);
+            this.comboBox5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.comboBox5.Name = "comboBox5";
+            this.comboBox5.Size = new System.Drawing.Size(354, 29);
+            this.comboBox5.TabIndex = 321;
             // 
             // groupBox9
             // 
             this.groupBox9.Controls.Add(this.checkBox6);
             this.groupBox9.Controls.Add(this.label22);
-            this.groupBox9.Controls.Add(this.BtnContentJSXmlCreate);
             this.groupBox9.Controls.Add(this.TbxPropName);
             this.groupBox9.Controls.Add(this.panel11);
             this.groupBox9.Controls.Add(this.label21);
@@ -931,20 +1127,22 @@ namespace Generator.UI.WF
             this.groupBox9.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox9.Font = new System.Drawing.Font("Century Gothic", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.groupBox9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
-            this.groupBox9.Location = new System.Drawing.Point(3, 3);
+            this.groupBox9.Location = new System.Drawing.Point(3, 2);
+            this.groupBox9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox9.Name = "groupBox9";
+            this.groupBox9.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox9.Size = new System.Drawing.Size(1528, 199);
             this.groupBox9.TabIndex = 370;
             this.groupBox9.TabStop = false;
-            this.groupBox9.Text = "Search For JavaScript";
-            this.groupBox9.Enter += new System.EventHandler(this.groupBox9_Enter_1);
+            this.groupBox9.Text = "Service JavaScript";
             // 
             // checkBox6
             // 
             this.checkBox6.AutoSize = true;
             this.checkBox6.Checked = true;
             this.checkBox6.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox6.Location = new System.Drawing.Point(1109, 140);
+            this.checkBox6.Location = new System.Drawing.Point(1327, 140);
+            this.checkBox6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.checkBox6.Name = "checkBox6";
             this.checkBox6.Size = new System.Drawing.Size(145, 28);
             this.checkBox6.TabIndex = 373;
@@ -958,25 +1156,11 @@ namespace Generator.UI.WF
             this.label22.Enabled = false;
             this.label22.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label22.ForeColor = System.Drawing.Color.Silver;
-            this.label22.Location = new System.Drawing.Point(799, 105);
+            this.label22.Location = new System.Drawing.Point(798, 105);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(113, 22);
             this.label22.TabIndex = 372;
             this.label22.Text = "Prop Name";
-            // 
-            // BtnContentJSXmlCreate
-            // 
-            this.BtnContentJSXmlCreate.BackColor = System.Drawing.Color.Transparent;
-            this.BtnContentJSXmlCreate.FlatAppearance.BorderSize = 3;
-            this.BtnContentJSXmlCreate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnContentJSXmlCreate.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.BtnContentJSXmlCreate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
-            this.BtnContentJSXmlCreate.Location = new System.Drawing.Point(1327, 129);
-            this.BtnContentJSXmlCreate.Name = "BtnContentJSXmlCreate";
-            this.BtnContentJSXmlCreate.Size = new System.Drawing.Size(175, 39);
-            this.BtnContentJSXmlCreate.TabIndex = 357;
-            this.BtnContentJSXmlCreate.Text = "XML Create";
-            this.BtnContentJSXmlCreate.UseVisualStyleBackColor = false;
             // 
             // TbxPropName
             // 
@@ -984,19 +1168,20 @@ namespace Generator.UI.WF
             this.TbxPropName.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TbxPropName.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.TbxPropName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
-            this.TbxPropName.Location = new System.Drawing.Point(799, 133);
+            this.TbxPropName.Location = new System.Drawing.Point(798, 132);
+            this.TbxPropName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TbxPropName.Name = "TbxPropName";
-            this.TbxPropName.Size = new System.Drawing.Size(268, 30);
+            this.TbxPropName.Size = new System.Drawing.Size(356, 30);
             this.TbxPropName.TabIndex = 370;
-            this.TbxPropName.Text = "650";
             this.TbxPropName.WordWrap = false;
             // 
             // panel11
             // 
             this.panel11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
-            this.panel11.Location = new System.Drawing.Point(799, 165);
+            this.panel11.Location = new System.Drawing.Point(798, 165);
+            this.panel11.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(268, 3);
+            this.panel11.Size = new System.Drawing.Size(356, 2);
             this.panel11.TabIndex = 371;
             // 
             // label21
@@ -1006,7 +1191,7 @@ namespace Generator.UI.WF
             this.label21.Enabled = false;
             this.label21.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label21.ForeColor = System.Drawing.Color.Silver;
-            this.label21.Location = new System.Drawing.Point(408, 113);
+            this.label21.Location = new System.Drawing.Point(408, 112);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(113, 23);
             this.label21.TabIndex = 369;
@@ -1025,6 +1210,7 @@ namespace Generator.UI.WF
             "MerchantBackoffice",
             "ISS_PRM"});
             this.CbxValueField.Location = new System.Drawing.Point(410, 138);
+            this.CbxValueField.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CbxValueField.Name = "CbxValueField";
             this.CbxValueField.Size = new System.Drawing.Size(354, 29);
             this.CbxValueField.TabIndex = 368;
@@ -1036,7 +1222,7 @@ namespace Generator.UI.WF
             this.label14.Enabled = false;
             this.label14.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label14.ForeColor = System.Drawing.Color.Silver;
-            this.label14.Location = new System.Drawing.Point(29, 113);
+            this.label14.Location = new System.Drawing.Point(30, 112);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(94, 23);
             this.label14.TabIndex = 367;
@@ -1055,6 +1241,7 @@ namespace Generator.UI.WF
             "MerchantBackoffice",
             "ISS_PRM"});
             this.CbxKeyField.Location = new System.Drawing.Point(31, 138);
+            this.CbxKeyField.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CbxKeyField.Name = "CbxKeyField";
             this.CbxKeyField.Size = new System.Drawing.Size(354, 29);
             this.CbxKeyField.TabIndex = 366;
@@ -1067,6 +1254,7 @@ namespace Generator.UI.WF
             this.BtnContentJSCreate.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.BtnContentJSCreate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
             this.BtnContentJSCreate.Location = new System.Drawing.Point(1327, 56);
+            this.BtnContentJSCreate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BtnContentJSCreate.Name = "BtnContentJSCreate";
             this.BtnContentJSCreate.Size = new System.Drawing.Size(175, 39);
             this.BtnContentJSCreate.TabIndex = 363;
@@ -1081,7 +1269,7 @@ namespace Generator.UI.WF
             this.label13.Enabled = false;
             this.label13.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label13.ForeColor = System.Drawing.Color.Silver;
-            this.label13.Location = new System.Drawing.Point(799, 37);
+            this.label13.Location = new System.Drawing.Point(798, 38);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(123, 23);
             this.label13.TabIndex = 326;
@@ -1100,6 +1288,7 @@ namespace Generator.UI.WF
             "CUSTOMSQL",
             "SEQUENCE"});
             this.CbxContentJSObjectType.Location = new System.Drawing.Point(801, 62);
+            this.CbxContentJSObjectType.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CbxContentJSObjectType.Name = "CbxContentJSObjectType";
             this.CbxContentJSObjectType.Size = new System.Drawing.Size(354, 29);
             this.CbxContentJSObjectType.TabIndex = 325;
@@ -1114,6 +1303,7 @@ namespace Generator.UI.WF
             this.CbxContentJSObjectId.FormattingEnabled = true;
             this.CbxContentJSObjectId.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.CbxContentJSObjectId.Location = new System.Drawing.Point(410, 62);
+            this.CbxContentJSObjectId.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CbxContentJSObjectId.Name = "CbxContentJSObjectId";
             this.CbxContentJSObjectId.Size = new System.Drawing.Size(354, 29);
             this.CbxContentJSObjectId.TabIndex = 319;
@@ -1126,7 +1316,7 @@ namespace Generator.UI.WF
             this.label16.Enabled = false;
             this.label16.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label16.ForeColor = System.Drawing.Color.Silver;
-            this.label16.Location = new System.Drawing.Point(408, 37);
+            this.label16.Location = new System.Drawing.Point(408, 38);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(97, 23);
             this.label16.TabIndex = 320;
@@ -1139,7 +1329,7 @@ namespace Generator.UI.WF
             this.label20.Enabled = false;
             this.label20.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label20.ForeColor = System.Drawing.Color.Silver;
-            this.label20.Location = new System.Drawing.Point(29, 37);
+            this.label20.Location = new System.Drawing.Point(30, 38);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(89, 23);
             this.label20.TabIndex = 322;
@@ -1158,6 +1348,7 @@ namespace Generator.UI.WF
             "MerchantBackoffice",
             "ISS_PRM"});
             this.CbxContentJSProfileId.Location = new System.Drawing.Point(31, 62);
+            this.CbxContentJSProfileId.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CbxContentJSProfileId.Name = "CbxContentJSProfileId";
             this.CbxContentJSProfileId.Size = new System.Drawing.Size(354, 29);
             this.CbxContentJSProfileId.TabIndex = 321;
@@ -1168,8 +1359,9 @@ namespace Generator.UI.WF
             this.TabContent.Controls.Add(this.panel5);
             this.TabContent.Controls.Add(this.groupBox11);
             this.TabContent.Location = new System.Drawing.Point(4, 29);
+            this.TabContent.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TabContent.Name = "TabContent";
-            this.TabContent.Padding = new System.Windows.Forms.Padding(3);
+            this.TabContent.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TabContent.Size = new System.Drawing.Size(1534, 752);
             this.TabContent.TabIndex = 2;
             this.TabContent.Text = "Content";
@@ -1179,10 +1371,11 @@ namespace Generator.UI.WF
             // 
             this.panel5.Controls.Add(this.GbxResult);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel5.Location = new System.Drawing.Point(3, 116);
+            this.panel5.Location = new System.Drawing.Point(3, 114);
+            this.panel5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel5.Name = "panel5";
             this.panel5.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.panel5.Size = new System.Drawing.Size(1528, 633);
+            this.panel5.Size = new System.Drawing.Size(1528, 636);
             this.panel5.TabIndex = 372;
             // 
             // GbxResult
@@ -1192,8 +1385,10 @@ namespace Generator.UI.WF
             this.GbxResult.Font = new System.Drawing.Font("Century Gothic", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.GbxResult.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
             this.GbxResult.Location = new System.Drawing.Point(10, 0);
+            this.GbxResult.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.GbxResult.Name = "GbxResult";
-            this.GbxResult.Size = new System.Drawing.Size(1518, 633);
+            this.GbxResult.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.GbxResult.Size = new System.Drawing.Size(1518, 636);
             this.GbxResult.TabIndex = 363;
             this.GbxResult.TabStop = false;
             this.GbxResult.Text = "Result";
@@ -1208,10 +1403,11 @@ namespace Generator.UI.WF
             this.TabElement.Controls.Add(this.TabView);
             this.TabElement.Controls.Add(this.tabPage8);
             this.TabElement.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TabElement.Location = new System.Drawing.Point(3, 28);
+            this.TabElement.Location = new System.Drawing.Point(3, 27);
+            this.TabElement.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TabElement.Name = "TabElement";
             this.TabElement.SelectedIndex = 0;
-            this.TabElement.Size = new System.Drawing.Size(1512, 602);
+            this.TabElement.Size = new System.Drawing.Size(1512, 607);
             this.TabElement.TabIndex = 0;
             this.TabElement.SelectedIndexChanged += new System.EventHandler(this.TabElement_SelectedIndexChanged);
             this.TabElement.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TabElement_KeyDown);
@@ -1221,9 +1417,10 @@ namespace Generator.UI.WF
             this.tabPage5.Controls.Add(this.DgwContent);
             this.tabPage5.Controls.Add(this.LblContextTotal);
             this.tabPage5.Location = new System.Drawing.Point(4, 32);
+            this.tabPage5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(1504, 566);
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabPage5.Size = new System.Drawing.Size(1504, 571);
             this.tabPage5.TabIndex = 0;
             this.tabPage5.Text = "Context";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -1236,38 +1433,39 @@ namespace Generator.UI.WF
             this.DgwContent.BackgroundColor = System.Drawing.Color.White;
             this.DgwContent.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DgwContent.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle4.NullValue = null;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DgwContent.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle30.Font = new System.Drawing.Font("Century Gothic", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle30.NullValue = null;
+            dataGridViewCellStyle30.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle30.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle30.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DgwContent.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle30;
             this.DgwContent.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgwContent.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
-            this.Text,
+            this.TextContent,
             this.ElementType});
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(231)))), ((int)(((byte)(228)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DgwContent.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle31.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle31.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle31.Font = new System.Drawing.Font("Century Gothic", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle31.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
+            dataGridViewCellStyle31.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(231)))), ((int)(((byte)(228)))));
+            dataGridViewCellStyle31.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle31.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DgwContent.DefaultCellStyle = dataGridViewCellStyle31;
             this.DgwContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DgwContent.Location = new System.Drawing.Point(3, 3);
+            this.DgwContent.Location = new System.Drawing.Point(3, 2);
+            this.DgwContent.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DgwContent.Name = "DgwContent";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgwContent.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle32.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
+            dataGridViewCellStyle32.Font = new System.Drawing.Font("Century Gothic", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle32.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle32.SelectionBackColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle32.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle32.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgwContent.RowHeadersDefaultCellStyle = dataGridViewCellStyle32;
             this.DgwContent.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DgwContent.Size = new System.Drawing.Size(1498, 530);
+            this.DgwContent.Size = new System.Drawing.Size(1498, 537);
             this.DgwContent.TabIndex = 271;
             this.DgwContent.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.DgwContent_RowsAdded);
             this.DgwContent.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.DgwContent_RowsRemoved);
@@ -1279,14 +1477,15 @@ namespace Generator.UI.WF
             this.Id.HeaderText = "Id";
             this.Id.Name = "Id";
             // 
-            // Text
+            // TextContent
             // 
-            this.Text.DataPropertyName = "Text";
-            this.Text.HeaderText = "Text";
-            this.Text.Name = "Text";
+            this.TextContent.DataPropertyName = "TextContent";
+            this.TextContent.HeaderText = "Text";
+            this.TextContent.Name = "TextContent";
             // 
             // ElementType
             // 
+            this.ElementType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ElementType.HeaderText = "Element Type";
             this.ElementType.Name = "ElementType";
             // 
@@ -1296,7 +1495,7 @@ namespace Generator.UI.WF
             this.LblContextTotal.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.LblContextTotal.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.LblContextTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
-            this.LblContextTotal.Location = new System.Drawing.Point(3, 533);
+            this.LblContextTotal.Location = new System.Drawing.Point(3, 539);
             this.LblContextTotal.Name = "LblContextTotal";
             this.LblContextTotal.Size = new System.Drawing.Size(109, 30);
             this.LblContextTotal.TabIndex = 270;
@@ -1307,106 +1506,113 @@ namespace Generator.UI.WF
             this.tabPage6.Controls.Add(this.DgwComboBoxes);
             this.tabPage6.Controls.Add(this.LblComboBoxTotal);
             this.tabPage6.Location = new System.Drawing.Point(4, 32);
+            this.tabPage6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(1504, 566);
+            this.tabPage6.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabPage6.Size = new System.Drawing.Size(1504, 571);
             this.tabPage6.TabIndex = 1;
             this.tabPage6.Text = "ComboBox";
             this.tabPage6.UseVisualStyleBackColor = true;
             // 
             // DgwComboBoxes
             // 
+            this.DgwComboBoxes.AllowUserToOrderColumns = true;
+            this.DgwComboBoxes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DgwComboBoxes.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.DgwComboBoxes.BackgroundColor = System.Drawing.Color.White;
             this.DgwComboBoxes.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DgwComboBoxes.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Century Gothic", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle7.NullValue = null;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DgwComboBoxes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle23.Font = new System.Drawing.Font("Century Gothic", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle23.NullValue = null;
+            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DgwComboBoxes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle23;
             this.DgwComboBoxes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgwComboBoxes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
+            this.IdComboBox,
+            this.TextComboBox,
             this.KeyField,
             this.ValueField,
             this.ObjectId,
-            this.ProfileIdComboBox});
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Century Gothic", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(231)))), ((int)(((byte)(228)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DgwComboBoxes.DefaultCellStyle = dataGridViewCellStyle9;
+            this.ProfileIdComboBox,
+            this.MethodType});
+            dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle25.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle25.Font = new System.Drawing.Font("Century Gothic", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle25.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
+            dataGridViewCellStyle25.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(231)))), ((int)(((byte)(228)))));
+            dataGridViewCellStyle25.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle25.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DgwComboBoxes.DefaultCellStyle = dataGridViewCellStyle25;
             this.DgwComboBoxes.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DgwComboBoxes.Location = new System.Drawing.Point(3, 3);
+            this.DgwComboBoxes.Location = new System.Drawing.Point(3, 2);
+            this.DgwComboBoxes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DgwComboBoxes.Name = "DgwComboBoxes";
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Century Gothic", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgwComboBoxes.RowHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle26.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
+            dataGridViewCellStyle26.Font = new System.Drawing.Font("Century Gothic", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle26.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle26.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgwComboBoxes.RowHeadersDefaultCellStyle = dataGridViewCellStyle26;
             this.DgwComboBoxes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DgwComboBoxes.Size = new System.Drawing.Size(1498, 530);
+            this.DgwComboBoxes.Size = new System.Drawing.Size(1498, 537);
             this.DgwComboBoxes.TabIndex = 270;
-            this.DgwComboBoxes.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgwComboBoxes_CellValueChanged);
+            this.DgwComboBoxes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgwComboBoxes_CellContentClick);
+            this.DgwComboBoxes.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgwComboBoxes_CellEndEdit);
             this.DgwComboBoxes.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.DgwComboBoxes_RowsAdded);
             this.DgwComboBoxes.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.DgwComboBoxes_RowsRemoved);
             // 
-            // dataGridViewTextBoxColumn1
+            // IdComboBox
             // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "Id";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Id";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Width = 243;
+            this.IdComboBox.DataPropertyName = "IdComboBox";
+            this.IdComboBox.HeaderText = "Id";
+            this.IdComboBox.Name = "IdComboBox";
             // 
-            // dataGridViewTextBoxColumn2
+            // TextComboBox
             // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Text";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Text";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Width = 243;
+            this.TextComboBox.DataPropertyName = "TextComboBox";
+            this.TextComboBox.HeaderText = "Text";
+            this.TextComboBox.Name = "TextComboBox";
             // 
             // KeyField
             // 
+            this.KeyField.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.KeyField.HeaderText = "Key Field";
             this.KeyField.Name = "KeyField";
             this.KeyField.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.KeyField.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.KeyField.Width = 242;
             // 
             // ValueField
             // 
+            this.ValueField.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ValueField.HeaderText = "Value Field";
             this.ValueField.Name = "ValueField";
             this.ValueField.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.ValueField.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.ValueField.Width = 243;
             // 
             // ObjectId
             // 
             this.ObjectId.DataPropertyName = "ObjectId";
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
-            this.ObjectId.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle24.BackColor = System.Drawing.Color.White;
+            this.ObjectId.DefaultCellStyle = dataGridViewCellStyle24;
+            this.ObjectId.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ObjectId.HeaderText = "Obeject Id";
             this.ObjectId.Name = "ObjectId";
-            this.ObjectId.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.ObjectId.Width = 243;
             // 
             // ProfileIdComboBox
             // 
+            this.ProfileIdComboBox.DropDownWidth = 2;
+            this.ProfileIdComboBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ProfileIdComboBox.HeaderText = "Profile Id";
             this.ProfileIdComboBox.Name = "ProfileIdComboBox";
             this.ProfileIdComboBox.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.ProfileIdComboBox.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.ProfileIdComboBox.Width = 243;
+            // 
+            // MethodType
+            // 
+            this.MethodType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.MethodType.HeaderText = "Method Type";
+            this.MethodType.Name = "MethodType";
             // 
             // LblComboBoxTotal
             // 
@@ -1414,7 +1620,7 @@ namespace Generator.UI.WF
             this.LblComboBoxTotal.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.LblComboBoxTotal.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.LblComboBoxTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
-            this.LblComboBoxTotal.Location = new System.Drawing.Point(3, 533);
+            this.LblComboBoxTotal.Location = new System.Drawing.Point(3, 539);
             this.LblComboBoxTotal.Name = "LblComboBoxTotal";
             this.LblComboBoxTotal.Size = new System.Drawing.Size(109, 30);
             this.LblComboBoxTotal.TabIndex = 269;
@@ -1425,8 +1631,9 @@ namespace Generator.UI.WF
             this.tabPage7.Controls.Add(this.DgwUserControl);
             this.tabPage7.Controls.Add(this.label4);
             this.tabPage7.Location = new System.Drawing.Point(4, 32);
+            this.tabPage7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Size = new System.Drawing.Size(1504, 566);
+            this.tabPage7.Size = new System.Drawing.Size(1504, 571);
             this.tabPage7.TabIndex = 3;
             this.tabPage7.Text = "User Control";
             this.tabPage7.UseVisualStyleBackColor = true;
@@ -1439,47 +1646,48 @@ namespace Generator.UI.WF
             this.DgwUserControl.BackgroundColor = System.Drawing.Color.White;
             this.DgwUserControl.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DgwUserControl.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Century Gothic", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle11.NullValue = null;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DgwUserControl.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle27.Font = new System.Drawing.Font("Century Gothic", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle27.NullValue = null;
+            dataGridViewCellStyle27.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle27.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle27.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DgwUserControl.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle27;
             this.DgwUserControl.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgwUserControl.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn5,
+            this.IdUserControl,
             this.dataGridViewTextBoxColumn6,
             this.GetActionCode,
             this.Label,
             this.SearchPage});
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Century Gothic", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(231)))), ((int)(((byte)(228)))));
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DgwUserControl.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle28.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle28.Font = new System.Drawing.Font("Century Gothic", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle28.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
+            dataGridViewCellStyle28.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(231)))), ((int)(((byte)(228)))));
+            dataGridViewCellStyle28.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle28.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DgwUserControl.DefaultCellStyle = dataGridViewCellStyle28;
             this.DgwUserControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DgwUserControl.Location = new System.Drawing.Point(0, 0);
+            this.DgwUserControl.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DgwUserControl.Name = "DgwUserControl";
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Century Gothic", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgwUserControl.RowHeadersDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle29.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
+            dataGridViewCellStyle29.Font = new System.Drawing.Font("Century Gothic", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle29.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle29.SelectionBackColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle29.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle29.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgwUserControl.RowHeadersDefaultCellStyle = dataGridViewCellStyle29;
             this.DgwUserControl.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DgwUserControl.Size = new System.Drawing.Size(1504, 536);
+            this.DgwUserControl.Size = new System.Drawing.Size(1504, 541);
             this.DgwUserControl.TabIndex = 273;
             // 
-            // dataGridViewTextBoxColumn5
+            // IdUserControl
             // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "Id";
-            this.dataGridViewTextBoxColumn5.HeaderText = "Id";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.IdUserControl.DataPropertyName = "IdUserControl";
+            this.IdUserControl.HeaderText = "Id";
+            this.IdUserControl.Name = "IdUserControl";
             // 
             // dataGridViewTextBoxColumn6
             // 
@@ -1510,7 +1718,7 @@ namespace Generator.UI.WF
             this.label4.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
-            this.label4.Location = new System.Drawing.Point(0, 536);
+            this.label4.Location = new System.Drawing.Point(0, 541);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(109, 30);
             this.label4.TabIndex = 272;
@@ -1518,111 +1726,21 @@ namespace Generator.UI.WF
             // 
             // NextPage
             // 
-            this.NextPage.Controls.Add(this.dataGridView1);
             this.NextPage.Location = new System.Drawing.Point(4, 32);
+            this.NextPage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.NextPage.Name = "NextPage";
-            this.NextPage.Padding = new System.Windows.Forms.Padding(3);
-            this.NextPage.Size = new System.Drawing.Size(1504, 566);
+            this.NextPage.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.NextPage.Size = new System.Drawing.Size(1504, 571);
             this.NextPage.TabIndex = 5;
             this.NextPage.Text = "Next Page";
             this.NextPage.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Century Gothic", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle14.NullValue = null;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn7,
-            this.dataGridViewTextBoxColumn8,
-            this.dataGridViewComboBoxColumn1,
-            this.dataGridViewComboBoxColumn2,
-            this.dataGridViewComboBoxColumn3,
-            this.dataGridViewComboBoxColumn4});
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("Century Gothic", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
-            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(231)))), ((int)(((byte)(228)))));
-            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle16;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 3);
-            this.dataGridView1.Name = "dataGridView1";
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Century Gothic", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle17;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1498, 141);
-            this.dataGridView1.TabIndex = 271;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "Id";
-            this.dataGridViewTextBoxColumn7.HeaderText = "Id";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.Width = 243;
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "Text";
-            this.dataGridViewTextBoxColumn8.HeaderText = "Text";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.Width = 243;
-            // 
-            // dataGridViewComboBoxColumn1
-            // 
-            this.dataGridViewComboBoxColumn1.HeaderText = "Key Field";
-            this.dataGridViewComboBoxColumn1.Name = "dataGridViewComboBoxColumn1";
-            this.dataGridViewComboBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewComboBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.dataGridViewComboBoxColumn1.Width = 242;
-            // 
-            // dataGridViewComboBoxColumn2
-            // 
-            this.dataGridViewComboBoxColumn2.HeaderText = "Value Field";
-            this.dataGridViewComboBoxColumn2.Name = "dataGridViewComboBoxColumn2";
-            this.dataGridViewComboBoxColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewComboBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.dataGridViewComboBoxColumn2.Width = 243;
-            // 
-            // dataGridViewComboBoxColumn3
-            // 
-            this.dataGridViewComboBoxColumn3.DataPropertyName = "ObjectId";
-            dataGridViewCellStyle15.BackColor = System.Drawing.Color.White;
-            this.dataGridViewComboBoxColumn3.DefaultCellStyle = dataGridViewCellStyle15;
-            this.dataGridViewComboBoxColumn3.HeaderText = "Obeject Id";
-            this.dataGridViewComboBoxColumn3.Name = "dataGridViewComboBoxColumn3";
-            this.dataGridViewComboBoxColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.dataGridViewComboBoxColumn3.Width = 243;
-            // 
-            // dataGridViewComboBoxColumn4
-            // 
-            this.dataGridViewComboBoxColumn4.HeaderText = "Profile Id";
-            this.dataGridViewComboBoxColumn4.Name = "dataGridViewComboBoxColumn4";
-            this.dataGridViewComboBoxColumn4.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewComboBoxColumn4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.dataGridViewComboBoxColumn4.Width = 243;
-            // 
             // Modal
             // 
             this.Modal.Location = new System.Drawing.Point(4, 32);
+            this.Modal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Modal.Name = "Modal";
-            this.Modal.Size = new System.Drawing.Size(1504, 566);
+            this.Modal.Size = new System.Drawing.Size(1504, 571);
             this.Modal.TabIndex = 6;
             this.Modal.Text = "Modal";
             this.Modal.UseVisualStyleBackColor = true;
@@ -1632,9 +1750,10 @@ namespace Generator.UI.WF
             this.TabView.Controls.Add(this.LblViewTotal);
             this.TabView.Controls.Add(this.DgwView);
             this.TabView.Location = new System.Drawing.Point(4, 32);
+            this.TabView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TabView.Name = "TabView";
-            this.TabView.Padding = new System.Windows.Forms.Padding(3);
-            this.TabView.Size = new System.Drawing.Size(1504, 566);
+            this.TabView.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TabView.Size = new System.Drawing.Size(1504, 571);
             this.TabView.TabIndex = 2;
             this.TabView.Text = "View";
             this.TabView.UseVisualStyleBackColor = true;
@@ -1645,7 +1764,7 @@ namespace Generator.UI.WF
             this.LblViewTotal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.LblViewTotal.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.LblViewTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
-            this.LblViewTotal.Location = new System.Drawing.Point(3, 528);
+            this.LblViewTotal.Location = new System.Drawing.Point(3, 527);
             this.LblViewTotal.Name = "LblViewTotal";
             this.LblViewTotal.Size = new System.Drawing.Size(109, 30);
             this.LblViewTotal.TabIndex = 270;
@@ -1659,74 +1778,78 @@ namespace Generator.UI.WF
             this.DgwView.BackgroundColor = System.Drawing.Color.White;
             this.DgwView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DgwView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Century Gothic", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle18.NullValue = null;
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DgwView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle33.Font = new System.Drawing.Font("Century Gothic", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle33.NullValue = null;
+            dataGridViewCellStyle33.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle33.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle33.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DgwView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle33;
             this.DgwView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgwView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
+            this.IdView,
+            this.TextView,
             this.ElementTypeView,
-            this.Size});
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle19.Font = new System.Drawing.Font("Century Gothic", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
-            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(231)))), ((int)(((byte)(228)))));
-            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DgwView.DefaultCellStyle = dataGridViewCellStyle19;
+            this.SizeView});
+            dataGridViewCellStyle34.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle34.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle34.Font = new System.Drawing.Font("Century Gothic", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle34.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
+            dataGridViewCellStyle34.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(231)))), ((int)(((byte)(228)))));
+            dataGridViewCellStyle34.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle34.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DgwView.DefaultCellStyle = dataGridViewCellStyle34;
             this.DgwView.Dock = System.Windows.Forms.DockStyle.Top;
-            this.DgwView.Location = new System.Drawing.Point(3, 3);
+            this.DgwView.Location = new System.Drawing.Point(3, 2);
+            this.DgwView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DgwView.Name = "DgwView";
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
-            dataGridViewCellStyle20.Font = new System.Drawing.Font("Century Gothic", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle20.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgwView.RowHeadersDefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle35.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle35.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
+            dataGridViewCellStyle35.Font = new System.Drawing.Font("Century Gothic", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle35.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle35.SelectionBackColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle35.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle35.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgwView.RowHeadersDefaultCellStyle = dataGridViewCellStyle35;
             this.DgwView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DgwView.Size = new System.Drawing.Size(1498, 525);
             this.DgwView.TabIndex = 4;
-            this.DgwView.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgwView_CellEndEdit);
             this.DgwView.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.DgwView_RowsAdded);
             this.DgwView.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.DgwView_RowsRemoved);
             // 
-            // dataGridViewTextBoxColumn3
+            // IdView
             // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "Id";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Id";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.IdView.DataPropertyName = "IdView";
+            this.IdView.HeaderText = "Id";
+            this.IdView.Name = "IdView";
             // 
-            // dataGridViewTextBoxColumn4
+            // TextView
             // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "Text";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Text";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.TextView.DataPropertyName = "TextView";
+            this.TextView.HeaderText = "Text";
+            this.TextView.Name = "TextView";
             // 
             // ElementTypeView
             // 
+            this.ElementTypeView.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.ElementTypeView.HeaderText = "Element Type";
             this.ElementTypeView.Name = "ElementTypeView";
             // 
-            // Size
+            // SizeView
             // 
-            this.Size.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Size.HeaderText = "Size";
-            this.Size.Name = "Size";
-            this.Size.Width = 120;
+            this.SizeView.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.SizeView.HeaderText = "Size";
+            this.SizeView.Name = "SizeView";
+            this.SizeView.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.SizeView.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.SizeView.Width = 120;
             // 
             // tabPage8
             // 
             this.tabPage8.Controls.Add(this.ResultText);
             this.tabPage8.Location = new System.Drawing.Point(4, 32);
+            this.tabPage8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage8.Name = "tabPage8";
-            this.tabPage8.Size = new System.Drawing.Size(1504, 566);
+            this.tabPage8.Size = new System.Drawing.Size(1504, 571);
             this.tabPage8.TabIndex = 4;
             this.tabPage8.Text = "Result";
             this.tabPage8.UseVisualStyleBackColor = true;
@@ -1736,8 +1859,9 @@ namespace Generator.UI.WF
             this.ResultText.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.ResultText.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ResultText.Location = new System.Drawing.Point(0, 0);
+            this.ResultText.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ResultText.Name = "ResultText";
-            this.ResultText.Size = new System.Drawing.Size(1504, 566);
+            this.ResultText.Size = new System.Drawing.Size(1504, 571);
             this.ResultText.TabIndex = 0;
             this.ResultText.Text = "";
             // 
@@ -1756,9 +1880,11 @@ namespace Generator.UI.WF
             this.groupBox11.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox11.Font = new System.Drawing.Font("Century Gothic", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.groupBox11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
-            this.groupBox11.Location = new System.Drawing.Point(3, 3);
+            this.groupBox11.Location = new System.Drawing.Point(3, 2);
+            this.groupBox11.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox11.Name = "groupBox11";
-            this.groupBox11.Size = new System.Drawing.Size(1528, 113);
+            this.groupBox11.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox11.Size = new System.Drawing.Size(1528, 112);
             this.groupBox11.TabIndex = 369;
             this.groupBox11.TabStop = false;
             this.groupBox11.Text = "Search Table";
@@ -1770,7 +1896,8 @@ namespace Generator.UI.WF
             this.BtnDown.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnDown.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.BtnDown.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
-            this.BtnDown.Location = new System.Drawing.Point(1343, 74);
+            this.BtnDown.Location = new System.Drawing.Point(1344, 74);
+            this.BtnDown.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BtnDown.Name = "BtnDown";
             this.BtnDown.Size = new System.Drawing.Size(175, 39);
             this.BtnDown.TabIndex = 365;
@@ -1785,9 +1912,10 @@ namespace Generator.UI.WF
             this.BtnUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnUp.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.BtnUp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
-            this.BtnUp.Location = new System.Drawing.Point(1177, 74);
+            this.BtnUp.Location = new System.Drawing.Point(1176, 74);
+            this.BtnUp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BtnUp.Name = "BtnUp";
-            this.BtnUp.Size = new System.Drawing.Size(160, 39);
+            this.BtnUp.Size = new System.Drawing.Size(159, 39);
             this.BtnUp.TabIndex = 364;
             this.BtnUp.Text = "Up";
             this.BtnUp.UseVisualStyleBackColor = false;
@@ -1800,7 +1928,8 @@ namespace Generator.UI.WF
             this.BtnContentJavaScript.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnContentJavaScript.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.BtnContentJavaScript.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
-            this.BtnContentJavaScript.Location = new System.Drawing.Point(1343, 17);
+            this.BtnContentJavaScript.Location = new System.Drawing.Point(1344, 18);
+            this.BtnContentJavaScript.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BtnContentJavaScript.Name = "BtnContentJavaScript";
             this.BtnContentJavaScript.Size = new System.Drawing.Size(175, 39);
             this.BtnContentJavaScript.TabIndex = 363;
@@ -1815,9 +1944,10 @@ namespace Generator.UI.WF
             this.BtnContentCreate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnContentCreate.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.BtnContentCreate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
-            this.BtnContentCreate.Location = new System.Drawing.Point(1177, 17);
+            this.BtnContentCreate.Location = new System.Drawing.Point(1176, 18);
+            this.BtnContentCreate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BtnContentCreate.Name = "BtnContentCreate";
-            this.BtnContentCreate.Size = new System.Drawing.Size(160, 39);
+            this.BtnContentCreate.Size = new System.Drawing.Size(159, 39);
             this.BtnContentCreate.TabIndex = 357;
             this.BtnContentCreate.Text = "Content Create";
             this.BtnContentCreate.UseVisualStyleBackColor = false;
@@ -1830,7 +1960,7 @@ namespace Generator.UI.WF
             this.label17.Enabled = false;
             this.label17.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label17.ForeColor = System.Drawing.Color.Silver;
-            this.label17.Location = new System.Drawing.Point(799, 37);
+            this.label17.Location = new System.Drawing.Point(798, 38);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(123, 23);
             this.label17.TabIndex = 326;
@@ -1849,6 +1979,7 @@ namespace Generator.UI.WF
             "CUSTOMSQL",
             "SEQUENCE"});
             this.CbxObjectTypes.Location = new System.Drawing.Point(801, 62);
+            this.CbxObjectTypes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CbxObjectTypes.Name = "CbxObjectTypes";
             this.CbxObjectTypes.Size = new System.Drawing.Size(354, 29);
             this.CbxObjectTypes.TabIndex = 325;
@@ -1863,6 +1994,7 @@ namespace Generator.UI.WF
             this.CbxObject.FormattingEnabled = true;
             this.CbxObject.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.CbxObject.Location = new System.Drawing.Point(410, 62);
+            this.CbxObject.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CbxObject.Name = "CbxObject";
             this.CbxObject.Size = new System.Drawing.Size(354, 29);
             this.CbxObject.TabIndex = 319;
@@ -1875,7 +2007,7 @@ namespace Generator.UI.WF
             this.label18.Enabled = false;
             this.label18.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label18.ForeColor = System.Drawing.Color.Silver;
-            this.label18.Location = new System.Drawing.Point(408, 37);
+            this.label18.Location = new System.Drawing.Point(408, 38);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(97, 23);
             this.label18.TabIndex = 320;
@@ -1888,7 +2020,7 @@ namespace Generator.UI.WF
             this.label19.Enabled = false;
             this.label19.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label19.ForeColor = System.Drawing.Color.Silver;
-            this.label19.Location = new System.Drawing.Point(29, 37);
+            this.label19.Location = new System.Drawing.Point(30, 38);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(89, 23);
             this.label19.TabIndex = 322;
@@ -1907,6 +2039,7 @@ namespace Generator.UI.WF
             "MerchantBackoffice",
             "ISS_PRM"});
             this.CbxProfile.Location = new System.Drawing.Point(31, 62);
+            this.CbxProfile.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CbxProfile.Name = "CbxProfile";
             this.CbxProfile.Size = new System.Drawing.Size(354, 29);
             this.CbxProfile.TabIndex = 321;
@@ -1919,13 +2052,13 @@ namespace Generator.UI.WF
             this.tabPage2.Controls.Add(this.panel13);
             this.tabPage2.Controls.Add(this.groupBox3);
             this.tabPage2.Location = new System.Drawing.Point(4, 29);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage2.Size = new System.Drawing.Size(1534, 752);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Header Create";
             this.tabPage2.UseVisualStyleBackColor = true;
-            this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
             // 
             // groupBox13
             // 
@@ -1935,9 +2068,9 @@ namespace Generator.UI.WF
             this.groupBox13.Font = new System.Drawing.Font("Century Gothic", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.groupBox13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
             this.groupBox13.Location = new System.Drawing.Point(3, 204);
-            this.groupBox13.Margin = new System.Windows.Forms.Padding(3, 25, 3, 3);
+            this.groupBox13.Margin = new System.Windows.Forms.Padding(3, 25, 3, 2);
             this.groupBox13.Name = "groupBox13";
-            this.groupBox13.Padding = new System.Windows.Forms.Padding(25);
+            this.groupBox13.Padding = new System.Windows.Forms.Padding(24, 25, 24, 25);
             this.groupBox13.Size = new System.Drawing.Size(1528, 318);
             this.groupBox13.TabIndex = 364;
             this.groupBox13.TabStop = false;
@@ -1952,12 +2085,12 @@ namespace Generator.UI.WF
             this.DgwHeader.BackgroundColor = System.Drawing.Color.White;
             this.DgwHeader.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DgwHeader.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
-            dataGridViewCellStyle21.Font = new System.Drawing.Font("Century Gothic", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle21.NullValue = null;
-            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DgwHeader.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle36.Font = new System.Drawing.Font("Century Gothic", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle36.NullValue = null;
+            dataGridViewCellStyle36.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle36.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle36.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DgwHeader.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle36;
             this.DgwHeader.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgwHeader.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn9,
@@ -1966,27 +2099,28 @@ namespace Generator.UI.WF
             this.TypeCss,
             this.Alignment,
             this.IconCss});
-            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle22.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle22.Font = new System.Drawing.Font("Century Gothic", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle22.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
-            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(231)))), ((int)(((byte)(228)))));
-            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DgwHeader.DefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle37.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle37.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle37.Font = new System.Drawing.Font("Century Gothic", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle37.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
+            dataGridViewCellStyle37.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(231)))), ((int)(((byte)(228)))));
+            dataGridViewCellStyle37.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle37.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DgwHeader.DefaultCellStyle = dataGridViewCellStyle37;
             this.DgwHeader.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DgwHeader.Location = new System.Drawing.Point(25, 50);
+            this.DgwHeader.Location = new System.Drawing.Point(24, 50);
+            this.DgwHeader.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DgwHeader.Name = "DgwHeader";
-            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
-            dataGridViewCellStyle23.Font = new System.Drawing.Font("Century Gothic", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle23.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgwHeader.RowHeadersDefaultCellStyle = dataGridViewCellStyle23;
+            dataGridViewCellStyle38.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle38.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
+            dataGridViewCellStyle38.Font = new System.Drawing.Font("Century Gothic", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle38.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle38.SelectionBackColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle38.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle38.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgwHeader.RowHeadersDefaultCellStyle = dataGridViewCellStyle38;
             this.DgwHeader.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DgwHeader.Size = new System.Drawing.Size(1478, 213);
+            this.DgwHeader.Size = new System.Drawing.Size(1480, 213);
             this.DgwHeader.TabIndex = 273;
             this.DgwHeader.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.DgwHeader_RowsAdded);
             this.DgwHeader.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.DgwHeader_RowsRemoved);
@@ -2029,7 +2163,7 @@ namespace Generator.UI.WF
             this.LblHeaderTotal.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.LblHeaderTotal.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.LblHeaderTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
-            this.LblHeaderTotal.Location = new System.Drawing.Point(25, 263);
+            this.LblHeaderTotal.Location = new System.Drawing.Point(24, 263);
             this.LblHeaderTotal.Name = "LblHeaderTotal";
             this.LblHeaderTotal.Size = new System.Drawing.Size(109, 30);
             this.LblHeaderTotal.TabIndex = 272;
@@ -2041,8 +2175,9 @@ namespace Generator.UI.WF
             this.RtbxPrensentation.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.RtbxPrensentation.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.RtbxPrensentation.Location = new System.Drawing.Point(3, 522);
+            this.RtbxPrensentation.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.RtbxPrensentation.Name = "RtbxPrensentation";
-            this.RtbxPrensentation.Size = new System.Drawing.Size(1528, 227);
+            this.RtbxPrensentation.Size = new System.Drawing.Size(1528, 228);
             this.RtbxPrensentation.TabIndex = 352;
             this.RtbxPrensentation.Text = "";
             // 
@@ -2050,6 +2185,7 @@ namespace Generator.UI.WF
             // 
             this.panel13.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel13.Location = new System.Drawing.Point(3, 190);
+            this.panel13.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel13.Name = "panel13";
             this.panel13.Size = new System.Drawing.Size(1528, 14);
             this.panel13.TabIndex = 378;
@@ -2062,19 +2198,21 @@ namespace Generator.UI.WF
             this.groupBox3.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox3.Font = new System.Drawing.Font("Century Gothic", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.groupBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
-            this.groupBox3.Location = new System.Drawing.Point(3, 3);
+            this.groupBox3.Location = new System.Drawing.Point(3, 2);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(0);
-            this.groupBox3.Size = new System.Drawing.Size(1528, 187);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox3.Size = new System.Drawing.Size(1528, 188);
             this.groupBox3.TabIndex = 342;
             this.groupBox3.TabStop = false;
             // 
             // panel3
             // 
             this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel3.Location = new System.Drawing.Point(646, 25);
+            this.panel3.Location = new System.Drawing.Point(648, 27);
+            this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(10, 162);
+            this.panel3.Size = new System.Drawing.Size(10, 159);
             this.panel3.TabIndex = 377;
             // 
             // groupBox16
@@ -2086,10 +2224,11 @@ namespace Generator.UI.WF
             this.groupBox16.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox16.Font = new System.Drawing.Font("Century Gothic", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.groupBox16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
-            this.groupBox16.Location = new System.Drawing.Point(646, 25);
+            this.groupBox16.Location = new System.Drawing.Point(648, 27);
+            this.groupBox16.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox16.Name = "groupBox16";
             this.groupBox16.Padding = new System.Windows.Forms.Padding(35);
-            this.groupBox16.Size = new System.Drawing.Size(882, 162);
+            this.groupBox16.Size = new System.Drawing.Size(877, 159);
             this.groupBox16.TabIndex = 376;
             this.groupBox16.TabStop = false;
             this.groupBox16.Text = "Buttons";
@@ -2100,7 +2239,8 @@ namespace Generator.UI.WF
             this.TbxTitle.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TbxTitle.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.TbxTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
-            this.TbxTitle.Location = new System.Drawing.Point(29, 85);
+            this.TbxTitle.Location = new System.Drawing.Point(30, 85);
+            this.TbxTitle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TbxTitle.Name = "TbxTitle";
             this.TbxTitle.Size = new System.Drawing.Size(449, 30);
             this.TbxTitle.TabIndex = 353;
@@ -2113,7 +2253,7 @@ namespace Generator.UI.WF
             this.label6.Enabled = false;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label6.ForeColor = System.Drawing.Color.Silver;
-            this.label6.Location = new System.Drawing.Point(29, 57);
+            this.label6.Location = new System.Drawing.Point(30, 58);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(460, 22);
             this.label6.TabIndex = 355;
@@ -2126,6 +2266,7 @@ namespace Generator.UI.WF
             this.BtnHeaderCreate.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.BtnHeaderCreate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
             this.BtnHeaderCreate.Location = new System.Drawing.Point(505, 82);
+            this.BtnHeaderCreate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BtnHeaderCreate.Name = "BtnHeaderCreate";
             this.BtnHeaderCreate.Size = new System.Drawing.Size(203, 45);
             this.BtnHeaderCreate.TabIndex = 351;
@@ -2136,9 +2277,10 @@ namespace Generator.UI.WF
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
-            this.panel6.Location = new System.Drawing.Point(29, 117);
+            this.panel6.Location = new System.Drawing.Point(30, 118);
+            this.panel6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(449, 3);
+            this.panel6.Size = new System.Drawing.Size(449, 2);
             this.panel6.TabIndex = 354;
             // 
             // groupBox15
@@ -2154,10 +2296,11 @@ namespace Generator.UI.WF
             this.groupBox15.Dock = System.Windows.Forms.DockStyle.Left;
             this.groupBox15.Font = new System.Drawing.Font("Century Gothic", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.groupBox15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
-            this.groupBox15.Location = new System.Drawing.Point(0, 25);
+            this.groupBox15.Location = new System.Drawing.Point(3, 27);
+            this.groupBox15.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox15.Name = "groupBox15";
-            this.groupBox15.Padding = new System.Windows.Forms.Padding(25);
-            this.groupBox15.Size = new System.Drawing.Size(646, 162);
+            this.groupBox15.Padding = new System.Windows.Forms.Padding(24, 25, 24, 25);
+            this.groupBox15.Size = new System.Drawing.Size(645, 159);
             this.groupBox15.TabIndex = 375;
             this.groupBox15.TabStop = false;
             this.groupBox15.Text = "Buttons";
@@ -2169,6 +2312,7 @@ namespace Generator.UI.WF
             this.BtnList.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.BtnList.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
             this.BtnList.Location = new System.Drawing.Point(22, 82);
+            this.BtnList.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BtnList.Name = "BtnList";
             this.BtnList.Size = new System.Drawing.Size(109, 36);
             this.BtnList.TabIndex = 363;
@@ -2183,6 +2327,7 @@ namespace Generator.UI.WF
             this.BtnSave.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.BtnSave.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
             this.BtnSave.Location = new System.Drawing.Point(307, 35);
+            this.BtnSave.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BtnSave.Name = "BtnSave";
             this.BtnSave.Size = new System.Drawing.Size(109, 36);
             this.BtnSave.TabIndex = 356;
@@ -2197,6 +2342,7 @@ namespace Generator.UI.WF
             this.BtnAdd.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.BtnAdd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
             this.BtnAdd.Location = new System.Drawing.Point(22, 35);
+            this.BtnAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BtnAdd.Name = "BtnAdd";
             this.BtnAdd.Size = new System.Drawing.Size(109, 36);
             this.BtnAdd.TabIndex = 362;
@@ -2211,6 +2357,7 @@ namespace Generator.UI.WF
             this.BtnShowDetail.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.BtnShowDetail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
             this.BtnShowDetail.Location = new System.Drawing.Point(456, 82);
+            this.BtnShowDetail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BtnShowDetail.Name = "BtnShowDetail";
             this.BtnShowDetail.Size = new System.Drawing.Size(162, 36);
             this.BtnShowDetail.TabIndex = 357;
@@ -2225,6 +2372,7 @@ namespace Generator.UI.WF
             this.BtnClear.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.BtnClear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
             this.BtnClear.Location = new System.Drawing.Point(163, 82);
+            this.BtnClear.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BtnClear.Name = "BtnClear";
             this.BtnClear.Size = new System.Drawing.Size(109, 36);
             this.BtnClear.TabIndex = 361;
@@ -2239,6 +2387,7 @@ namespace Generator.UI.WF
             this.BtnUpdateQuestion.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.BtnUpdateQuestion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
             this.BtnUpdateQuestion.Location = new System.Drawing.Point(456, 35);
+            this.BtnUpdateQuestion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BtnUpdateQuestion.Name = "BtnUpdateQuestion";
             this.BtnUpdateQuestion.Size = new System.Drawing.Size(165, 36);
             this.BtnUpdateQuestion.TabIndex = 358;
@@ -2253,6 +2402,7 @@ namespace Generator.UI.WF
             this.BtnUpdate.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.BtnUpdate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
             this.BtnUpdate.Location = new System.Drawing.Point(163, 35);
+            this.BtnUpdate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BtnUpdate.Name = "BtnUpdate";
             this.BtnUpdate.Size = new System.Drawing.Size(109, 36);
             this.BtnUpdate.TabIndex = 360;
@@ -2267,6 +2417,7 @@ namespace Generator.UI.WF
             this.BtnDelete.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.BtnDelete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
             this.BtnDelete.Location = new System.Drawing.Point(307, 82);
+            this.BtnDelete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BtnDelete.Name = "BtnDelete";
             this.BtnDelete.Size = new System.Drawing.Size(109, 36);
             this.BtnDelete.TabIndex = 359;
@@ -2283,6 +2434,7 @@ namespace Generator.UI.WF
             this.TabMain.Controls.Add(this.FileExport);
             this.TabMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TabMain.Location = new System.Drawing.Point(10, 10);
+            this.TabMain.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TabMain.Name = "TabMain";
             this.TabMain.SelectedIndex = 0;
             this.TabMain.Size = new System.Drawing.Size(1542, 785);
@@ -2295,6 +2447,7 @@ namespace Generator.UI.WF
             this.FileExport.Controls.Add(this.groupBox5);
             this.FileExport.Controls.Add(this.panel9);
             this.FileExport.Location = new System.Drawing.Point(4, 29);
+            this.FileExport.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.FileExport.Name = "FileExport";
             this.FileExport.Size = new System.Drawing.Size(1534, 752);
             this.FileExport.TabIndex = 4;
@@ -2309,8 +2462,10 @@ namespace Generator.UI.WF
             this.groupBox10.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox10.Font = new System.Drawing.Font("Century Gothic", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.groupBox10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
-            this.groupBox10.Location = new System.Drawing.Point(0, 215);
+            this.groupBox10.Location = new System.Drawing.Point(0, 214);
+            this.groupBox10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox10.Name = "groupBox10";
+            this.groupBox10.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox10.Size = new System.Drawing.Size(1534, 240);
             this.groupBox10.TabIndex = 366;
             this.groupBox10.TabStop = false;
@@ -2318,68 +2473,40 @@ namespace Generator.UI.WF
             // 
             // groupBox14
             // 
-            this.groupBox14.Controls.Add(this.button1);
-            this.groupBox14.Controls.Add(this.label24);
-            this.groupBox14.Controls.Add(this.comboBox3);
+            this.groupBox14.Controls.Add(this.BtnPath);
             this.groupBox14.Dock = System.Windows.Forms.DockStyle.Left;
             this.groupBox14.Font = new System.Drawing.Font("Century Gothic", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.groupBox14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
-            this.groupBox14.Location = new System.Drawing.Point(522, 28);
+            this.groupBox14.Location = new System.Drawing.Point(522, 27);
+            this.groupBox14.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox14.Name = "groupBox14";
-            this.groupBox14.Size = new System.Drawing.Size(418, 209);
+            this.groupBox14.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox14.Size = new System.Drawing.Size(418, 211);
             this.groupBox14.TabIndex = 378;
             this.groupBox14.TabStop = false;
             this.groupBox14.Text = "Open Folder ";
             // 
-            // button1
+            // BtnPath
             // 
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.FlatAppearance.BorderSize = 3;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
-            this.button1.Location = new System.Drawing.Point(240, 118);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(141, 42);
-            this.button1.TabIndex = 374;
-            this.button1.Text = "Path Change";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.BackColor = System.Drawing.Color.Transparent;
-            this.label24.Enabled = false;
-            this.label24.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label24.ForeColor = System.Drawing.Color.Silver;
-            this.label24.Location = new System.Drawing.Point(25, 43);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(119, 23);
-            this.label24.TabIndex = 324;
-            this.label24.Text = "Application";
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(231)))), ((int)(((byte)(228)))));
-            this.comboBox3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.comboBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Items.AddRange(new object[] {
-            "Hiçbiri",
-            "Tümü",
-            "Fiba UX",
-            "BÖS Acq UX"});
-            this.comboBox3.Location = new System.Drawing.Point(27, 68);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(354, 29);
-            this.comboBox3.TabIndex = 323;
+            this.BtnPath.BackColor = System.Drawing.Color.Transparent;
+            this.BtnPath.FlatAppearance.BorderSize = 3;
+            this.BtnPath.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnPath.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.BtnPath.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
+            this.BtnPath.Location = new System.Drawing.Point(121, 85);
+            this.BtnPath.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BtnPath.Name = "BtnPath";
+            this.BtnPath.Size = new System.Drawing.Size(141, 42);
+            this.BtnPath.TabIndex = 374;
+            this.BtnPath.Text = "Path Change";
+            this.BtnPath.UseVisualStyleBackColor = false;
+            this.BtnPath.Click += new System.EventHandler(this.BtnPath_Click);
             // 
             // label25
             // 
             this.label25.AutoSize = true;
             this.label25.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label25.Location = new System.Drawing.Point(421, 28);
+            this.label25.Location = new System.Drawing.Point(421, 27);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(101, 24);
             this.label25.TabIndex = 377;
@@ -2388,15 +2515,17 @@ namespace Generator.UI.WF
             // groupBox12
             // 
             this.groupBox12.Controls.Add(this.label26);
-            this.groupBox12.Controls.Add(this.comboBox2);
+            this.groupBox12.Controls.Add(this.CbxFolder);
             this.groupBox12.Controls.Add(this.label23);
-            this.groupBox12.Controls.Add(this.comboBox1);
+            this.groupBox12.Controls.Add(this.CbxApplication);
             this.groupBox12.Dock = System.Windows.Forms.DockStyle.Left;
             this.groupBox12.Font = new System.Drawing.Font("Century Gothic", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.groupBox12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
-            this.groupBox12.Location = new System.Drawing.Point(3, 28);
+            this.groupBox12.Location = new System.Drawing.Point(3, 27);
+            this.groupBox12.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox12.Name = "groupBox12";
-            this.groupBox12.Size = new System.Drawing.Size(418, 209);
+            this.groupBox12.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox12.Size = new System.Drawing.Size(418, 211);
             this.groupBox12.TabIndex = 374;
             this.groupBox12.TabStop = false;
             this.groupBox12.Text = "Application Choose";
@@ -2414,22 +2543,24 @@ namespace Generator.UI.WF
             this.label26.TabIndex = 326;
             this.label26.Text = "Application Folder";
             // 
-            // comboBox2
+            // CbxFolder
             // 
-            this.comboBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(231)))), ((int)(((byte)(228)))));
-            this.comboBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.comboBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.CbxFolder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(231)))), ((int)(((byte)(228)))));
+            this.CbxFolder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CbxFolder.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.CbxFolder.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
+            this.CbxFolder.FormattingEnabled = true;
+            this.CbxFolder.Items.AddRange(new object[] {
             "Hiçbiri",
             "Tümü",
             "MerchantBackoffice",
             "ISS_PRM"});
-            this.comboBox2.Location = new System.Drawing.Point(20, 143);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(354, 29);
-            this.comboBox2.TabIndex = 325;
+            this.CbxFolder.Location = new System.Drawing.Point(21, 142);
+            this.CbxFolder.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.CbxFolder.Name = "CbxFolder";
+            this.CbxFolder.Size = new System.Drawing.Size(354, 29);
+            this.CbxFolder.TabIndex = 325;
+            this.CbxFolder.SelectedIndexChanged += new System.EventHandler(this.CbxFolder_SelectedIndexChanged);
             // 
             // label23
             // 
@@ -2438,49 +2569,67 @@ namespace Generator.UI.WF
             this.label23.Enabled = false;
             this.label23.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label23.ForeColor = System.Drawing.Color.Silver;
-            this.label23.Location = new System.Drawing.Point(18, 43);
+            this.label23.Location = new System.Drawing.Point(18, 42);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(119, 23);
             this.label23.TabIndex = 324;
             this.label23.Text = "Application";
             // 
-            // comboBox1
+            // CbxApplication
             // 
-            this.comboBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(231)))), ((int)(((byte)(228)))));
-            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.comboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.CbxApplication.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(231)))), ((int)(((byte)(228)))));
+            this.CbxApplication.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CbxApplication.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.CbxApplication.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
+            this.CbxApplication.FormattingEnabled = true;
+            this.CbxApplication.Items.AddRange(new object[] {
             "Hiçbiri",
             "Tümü",
             "Fiba UX",
             "BÖS Acq UX"});
-            this.comboBox1.Location = new System.Drawing.Point(20, 68);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(354, 29);
-            this.comboBox1.TabIndex = 323;
+            this.CbxApplication.Location = new System.Drawing.Point(21, 68);
+            this.CbxApplication.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.CbxApplication.Name = "CbxApplication";
+            this.CbxApplication.Size = new System.Drawing.Size(354, 29);
+            this.CbxApplication.TabIndex = 323;
+            this.CbxApplication.SelectedIndexChanged += new System.EventHandler(this.CbxApplication_SelectedIndexChanged);
             // 
             // groupBox5
             // 
+            this.groupBox5.Controls.Add(this.CbxOverrideWriteFile);
             this.groupBox5.Controls.Add(this.label5);
             this.groupBox5.Controls.Add(this.TbxPath);
             this.groupBox5.Controls.Add(this.panel12);
             this.groupBox5.Controls.Add(this.BtnExport);
-            this.groupBox5.Controls.Add(this.checkBox4);
-            this.groupBox5.Controls.Add(this.checkBox5);
+            this.groupBox5.Controls.Add(this.CbxJavaScriptExport);
+            this.groupBox5.Controls.Add(this.CbxExportXML);
             this.groupBox5.Controls.Add(this.label15);
-            this.groupBox5.Controls.Add(this.textBox2);
+            this.groupBox5.Controls.Add(this.TbxPageName);
             this.groupBox5.Controls.Add(this.panel10);
             this.groupBox5.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox5.Font = new System.Drawing.Font("Century Gothic", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.groupBox5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
             this.groupBox5.Location = new System.Drawing.Point(0, 12);
+            this.groupBox5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(1534, 203);
+            this.groupBox5.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox5.Size = new System.Drawing.Size(1534, 202);
             this.groupBox5.TabIndex = 364;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Properties";
+            // 
+            // CbxOverrideWriteFile
+            // 
+            this.CbxOverrideWriteFile.AutoSize = true;
+            this.CbxOverrideWriteFile.Checked = true;
+            this.CbxOverrideWriteFile.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.CbxOverrideWriteFile.Location = new System.Drawing.Point(928, 78);
+            this.CbxOverrideWriteFile.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.CbxOverrideWriteFile.Name = "CbxOverrideWriteFile";
+            this.CbxOverrideWriteFile.Size = new System.Drawing.Size(210, 28);
+            this.CbxOverrideWriteFile.TabIndex = 374;
+            this.CbxOverrideWriteFile.Text = "Override Write File";
+            this.CbxOverrideWriteFile.UseVisualStyleBackColor = true;
             // 
             // label5
             // 
@@ -2502,6 +2651,7 @@ namespace Generator.UI.WF
             this.TbxPath.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.TbxPath.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
             this.TbxPath.Location = new System.Drawing.Point(21, 149);
+            this.TbxPath.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TbxPath.Name = "TbxPath";
             this.TbxPath.Size = new System.Drawing.Size(1117, 30);
             this.TbxPath.TabIndex = 371;
@@ -2512,8 +2662,9 @@ namespace Generator.UI.WF
             // 
             this.panel12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
             this.panel12.Location = new System.Drawing.Point(21, 181);
+            this.panel12.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(1117, 3);
+            this.panel12.Size = new System.Drawing.Size(1117, 2);
             this.panel12.TabIndex = 372;
             // 
             // BtnExport
@@ -2523,7 +2674,8 @@ namespace Generator.UI.WF
             this.BtnExport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnExport.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.BtnExport.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
-            this.BtnExport.Location = new System.Drawing.Point(935, 67);
+            this.BtnExport.Location = new System.Drawing.Point(1160, 142);
+            this.BtnExport.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BtnExport.Name = "BtnExport";
             this.BtnExport.Size = new System.Drawing.Size(203, 42);
             this.BtnExport.TabIndex = 366;
@@ -2531,29 +2683,31 @@ namespace Generator.UI.WF
             this.BtnExport.UseVisualStyleBackColor = false;
             this.BtnExport.Click += new System.EventHandler(this.BtnExport_Click);
             // 
-            // checkBox4
+            // CbxJavaScriptExport
             // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Checked = true;
-            this.checkBox4.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox4.Location = new System.Drawing.Point(328, 77);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(202, 28);
-            this.checkBox4.TabIndex = 370;
-            this.checkBox4.Text = "Export JavaScript";
-            this.checkBox4.UseVisualStyleBackColor = true;
+            this.CbxJavaScriptExport.AutoSize = true;
+            this.CbxJavaScriptExport.Checked = true;
+            this.CbxJavaScriptExport.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.CbxJavaScriptExport.Location = new System.Drawing.Point(435, 78);
+            this.CbxJavaScriptExport.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.CbxJavaScriptExport.Name = "CbxJavaScriptExport";
+            this.CbxJavaScriptExport.Size = new System.Drawing.Size(202, 28);
+            this.CbxJavaScriptExport.TabIndex = 370;
+            this.CbxJavaScriptExport.Text = "Export JavaScript";
+            this.CbxJavaScriptExport.UseVisualStyleBackColor = true;
             // 
-            // checkBox5
+            // CbxExportXML
             // 
-            this.checkBox5.AutoSize = true;
-            this.checkBox5.Checked = true;
-            this.checkBox5.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox5.Location = new System.Drawing.Point(569, 77);
-            this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(153, 28);
-            this.checkBox5.TabIndex = 369;
-            this.checkBox5.Text = "Expport XML";
-            this.checkBox5.UseVisualStyleBackColor = true;
+            this.CbxExportXML.AutoSize = true;
+            this.CbxExportXML.Checked = true;
+            this.CbxExportXML.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.CbxExportXML.Location = new System.Drawing.Point(697, 78);
+            this.CbxExportXML.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.CbxExportXML.Name = "CbxExportXML";
+            this.CbxExportXML.Size = new System.Drawing.Size(153, 28);
+            this.CbxExportXML.TabIndex = 369;
+            this.CbxExportXML.Text = "Expport XML";
+            this.CbxExportXML.UseVisualStyleBackColor = true;
             // 
             // label15
             // 
@@ -2568,31 +2722,33 @@ namespace Generator.UI.WF
             this.label15.TabIndex = 358;
             this.label15.Text = "Page Name";
             // 
-            // textBox2
+            // TbxPageName
             // 
-            this.textBox2.BackColor = System.Drawing.Color.White;
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
-            this.textBox2.Location = new System.Drawing.Point(21, 70);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(268, 30);
-            this.textBox2.TabIndex = 356;
-            this.textBox2.Text = "PermissinProfile";
-            this.textBox2.WordWrap = false;
+            this.TbxPageName.BackColor = System.Drawing.Color.White;
+            this.TbxPageName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TbxPageName.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.TbxPageName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
+            this.TbxPageName.Location = new System.Drawing.Point(21, 70);
+            this.TbxPageName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TbxPageName.Name = "TbxPageName";
+            this.TbxPageName.Size = new System.Drawing.Size(332, 30);
+            this.TbxPageName.TabIndex = 356;
+            this.TbxPageName.WordWrap = false;
             // 
             // panel10
             // 
             this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
             this.panel10.Location = new System.Drawing.Point(21, 102);
+            this.panel10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(268, 3);
+            this.panel10.Size = new System.Drawing.Size(332, 2);
             this.panel10.TabIndex = 357;
             // 
             // panel9
             // 
             this.panel9.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel9.Location = new System.Drawing.Point(0, 0);
+            this.panel9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(1534, 12);
             this.panel9.TabIndex = 365;
@@ -2611,7 +2767,6 @@ namespace Generator.UI.WF
             this.Padding = new System.Windows.Forms.Padding(10);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.FormUxGenerator_Load);
-            this.SizeChanged += new System.EventHandler(this.FormUxGenerator_SizeChanged);
             this.TabGridCreate.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
@@ -2628,6 +2783,8 @@ namespace Generator.UI.WF
             this.groupBox2.PerformLayout();
             this.tabPage4.ResumeLayout(false);
             this.groupBox8.ResumeLayout(false);
+            this.groupBox17.ResumeLayout(false);
+            this.groupBox17.PerformLayout();
             this.groupBox9.ResumeLayout(false);
             this.groupBox9.PerformLayout();
             this.TabContent.ResumeLayout(false);
@@ -2643,8 +2800,6 @@ namespace Generator.UI.WF
             this.tabPage7.ResumeLayout(false);
             this.tabPage7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgwUserControl)).EndInit();
-            this.NextPage.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.TabView.ResumeLayout(false);
             this.TabView.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgwView)).EndInit();
@@ -2664,7 +2819,6 @@ namespace Generator.UI.WF
             this.groupBox10.ResumeLayout(false);
             this.groupBox10.PerformLayout();
             this.groupBox14.ResumeLayout(false);
-            this.groupBox14.PerformLayout();
             this.groupBox12.ResumeLayout(false);
             this.groupBox12.PerformLayout();
             this.groupBox5.ResumeLayout(false);
@@ -2683,7 +2837,6 @@ namespace Generator.UI.WF
         private System.Windows.Forms.Panel PanelDgw;
         private System.Windows.Forms.Button BtnHeaderCreate;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.CheckBox ChckbAdd;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox TbxTitle;
         private System.Windows.Forms.Panel panel6;
@@ -2734,7 +2887,6 @@ namespace Generator.UI.WF
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.ComboBox CbxProfile;
-        private System.Windows.Forms.Button BtnGetParameter;
         private System.Windows.Forms.Button BtnContentJavaScript;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.GroupBox GbxResult;
@@ -2746,10 +2898,6 @@ namespace Generator.UI.WF
         private System.Windows.Forms.Button BtnUp;
         private System.Windows.Forms.TabPage TabView;
         private System.Windows.Forms.DataGridView DgwView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewComboBoxColumn ElementTypeView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Size;
         private System.Windows.Forms.TabPage tabPage7;
         private System.Windows.Forms.TabPage tabPage8;
         private System.Windows.Forms.RichTextBox ResultText;
@@ -2757,37 +2905,12 @@ namespace Generator.UI.WF
         private System.Windows.Forms.Label LblViewTotal;
         private System.Windows.Forms.Label LblComboBoxTotal;
         private System.Windows.Forms.DataGridView DgwContent;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Text;
-        private System.Windows.Forms.DataGridViewComboBoxColumn ElementType;
         private System.Windows.Forms.DataGridView DgwComboBoxes;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewComboBoxColumn KeyField;
-        private System.Windows.Forms.DataGridViewComboBoxColumn ValueField;
-        private System.Windows.Forms.DataGridViewComboBoxColumn ObjectId;
-        private System.Windows.Forms.DataGridViewComboBoxColumn ProfileIdComboBox;
         private System.Windows.Forms.DataGridView DgwUserControl;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn GetActionCode;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Label;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SearchPage;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TabPage FileExport;
-        private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.Button BtnExport;
-        private System.Windows.Forms.CheckBox checkBox4;
-        private System.Windows.Forms.CheckBox checkBox5;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.TabPage NextPage;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
-        private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewComboBoxColumn1;
-        private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewComboBoxColumn2;
-        private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewComboBoxColumn3;
-        private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewComboBoxColumn4;
         private System.Windows.Forms.TabPage Modal;
         private System.Windows.Forms.GroupBox groupBox9;
         private System.Windows.Forms.Label label21;
@@ -2811,20 +2934,11 @@ namespace Generator.UI.WF
         private System.Windows.Forms.GroupBox groupBox10;
         private System.Windows.Forms.GroupBox groupBox12;
         private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Panel panel10;
-        private System.Windows.Forms.GroupBox groupBox14;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox CbxApplication;
+        private System.Windows.Forms.Button BtnPath;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox TbxPath;
-        private System.Windows.Forms.Panel panel12;
+        private System.Windows.Forms.ComboBox CbxFolder;
         private System.Windows.Forms.GroupBox groupBox13;
         private System.Windows.Forms.DataGridView DgwHeader;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
@@ -2846,5 +2960,49 @@ namespace Generator.UI.WF
         private System.Windows.Forms.Button BtnUpdateQuestion;
         private System.Windows.Forms.Button BtnUpdate;
         private System.Windows.Forms.Button BtnDelete;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.CheckBox CbxOverrideWriteFile;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox TbxPath;
+        private System.Windows.Forms.Panel panel12;
+        private System.Windows.Forms.Button BtnExport;
+        private System.Windows.Forms.CheckBox CbxJavaScriptExport;
+        private System.Windows.Forms.CheckBox CbxExportXML;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TextBox TbxPageName;
+        private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.GroupBox groupBox14;
+        private System.Windows.Forms.GroupBox groupBox17;
+        private System.Windows.Forms.CheckBox checkBox4;
+        private System.Windows.Forms.Label label24; 
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Panel panel14;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.ComboBox comboBox5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdUserControl;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GetActionCode;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Label;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SearchPage;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TextView;
+        private System.Windows.Forms.DataGridViewComboBoxColumn ElementTypeView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SizeView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TextContent;
+        private System.Windows.Forms.DataGridViewComboBoxColumn ElementType;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdComboBox;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TextComboBox;
+        private System.Windows.Forms.DataGridViewComboBoxColumn KeyField;
+        private System.Windows.Forms.DataGridViewComboBoxColumn ValueField;
+        private System.Windows.Forms.DataGridViewComboBoxColumn ObjectId;
+        private System.Windows.Forms.DataGridViewComboBoxColumn ProfileIdComboBox;
+        private System.Windows.Forms.DataGridViewComboBoxColumn MethodType;
     }
 }

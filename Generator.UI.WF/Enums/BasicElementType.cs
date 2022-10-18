@@ -3,7 +3,8 @@
     public enum BasicElementType
     {
         TextBox,
-        DataEntry,
-        CheckBox
+        DateEntry,
+        CheckBox,
+        DateTimeEntry
     }
 }

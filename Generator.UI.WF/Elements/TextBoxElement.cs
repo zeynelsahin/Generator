@@ -4,7 +4,9 @@
     {
         public override string ToString()
         {
-            return $"\n<textbox id=\"{Id}\" text=\"{Text}\" />";
+            string xml = "\n";
+            xml += $"<textbox id=\"{Id}\" text=\"{Text}\" />".Tab(4);
+            return xml;
         }
     }
 }

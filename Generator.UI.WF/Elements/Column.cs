@@ -8,8 +8,22 @@
 
         public override string ToString()
         {
-            if (LinkButton == null) return $"\n<col id=\"{Id}\" field-id=\"{FieldId}\" text=\"{Text}\" width=\"{Witdh}\"/>";
-            return $"\n<col id=\"{Id}\" field-id=\"{FieldId}\" text=\"{Text}\" width=\"{Witdh}\">" + LinkButton.ToString() + "\n</col>";
+            string xml = "";
+            if (LinkButton == null)
+            {
+                xml += "\n";
+                xml += $"<col id=\"{Id}\" field-id=\"{FieldId}\" text=\"{Text}\" width=\"{Witdh}\"/>".Tab(6);
+                return xml;
+            }
+            else
+            {
+                xml += "\n";
+                xml += $"<col id=\"{Id}\" field-id=\"{FieldId}\" text=\"{Text}\" width=\"{Witdh}\">".Tab(6);
+                xml += LinkButton.ToString();
+                xml += "\n";
+                xml += "</col>".Tab(6);
+                return xml;
+            }
         }
     }
 }

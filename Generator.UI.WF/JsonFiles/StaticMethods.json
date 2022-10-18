@@ -1,300 +1,415 @@
 ﻿[
   {
-    "MethodName":"OneToTwelve",
-    "MethodDescription":"1-12 between number",
-    "KeyType":"int",
-    "KeyName":"Number",
-    "Number":[
-     1,2,3,4,5,6,7,8,9,10,11,12
+    "MethodName": "OneToTwelve",
+    "MethodDescription": "1-12 between number",
+    "KeyType": "int",
+    "KeyName": "Number",
+    "Number": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
     ]
   },
   {
-    "MethodName":"BlockPeriodTypeList",
-    "MethodDescription":"DailyMonthly,Weekly",
-    "KeyType":"string",
-    "KeyName":"BlockPeriod",
-    "BlockPeriod":[
-      "D","M","W"
+    "MethodName": "BlockPeriodType",
+    "MethodDescription": "DailyMonthly,Weekly",
+    "KeyType": "string",
+    "KeyName": "BlockPeriod",
+    "BlockPeriod": [
+      "D",
+      "M",
+      "W"
     ],
-    "ValueType":"String",
-    "ValueName":"BlockPeriodType",
-    "BlockPeriodType":[
-      "DAILY","MONTHLY","WEEKLY"
+    "ValueType": "String",
+    "ValueName": "BlockPeriodType",
+    "BlockPeriodType": [
+      "DAILY",
+      "MONTHLY",
+      "WEEKLY"
     ]
   },
   {
-    "MethodName":"ServiceDomainId",
-    "MethodDescription":"Debit,Credit,Prepaid",
-    "KeyType":"string",
-    "KeyName":"ServiceDomainId",
-    "ServiceDomainId":[
-      "D","C","P"
+    "MethodName": "ServiceDomainId",
+    "MethodDescription": "Debit,Credit,Prepaid",
+    "KeyType": "string",
+    "KeyName": "ServiceDomainId",
+    "ServiceDomainId": [
+      "D",
+      "C",
+      "P"
     ],
-    "ValueType":"String",
-    "ValueName":"ServiceDomainIdDescription",
-    "ServiceDomainIdDescription":[
-      "Debit","Credit","Prepaid"
+    "ValueType": "String",
+    "ValueName": "ServiceDomainIdDescription",
+    "ServiceDomainIdDescription": [
+      "Debit",
+      "Credit",
+      "Prepaid"
     ]
   },
   {
-    "MethodName":"BranchIsActive",
-    "MethodDescription":"Active,Not Active",
-    "KeyType":"string",
-    "KeyName":"BranchIsActive",
-    "BranchIsActive":[
-      "1","0"
+    "MethodName": "BranchIsActive",
+    "MethodDescription": "Active,Not Active",
+    "KeyType": "string",
+    "KeyName": "BranchIsActive",
+    "BranchIsActive": [
+      "1",
+      "0"
     ],
-    "ValueType":"String",
-    "ValueName":"Description",
-    "Description":[
-      "Active","Not Active"
+    "ValueType": "String",
+    "ValueName": "Description",
+    "Description": [
+      "Active",
+      "Not Active"
     ]
   },
   {
-    "MethodName":"CardAnnualFeeType",
-    "MethodDescription":"Search Transaction or no transaction",
-    "KeyType":"int",
-    "KeyName":"CardAnnualFeeType",
-    "CardAnnualFeeType":[
-      1,2
+    "MethodName": "CardAnnualFeeType",
+    "MethodDescription": "Search Transaction or no transaction",
+    "KeyType": "int",
+    "KeyName": "CardAnnualFeeType",
+    "CardAnnualFeeType": [
+      1,
+      2
     ],
-    "ValueType":"String",
-    "ValueName":"CardAnnualFeeTypeDesc",
-    "CardAnnualFeeTypeDesc":[
-      "SEARCH TRANSACTION IN THE LAST YEAR","NO TRANSACTION CONTROL"
+    "ValueType": "String",
+    "ValueName": "CardAnnualFeeTypeDesc",
+    "CardAnnualFeeTypeDesc": [
+      "SEARCH TRANSACTION IN THE LAST YEAR",
+      "NO TRANSACTION CONTROL"
     ]
   },
   {
-    "MethodName":"WalletChipIndicators",
-    "MethodDescription":"Wallet,Chip",
-    "KeyType":"string",
-    "KeyName":"WalletChipIndicator",
-    "WalletChipIndicator":[
-      "W","C"
+    "MethodName": "WalletChipIndicators",
+    "MethodDescription": "Wallet,Chip",
+    "KeyType": "string",
+    "KeyName": "WalletChipIndicator",
+    "WalletChipIndicator": [
+      "W",
+      "C"
     ],
-    "ValueType":"String",
-    "ValueName":"Description",
-    "Description":[
-      "Wallet","Chip"
+    "ValueType": "String",
+    "ValueName": "Description",
+    "Description": [
+      "Wallet",
+      "Chip"
     ]
   },
   {
-    "MethodName":"RewardEffectedSegment",
-    "MethodDescription":"Non,Daily,Corrected",
-    "KeyType":"string",
-    "KeyName":"RewardEffectedSegment",
-    "RewardEffectedSegment":[
-      "N","D","C"
+    "MethodName": "RewardEffectedSegment",
+    "MethodDescription": "Non,Daily,Corrected",
+    "KeyType": "string",
+    "KeyName": "RewardEffectedSegment",
+    "RewardEffectedSegment": [
+      "N",
+      "D",
+      "C"
     ],
-    "ValueType":"String",
-    "ValueName":"Description",
-    "Description":[
-      "Non","Daily","Corrected"
+    "ValueType": "String",
+    "ValueName": "Description",
+    "Description": [
+      "Non",
+      "Daily",
+      "Corrected"
     ]
   },
   {
-    "MethodName":"TrnEffectedLimit",
-    "MethodDescription":"Cash,Normal Limit and Non Financial",
-    "KeyType":"string",
-    "KeyName":"TrnEffectedLimit",
-    "TrnEffectedLimit":[
-      "C","L","N"
+    "MethodName": "TrnEffectedLimit",
+    "MethodDescription": "Cash,Normal Limit and Non Financial",
+    "KeyType": "string",
+    "KeyName": "TrnEffectedLimit",
+    "TrnEffectedLimit": [
+      "C",
+      "L",
+      "N"
     ],
-    "ValueType":"String",
-    "ValueName":"Description",
-    "Description":[
-      "Cash Limit","Normal Limit","Non Financial"
+    "ValueType": "String",
+    "ValueName": "Description",
+    "Description": [
+      "Cash Limit",
+      "Normal Limit",
+      "Non Financial"
     ]
   },
   {
-    "MethodName":"TrnEffectedLimit",
-    "MethodDescription":"Non,Daily,Corrected",
-    "KeyType":"string",
-    "KeyName":"TrnRewardAbility",
-    "TrnRewardAbility":[
-      "C","L","N"
+    "MethodName": "TrnEffectedLimit",
+    "MethodDescription": "Non,Daily,Corrected",
+    "KeyType": "string",
+    "KeyName": "TrnRewardAbility",
+    "TrnRewardAbility": [
+      "C",
+      "L",
+      "N"
     ],
-    "ValueType":"String",
-    "ValueName":"Description",
-    "Description":[
-      "Debit","Credit","None"
+    "ValueType": "String",
+    "ValueName": "Description",
+    "Description": [
+      "Debit",
+      "Credit",
+      "None"
     ]
   },
   {
-    "MethodName":"TrnEffectType",
-    "MethodDescription":"Non Financial, Fund, Reward",
-    "KeyType":"string",
-    "KeyName":"TrnEffectType",
-    "TrnEffectType":[
-      "N","F","R"
+    "MethodName": "TrnEffectType",
+    "MethodDescription": "Non Financial, Fund, Reward",
+    "KeyType": "string",
+    "KeyName": "TrnEffectType",
+    "TrnEffectType": [
+      "N",
+      "F",
+      "R"
     ],
-    "ValueType":"String",
-    "ValueName":"Description",
-    "Description":[
-      "Non Financial","Fund","Reward"
+    "ValueType": "String",
+    "ValueName": "Description",
+    "Description": [
+      "Non Financial",
+      "Fund",
+      "Reward"
     ]
   },
   {
-    "MethodName":"PeriodTypeDef",
-    "MethodDescription":"Haftalik, Aylik",
-    "KeyType":"string",
-    "KeyName":"PeriodType",
-    "PeriodType":[
-      "N","F","R"
+    "MethodName": "PeriodTypeDef",
+    "MethodDescription": "Haftalik, Aylik",
+    "KeyType": "string",
+    "KeyName": "PeriodType",
+    "PeriodType": [
+      "N",
+      "F",
+      "R"
     ],
-    "ValueType":"String",
-    "ValueName":"PeriodTypeDescription",
-    "PeriodTypeDescription":[
-      "Haftalik","Aylik"
+    "ValueType": "String",
+    "ValueName": "PeriodTypeDescription",
+    "PeriodTypeDescription": [
+      "Haftalik",
+      "Aylik"
     ]
   },
   {
-    "MethodName":"CurrencyCode",
-    "MethodDescription":"USD, TL, EUR",
-    "KeyType":"string",
-    "KeyName":"CurrencyCode",
-    "CurrencyCode":[
-      "840","949","978"
+    "MethodName": "CurrencyCode",
+    "MethodDescription": "USD, TL, EUR",
+    "KeyType": "string",
+    "KeyName": "CurrencyCode",
+    "CurrencyCode": [
+      "840",
+      "949",
+      "978"
     ],
-    "ValueType":"String",
-    "ValueName":"Description",
-    "Description":[
-      "USD","TL","EUR"
+    "ValueType": "String",
+    "ValueName": "Description",
+    "Description": [
+      "USD",
+      "TL",
+      "EUR"
     ]
   },
   {
-    "MethodName":"NotificationStatus",
-    "MethodDescription":"Success, Failed, NotNotify",
-    "KeyType":"string",
-    "KeyName":"ProcessStatus",
-    "ProcessStatus":[
-      "SUCCEED","FAILED","NOTNOTIFY"
+    "MethodName": "NotificationStatus",
+    "MethodDescription": "Success, Failed, NotNotify",
+    "KeyType": "string",
+    "KeyName": "ProcessStatus",
+    "ProcessStatus": [
+      "SUCCEED",
+      "FAILED",
+      "NOTNOTIFY"
     ],
-    "ValueType":"String",
-    "ValueName":"ProcessStatusDescription",
-    "ProcessStatusDescription":[
-      "Başarılı","Hatalı","Beklemede"
+    "ValueType": "String",
+    "ValueName": "ProcessStatusDescription",
+    "ProcessStatusDescription": [
+      "Başarılı",
+      "Hatalı",
+      "Beklemede"
     ]
   },
   {
-    "MethodName":"Route",
-    "MethodDescription":"Issuer, Acquirer",
-    "KeyType":"string",
-    "KeyName":"Route",
-    "Route":[
-      "Issuer","Acquirer"
+    "MethodName": "Route",
+    "MethodDescription": "Issuer, Acquirer",
+    "KeyType": "string",
+    "KeyName": "Route",
+    "Route": [
+      "Issuer",
+      "Acquirer"
     ]
   },
   {
-    "MethodName":"TrnType",
-    "MethodDescription":"Credit, Debit, Reward",
-    "KeyType":"string",
-    "KeyName":"TrnType",
-    "TrnType":[
-      "C","D","R"
+    "MethodName": "TrnType",
+    "MethodDescription": "Credit, Debit, Reward",
+    "KeyType": "string",
+    "KeyName": "TrnType",
+    "TrnType": [
+      "C",
+      "D",
+      "R"
     ],
-    "ValueType":"String",
-    "ValueName":"TrnTypeDesc",
-    "TrnTypeDesc":[
-      "CREDIT","DEBT","REWARD"
+    "ValueType": "String",
+    "ValueName": "TrnTypeDesc",
+    "TrnTypeDesc": [
+      "CREDIT",
+      "DEBT",
+      "REWARD"
     ]
   },
   {
-    "MethodName":"TrnResource",
-    "MethodDescription":"Credit, Debit, Reward",
-    "KeyType":"int",
-    "KeyName":"TrnResourceCode",
-    "TrnResourceCode":[
-      1,2,3
+    "MethodName": "TrnResource",
+    "MethodDescription": "Credit, Debit, Reward",
+    "KeyType": "int",
+    "KeyName": "TrnResourceCode",
+    "TrnResourceCode": [
+      1,
+      2,
+      3
     ],
-    "ValueType":"String",
-    "ValueName":"TrnResourceDesc",
-    "TrnResourceDesc":[
-      "AUTHORIZATION","CURRENT","STATEMENT"
+    "ValueType": "String",
+    "ValueName": "TrnResourceDesc",
+    "TrnResourceDesc": [
+      "AUTHORIZATION",
+      "CURRENT",
+      "STATEMENT"
     ]
   },
   {
-    "MethodName":"TrnResource",
-    "MethodDescription":"Authorization, Current, Statement",
-    "KeyType":"int",
-    "KeyName":"TrnResourceCode",
-    "TrnResourceCode":[
-      1,2,3
+    "MethodName": "TrnResource",
+    "MethodDescription": "Authorization, Current, Statement",
+    "KeyType": "int",
+    "KeyName": "TrnResourceCode",
+    "TrnResourceCode": [
+      1,
+      2,
+      3
     ],
-    "ValueType":"String",
-    "ValueName":"TrnResourceDesc",
-    "TrnResourceDesc":[
-      "AUTHORIZATION","CURRENT","STATEMENT"
+    "ValueType": "String",
+    "ValueName": "TrnResourceDesc",
+    "TrnResourceDesc": [
+      "AUTHORIZATION",
+      "CURRENT",
+      "STATEMENT"
     ]
   },
   {
-    "MethodName":"RvTrnCode_05",
-    "MethodDescription":"05, 06, 07, 08",
-    "KeyType":"string",
-    "KeyName":"TrnCode",
-    "TrnCode":[
-     "05","06","07","08"
+    "MethodName": "RvTrnCode_05",
+    "MethodDescription": "05, 06, 07, 08",
+    "KeyType": "string",
+    "KeyName": "TrnCode",
+    "TrnCode": [
+      "05",
+      "06",
+      "07",
+      "08"
     ],
-    "ValueType":"String",
-    "ValueName":"UsageCode",
-    "UsageCode":[
-      "1","1","1","1"
+    "ValueType": "String",
+    "ValueName": "UsageCode",
+    "UsageCode": [
+      "1",
+      "1",
+      "1",
+      "1"
     ]
   },
   {
-    "MethodName":"RvTrnCode_15",
-    "MethodDescription":"15, 16, 17, 18",
-    "KeyType":"string",
-    "KeyName":"TrnCode",
-    "TrnCode":[
-      "15","16","17","18"
+    "MethodName": "RvTrnCode_15",
+    "MethodDescription": "15, 16, 17, 18",
+    "KeyType": "string",
+    "KeyName": "TrnCode",
+    "TrnCode": [
+      "15",
+      "16",
+      "17",
+      "18"
     ],
-    "ValueType":"String",
-    "ValueName":"UsageCode",
-    "UsageCode":[
-      "1","1","1","1"
+    "ValueType": "String",
+    "ValueName": "UsageCode",
+    "UsageCode": [
+      "1",
+      "1",
+      "1",
+      "1"
     ]
   },
   {
-    "MethodName":"CbTrnCode",
-    "MethodDescription":"05, 06, 07, 08",
-    "KeyType":"string",
-    "KeyName":"TrnCode",
-    "TrnCode":[
-      "05","06","07","08"
+    "MethodName": "CbTrnCode",
+    "MethodDescription": "05, 06, 07, 08",
+    "KeyType": "string",
+    "KeyName": "TrnCode",
+    "TrnCode": [
+      "05",
+      "06",
+      "07",
+      "08"
     ],
-    "ValueType":"String",
-    "ValueName":"UsageCode",
-    "UsageCode":[
-      "1","1","1","1"
+    "ValueType": "String",
+    "ValueName": "UsageCode",
+    "UsageCode": [
+      "1",
+      "1",
+      "1",
+      "1"
     ]
   },
   {
-    "MethodName":"ReportTypeList",
-    "MethodDescription":"05, 06, 07, 08",
-    "KeyType":"int",
-    "KeyName":"Id",
-    "Id":[
-      1,2
+    "MethodName": "ReportTypeList",
+    "MethodDescription": "05, 06, 07, 08",
+    "KeyType": "int",
+    "KeyName": "Id",
+    "Id": [
+      1,
+      2
     ],
-    "ValueType":"String",
-    "ValueName":"Report",
-    "Report":[
-      "Summary","Detail"
+    "ValueType": "String",
+    "ValueName": "Report",
+    "Report": [
+      "Summary",
+      "Detail"
     ]
   },
   {
-    "MethodName":"FileTypeList",
-    "MethodDescription":"Visa Incoming,Outgoing File",
-    "KeyType":"string",
-    "KeyName":"FileType",
-    "FileType":[
-      "VISAINCOMINGFILE","VISAOUTGOINGFILE"
+    "MethodName": "FileTypeList",
+    "MethodDescription": "Visa Incoming,Outgoing File",
+    "KeyType": "string",
+    "KeyName": "FileType",
+    "FileType": [
+      "VISAINCOMINGFILE",
+      "VISAOUTGOINGFILE"
     ],
-    "ValueType":"String",
-    "ValueName":"Description",
-    "Description":[
-      "Visa Incoming File","Visa Outgoing File"
+    "ValueType": "String",
+    "ValueName": "Description",
+    "Description": [
+      "Visa Incoming File",
+      "Visa Outgoing File"
+    ]
+  },
+  {
+    "MethodName": "ClearingChannel",
+    "MethodDescription": "BKM VISA EMC",
+    "KeyType": "string",
+    "KeyName": "Channel",
+    "Channel": [
+      "BKM",
+      "VISA",
+      "EMC"
+    ]
+  },
+  {
+    "MethodName": "CaseType",
+    "MethodDescription": "Issuer I, Acquirer A",
+    "KeyType": "String",
+    "KeyName": "Type",
+    "Type": [
+      "I",
+      "A"
+    ],
+    "ValueType": "String",
+    "ValueName": "Description",
+    "Description": [
+      "Issuer",
+      "Acquirer"
     ]
   }
+
 ]

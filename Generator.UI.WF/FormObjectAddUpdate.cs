@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Windows.Forms;
 using Generator.Business.Abstract;
 using Generator.Business.Concrete;
@@ -45,20 +47,21 @@ namespace Generator.UI.WF
             {
                 "Hiçbiri"
             };
-            var result = _objectEntityService.GetAllProfileId();
-            objectIdList.AddRange(result);
+            var profiles = File.ReadAllText(@"../../../JsonFiles/ObjectProfiles.json");
+            objectIdList.AddRange(JsonSerializer.Deserialize<List<string>>(profiles));
             CbxProfileId.DataSource = objectIdList;
         }
 
         private void FillSchemaName()
         {
-            var objectIdList = new List<string>()
+            var schemaList = new List<string>()
             {
                 "Hiçbiri"
             };
-            var result = _objectEntityService.GetAllSchemaName();
-            objectIdList.AddRange(result);
-            CbxSchemaName.DataSource = objectIdList;
+            var schemaNames = File.ReadAllText(@"../../../JsonFiles/SchemaNames.json");
+            schemaList.AddRange(JsonSerializer.Deserialize<List<string>>(schemaNames));
+        
+            CbxSchemaName.DataSource = schemaList;
         }
 
         private void FillProfile()
@@ -251,7 +254,7 @@ namespace Generator.UI.WF
 
         private void BtnServiceMethodAdd_Click(object sender, EventArgs e)
         {
-            FormServiceMethodAdd form= new FormServiceMethodAdd(TbxObjectId.Text,TbxProfileId.Text,CbxObjectType.Text);
+            FormServiceMethodAdd form = new FormServiceMethodAdd(TbxObjectId.Text, TbxProfileId.Text, CbxObjectType.Text);
             form.Show();
         }
     }

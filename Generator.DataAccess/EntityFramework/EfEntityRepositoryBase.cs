@@ -2,18 +2,17 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
 using Generator.Entities.Abstract;
 using Microsoft.EntityFrameworkCore;
 
-namespace Generator.DataAccess.EntitiyFramework
+namespace Generator.DataAccess.EntityFramework
 {
     public class EfEntityRepositoryBase<TEntity, TContext> : IEntityRepository<TEntity> where TEntity : class, IEntity, new() where TContext : DbContext, new()
     {
         public List<TEntity> GetAll(Expression<Func<TEntity, bool>> filter = null)
         {
             using var context = new TContext();
-            return filter == null ? context.Set<TEntity>().ToList() : context.Set<TEntity>().Where(filter).ToList();
+                return filter == null ? context.Set<TEntity>().ToList() : context.Set<TEntity>().Where(filter).ToList();
         }
 
         public TEntity Get(Expression<Func<TEntity, bool>> filter)

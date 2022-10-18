@@ -8,9 +8,12 @@ namespace Generator.UI.WF.Elements
 
         public override string ToString()
         {
-            var rowTemplate = "";
-            Columns.ForEach(p => { rowTemplate += p.ToString(); });
-            return "\n<row-template>" + rowTemplate + "\n</row-template>";
+            string xml = "\n";
+            xml += "<row-template>".Tab(5);
+            Columns.ForEach(p => { xml += p.ToString(); });
+            xml += "\n";
+            xml += "</row-template>".Tab(5);
+            return xml;
         }
     }
 }

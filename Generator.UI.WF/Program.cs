@@ -12,13 +12,13 @@ using Generator.Business.Concrete;
 using Generator.DataAccess.Abstract;
 using Generator.DataAccess.Concrete;
 using Generator.Entities;
+using Microsoft.Extensions.DependencyInjection;
 using Module = Autofac.Module;
 
 namespace Generator.UI.WF
 {
     public static class Program
     {
-        //public static IContainer IoCContainer { get; set; }
         /// <summary>
         ///  The main entry point for the application.
         /// </summary>
@@ -28,9 +28,9 @@ namespace Generator.UI.WF
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new FormLogin());
-            Application.Run(new FormUxGenerator());
-            //Application.Run(new FormParameterAdd());
+            Application.Run(new FormLogin());
+            //Application.Run(new FormUxGenerator());
+            //Application.Run(new FormParameterAndResultAdd());
             //Application.Run(new FormResultAdd());
         }
     }

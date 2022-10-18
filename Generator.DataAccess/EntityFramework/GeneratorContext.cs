@@ -1,9 +1,7 @@
-﻿using System.Collections.Generic;
-using System.Text;
-using Generator.Entities;
+﻿using Generator.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace Generator.DataAccess.EntitiyFramework
+namespace Generator.DataAccess.EntityFramework
 {
     public class GeneratorContext : DbContext
     {

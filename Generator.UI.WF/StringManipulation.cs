@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Microsoft.VisualBasic;
 
 namespace Generator.UI.WF
 {
@@ -101,7 +102,6 @@ namespace Generator.UI.WF
                 }
             }
 
-
             return yeniSt;
         }
 
@@ -127,9 +127,9 @@ namespace Generator.UI.WF
                 }
             }
 
-
             return yeniSt;
         }
+
         public static string UnifiedCaseConfigure(this string result)
         {
             var st = result;
@@ -148,6 +148,7 @@ namespace Generator.UI.WF
 
             return yeniSt;
         }
+
         public static char ConvertChar(this object value)
         {
             if ((bool)value)
@@ -159,14 +160,41 @@ namespace Generator.UI.WF
                 return '0';
             }
         }
+
         public static string RemoveGet(this string result)
         {
             var index = result.ToLower().IndexOf("get");
             if (index != -1)
             {
-                result = result.Substring(2);
+                result = result.Substring(3);
             }
+
             return result;
         }
+
+        public static string Tab(this string javaScript, int tabCount)
+        {
+            var javaSrciptNew = "";
+            for (int i = 0; i < tabCount; i++)
+            {
+                javaSrciptNew += "    ";
+            }
+            return javaSrciptNew + javaScript;
+        }
+
+        public static string GridNameConfig(this string name)
+        {
+            if (name.IndexOf("Get") != -1)
+                name = name.Substring(3);
+            else if (name.IndexOf("Modify") != -1)
+                name = name.Substring(6);
+            else if (name.IndexOf("Create") != -1)
+                name = name.Substring(6);
+            var index = name.IndexOf("ByCustom");
+            if (index != -1)
+                name = name.Substring(0,index);
+            return name;
+        }
+
     }
 }

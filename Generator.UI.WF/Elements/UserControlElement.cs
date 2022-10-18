@@ -9,14 +9,14 @@ namespace Generator.UI.WF.Elements
     public class UserControlElement : BaseElement
     {
         public string ControlId { get; set; }
-        public List<Parameter> Parameters { get; set; }= new List<Parameter>();
-
+        public List<Parameter> Parameters { get; set; } = new List<Parameter>();
 
         public override string ToString()
         {
-            string xml=$"<user-control id=\"{Id}\" control-id=\"{ControlId}\"\n";
-            Parameters.ForEach(parameter => { xml += parameter.ToString()+"\n"; });
-            xml += "</user-control>";
+            string xml = "\n";
+            xml += $"<user-control id=\"{Id}\" control-id=\"{ControlId}\"".Tab(4);
+            Parameters.ForEach(parameter => { xml += parameter.ToString(); });
+            xml += "</user-control>".Tab(4);
             return xml;
         }
     }

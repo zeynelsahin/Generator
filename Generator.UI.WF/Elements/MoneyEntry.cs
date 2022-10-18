@@ -8,7 +8,9 @@ namespace Generator.UI.WF.Elements
     {
         public override string ToString()
         {
-            return "\n<money-entry id=\"MinSourceAmount\" text=\"MinAmount\"/>";
+            string xml = "\n";
+            xml += $"<money-entry id=\"MinSourceAmount\" text=\"MinAmount\"/>";
+            return xml;
         }
     }
 }

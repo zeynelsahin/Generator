@@ -9,8 +9,16 @@ namespace Generator.UI.WF.Elements
 
         public override string ToString()
         {
-     
-            return Type!=null?$"\n<field id=\"{Id}\" data-source=\"{DataSource}\" type=\"{Type}\"></field>":$"\n<field id=\"{Id}\" data-source=\"{DataSource}\"></field>";
+            string xml = "\n";
+            if (Type != null)
+            {
+                xml += $"<field id=\"{Id}\" data-source=\"{DataSource}\" type=\"{Type}\"></field>".Tab(6);
+            }
+            else
+            {
+                xml += $"<field id=\"{Id}\" data-source=\"{DataSource}\"></field>".Tab(6);
+            }
+            return xml;
         }
     }
 }

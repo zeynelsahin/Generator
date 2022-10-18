@@ -8,32 +8,49 @@
 
         public override string ToString()
         {
-            var javaScript = "";
-            javaScript += $"\n{MethodName}()";
-                javaScript += "{";
+            
+            var javaScript = "\n";
+            javaScript += $"{MethodName}()".Tab(2);
+            javaScript += " {";
             if (Parameter.Params.Count > 0)
             {
-                javaScript += "let input = {";
+                int tab = 4;
+                javaScript += "\n";
+                javaScript += "let input = {\n".Tab(3);
+                if (!string.IsNullOrWhiteSpace(ParameterName))
+                {
+                    javaScript += $"{ParameterName}: ".Tab(4);
+                    javaScript += "{";
+                    javaScript += "\n";
+                    tab = 5;
+                }
                 for (var i = 0; i < Parameter.Params.Count; i++)
                 {
                     if (i == Parameter.Params.Count - 1)
                     {
-                        javaScript += $"\n{Parameter.Params[i].Key}: this.$Prop.{Parameter.Params[i].Value}.GetValue()";
+                        javaScript += $"{Parameter.Params[i].Key}: this.$Prop.{Parameter.Params[i].Value}.GetValue()\n".Tab(tab);
                         break;
                     }
 
-                    javaScript += $"\n{Parameter.Params[i].Key}: this.$Prop.{Parameter.Params[i].Value}.GetValue(),";
+                    javaScript += $"{Parameter.Params[i].Key}: this.$Prop.{Parameter.Params[i].Value}.GetValue(),\n".Tab(tab);
                 }
-                javaScript += "\n};";
-            }
 
-            javaScript += $"\nthis.$Page.ExecuteQuery(\"{ServiceName}\",";
-            javaScript += "\n{\n";
+                if (!string.IsNullOrWhiteSpace(ParameterName))
+                {
+                    javaScript += "}\n".Tab(4);
+                }
+
+                javaScript += "};".Tab(3);
+            }
+            javaScript += "\n";
+            javaScript += ($"this.$Page.ExecuteQuery(\"{ServiceName}\",\n").Tab(3);
+            javaScript += "{\n".Tab(4);
             if (Parameter.Params.Count > 0)
             {
-                javaScript += "Params:[input],\n";
+                javaScript += "Params: [input],\n".Tab(5);
             }
-            javaScript += "Done(results) {\n";
+
+            javaScript += "Done(results) {\n".Tab(5);
             return javaScript;
         }
     }

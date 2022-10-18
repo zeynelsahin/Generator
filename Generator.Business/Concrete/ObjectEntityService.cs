@@ -72,7 +72,7 @@ namespace Generator.Business.Concrete
 
         public List<string> GetAllSchemaName()
         {
-            var result = _objectEntityDal.GetAll().Select(entity => entity.SchemaName).Distinct().ToList();
+            var result = _objectEntityDal.GetAll().OrderBy(p=>p.SchemaName).Select(entity => entity.SchemaName).Distinct().ToList();
             return result;
         }
 

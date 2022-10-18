@@ -4,11 +4,13 @@ using System.Text;
 
 namespace Generator.UI.WF.Elements
 {
-    public class DataEntry : BaseElement
+    public class DateEntry : BaseElement
     {
         public override string ToString()
         {
-            return $"\n<data-entry id=\"{Id}\" text=\"{Text}\"/>";
+            string xml = "\n";
+            xml += "<date-entry id=\"{Id}\" text=\"{Text}\"/>".Tab(4);
+            return xml;
         }
     }
 }

@@ -10,7 +10,9 @@ namespace Generator.UI.WF.Elements
 
         public override string ToString()
         {
-            return "\n<navbar title=\"File Upload Status\"/>";
+            string xml = "\n";
+            xml += $"<navbar title=\"{Title}\"/";
+            return xml;
         }
     }
 }

@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
-using System.Text;
 using Generator.Entities.Abstract;
 
-namespace Generator.DataAccess.EntitiyFramework
+namespace Generator.DataAccess.EntityFramework
 {
     public interface IEntityRepository<T> where T : class, IEntity, new()
     {

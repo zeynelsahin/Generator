@@ -1,4 +1,4 @@
-﻿using Generator.DataAccess.EntitiyFramework;
+﻿using Generator.DataAccess.EntityFramework;
 using Generator.Entities;
 
 namespace Generator.DataAccess.Abstract

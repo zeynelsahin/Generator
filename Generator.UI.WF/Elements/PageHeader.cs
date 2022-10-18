@@ -10,7 +10,8 @@ namespace Generator.UI.WF.Elements
 
         public override string ToString()
         {
-            string xml = $"\n<page-header title=\"{Title}\">";
+            string xml = "\n";
+            xml += $"<page-header title=\"{Title}\">".Tab(1);
             if (Buttons.Count > 0)
             {
                 foreach (var button in Buttons)
@@ -18,8 +19,8 @@ namespace Generator.UI.WF.Elements
                     xml += button.ToString();
                 }
             }
-
-            xml += "\n</page-header>";
+            xml += "\n";
+            xml += "</page-header>".Tab(1);
             return xml;
         }
     }

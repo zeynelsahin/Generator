@@ -8,9 +8,12 @@ namespace Generator.UI.WF.Elements
 
         public override string ToString()
         {
-            var xml = "";
+            var xml = "\n";
+            xml += "<model>".Tab(5);
             Fields.ForEach(field => { xml += field.ToString(); });
-            return "\n<model>" + xml + "\n</model>";
+            xml += "\n";
+            xml += "</model>".Tab(5);
+            return xml;
         }
     }
 }

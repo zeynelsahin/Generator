@@ -17,7 +17,7 @@ namespace Generator.Entities
         public char DeleteMethodFlag { get; set; }
         public char CreateMethodFlag { get; set; }
         public char ModifyMethodFlag { get; set; }
-        public char CustomMethodFlag { get; set; }
+        public char? CustomMethodFlag { get; set; } 
         public char IndexMethodFlag { get; set; }
         public char OnlyEntityFlag { get; set; }
     }

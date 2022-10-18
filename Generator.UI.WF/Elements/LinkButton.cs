@@ -10,7 +10,9 @@ namespace Generator.UI.WF.Elements
 
         public override string ToString()
         {
-            return $"\n<link-button action-code=\"{ActionCode}\"/>";
+            string xml = "\n";
+            xml += $"<link-button action-code=\"{ActionCode}\"/>".Tab(7);
+            return xml;
         }
     }
 }

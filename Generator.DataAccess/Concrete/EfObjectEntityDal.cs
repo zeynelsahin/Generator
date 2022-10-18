@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using Generator.DataAccess.Abstract;
-using Generator.DataAccess.EntitiyFramework;
+using Generator.DataAccess.EntityFramework;
 using Generator.Entities;
 using Microsoft.EntityFrameworkCore;
 using Oracle.ManagedDataAccess.Client;

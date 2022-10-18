@@ -11,7 +11,9 @@ namespace Generator.UI.WF.Elements
 
         public override string ToString()
         {
-            return $"<parameter key=\"{Key}\">{Text}</parameter> ";
+            string xml = "\n";
+            xml += $"<parameter key=\"{Key}\">{Text}</parameter>".Tab(5);
+            return xml;
         }
     }
 }

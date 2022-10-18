@@ -1,11 +1,13 @@
 ﻿using System.Collections.Generic;
+using Generator.Entities;
 
 namespace Generator.UI.WF.JavaScriptGenerate
 {
-    public class KeyValueStaticMethod<TKeyType, TValueType> : StaticMethod
+    public class KeyValueStaticMethod : StaticMethod
     {
-        public List<TKeyType> KeyList { get; set; } = new List<TKeyType>();
-        public List<TValueType> ValueList { get; set; } = new List<TValueType>();
+        public List<object> KeyList { get; set; } = new List<object>();
+        public List<object> ValueList { get; set; } = null;
+        public string JsonString { get; set; }
 
         public string GetValue(object value)
         {
@@ -26,26 +28,42 @@ namespace Generator.UI.WF.JavaScriptGenerate
         public override string ToString()
         {
             var javaScript = "";
-            javaScript += $"{MethodName}List() ";
+            javaScript += ($"{MethodName}List() ").Tab(2);
             javaScript += "{\n";
-            javaScript += $"let {MethodName} = [";
-
-            for (int i = 0; i < KeyList.Count; i++)
+            javaScript += ($"let {MethodName} = [").Tab(3);
+            if (ValueList != null)
             {
-                javaScript += "\n{";
-                javaScript += $"{KeyName}: {GetValue(KeyList[i])}: {ValueName}: {GetValue(ValueList[i])}";
-                if (KeyList.Count != KeyList.Count - 1)
+                for (int i = 0; i < KeyList.Count - 1; i++)
                 {
-                    javaScript += "},";
+                    javaScript += "\n";
+                    javaScript += ("{ ").Tab(4);
+                    javaScript += ($"{KeyName}: {KeyList[i]}, {ValueName}: {(ValueList[i])}");
+                    javaScript += " },";
                 }
-                else
-                {
-                    javaScript += "}";
-                }
-            }
+                javaScript += "\n";
+                javaScript += "{ ".Tab(4);
+                javaScript += $"{KeyName}: {(KeyList[^1])}, {ValueName}: {(ValueList[^1])}";
+                javaScript += " }\n";
+                javaScript += "];".Tab(3);
 
-            javaScript += "\n];";
-            javaScript += "\n}";
+            }
+            else
+            {
+                for (int i = 0; i < KeyList.Count - 1; i++)
+                {
+                    javaScript += "{".Tab(4);
+                    javaScript += $"{KeyName}: {(KeyList[i])}".Tab(4);
+                    javaScript += "},".Tab(4);
+                }
+                javaScript += "{";
+                javaScript += $"{KeyName}: {(KeyList[^1])}".Tab(4);
+                javaScript += "}\n".Tab(4);
+                javaScript += "];".Tab(3);
+            }
+            javaScript += "\n";
+            javaScript += $"this.$Prop.{PropName}.Fill({MethodName});\n".Tab(3);
+            javaScript += "}\n".Tab(2);
+
             return javaScript;
         }
     }

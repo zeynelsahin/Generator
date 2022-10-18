@@ -13,7 +13,9 @@ namespace Generator.UI.WF.Elements
 
         public override string ToString()
         {
-            return $"\n<button id=\"{Id}\" text=\"{Text}\" action-code=\"{ActionCode}\" type-css=\"{TypeCss}\" alignment=\"{Alignment}\" icon-css=\"{IconCss}\"/> ";
+            string xml = "\n";
+            xml += $"<button id=\"{Id}\" text=\"{Text}\" action-code=\"{ActionCode}\" type-css=\"{TypeCss}\" alignment=\"{Alignment}\" icon-css=\"{IconCss}\"/>".Tab(2);
+            return xml;
         }
     }
 }

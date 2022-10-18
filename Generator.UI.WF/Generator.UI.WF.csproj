@@ -37,7 +37,7 @@
 
     <ItemGroup>
         <Folder Include="Enums\" />
-        <Folder Include="NewFolder1\" />
+        <Folder Include="Dependency\" />
     </ItemGroup>
 
 </Project>

@@ -11,7 +11,9 @@ namespace Generator.UI.WF.Elements
 
         public override string ToString()
         {
-            return $"\n<combo id=\"{Id}\" text=\"{Text}\" key-field=\"{KeyField}\" value-field=\"{ValueField}\"/>";
+            string xml = "\n";
+            xml += $"<combo id=\"{Id}\" text=\"{Text}\" key-field=\"{KeyField}\" value-field=\"{ValueField}\"/>".Tab(4);
+            return xml;
         }
     }
 }

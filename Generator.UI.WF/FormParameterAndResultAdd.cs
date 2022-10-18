@@ -17,9 +17,9 @@ namespace Generator.UI.WF
 
         public FormParameterAndResultAdd()
         {
-            _objectId = "get_terminal_transactions_list_by_custom_cretiria";
-            _profileId = "MerchantBackoffice";
-            _schemaName = "TRN";
+            _objectId = "create_dis_case";
+            _profileId = "CLEARING_BACKOFFICE_V2";
+            _schemaName = "DIS";
             InitializeComponent();
         }
 
@@ -128,23 +128,13 @@ namespace Generator.UI.WF
 
         private string ParameterSqlTextFormat(string sqlText)
         {
-            var unionIndex = sqlText.IndexOf("union");
-            if (unionIndex != -1) sqlText = sqlText.Substring(0, unionIndex);
-
-
-            var selectIndex = sqlText.IndexOf("select");
-            sqlText = sqlText.Substring(selectIndex);
-            sqlText = sqlText.Substring(6);
-
-            var fromIndex = sqlText.IndexOf("where");
-            sqlText = sqlText.Substring(fromIndex);
-            sqlText = sqlText.Substring(6);
-
-            var orderByIndex = sqlText.LastIndexOf("order by");
-            if (orderByIndex != -1) sqlText = sqlText.Substring(0, orderByIndex);
-
+            //var declare = sqlText.ToLower().IndexOf("declare");
+            //if (declare != -1)
+            //{
+            //    var lastSelect = sqlText.LastIndexOf("Select");
+            //    sqlText = sqlText.Substring(lastSelect);
+            //}
             var straightSqlText = sqlText.Where(t => t != Convert.ToChar($"\n") && t != Convert.ToChar($"\r")).Aggregate("", (current, t) => current + t.ToString());
-
             return straightSqlText.ToUpper();
         }
 
@@ -156,6 +146,11 @@ namespace Generator.UI.WF
             for (int i = 0; i < straightSqlText.Length; i++)
             {
                 if (straightSqlText[i] == 'A' && straightSqlText[i + 1] == 'N' && straightSqlText[i + 2] == 'D' && straightSqlText[i - 1] == ' ')
+                {
+                    sqlText += 'é';
+                    i += 2;
+                }
+                else if (straightSqlText[i] == 'O' && straightSqlText[i + 1] == 'R' && straightSqlText[i - 1] == ' ')
                 {
                     sqlText += 'é';
                     i += 2;
@@ -179,14 +174,16 @@ namespace Generator.UI.WF
                 }
                 //if (sqlText[i] == Convert.ToChar("."))
                 //    column = "";
-
-                if (sqlText[i] == Convert.ToChar("é") || i == sqlText.Length - 1)
+                if (string.IsNullOrWhiteSpace(column)) continue;
+                if (sqlText[i] == Convert.ToChar("é") || i == sqlText.Length - 1 || (sqlText[i] == Convert.ToChar(" ") && column.Length > 2 && column.Contains(':')))
                 {
+                    
                     if (column.StartsWith('(')) column = column.Remove(0, 1);
                     if (column.StartsWith(' ')) column = column.Remove(0, 1);
                     if (column.IndexOf(":") != -1)
                     {
                         var elseIndex = column.IndexOf(":");
+                        if (column[elseIndex + 1] == '=') continue;
                         if (elseIndex != -1) column = column.Substring(elseIndex);
                         if (column.IndexOf("IS NULL") != -1)
                         {
@@ -205,7 +202,11 @@ namespace Generator.UI.WF
                             var index = column.IndexOf(")");
                             column = column.Substring(0, index);
                         }
-
+                        if (column.Contains(";"))
+                        {
+                            var index = column.IndexOf(";");
+                            column = column.Substring(0, index);
+                        }
                         if (column.IndexOf("AS") != -1 && column[column.IndexOf("AS") - 1] == ' ')
                         {
                             var asIndex = column.IndexOf("AS");
@@ -241,7 +242,11 @@ namespace Generator.UI.WF
                 if (parameter.DataType == null)
                 {
                     parameter.InputOutput = "i";
-                    parameter.NullableFlag = '0';
+                    parameter.NullableFlag = '1';
+                    if (parameter.ParameterId.Contains("_FLAG"))
+                    {
+                        parameter.DataType="char";
+                    }
                 }
                 list.Add(parameter);
             }
@@ -422,6 +427,10 @@ namespace Generator.UI.WF
                 if (result.DataType == null)
                 {
                     result.NullableFlag = '1';
+                    if (result.ResultId.Contains("_FLAG"))
+                    {
+                        result.DataType = "char";
+                    }
                 }
                 list.Add(result);
             }

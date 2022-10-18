@@ -1,0 +1,10 @@
+[
+  "TextBox",
+  "DateEntry",
+  "CheckBox",
+  "ComboBox",
+  "NumberEntry",
+  "MoneyEntry",
+  "UserControl",
+  "DateTimeEntry"
+]

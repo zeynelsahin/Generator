@@ -3,7 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Text;
 using System.Text.Json;
+using System.Text.Json.Nodes;
 using System.Windows.Forms;
 using Generator.Business.Abstract;
 using Generator.Business.Concrete;
@@ -36,11 +38,18 @@ namespace Generator.UI.WF
 
         private readonly IObjectEntityService _objectEntityService = new ObjectEntityService(new EfObjectEntityDal());
         private readonly IObjectResultService _objectResultService = new ObjectResultService(new EfObjectResultDal());
-        private readonly IServiceMethodService _serviceMethodService = new ServiceMethodService(new EfServiceMethodDal());
-        private readonly IObjectParameterService _objectParameterService = new ObjectParameterService(new EfObjectParameterDal());
+
+        private readonly IServiceMethodService _serviceMethodService =
+            new ServiceMethodService(new EfServiceMethodDal());
+
+        private readonly IObjectParameterService _objectParameterService =
+            new ObjectParameterService(new EfObjectParameterDal());
+
         private readonly IActionOptionService _actionOptionService = new ActionOptionService(new EfActionOptionDal());
         private readonly IStringOptionService _stringOptionService = new StringOptionService(new EfStringOptionDal());
-        private readonly IServiceOptionService _serviceOptionService = new ServiceOptionService(new EfServiceOptionDal());
+
+        private readonly IServiceOptionService _serviceOptionService =
+            new ServiceOptionService(new EfServiceOptionDal());
 
         private void FormUxGenerator_Load(object sender, EventArgs e)
         {
@@ -65,6 +74,7 @@ namespace Generator.UI.WF
             var profiles = File.ReadAllText(@"../../../JsonFiles/ObjectProfiles.json");
             comboBoxProfileType.DataSource = JsonSerializer.Deserialize<List<string>>(profiles);
         }
+
         private void LoadProfiles()
         {
             var profiles = File.ReadAllText(@"../../../JsonFiles/ObjectProfiles.json");
@@ -76,10 +86,11 @@ namespace Generator.UI.WF
         private void LoadDirectoryPaths()
         {
             var jsonString = File.ReadAllText(@"../../../JsonFiles/DirectoryPath.json");
-            CbxApplication.DataSource = JsonSerializer.Deserialize<List<DirectoryPath>>(jsonString, new JsonSerializerOptions() { PropertyNameCaseInsensitive = true }); ;
+            CbxApplication.DataSource = JsonSerializer.Deserialize<List<DirectoryPath>>(jsonString,
+                new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
+            ;
             CbxApplication.DisplayMember = "Application";
             CbxApplication.ValueMember = "Path";
-
         }
 
         private void BtnAdd_Click(object sender, EventArgs e)
@@ -133,7 +144,7 @@ namespace Generator.UI.WF
         private PageHeader CreatePageHeader()
         {
             var pageHeader = new PageHeader()
-            { Title = TbxTitle.Text };
+                { Title = TbxTitle.Text };
             foreach (DataGridViewRow item in DgwHeader.Rows)
                 if (item.Index != DgwHeader.Rows.Count - 1)
                 {
@@ -188,8 +199,10 @@ namespace Generator.UI.WF
                 TbxGridName.Text = CbxObjectId.SelectedItem.ToString().NameConfigure();
                 TbxGridName.Text = TbxGridName.Text.GridNameConfig();
                 var tableService = new List<string>() { "Tümü" };
-                var serviceMethods = _serviceMethodService.GetByObjectId(CbxObjectId.SelectedItem.ToString(), CbxProfileId.SelectedItem.ToString());
-                if (serviceMethods.CustomMethodFlag != null)
+                var serviceMethods = _serviceMethodService.GetByObjectId(CbxObjectId.SelectedItem.ToString(),
+                    CbxProfileId.SelectedItem.ToString());
+
+                if (serviceMethods != null)
                 {
                     if (serviceMethods.CustomMethodFlag == '0')
                     {
@@ -204,7 +217,6 @@ namespace Generator.UI.WF
 
                     CbxCrudMethod.DataSource = tableService;
                 }
-
             }
         }
 
@@ -219,14 +231,15 @@ namespace Generator.UI.WF
                     columnNames = _objectEntityService.GetOracleColumns(objectId);
                     break;
                 case "CUSTOMSQL":
-                    {
-                        columnNames = _objectResultService.GetAll(objectId, profileId);
-                        break;
-                    }
+                {
+                    columnNames = _objectResultService.GetAll(objectId, profileId);
+                    break;
+                }
             }
 
             return columnNames;
         }
+
         private List<OracleColumn> ParameterList(string objectId, string profileId, string objectType)
         {
             var columnNames = new List<OracleColumn>();
@@ -238,10 +251,10 @@ namespace Generator.UI.WF
                     columnNames = _objectEntityService.GetOracleColumns(objectId);
                     break;
                 case "CUSTOMSQL":
-                    {
-                        columnNames = _objectParameterService.GetAll(objectId, profileId);
-                        break;
-                    }
+                {
+                    columnNames = _objectParameterService.GetAll(objectId, profileId);
+                    break;
+                }
             }
 
             return columnNames;
@@ -249,13 +262,14 @@ namespace Generator.UI.WF
 
         private void GetParameterList()
         {
-            var objectType = _objectEntityService.GetObjectType(CbxObject.SelectedItem.ToString(), CbxProfile.SelectedItem.ToString());
+            var objectType = _objectEntityService.GetObjectType(CbxObject.SelectedItem.ToString(),
+                CbxProfile.SelectedItem.ToString());
             CbxObjectTypes.SelectedItem = objectType;
             if (CbxObject.SelectedItem != null && CbxObject.SelectedIndex != 0 && CbxObjectTypes.SelectedItem != null)
             {
-
                 DgwContent.Rows.Clear();
-                var columnNames = ParameterList(CbxObject.SelectedItem.ToString(), CbxProfile.SelectedItem.ToString(), CbxObjectTypes.SelectedItem.ToString());
+                var columnNames = ParameterList(CbxObject.SelectedItem.ToString(), CbxProfile.SelectedItem.ToString(),
+                    CbxObjectTypes.SelectedItem.ToString());
                 columnNames.ForEach(column =>
                 {
                     var dataType = "";
@@ -310,7 +324,8 @@ namespace Generator.UI.WF
                 }
                 else if (CbxObjectType.SelectedItem.ToString() == "CUSTOMSQL")
                 {
-                    var result = _objectResultService.GetAllByObjectId(CbxObjectId.SelectedItem.ToString(), CbxProfileId.SelectedItem.ToString());
+                    var result = _objectResultService.GetAllByObjectId(CbxObjectId.SelectedItem.ToString(),
+                        CbxProfileId.SelectedItem.ToString());
                     result.ForEach(result => columnNames.Add(result.ResultId));
                     columnNames = columnNames.NameConfigure();
                     //var parameters = _objectParameterService.GetAllByObjectId(CbxObjectId.SelectedItem.ToString(), CbxProfileId.SelectedItem.ToString());
@@ -361,14 +376,15 @@ namespace Generator.UI.WF
         {
             if (string.IsNullOrWhiteSpace(CbxObjectId.Text)) return true;
 
-            var objects = _objectEntityService.GetAllOrFilter(CbxObjectId.SelectedItem.ToString(), CbxProfileId.SelectedItem.ToString());
+            var objects = _objectEntityService.GetAllOrFilter(CbxObjectId.SelectedItem.ToString(),
+                CbxProfileId.SelectedItem.ToString());
             DgwObject.DataSource = objects;
             if (DgwObject.Rows.Count > 0)
             {
                 CbxObjectType.SelectedItem = DgwObject.CurrentRow!.Cells[4].Value.ToString();
                 return false;
-
             }
+
             //
             return true;
         }
@@ -398,9 +414,9 @@ namespace Generator.UI.WF
                         case "Update":
                             method.MethodName = $"Update{objectId}";
                             break;
-                            //case "Delete":
-                            //    method.MethodName = $"Delete{objectId}";
-                            //    break;
+                        //case "Delete":
+                        //    method.MethodName = $"Delete{objectId}";
+                        //    break;
                     }
 
                     method.ServiceName = $"get{objectId}";
@@ -438,7 +454,6 @@ namespace Generator.UI.WF
                         }
                         else if (item.ToString() == "Modify")
                         {
-
                             gridJavaScriptMethod.UpdateApiMethod = GridUpdateApiMethod();
                         }
                         else if (item.ToString() == "Delete")
@@ -451,12 +466,10 @@ namespace Generator.UI.WF
                 {
                     if (CbxCrudMethod.SelectedItem.ToString() == "Create")
                     {
-
                         gridJavaScriptMethod.CreateApiMethod = GridCreateApiMethod();
                     }
                     else if (CbxCrudMethod.SelectedItem.ToString() == "Modify")
                     {
-
                         gridJavaScriptMethod.UpdateApiMethod = GridUpdateApiMethod();
                     }
                 }
@@ -471,7 +484,8 @@ namespace Generator.UI.WF
                 get.ParameterName = CbxObjectId.SelectedItem.ToString().NameConfigure() + "Param";
                 get.PropName = CbxObjectId.SelectedItem.ToString().NameConfigure().GridNameConfig() + "Grid";
                 get.ResultName = CbxObjectId.SelectedItem.ToString().NameConfigure() + "Result";
-                var parameters = _objectParameterService.GetAllByObjectId(CbxObjectId.SelectedItem.ToString(), CbxProfileId.SelectedItem.ToString());
+                var parameters = _objectParameterService.GetAllByObjectId(CbxObjectId.SelectedItem.ToString(),
+                    CbxProfileId.SelectedItem.ToString());
                 parameters = parameters.NameConfigure();
                 JavaScriptParams(get, parameters);
                 gridJavaScriptMethod.GetGridApiMethod = get;
@@ -503,6 +517,7 @@ namespace Generator.UI.WF
             GridJavaScriptParams(modify);
             return modify;
         }
+
         private void GridJavaScriptParams(ApiRequestMethod method)
         {
             foreach (var param in ClbColumnNames.CheckedItems)
@@ -531,7 +546,8 @@ namespace Generator.UI.WF
                 method.ResultName = configObjectId + "Result";
                 if (CbxOneServiceParameter.Checked)
                 {
-                    var parameters = _objectParameterService.GetAllByObjectId(CbxContentJSObjectId.SelectedItem.ToString(), CbxContentJSProfileId.SelectedItem.ToString());
+                    var parameters = _objectParameterService.GetAllByObjectId(
+                        CbxContentJSObjectId.SelectedItem.ToString(), CbxContentJSProfileId.SelectedItem.ToString());
                     parameters = parameters.NameConfigure();
                     JavaScriptParams(method, parameters);
                     method.ParameterName = configObjectId + "Param";
@@ -558,7 +574,8 @@ namespace Generator.UI.WF
                     var keyField = row.Cells[2].Value;
                     var valueField = row.Cells[3].Value;
                     var objectId = row.Cells[4].Value.ToString().NameConfigure().RemoveGet();
-                    var objectType = _objectEntityService.GetObjectType(row.Cells[4].Value.ToString(), row.Cells[5].Value.ToString());
+                    var objectType = _objectEntityService.GetObjectType(row.Cells[4].Value.ToString(),
+                        row.Cells[5].Value.ToString());
                     if (objectType == "TABLE")
                     {
                         method.ServiceName = $"get{objectId}";
@@ -567,7 +584,8 @@ namespace Generator.UI.WF
                     else if (objectType == "CUSTOMSQL")
                     {
                         method.ServiceName = $"{row.Cells[4].Value.ToString().CamelCaseConfigure()}";
-                        var parameters = _objectParameterService.GetAllByObjectId(row.Cells[4].Value.ToString(), row.Cells[5].Value.ToString());
+                        var parameters = _objectParameterService.GetAllByObjectId(row.Cells[4].Value.ToString(),
+                            row.Cells[5].Value.ToString());
                         if (parameters != null)
                         {
                             JavaScriptParams(method, parameters.NameConfigure());
@@ -597,7 +615,8 @@ namespace Generator.UI.WF
                 var keyField = row.Cells[2].Value;
                 var valueField = row.Cells[3].Value;
                 var objectId = row.Cells[4].Value.ToString().NameConfigure().RemoveGet();
-                var objectType = _objectEntityService.GetObjectType(row.Cells[4].Value.ToString(), row.Cells[5].Value.ToString());
+                var objectType =
+                    _objectEntityService.GetObjectType(row.Cells[4].Value.ToString(), row.Cells[5].Value.ToString());
                 if (objectType == "TABLE")
                 {
                     method.ServiceName = $"get{objectId}";
@@ -631,9 +650,11 @@ namespace Generator.UI.WF
             foreach (var item in ClbColumnNames.CheckedItems)
             {
                 var column = new Column()
-                { Id = item.ToString(), Text = item.ToString(), FieldId = item.ToString() };
+                    { Id = item.ToString(), Text = item.ToString(), FieldId = item.ToString() };
                 column.Witdh = item.ToString()!.Length > 18 ? "150" : "100";
-                column.LinkButton = CbxLinkButton.SelectedItem.ToString() == item.ToString() ? new LinkButton() { ActionCode = CbxActionCode.Text.ToString() } : null;
+                column.LinkButton = CbxLinkButton.SelectedItem.ToString() == item.ToString()
+                    ? new LinkButton() { ActionCode = CbxActionCode.Text.ToString() }
+                    : null;
 
                 rowTemplate.Columns.Add(column);
                 if (item.ToString()!.Contains("Date"))
@@ -643,7 +664,8 @@ namespace Generator.UI.WF
             }
 
             var model = new Model() { };
-            dateList.ForEach(s => model.Fields.Add(new Field() { Id = s.ToString(), DataSource = s.ToString(), Type = Types.Date }));
+            dateList.ForEach(s => model.Fields.Add(new Field()
+                { Id = s.ToString(), DataSource = s.ToString(), Type = Types.Date }));
             otherList.ForEach(s => model.Fields.Add(new Field() { Id = s.ToString(), DataSource = s.ToString() }));
 
             var commandBar = new CommandBar()
@@ -716,7 +738,8 @@ namespace Generator.UI.WF
             {
                 GetParameterList();
                 var tableService = new List<string>();
-                var serviceMethods = _serviceMethodService.GetByObjectId(CbxObject.SelectedItem.ToString(), CbxProfile.SelectedItem.ToString());
+                var serviceMethods = _serviceMethodService.GetByObjectId(CbxObject.SelectedItem.ToString(),
+                    CbxProfile.SelectedItem.ToString());
                 //if (serviceMethods.CustomMethodFlag == '0')
                 //{
                 //    if (serviceMethods.GetMethodFlag == '1') tableService.Add("Get Method");
@@ -768,14 +791,15 @@ namespace Generator.UI.WF
 
 
                 var comboBoxView = (DataGridViewComboBoxColumn)DgwView.Columns["ElementTypeView"];
-                var list = JsonSerializer.Deserialize<List<string>>(jsonString, new JsonSerializerOptions() { PropertyNameCaseInsensitive = true }).ToList();
+                var list = JsonSerializer.Deserialize<List<string>>(jsonString,
+                    new JsonSerializerOptions() { PropertyNameCaseInsensitive = true }).ToList();
                 comboBoxView.DataSource = list;
 
                 var comboBox = (DataGridViewComboBoxColumn)DgwContent.Columns["ElementType"];
-                var list1 = JsonSerializer.Deserialize<List<string>>(jsonString, new JsonSerializerOptions() { PropertyNameCaseInsensitive = true }).ToList();
+                var list1 = JsonSerializer.Deserialize<List<string>>(jsonString,
+                    new JsonSerializerOptions() { PropertyNameCaseInsensitive = true }).ToList();
                 list1.Remove("ComboBox");
                 comboBox.DataSource = list1;
-
             }
             else if (CbxProfile.SelectedIndex == 0)
             {
@@ -841,6 +865,7 @@ namespace Generator.UI.WF
                         DgwComboBoxes.Rows.Add(row);
                         DgwContent.Rows.Remove(item);
                     }
+
                 foreach (DataGridViewRow item in DgwComboBoxes.Rows)
                 {
                     if (item.Index != DgwComboBoxes.Rows.Count - 1)
@@ -915,6 +940,7 @@ namespace Generator.UI.WF
             {
                 ResultText.Text += method.ToString();
             }
+
             foreach (var item in ComboBoxServiceMethod())
             {
                 ResultText.Text += item.ToString();
@@ -980,9 +1006,7 @@ namespace Generator.UI.WF
 
                     comboBox.ValueField = row.Cells[3].Value == null ? string.Empty : row.Cells[3].Value.ToString();
                     return comboBox;
-
                 }
-
             }
 
             return new ComboBoxElement();
@@ -1092,6 +1116,11 @@ namespace Generator.UI.WF
                             element = GetUserControl(id);
                             break;
                         case "DateTimeEntry":
+                            element = new DateTimeEntry()
+                            {
+                                Id = id,
+                                Text = text
+                            };
                             break;
                     }
 
@@ -1163,12 +1192,13 @@ namespace Generator.UI.WF
                         }
                     }
 
-                    if (isHere == false) DgwView.Rows.Add(content.Cells[0].Value, content.Cells[1].Value, content.Cells[2].Value, "3");
+                    if (isHere == false)
+                        DgwView.Rows.Add(content.Cells[0].Value, content.Cells[1].Value, content.Cells[2].Value, "3");
                 }
             }
         }
 
-        private void ViewComboBox()//ComboBoxları View e ekler
+        private void ViewComboBox() //ComboBoxları View e ekler
         {
             var isHere = false;
             if (!isComboBoxAddView)
@@ -1188,7 +1218,8 @@ namespace Generator.UI.WF
                         }
                     }
 
-                    if (isHere == false) DgwView.Rows.Add(comboBox.Cells[0].Value, comboBox.Cells[1].Value, "ComboBox", "3");
+                    if (isHere == false)
+                        DgwView.Rows.Add(comboBox.Cells[0].Value, comboBox.Cells[1].Value, "ComboBox", "3");
                 }
         }
 
@@ -1213,7 +1244,8 @@ namespace Generator.UI.WF
                         }
                     }
 
-                    if (isHere == false) DgwView.Rows.Add(userControl.Cells[0].Value, userControl.Cells[1].Value, "UserControl", "6");
+                    if (isHere == false)
+                        DgwView.Rows.Add(userControl.Cells[0].Value, userControl.Cells[1].Value, "UserControl", "6");
                 }
         }
 
@@ -1308,6 +1340,7 @@ namespace Generator.UI.WF
                 File.WriteAllText(jsPath, pageJs.ToString());
             }
         }
+
         void PageFilesCreate(string path, string fileName, string pageXml, string pageJs)
         {
             string xmlPath = Path.Combine(path, fileName + ".xml");
@@ -1384,7 +1417,6 @@ namespace Generator.UI.WF
 
         private void BtnExport_Click(object sender, EventArgs e)
         {
-
             var pageXml = PageXmlCreate();
             var pageJs = PageJsCreate(pageXml);
             //var pageJsString = pageJs.ToString().Trim();
@@ -1418,7 +1450,6 @@ namespace Generator.UI.WF
 
             PageFilesCreate(TbxPath.Text, TbxPageName.Text, pageXml, pageJs);
             //PageFilesCreate(TbxPath.Text, TbxPageName.Text, pageXml.ToString(), modify);
-
         }
 
         private void CbxContentJSProfileId_SelectedIndexChanged(object sender, EventArgs e)
@@ -1439,10 +1470,12 @@ namespace Generator.UI.WF
         {
             if (CbxContentJSObjectId.SelectedIndex != 0 && CbxContentJSObjectId.SelectedIndex != -1)
             {
-                var objectType = _objectEntityService.GetObjectType(CbxContentJSObjectId.SelectedItem.ToString(), CbxContentJSProfileId.SelectedItem.ToString());
+                var objectType = _objectEntityService.GetObjectType(CbxContentJSObjectId.SelectedItem.ToString(),
+                    CbxContentJSProfileId.SelectedItem.ToString());
                 CbxContentJSObjectType.SelectedItem = objectType;
 
-                var result = ResultList(CbxContentJSObjectId.SelectedItem.ToString(), CbxContentJSProfileId.SelectedItem.ToString(), CbxContentJSObjectType.SelectedItem.ToString());
+                var result = ResultList(CbxContentJSObjectId.SelectedItem.ToString(),
+                    CbxContentJSProfileId.SelectedItem.ToString(), CbxContentJSObjectType.SelectedItem.ToString());
                 result.ForEach(p =>
                 {
                     CbxKeyField.Items.Add(p.Name);
@@ -1477,7 +1510,8 @@ namespace Generator.UI.WF
         {
             if (CbxContentJSObjectId.SelectedItem != null && CbxContentJSObjectType.SelectedItem != null)
             {
-                var javaScript = CreateComboBoxJavaScript(CbxContentJSObjectId.SelectedItem.ToString(), CbxContentJSObjectType.SelectedItem.ToString(), TbxPropName.Text);
+                var javaScript = CreateComboBoxJavaScript(CbxContentJSObjectId.SelectedItem.ToString(),
+                    CbxContentJSObjectType.SelectedItem.ToString(), TbxPropName.Text);
                 RtbxSingleJavaScript.Text = javaScript.ToString();
             }
         }
@@ -1490,6 +1524,7 @@ namespace Generator.UI.WF
             List<string> methodList = jsonNode.AsArray().Select(p => p.AsObject()["MethodName"].ToString()).ToList();
             comboBoxMethod.DataSource = methodList;
         }
+
         private void LoadStaticMethod()
         {
             var jsonString = File.ReadAllText(@"../../../JsonFiles/StaticMethods.json");
@@ -1497,6 +1532,7 @@ namespace Generator.UI.WF
             List<string> methodList = jsonNode.AsArray().Select(p => p.AsObject()["MethodName"].ToString()).ToList();
             CbxStaticJavaScript.DataSource = methodList;
         }
+
         private void GetStaticMethodKeyValue(int rowIndex)
         {
             List<string> list = new List<string>();
@@ -1505,6 +1541,11 @@ namespace Generator.UI.WF
 
             var comboBoxKey = (DataGridViewComboBoxCell)DgwComboBoxes.Rows[rowIndex].Cells["KeyField"];
             var comboBoxValue = (DataGridViewComboBoxCell)DgwComboBoxes.Rows[rowIndex].Cells["ValueField"];
+
+            comboBoxKey.Value = null;
+            comboBoxValue.Value = null;
+            comboBoxKey.DataSource = null;
+            comboBoxValue.DataSource = null;
 
             var methodList = jsonNode.AsArray().Select(p => p.AsObject()["MethodName"]).ToList();
             foreach (var node in jsonNode.AsArray())
@@ -1517,25 +1558,29 @@ namespace Generator.UI.WF
                     {
                         list.Add(item["ValueName"].ToString());
                     }
+
                     if (item["KeyName"] != null)
                     {
                         list.Add(item["KeyName"].ToString());
                     }
+
                     comboBoxValue.DataSource = list;
                     comboBoxKey.DataSource = list;
                     if (item["ValueName"] != null)
                     {
                         comboBoxValue.Value = item["ValueName"].ToString();
                     }
+
                     if (item["KeyName"] != null)
                     {
                         comboBoxKey.Value = item["KeyName"].ToString();
                     }
-                    return;
 
+                    return;
                 }
             }
         }
+
         private void GetStaticMethodKeyValue()
         {
             var jsonString = File.ReadAllText(@"../../../JsonFiles/StaticMethods.json");
@@ -1546,11 +1591,12 @@ namespace Generator.UI.WF
                 var item = node.AsObject();
                 if (CbxStaticJavaScript.SelectedItem.ToString() == item["MethodName"].ToString())
                 {
-                     CbxStaticValueField.Text = " ";
+                    CbxStaticValueField.Text = " ";
                     if (item["ValueName"] != null)
                     {
                         CbxStaticValueField.Text = item["ValueName"].ToString();
                     }
+
                     if (item["KeyName"] != null)
                     {
                         CbxStaticKeyField.Text = item["KeyName"].ToString();
@@ -1561,6 +1607,7 @@ namespace Generator.UI.WF
                 }
             }
         }
+
         private Type GetTypeValueKey(string typeName)
         {
             if (typeName == "string")
@@ -1576,20 +1623,23 @@ namespace Generator.UI.WF
                 return typeof(string);
             }
         }
+
         private List<object> ConvertToList(System.Text.Json.Nodes.JsonArray array)
         {
             List<object> list = new List<object>();
             foreach (var item in array)
             {
-                list.Add(item.ToJsonString());
+                list.Add(item.ToJsonString().ConvertUtf8());
             }
+
             return list;
         }
+
         private List<StaticMethod> ComboBoxStaticMethod()
         {
             List<StaticMethod> staticMethods = new List<StaticMethod>();
             var jsonString = File.ReadAllText(@"../../../JsonFiles/StaticMethods.json");
-            var jsonNode = System.Text.Json.Nodes.JsonNode.Parse(jsonString);
+            var jsonNode = JsonNode.Parse(jsonString);
             for (int i = 0; i < DgwComboBoxes.Rows.Count - 1; i++)
             {
                 if (DgwComboBoxes.Rows[i].Cells[6].Value.ToString() == "Static Method")
@@ -1603,23 +1653,24 @@ namespace Generator.UI.WF
                             var valueName = item["ValueName"] != null ? item["ValueName"].ToString() : null;
                             var keyName = item["KeyName"] != null ? item["KeyName"].ToString() : null;
 
+                            var staticMethod = new KeyValueStaticMethod
+                            {
+                                MethodDescription = item["MethodDescription"].ToString().ConvertUtf8(),
+                                MethodName = item["MethodName"].ToString().ConvertUtf8(),
+                                PropName = DgwComboBoxes.Rows[i].Cells[0].Value.ToString().ConvertUtf8()
+                            };
 
-                            var staticMethod = new KeyValueStaticMethod();
-
-                            staticMethod.MethodDescription = item["MethodDescription"].ToString();
-                            staticMethod.MethodName = item["MethodName"].ToString();
-                            staticMethod.PropName = DgwComboBoxes.Rows[i].Cells[0].Value.ToString();
                             if (valueName != null)
                             {
                                 var values = ConvertToList((System.Text.Json.Nodes.JsonArray)item[valueName]);
-                                staticMethod.ValueName = valueName;
+                                staticMethod.ValueName = valueName.ConvertUtf8();
                                 staticMethod.ValueList = values;
                             }
 
                             if (keyName != null)
                             {
                                 var keys = ConvertToList((System.Text.Json.Nodes.JsonArray)item[keyName]);
-                                staticMethod.KeyName = keyName;
+                                staticMethod.KeyName = keyName.ConvertUtf8();
                                 staticMethod.KeyList = keys;
                             }
 
@@ -1628,8 +1679,10 @@ namespace Generator.UI.WF
                     }
                 }
             }
+
             return staticMethods;
         }
+
         private void DgwComboBoxes_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
             if (DgwComboBoxes.Rows.Count > 1)
@@ -1690,8 +1743,10 @@ namespace Generator.UI.WF
                         }
 
                         var profileId = DgwComboBoxes.Rows[rowIndex].Cells[5].Value.ToString();
-                        var objectTye = GetObjectType(DgwComboBoxes.Rows[rowIndex].Cells[4].Value.ToString(), profileId);
-                        var result = ResultList(DgwComboBoxes.Rows[rowIndex].Cells[4].Value.ToString(), profileId, objectTye);
+                        var objectTye = GetObjectType(DgwComboBoxes.Rows[rowIndex].Cells[4].Value.ToString(),
+                            profileId);
+                        var result = ResultList(DgwComboBoxes.Rows[rowIndex].Cells[4].Value.ToString(), profileId,
+                            objectTye);
                         var list = new List<string>();
 
 
@@ -1716,7 +1771,8 @@ namespace Generator.UI.WF
                         else
                             list.ForEach(p =>
                             {
-                                if (p.ToLower().Contains("description")) DgwComboBoxes.Rows[rowIndex].Cells[3].Value = p;
+                                if (p.ToLower().Contains("description"))
+                                    DgwComboBoxes.Rows[rowIndex].Cells[3].Value = p;
 
                                 if (p.ToLower().Contains("type")) DgwComboBoxes.Rows[rowIndex].Cells[2].Value = p;
                             });
@@ -1731,7 +1787,9 @@ namespace Generator.UI.WF
 
         private string GetCbxApplicationValue()
         {
-            return CbxApplication.SelectedValue.GetType() == typeof(DirectoryPath) ? ((DirectoryPath)CbxApplication.SelectedValue).Path : CbxApplication.SelectedValue.ToString();
+            return CbxApplication.SelectedValue.GetType() == typeof(DirectoryPath)
+                ? ((DirectoryPath)CbxApplication.SelectedValue).Path
+                : CbxApplication.SelectedValue.ToString();
         }
 
         private void CbxApplication_SelectedIndexChanged(object sender, EventArgs e)
@@ -1763,12 +1821,10 @@ namespace Generator.UI.WF
 
         private void DgwComboBoxes_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
         }
 
         private void groupBox18_Enter(object sender, EventArgs e)
         {
-
         }
 
         private void BtnAddActions_Click(object sender, EventArgs e)
@@ -1810,6 +1866,7 @@ namespace Generator.UI.WF
                 var result = _actionOptionService.Get(domainId, "Development", applicationId, actionId);
                 actions.Add(result);
             }
+
             DgwActionResult.DataSource = actions;
         }
 
@@ -1842,6 +1899,7 @@ namespace Generator.UI.WF
                         staticMethod.KeyName = CbxStaticKeyField.Text;
                         staticMethod.KeyList = keys;
                     }
+
                     RtbxSingleJavaScript.Text = staticMethod.ToString();
                     return;
                 }
@@ -1858,7 +1916,6 @@ namespace Generator.UI.WF
 
         private void CbxStaticKeyField_SelectedIndexChanged(object sender, EventArgs e)
         {
-
         }
     }
 }

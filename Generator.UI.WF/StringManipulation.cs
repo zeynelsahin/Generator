@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using Microsoft.VisualBasic;
 
@@ -179,6 +180,7 @@ namespace Generator.UI.WF
             {
                 javaSrciptNew += "    ";
             }
+
             return javaSrciptNew + javaScript;
         }
 
@@ -192,9 +194,23 @@ namespace Generator.UI.WF
                 name = name.Substring(6);
             var index = name.IndexOf("ByCustom");
             if (index != -1)
-                name = name.Substring(0,index);
+                name = name.Substring(0, index);
             return name;
         }
 
+        public static string ConvertUtf8(this string json)
+        {
+            json = json.Replace("\\u011F", "ğ");
+            json = json.Replace("\\u011E", "Ğ");
+            json = json.Replace("\\u00E7", "ç");
+            json = json.Replace("\\u00C7", "Ç");
+            json = json.Replace("\\u00f6", "ö");
+            json = json.Replace("\\u00D6", "Ö");
+            json = json.Replace("\\u015F", "ş");
+            json = json.Replace("\\u0131", "ı");
+            json = json.Replace("\\u00FC", "ü");
+            json = json.Replace("\\u00DC", "ü");
+            return json;
+        }
     }
 }

@@ -1,17 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Text;
 using System.Text.Json;
 using System.Windows.Forms;
 using Generator.Business.Abstract;
-using Generator.Business.Concrete;
 using Generator.Business.Constants;
-using Generator.DataAccess.Concrete;
 using Generator.Entities;
 
 namespace Generator.UI.WF
@@ -60,7 +54,7 @@ namespace Generator.UI.WF
             };
             var schemaNames = File.ReadAllText(@"../../../JsonFiles/SchemaNames.json");
             schemaList.AddRange(JsonSerializer.Deserialize<List<string>>(schemaNames));
-        
+
             CbxSchemaName.DataSource = schemaList;
         }
 
@@ -205,14 +199,20 @@ namespace Generator.UI.WF
 
         private void BtnParametre_Click(object sender, EventArgs e)
         {
-            var parameterAdd = new FormParameterAndResultAdd(CbxOjectId.SelectedItem.ToString(), TbxProfileId.Text, TbxSchemaName.Text);
-            parameterAdd.Show();
+            if (string.IsNullOrWhiteSpace(TbxObjectId.Text))
+            {
+                FormParameterAndResultAdd parameterAdd = new FormParameterAndResultAdd(TbxObjectId.Text, TbxProfileId.Text, TbxSchemaName.Text);
+                parameterAdd.Show();
+            }
         }
 
         private void BtnResultAdd_Click(object sender, EventArgs e)
         {
-            var formResult = new FormResultAdd(TbxObjectId.Text, TbxProfileId.Text, TbxSchemaName.Text);
-            formResult.Show();
+            if (string.IsNullOrWhiteSpace(TbxObjectId.Text))
+            {
+                FormResultAdd formResult = new FormResultAdd(TbxObjectId.Text, TbxProfileId.Text, TbxSchemaName.Text);
+                formResult.Show();
+            }
         }
 
         private void DgwObject_CellEnter(object sender, DataGridViewCellEventArgs e)
@@ -254,8 +254,16 @@ namespace Generator.UI.WF
 
         private void BtnServiceMethodAdd_Click(object sender, EventArgs e)
         {
-            FormServiceMethodAdd form = new FormServiceMethodAdd(TbxObjectId.Text, TbxProfileId.Text, CbxObjectType.Text);
-            form.Show();
+            if (!string.IsNullOrWhiteSpace(TbxObjectId.Text))
+            {
+                FormServiceMethodAdd form = new FormServiceMethodAdd(TbxObjectId.Text, TbxProfileId.Text, CbxObjectType.Text);
+                form.Show();
+            }
+        }
+
+        private void TbxProfileId_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

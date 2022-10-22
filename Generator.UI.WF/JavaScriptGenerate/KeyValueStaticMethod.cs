@@ -51,13 +51,13 @@ namespace Generator.UI.WF.JavaScriptGenerate
             {
                 for (int i = 0; i < KeyList.Count - 1; i++)
                 {
-                    javaScript += "{".Tab(4);
-                    javaScript += $"{KeyName}: {(KeyList[i])}".Tab(4);
-                    javaScript += "},".Tab(4);
+                    javaScript += "{";
+                    javaScript += $"{KeyName}: {(KeyList[i])}";
+                    javaScript += "},";
                 }
                 javaScript += "{";
-                javaScript += $"{KeyName}: {(KeyList[^1])}".Tab(4);
-                javaScript += "}\n".Tab(4);
+                javaScript += $"{KeyName}: {(KeyList[^1])}";
+                javaScript += "}\n";
                 javaScript += "];".Tab(3);
             }
             javaScript += "\n";

@@ -400,7 +400,6 @@ namespace Generator.UI.WF
                         }
                     }
 
-
                     if (column.IndexOf("NULL") != -1)
                     {
                         column = column.Substring(column.IndexOf("NULL"));

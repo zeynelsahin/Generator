@@ -959,6 +959,7 @@ namespace Generator.UI.WF
             this.TbxProfileId.Size = new System.Drawing.Size(261, 30);
             this.TbxProfileId.TabIndex = 313;
             this.TbxProfileId.Text = "123";
+            this.TbxProfileId.TextChanged += new System.EventHandler(this.TbxProfileId_TextChanged);
             // 
             // panel4
             // 

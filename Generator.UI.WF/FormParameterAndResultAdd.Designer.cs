@@ -496,7 +496,7 @@ namespace Generator.UI.WF
             // 
             // label9
             // 
-            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label9.AutoSize = true;
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Enabled = false;
@@ -507,10 +507,11 @@ namespace Generator.UI.WF
             this.label9.Size = new System.Drawing.Size(126, 23);
             this.label9.TabIndex = 346;
             this.label9.Text = "Parmeter List";
+            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // BtnResultList
             // 
-            this.BtnResultList.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnResultList.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.BtnResultList.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnResultList.FlatAppearance.BorderSize = 0;
             this.BtnResultList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;

@@ -107,21 +107,27 @@ namespace Generator.UI.WF
 
         private string ResultSqlTextFormat(string sqlText)
         {
-            var unionIndex = sqlText.IndexOf("union");
-            if (unionIndex != -1) sqlText = sqlText.Substring(0, unionIndex);
+            sqlText = sqlText.ToLower();
+            if (sqlText.Contains("declare"))
+            {
+                var selectIndex = sqlText.LastIndexOf("select");
+                sqlText = sqlText.Substring(selectIndex);
+            }
+            else
+            {
+                var unionIndex = sqlText.IndexOf("union");
+                if (unionIndex != -1) sqlText = sqlText.Substring(0, unionIndex);
 
-
-            var selectIndex = sqlText.IndexOf("select");
-            sqlText = sqlText.Substring(selectIndex);
-            sqlText = sqlText.Substring(6);
-
+                var selectIndex = sqlText.IndexOf("select");
+                sqlText = sqlText.Substring(selectIndex);
+                sqlText = sqlText.Substring(6);
+            }
             var fromIndex = sqlText.LastIndexOf("from");
             sqlText = sqlText.Substring(0, fromIndex);
-
             var straightSqlText = "";
 
             for (var i = 0; i < sqlText.Length; i++)
-                if (sqlText[i] != Convert.ToChar($"\n") && sqlText[i] != Convert.ToChar($"\r"))
+                if (sqlText[i] != Convert.ToChar($"\n") && sqlText[i] != Convert.ToChar($"\r") && sqlText[i] != Convert.ToChar($"\t"))
                     straightSqlText += sqlText[i].ToString();
             return straightSqlText.ToUpper();
         }
@@ -169,21 +175,23 @@ namespace Generator.UI.WF
                     if (column == null)
                         if (sqlText[i].ToString() == " ")
                             continue;
-
                     column += sqlText[i].ToString();
                 }
                 //if (sqlText[i] == Convert.ToChar("."))
                 //    column = "";
                 if (string.IsNullOrWhiteSpace(column)) continue;
-                if (sqlText[i] == Convert.ToChar("é") || i == sqlText.Length - 1 || (sqlText[i] == Convert.ToChar(" ") && column.Length > 2 && column.Contains(':')))
+                if ((sqlText[i] == Convert.ToChar("é") && column.Contains(":")) || i == sqlText.Length - 1 || (sqlText[i] == Convert.ToChar(" ") && column.Length > 2 && column.Contains(':')))
                 {
-                    
                     if (column.StartsWith('(')) column = column.Remove(0, 1);
                     if (column.StartsWith(' ')) column = column.Remove(0, 1);
                     if (column.IndexOf(":") != -1)
                     {
                         var elseIndex = column.IndexOf(":");
-                        if (column[elseIndex + 1] == '=') continue;
+                        if (column[elseIndex + 1] == '=')
+                        {
+                            column = "";
+                            continue;
+                        }
                         if (elseIndex != -1) column = column.Substring(elseIndex);
                         if (column.IndexOf("IS NULL") != -1)
                         {
@@ -245,7 +253,7 @@ namespace Generator.UI.WF
                     parameter.NullableFlag = '1';
                     if (parameter.ParameterId.Contains("_FLAG"))
                     {
-                        parameter.DataType="char";
+                        parameter.DataType = "char";
                     }
                 }
                 list.Add(parameter);
@@ -289,6 +297,7 @@ namespace Generator.UI.WF
         {
             var parameter = _objectParameterService.GetAllObjectParameter(_objectId, _profileId);
             DgwObject.DataSource = parameter;
+            LabelParameterResult.Text = $"Count: {DgwObject.Rows.Count}";
         }
 
         // public void DatagridLabelSize() //datagridview in boyutunu ayarlar
@@ -345,16 +354,13 @@ namespace Generator.UI.WF
             LblSonuc.Text = $"Count: {DgwParameter.Rows.Count}";
         }
 
-
         private List<string> GetResulList(string straightSqlText)
         {
             List<string> resultList = new List<string>();
             var caseIs = false;
             var tables = new List<string>();
             var column = "";
-            for (var i = 0;
-                 i < straightSqlText.Length;
-                 i++)
+            for (var i = 0; i < straightSqlText.Length; i++)
             {
                 if (straightSqlText[i] != Convert.ToChar(".") && straightSqlText[i] != Convert.ToChar(",") && straightSqlText[i] != '*') column += straightSqlText[i].ToString();
 
@@ -368,10 +374,6 @@ namespace Generator.UI.WF
 
                 if (straightSqlText[i] == Convert.ToChar(",") || i == straightSqlText.Length - 1)
                 {
-                    if (column == "TRN_PROCESS_TYPE_DESC")
-                    {
-                    }
-
                     if (column.IndexOf("CASE") != -1)
                     {
                         caseIs = true;
@@ -387,18 +389,17 @@ namespace Generator.UI.WF
                             }
                         }
                     }
-                    else if (!column.StartsWith("AS"))
+
+                    if (column.IndexOf(" AS ") != -1)
                     {
-                        if (column.IndexOf(" AS ") != -1)
+                        var asIndex = column.IndexOf(" AS ");
+                        if (column.LastIndexOf("_") >= asIndex || column[asIndex - 1] == ')')
                         {
-                            var asIndex = column.IndexOf(" AS ");
-                            if (column.LastIndexOf("_") >= asIndex || column[asIndex - 1] == ')')
-                            {
-                                column = column.Substring(asIndex);
-                                column = column.Substring(4);
-                            }
+                            column = column.Substring(asIndex);
+                            column = column.Substring(4);
                         }
                     }
+
 
                     if (column.IndexOf("NULL") != -1)
                     {
@@ -469,6 +470,7 @@ namespace Generator.UI.WF
         {
             var results = _objecResultService.GetAllByObjectId(_objectId, _profileId);
             DgwResultList.DataSource = results;
+            LblResultList.Text = $"Count: {DgwResultList.Rows.Count}";
         }
 
         private void BtnResultAdd_Click(object sender, EventArgs e)
@@ -502,6 +504,11 @@ namespace Generator.UI.WF
         private void BtnResultList_Click(object sender, EventArgs e)
         {
             GetResultList();
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

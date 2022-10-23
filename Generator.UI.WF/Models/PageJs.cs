@@ -9,6 +9,7 @@ namespace Generator.UI.WF.Models
     public class PageJs
     {
         public List<StaticMethod> StaticMethods { get; set; } = new List<StaticMethod>();
+        public List<StaticMethod> DateTimeMethod { get; set; } = new List<StaticMethod>();
         public List<ApiRequestMethod> ApiRequestMethods { get; set; } = new List<ApiRequestMethod>();
         public GetGridApiMethod GetGridApiMethod { get; set; } = new GetGridApiMethod();
         public CreateApiMethod CreateApiMethod { get; set; }
@@ -40,16 +41,20 @@ namespace Generator.UI.WF.Models
                     for (int i = rowCount; i >= 0; i--)
                     {
                         var col = row.Elements[i];
-                        if (col.GetType() == typeof(DateEntry))
+                        var deneme3 = ((Col)col).Element.GetType();
+                        if (deneme3 == typeof(DateEntry))
                         {
-                            var propName = ((DateEntry)col).Id;
-                            javaScriptDateSet.Add($"this.${propName}.SetValue(d.setMonth(d.getMonth() - {dateEntryCount}));");
+                            var propName = ((DateEntry)((Col)col).Element).Id;
+
+                            javaScriptDateSet.Add(
+                                $"this.${propName}.SetValue(d.setMonth(d.getMonth() - {dateEntryCount}));");
                             dateEntryCount++;
                         }
-                        else if (col.GetType() == typeof(DateTimeEntry))
+                        else if (deneme3 == typeof(DateTimeEntry))
                         {
-                            var propName = ((DateTimeEntry)col).Id;
-                            javaScriptDateSet.Add($"this.${propName}.SetValue(d.setMonth(d.getMonth() - {dateEntryCount}));");
+                            var propName = ((DateTimeEntry)((Col)col).Element).Id;
+                            javaScriptDateSet.Add(
+                                $"this.${propName}.SetValue(d.setMonth(d.getMonth() - {dateEntryCount}));");
                             dateEntryCount++;
                         }
                     }
@@ -59,15 +64,18 @@ namespace Generator.UI.WF.Models
                 if (javaScriptDateSet.Count > 1)
                 {
                     javaScript += "\n";
-                    javaScript += "this.SetDateValue();";
+                    javaScript += "this.SetDateValue();".Tab(3);
+                    javaScript += "\n";
                     var staticMethod = new StringStaticMethod();
-                    javaScript += dateFunc.Tab(3);
+                    staticMethod.MethodName = "SetDateValue";
+                    staticMethod.StaticMethod += dateFunc.Tab(3);
                     javaScriptDateSet.ForEach(p =>
                     {
                         staticMethod.StaticMethod += "\n";
                         staticMethod.StaticMethod += p.Tab(3);
                     });
-                    StaticMethods.Insert(0, staticMethod);
+
+                    DateTimeMethod.Add(staticMethod);
                 }
                 else if (javaScriptDateSet.Count == 1)
                 {
@@ -75,33 +83,48 @@ namespace Generator.UI.WF.Models
                     javaScript += dateFunc.Tab(3);
                     javaScript += "\n";
                     javaScript += javaScriptDateSet[0].Tab(3);
+                    javaScript += "\n";
                 }
             }
 
-            javaScript += "\n";
-            if (GetGridApiMethod != null)
+            if (ApiRequestMethods.Count + StaticMethods.Count > 1)
             {
-                javaScript += ($"this.{GetGridApiMethod.MethodName}();").Tab(3);
-            }
-
-            if (ApiRequestMethods.Count > 1)
-            {
-                javaScript += "\n";
                 javaScript += "this.FillCombos();".Tab(3);
-                javaScript+="\n";
-                javaScript+="}\n".Tab(2);
+                javaScript += "\n";
+                if (GetGridApiMethod != null)
+                {
+                    javaScript += ($"this.{GetGridApiMethod.MethodName}();").Tab(3);
+                }
+
+                javaScript += "\n";
+                javaScript += "}\n".Tab(2);
                 javaScript += ("FillCombos() {\n").Tab(2);
-                javaScript = ApiRequestMethods.Aggregate(javaScript, (current, requestMethod) => current + ($"this.{requestMethod.MethodName}();\n").Tab(3));
+                javaScript = ApiRequestMethods.Aggregate(javaScript,
+                    (current, requestMethod) => current + ($"this.{requestMethod.MethodName}();\n").Tab(3));
+                javaScript = StaticMethods.Aggregate(javaScript,
+                    (current, requestMethod) => current + ($"this.{requestMethod.MethodName}();\n").Tab(3));
                 javaScript += "}".Tab(2);
             }
             else
             {
-                javaScript += "\n";
-                javaScript += ("}\n").Tab(2);
+                javaScript = ApiRequestMethods.Aggregate(javaScript,
+                    (current, requestMethod) => current + ($"this.{requestMethod.MethodName}();\n").Tab(3));
+                javaScript = StaticMethods.Aggregate(javaScript,
+                    (current, requestMethod) => current + ($"this.{requestMethod.MethodName}();\n").Tab(3));
             }
 
-            if (StaticMethods.Count > 0) javaScript = StaticMethods.Aggregate(javaScript, (current, staticMethod) => current + staticMethod.ToString());
-            javaScript = ApiRequestMethods.Aggregate(javaScript, (current, requestMethod) => current + requestMethod.ToString());
+            javaScript += "\n";
+
+            if (DateTimeMethod.Count == 1)
+            {
+
+                javaScript = DateTimeMethod.Aggregate(javaScript, (current, method) => current + method.ToString());
+            }
+            if (StaticMethods.Count > 0)
+                javaScript = StaticMethods.Aggregate(javaScript,
+                    (current, staticMethod) => current + staticMethod.ToString());
+            javaScript = ApiRequestMethods.Aggregate(javaScript,
+                (current, requestMethod) => current + requestMethod.ToString());
             if (GetGridApiMethod != null) javaScript += GetGridApiMethod.ToString();
             if (CreateApiMethod != null) javaScript += CreateApiMethod.ToString();
             if (UpdateApiMethod != null) javaScript += UpdateApiMethod.ToString();

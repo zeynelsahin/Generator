@@ -9,7 +9,7 @@ namespace Generator.UI.WF.Elements
         public override string ToString()
         {
             string xml = "\n";
-            xml += "<date-time-entry id=\"{Id}\" text=\"{Text}\"/>".Tab(4);
+            xml += $"<date-time-entry id=\"{Id}\" text=\"{Text}\"/>".Tab(4);
             return xml;
         }
     }

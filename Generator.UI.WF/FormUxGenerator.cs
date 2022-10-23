@@ -144,7 +144,7 @@ namespace Generator.UI.WF
         private PageHeader CreatePageHeader()
         {
             var pageHeader = new PageHeader()
-                { Title = TbxTitle.Text };
+            { Title = TbxTitle.Text };
             foreach (DataGridViewRow item in DgwHeader.Rows)
                 if (item.Index != DgwHeader.Rows.Count - 1)
                 {
@@ -231,10 +231,10 @@ namespace Generator.UI.WF
                     columnNames = _objectEntityService.GetOracleColumns(objectId);
                     break;
                 case "CUSTOMSQL":
-                {
-                    columnNames = _objectResultService.GetAll(objectId, profileId);
-                    break;
-                }
+                    {
+                        columnNames = _objectResultService.GetAll(objectId, profileId);
+                        break;
+                    }
             }
 
             return columnNames;
@@ -251,10 +251,10 @@ namespace Generator.UI.WF
                     columnNames = _objectEntityService.GetOracleColumns(objectId);
                     break;
                 case "CUSTOMSQL":
-                {
-                    columnNames = _objectParameterService.GetAll(objectId, profileId);
-                    break;
-                }
+                    {
+                        columnNames = _objectParameterService.GetAll(objectId, profileId);
+                        break;
+                    }
             }
 
             return columnNames;
@@ -414,9 +414,9 @@ namespace Generator.UI.WF
                         case "Update":
                             method.MethodName = $"Update{objectId}";
                             break;
-                        //case "Delete":
-                        //    method.MethodName = $"Delete{objectId}";
-                        //    break;
+                            //case "Delete":
+                            //    method.MethodName = $"Delete{objectId}";
+                            //    break;
                     }
 
                     method.ServiceName = $"get{objectId}";
@@ -650,7 +650,7 @@ namespace Generator.UI.WF
             foreach (var item in ClbColumnNames.CheckedItems)
             {
                 var column = new Column()
-                    { Id = item.ToString(), Text = item.ToString(), FieldId = item.ToString() };
+                { Id = item.ToString(), Text = item.ToString(), FieldId = item.ToString() };
                 column.Witdh = item.ToString()!.Length > 18 ? "150" : "100";
                 column.LinkButton = CbxLinkButton.SelectedItem.ToString() == item.ToString()
                     ? new LinkButton() { ActionCode = CbxActionCode.Text.ToString() }
@@ -665,7 +665,7 @@ namespace Generator.UI.WF
 
             var model = new Model() { };
             dateList.ForEach(s => model.Fields.Add(new Field()
-                { Id = s.ToString(), DataSource = s.ToString(), Type = Types.Date }));
+            { Id = s.ToString(), DataSource = s.ToString(), Type = Types.Date }));
             otherList.ForEach(s => model.Fields.Add(new Field() { Id = s.ToString(), DataSource = s.ToString() }));
 
             var commandBar = new CommandBar()
@@ -1407,7 +1407,8 @@ namespace Generator.UI.WF
                     GetGridApiMethod = gridMethod.GetGridApiMethod,
                     UpdateApiMethod = gridMethod.UpdateApiMethod,
                     PageName = TbxPageName.Text,
-                    PageXml = pageXml
+                    PageXml = pageXml,
+                    StaticMethods = ComboBoxStaticMethod()
                 };
                 return pageJs;
             }
@@ -1656,7 +1657,7 @@ namespace Generator.UI.WF
                             var staticMethod = new KeyValueStaticMethod
                             {
                                 MethodDescription = item["MethodDescription"].ToString().ConvertUtf8(),
-                                MethodName = item["MethodName"].ToString().ConvertUtf8(),
+                                MethodName = "Fill" + (item["MethodName"].ToString().ConvertUtf8()) + "List",
                                 PropName = DgwComboBoxes.Rows[i].Cells[0].Value.ToString().ConvertUtf8()
                             };
 
@@ -1883,7 +1884,7 @@ namespace Generator.UI.WF
                 {
                     var staticMethod = new KeyValueStaticMethod();
 
-                    staticMethod.MethodName = item["MethodName"].ToString();
+                    staticMethod.MethodName = "Fill" + (item["MethodName"].ToString().ConvertUtf8()) + "List";
                     staticMethod.PropName = TbxPropName.Text;
                     CbxStaticValueField.Text = " ";
                     if (CbxStaticValueField.Text != " ")

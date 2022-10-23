@@ -28,7 +28,7 @@ namespace Generator.UI.WF.JavaScriptGenerate
         public override string ToString()
         {
             var javaScript = "";
-            javaScript += ($"{MethodName}List() ").Tab(2);
+            javaScript += ($"{MethodName} ()").Tab(2);
             javaScript += "{\n";
             javaScript += ($"let {MethodName} = [").Tab(3);
             if (ValueList != null)
@@ -62,7 +62,7 @@ namespace Generator.UI.WF.JavaScriptGenerate
             }
             javaScript += "\n";
             javaScript += $"this.$Prop.{PropName}.Fill({MethodName});\n".Tab(3);
-            javaScript += "}\n".Tab(2);
+            javaScript += "}".Tab(2);
 
             return javaScript;
         }

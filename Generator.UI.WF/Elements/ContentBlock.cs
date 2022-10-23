@@ -12,8 +12,8 @@ namespace Generator.UI.WF.Elements
         {
             var xml = "\n";
             xml += $"<content-block helper-css=\"{HelperCss}\">".Tab(1);
-            xml += "\n";
-            Rows.ForEach(row => { xml += row.ToString(); });
+
+            Rows.ForEach(row => { xml += "\n";  xml += row.ToString(); });
             xml += "\n";
             xml += "</content-block>".Tab(1);
             return xml;

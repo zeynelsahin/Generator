@@ -167,7 +167,7 @@ namespace Generator.UI.WF
             var index = result.ToLower().IndexOf("get");
             if (index != -1)
             {
-                result = result.Substring(3);
+                result = result[3..];
             }
 
             return result;

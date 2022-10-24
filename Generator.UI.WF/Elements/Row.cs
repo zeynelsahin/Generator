@@ -11,7 +11,7 @@ namespace Generator.UI.WF.Elements
         {
             var xml = "<row>".Tab(2);
             Elements.ForEach(element => { xml += element.ToString(); });
-            xml+="\n";
+            xml += "\n";
             xml += "</row>".Tab(2);
             return xml;
         }

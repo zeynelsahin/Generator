@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Generator.Entities.Abstract;
+﻿using Generator.Entities.Abstract;
 
 namespace Generator.Entities
 {

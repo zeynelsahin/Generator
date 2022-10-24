@@ -1,5 +1,6 @@
-﻿using Generator.UI.WF.Models;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.Linq;
+using Generator.UI.WF.Models;
 
 namespace Generator.UI.WF.Elements
 {
@@ -10,15 +11,9 @@ namespace Generator.UI.WF.Elements
 
         public override string ToString()
         {
-            string xml = "\n";
+            var xml = "\n";
             xml += $"<page-header title=\"{Title}\">".Tab(1);
-            if (Buttons.Count > 0)
-            {
-                foreach (var button in Buttons)
-                {
-                    xml += button.ToString();
-                }
-            }
+            if (Buttons.Count > 0) xml = Buttons.Aggregate(xml, (current, button) => current + button);
             xml += "\n";
             xml += "</page-header>".Tab(1);
             return xml;

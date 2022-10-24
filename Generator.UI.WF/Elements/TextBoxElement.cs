@@ -4,7 +4,7 @@
     {
         public override string ToString()
         {
-            string xml = "\n";
+            var xml = "\n";
             xml += $"<textbox id=\"{Id}\" text=\"{Text}\" />".Tab(4);
             return xml;
         }

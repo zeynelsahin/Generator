@@ -8,7 +8,7 @@ namespace Generator.UI.WF.Elements
 
         public override string ToString()
         {
-            string xml = "\n";
+            var xml = "\n";
             xml += "<row-template>".Tab(5);
             Columns.ForEach(p => { xml += p.ToString(); });
             xml += "\n";

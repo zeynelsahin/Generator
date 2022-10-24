@@ -4,11 +4,13 @@
     {
         public string EventName { get; set; }
         public string Content { get; set; }
+
         public override string ToString()
         {
-            string javaScript = "";
-            javaScript += $"case '{EventName}:";
+            var javaScript = "";
+            javaScript += $"case '{EventName}:".Tab(4);
             javaScript += Content;
+            javaScript += "break;\n".Tab(5);
             return javaScript;
         }
     }

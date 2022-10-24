@@ -19,10 +19,7 @@
             xml += "<col size=\"12\" helper-css=\"col-layout-border\">".Tab(3);
             xml += "\n";
             xml += $"<grid-view id =\"{Id}\" show-status=\"{ShowStatus}\"".Tab(4);
-            if (StatusColorFieldId != null)
-            {
-                xml += $" status-color-field-id=\"{StatusColorFieldId}\"";
-            }
+            if (StatusColorFieldId != null) xml += $" status-color-field-id=\"{StatusColorFieldId}\"";
             xml += $" text=\"{Text}\" height=\"{Height}\">";
             if (CommandBar != null) xml += CommandBar.ToString();
 

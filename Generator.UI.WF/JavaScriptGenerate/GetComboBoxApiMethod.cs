@@ -6,6 +6,7 @@
         {
             var javaScript = base.ToString();
             javaScript += $"if (results.{ResultName} == null || results.{ResultName}.length < 1)".Tab(6);
+            javaScript += "if (results == null)".Tab(6);
             javaScript += " {\n";
             javaScript += $"this.$Prop.{PropName}.Fill(null);\n".Tab(7);
             javaScript += "}\n".Tab(6);

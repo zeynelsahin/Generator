@@ -3,8 +3,7 @@ using Generator.Entities;
 
 namespace Generator.DataAccess.Abstract
 {
-    public interface IActionOptionDal: IEntityRepository<ActionOption>
+    public interface IActionOptionDal : IEntityRepository<ActionOption>
     {
-        
     }
 }

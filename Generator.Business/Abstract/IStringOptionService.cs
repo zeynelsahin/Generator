@@ -7,6 +7,6 @@ namespace Generator.Business.Abstract
     {
         void Add(StringOption stringOption);
         List<StringOption> GetAll();
-        StringOption Get(string languageId,string keyId);
+        StringOption Get(string languageId, string keyId);
     }
 }

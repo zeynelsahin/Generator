@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
+using System.Linq;
 using Generator.Business.Abstract;
 using Generator.DataAccess.Abstract;
 using Generator.Entities;
-using System.Linq;
 
 namespace Generator.Business.Concrete
 {
@@ -61,7 +59,8 @@ namespace Generator.Business.Concrete
 
         public List<string> GetResultIdByObjectId(string objectId, string profileId)
         {
-            var result = _objectResultDal.GetAll(p => p.ObjectId == objectId && profileId == p.ProfileId).Select(p => p.ResultId).ToList();
+            var result = _objectResultDal.GetAll(p => p.ObjectId == objectId && profileId == p.ProfileId)
+                .Select(p => p.ResultId).ToList();
             return result;
         }
 

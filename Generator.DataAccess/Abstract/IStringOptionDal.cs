@@ -3,8 +3,7 @@ using Generator.Entities;
 
 namespace Generator.DataAccess.Abstract
 {
-    public interface IStringOptionDal: IEntityRepository<StringOption>
+    public interface IStringOptionDal : IEntityRepository<StringOption>
     {
-        
     }
 }

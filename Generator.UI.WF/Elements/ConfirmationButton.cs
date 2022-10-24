@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Reflection.Metadata.Ecma335;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace Generator.UI.WF.Elements
 {
@@ -22,7 +19,7 @@ namespace Generator.UI.WF.Elements
         public override string ToString()
         {
             var xml =
-                $"\n<confirmation-button id=\"BtnBatchFix\" action-code=\"BtnBatchFix\" message=\"Are you sure you want to update?\" icon-css=\"save\" text=\"Toplu Düzelt\" type-css=\"Success\" alignment=\"Right\">";
+                "\n<confirmation-button id=\"BtnBatchFix\" action-code=\"BtnBatchFix\" message=\"Are you sure you want to update?\" icon-css=\"save\" text=\"Toplu Düzelt\" type-css=\"Success\" alignment=\"Right\">";
             ConfirmationItems.ForEach(item =>
             {
                 xml += $"<confirmation-item confirmation-button=\"{item.ConfirmationButton}\"";

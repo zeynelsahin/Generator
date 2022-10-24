@@ -1,24 +1,21 @@
-﻿using Generator.Business.Abstract;
+﻿using System;
+using System.Windows.Forms;
+using Generator.Business.Abstract;
 using Generator.Business.Concrete;
 using Generator.DataAccess.Concrete;
-using System;
 using Generator.Entities;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Windows.Forms;
 
 namespace Generator.UI.WF
 {
     public partial class FormServiceMethodAdd : Form
     {
+        private readonly string _classType;
         private readonly string _objectId;
         private readonly string _profileId;
-        private readonly string _classType;
 
-        private readonly IServiceMethodService _serviceMethodService = new ServiceMethodService(new EfServiceMethodDal());
+        private readonly IServiceMethodService _serviceMethodService =
+            new ServiceMethodService(new EfServiceMethodDal());
+
         public FormServiceMethodAdd(string objectId, string profileId, string classType)
         {
             _objectId = objectId;
@@ -30,7 +27,8 @@ namespace Generator.UI.WF
         private void FormServiceMethodAdd_Load(object sender, EventArgs e)
         {
             CbxObjectType.SelectedItem = _classType;
-            DgwAdd.Rows.Add(_profileId, _objectId, "SERVICE", false, false, false, false, false, false, false, false, false, false);
+            DgwAdd.Rows.Add(_profileId, _objectId, "SERVICE", false, false, false, false, false, false, false, false,
+                false, false);
             if (_classType == "CUSTOMSQL")
             {
                 DgwAdd.Rows[0].Cells[10].Value = true;
@@ -50,6 +48,7 @@ namespace Generator.UI.WF
                 LblSonuc.Text = "    Zaten ekli";
                 return;
             }
+
             AddServiceMethod();
         }
 
@@ -79,11 +78,13 @@ namespace Generator.UI.WF
             var result = _serviceMethodService.GetByObjectId(_objectId, _profileId);
             return result != null ? true : false;
         }
+
         private void List()
         {
             var list = _serviceMethodService.GetByObjectId(_objectId, _profileId);
             DgwList.DataSource = list;
         }
+
         private void BtnServiceMethodList_Click(object sender, EventArgs e)
         {
             List();
@@ -103,8 +104,8 @@ namespace Generator.UI.WF
                 AddServiceMethod();
                 LblSonuc.Text = "";
             }
-            List();
 
+            List();
         }
     }
 }

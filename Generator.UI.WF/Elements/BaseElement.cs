@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Generator.UI.WF.Models;
+﻿using Generator.UI.WF.Models;
 
 namespace Generator.UI.WF.Elements
 {

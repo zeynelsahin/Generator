@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Generator.UI.WF.JavaScriptGenerate
+﻿namespace Generator.UI.WF.JavaScriptGenerate
 {
     public class GridJavaScriptMethod
     {
@@ -11,10 +9,10 @@ namespace Generator.UI.WF.JavaScriptGenerate
 
         public override string ToString()
         {
-            var javaScript="";
-            if(GetGridApiMethod!=null) javaScript+=GetGridApiMethod.ToString();
-            if(UpdateApiMethod!=null) javaScript+=UpdateApiMethod.ToString();
-            if(CreateApiMethod!=null) javaScript+=CreateApiMethod.ToString();
+            var javaScript = "";
+            if (GetGridApiMethod != null) javaScript += GetGridApiMethod.ToString();
+            if (UpdateApiMethod != null) javaScript += UpdateApiMethod.ToString();
+            if (CreateApiMethod != null) javaScript += CreateApiMethod.ToString();
             return javaScript;
         }
     }

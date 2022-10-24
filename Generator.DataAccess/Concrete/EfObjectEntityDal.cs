@@ -2,7 +2,6 @@
 using Generator.DataAccess.Abstract;
 using Generator.DataAccess.EntityFramework;
 using Generator.Entities;
-using Microsoft.EntityFrameworkCore;
 using Oracle.ManagedDataAccess.Client;
 
 namespace Generator.DataAccess.Concrete
@@ -11,7 +10,8 @@ namespace Generator.DataAccess.Concrete
     {
         public List<string> ColumnNames(string tableName)
         {
-            var constr = "User Id=CMS_APP_USER;Password=Panda1881;Data Source=(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.0.59)(PORT=1521))(CONNECT_DATA=(SID=ORCLSRV19)))";
+            var constr =
+                "User Id=CMS_APP_USER;Password=Panda1881;Data Source=(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.0.59)(PORT=1521))(CONNECT_DATA=(SID=ORCLSRV19)))";
             var response = new List<string>();
             using var con = new OracleConnection(constr);
             con.Open();
@@ -30,7 +30,8 @@ namespace Generator.DataAccess.Concrete
 
         public List<OracleColumn> ColumnNamesAndType(string tableName)
         {
-            var constr = "User Id=CMS_APP_USER;Password=Panda1881;Data Source=(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.0.59)(PORT=1521))(CONNECT_DATA=(SID=ORCLSRV19)))";
+            var constr =
+                "User Id=CMS_APP_USER;Password=Panda1881;Data Source=(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.0.59)(PORT=1521))(CONNECT_DATA=(SID=ORCLSRV19)))";
             var response = new List<OracleColumn>();
             using var con = new OracleConnection(constr);
             con.Open();
@@ -39,7 +40,9 @@ namespace Generator.DataAccess.Concrete
             {
                 using (var reader = com.ExecuteReader())
                 {
-                    while (reader.Read()) response.Add(new OracleColumn { Name = (string)reader["column_name"], DataType = (string)reader["data_type"] });
+                    while (reader.Read())
+                        response.Add(new OracleColumn
+                            { Name = (string)reader["column_name"], DataType = (string)reader["data_type"] });
                 }
             }
 

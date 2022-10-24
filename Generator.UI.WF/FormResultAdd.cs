@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 using Generator.Business.Abstract;
 using Generator.Business.Concrete;
@@ -17,6 +14,10 @@ namespace Generator.UI.WF
         private readonly string _objectId;
         private readonly string _profileId;
         private readonly string _schemaName;
+        private readonly IObjectResultService _objecResultService = new ObjectResultService(new EfObjectResultDal());
+
+        private readonly IObjectEntityService _objectEntityService = new ObjectEntityService(new EfObjectEntityDal());
+        private readonly List<string> resultList = new List<string>();
 
         public FormResultAdd(string objectId, string profileId, string schemaName)
         {
@@ -43,9 +44,6 @@ namespace Generator.UI.WF
             InitializeComponent();
         }
 
-        private IObjectEntityService _objectEntityService = new ObjectEntityService(new EfObjectEntityDal());
-        private IObjectResultService _objecResultService = new ObjectResultService(new EfObjectResultDal());
-        private List<string> resultList = new List<string>();
         private ComboBox CreateComboBox()
         {
             //Combobox
@@ -53,7 +51,7 @@ namespace Generator.UI.WF
             comboBox.BackColor = Color.White;
             comboBox.FlatStyle = FlatStyle.Flat;
             comboBox.Font = new Font("Century Gothic", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            comboBox.ForeColor = Color.FromArgb((int)(byte)35, (int)(byte)128, (int)(byte)109);
+            comboBox.ForeColor = Color.FromArgb(35, 128, 109);
             comboBox.FormattingEnabled = true;
             comboBox.Items.AddRange(new object[]
             {
@@ -81,7 +79,7 @@ namespace Generator.UI.WF
         {
             //Panel Combox altı
             var panelCombobox = new Panel();
-            panelCombobox.BackColor = Color.FromArgb((int)(byte)35, (int)(byte)128, (int)(byte)109);
+            panelCombobox.BackColor = Color.FromArgb(35, 128, 109);
             panelCombobox.Location = new Point(299, 34);
             panelCombobox.Name = "panel103";
             panelCombobox.Size = new Size(166, 2);
@@ -95,7 +93,7 @@ namespace Generator.UI.WF
             textBox.BackColor = Color.White;
             textBox.BorderStyle = BorderStyle.None;
             textBox.Font = new Font("Century Gothic", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox.ForeColor = Color.FromArgb((int)(byte)35, (int)(byte)128, (int)(byte)109);
+            textBox.ForeColor = Color.FromArgb(35, 128, 109);
             textBox.Location = new Point(14, 3);
             textBox.Name = "name";
             textBox.Size = new Size(249, 30);
@@ -108,7 +106,7 @@ namespace Generator.UI.WF
         {
             //Panel TextBox Altı
             var panelTextBox = new Panel();
-            panelTextBox.BackColor = Color.FromArgb((int)(byte)35, (int)(byte)128, (int)(byte)109);
+            panelTextBox.BackColor = Color.FromArgb(35, 128, 109);
             panelTextBox.Location = new Point(14, 35);
             panelTextBox.Name = "panel20";
             panelTextBox.Size = new Size(249, 2);
@@ -152,14 +150,14 @@ namespace Generator.UI.WF
             var straightSqlText = "";
 
             for (var i = 0; i < sqlText.Length; i++)
-                if (sqlText[i] != Convert.ToChar($"\n") && sqlText[i] != Convert.ToChar($"\r"))
+                if (sqlText[i] != Convert.ToChar("\n") && sqlText[i] != Convert.ToChar("\r"))
                     straightSqlText += sqlText[i].ToString();
             return straightSqlText.ToUpper();
         }
 
         private List<string> GetResulList(string straightSqlText)
         {
-            List<string> resultList = new List<string>();
+            var resultList = new List<string>();
             var caseIs = false;
             var tables = new List<string>();
             var column = "";
@@ -167,7 +165,8 @@ namespace Generator.UI.WF
                  i < straightSqlText.Length;
                  i++)
             {
-                if (straightSqlText[i] != Convert.ToChar(".") && straightSqlText[i] != Convert.ToChar(",")) column += straightSqlText[i].ToString();
+                if (straightSqlText[i] != Convert.ToChar(".") && straightSqlText[i] != Convert.ToChar(","))
+                    column += straightSqlText[i].ToString();
 
                 if (straightSqlText[i] == Convert.ToChar("."))
                     if (caseIs == false)
@@ -308,7 +307,7 @@ namespace Generator.UI.WF
                 var comboBox = Controls.Find(comboBoxKey, true);
 
                 //objectResults.Add();
-                var objectResult = new ObjectResult()
+                var objectResult = new ObjectResult
                 {
                     NullableFlag = '1',
                     DataType = comboBox[0].Text,

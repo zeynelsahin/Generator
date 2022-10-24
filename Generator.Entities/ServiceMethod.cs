@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Generator.Entities.Abstract;
+﻿using Generator.Entities.Abstract;
 
 namespace Generator.Entities
 {
@@ -17,7 +14,7 @@ namespace Generator.Entities
         public char DeleteMethodFlag { get; set; }
         public char CreateMethodFlag { get; set; }
         public char ModifyMethodFlag { get; set; }
-        public char? CustomMethodFlag { get; set; } 
+        public char? CustomMethodFlag { get; set; }
         public char IndexMethodFlag { get; set; }
         public char OnlyEntityFlag { get; set; }
     }

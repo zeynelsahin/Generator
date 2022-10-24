@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace Generator.UI.WF.Elements
 {
@@ -15,8 +13,8 @@ namespace Generator.UI.WF.Elements
         public override string ToString()
         {
             var grid = "";
-            grid = $"<grid-view>";
-            grid += $"\n<command-bar show-searchbox=\"true\" excel-export=\"true\"/>";
+            grid = "<grid-view>";
+            grid += "\n<command-bar show-searchbox=\"true\" excel-export=\"true\"/>";
             if (Fields != null)
             {
                 grid += "\n<model>";

@@ -21,12 +21,16 @@ namespace Generator.Business.Concrete
 
         public List<ActionOption> GetAll(string domainId, string environment, string applicationId, string actionId)
         {
-            return _actionOptionDal.GetAll(a => a.DomainId == domainId && a.Environment == environment && a.ApplicationId == applicationId && a.ActionId == actionId);
+            return _actionOptionDal.GetAll(a =>
+                a.DomainId == domainId && a.Environment == environment && a.ApplicationId == applicationId &&
+                a.ActionId == actionId);
         }
 
         public ActionOption Get(string domainId, string environment, string applicationId, string actionId)
         {
-            var result = _actionOptionDal.Get(p => p.ActionId == actionId && p.Environment == environment && p.DomainId == domainId && p.ApplicationId == applicationId);
+            var result = _actionOptionDal.Get(p =>
+                p.ActionId == actionId && p.Environment == environment && p.DomainId == domainId &&
+                p.ApplicationId == applicationId);
             return result;
         }
     }

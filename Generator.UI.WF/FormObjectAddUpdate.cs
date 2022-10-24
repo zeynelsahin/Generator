@@ -12,21 +12,24 @@ namespace Generator.UI.WF
 {
     public partial class FormObjectAddUpdate : Form
     {
+        private readonly IObjectEntityService _objectEntityService;
+        //private IObjectEntityService _objectEntityService = new ObjectEntityService(new EfObjectEntityDal());
+
+        private readonly Profile _profile;
+
+        private bool canFilter;
+
         public FormObjectAddUpdate(Profile profile, IObjectEntityService objectEntityService)
         {
             _profile = profile;
             _objectEntityService = objectEntityService;
             InitializeComponent();
         }
-        //private IObjectEntityService _objectEntityService = new ObjectEntityService(new EfObjectEntityDal());
-
-        private Profile _profile;
-        private readonly IObjectEntityService _objectEntityService;
 
         private void FillObjectId()
         {
             CbxOjectId.DataSource = null;
-            var objectIdList = new List<string>()
+            var objectIdList = new List<string>
             {
                 "Hiçbiri"
             };
@@ -37,7 +40,7 @@ namespace Generator.UI.WF
 
         private void FillProfileId()
         {
-            var objectIdList = new List<string>()
+            var objectIdList = new List<string>
             {
                 "Hiçbiri"
             };
@@ -48,7 +51,7 @@ namespace Generator.UI.WF
 
         private void FillSchemaName()
         {
-            var schemaList = new List<string>()
+            var schemaList = new List<string>
             {
                 "Hiçbiri"
             };
@@ -103,7 +106,6 @@ namespace Generator.UI.WF
             return objectEntity;
         }
 
-        private bool canFilter = false;
         private void FormObjectAddUpdate_Load(object sender, EventArgs e)
         {
             FillProfile();
@@ -168,12 +170,14 @@ namespace Generator.UI.WF
 
         private void FilterObject()
         {
-            if (canFilter == true)
+            if (canFilter)
             {
                 var selectedObjectId = CbxOjectId.SelectedIndex == 0 ? null : CbxOjectId.SelectedItem.ToString();
                 var selectedProfileId = CbxProfileId.SelectedIndex == 0 ? null : CbxProfileId.SelectedItem.ToString();
-                var selectedSchemaName = CbxSchemaName.SelectedIndex == 0 ? null : CbxSchemaName.SelectedItem.ToString();
-                var result = _objectEntityService.GetAllOrFilter(selectedObjectId, selectedProfileId, selectedSchemaName);
+                var selectedSchemaName =
+                    CbxSchemaName.SelectedIndex == 0 ? null : CbxSchemaName.SelectedItem.ToString();
+                var result =
+                    _objectEntityService.GetAllOrFilter(selectedObjectId, selectedProfileId, selectedSchemaName);
                 DgwObject.DataSource = result;
             }
         }
@@ -201,7 +205,8 @@ namespace Generator.UI.WF
         {
             if (string.IsNullOrWhiteSpace(TbxObjectId.Text))
             {
-                FormParameterAndResultAdd parameterAdd = new FormParameterAndResultAdd(TbxObjectId.Text, TbxProfileId.Text, TbxSchemaName.Text);
+                var parameterAdd =
+                    new FormParameterAndResultAdd(TbxObjectId.Text, TbxProfileId.Text, TbxSchemaName.Text);
                 parameterAdd.Show();
             }
         }
@@ -210,7 +215,7 @@ namespace Generator.UI.WF
         {
             if (string.IsNullOrWhiteSpace(TbxObjectId.Text))
             {
-                FormResultAdd formResult = new FormResultAdd(TbxObjectId.Text, TbxProfileId.Text, TbxSchemaName.Text);
+                var formResult = new FormResultAdd(TbxObjectId.Text, TbxProfileId.Text, TbxSchemaName.Text);
                 formResult.Show();
             }
         }
@@ -243,12 +248,11 @@ namespace Generator.UI.WF
         private void BtnOracle_Click(object sender, EventArgs e)
         {
             FillObjectId();
-
         }
 
         private void BtnUxGenerator_Click(object sender, EventArgs e)
         {
-            FormUxGenerator formUxGenerator = new FormUxGenerator();
+            var formUxGenerator = new FormUxGenerator();
             formUxGenerator.Show();
         }
 
@@ -256,14 +260,13 @@ namespace Generator.UI.WF
         {
             if (!string.IsNullOrWhiteSpace(TbxObjectId.Text))
             {
-                FormServiceMethodAdd form = new FormServiceMethodAdd(TbxObjectId.Text, TbxProfileId.Text, CbxObjectType.Text);
+                var form = new FormServiceMethodAdd(TbxObjectId.Text, TbxProfileId.Text, CbxObjectType.Text);
                 form.Show();
             }
         }
 
         private void TbxProfileId_TextChanged(object sender, EventArgs e)
         {
-
         }
     }
 }

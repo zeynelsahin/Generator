@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Generator.UI.WF.Models;
-
-namespace Generator.UI.WF.Elements
+﻿namespace Generator.UI.WF.Elements
 {
     public class Button : BaseElement
     {
@@ -13,8 +8,10 @@ namespace Generator.UI.WF.Elements
 
         public override string ToString()
         {
-            string xml = "\n";
-            xml += $"<button id=\"{Id}\" text=\"{Text}\" action-code=\"{ActionCode}\" type-css=\"{TypeCss}\" alignment=\"{Alignment}\" icon-css=\"{IconCss}\"/>".Tab(2);
+            var xml = "\n";
+            xml +=
+                $"<button id=\"{Id}\" text=\"{Text}\" action-code=\"{ActionCode}\" type-css=\"{TypeCss}\" alignment=\"{Alignment}\" icon-css=\"{IconCss}\"/>"
+                    .Tab(2);
             return xml;
         }
     }

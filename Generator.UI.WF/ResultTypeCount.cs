@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Generator.UI.WF
+﻿namespace Generator.UI.WF
 {
     public class ResultTypeCount
     {

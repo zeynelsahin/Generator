@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Generator.Business.Abstract;
+﻿using Generator.Business.Abstract;
 using Generator.DataAccess.Abstract;
 using Generator.Entities;
 
@@ -16,7 +13,7 @@ namespace Generator.Business.Concrete
             _serviceMethodDal = serviceMethodDal;
         }
 
-        public ServiceMethod GetByObjectId(string objectId, string profileId,string classType=null)
+        public ServiceMethod GetByObjectId(string objectId, string profileId, string classType = null)
         {
             return _serviceMethodDal.Get(p => p.ObjectId == objectId && p.ProfileId == profileId);
         }
@@ -28,7 +25,7 @@ namespace Generator.Business.Concrete
 
         public void Delete(ServiceMethod serviceMethod)
         {
-           _serviceMethodDal.Delete(serviceMethod);
+            _serviceMethodDal.Delete(serviceMethod);
         }
     }
 }

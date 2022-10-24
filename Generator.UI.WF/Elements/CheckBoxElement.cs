@@ -6,7 +6,7 @@
 
         public override string ToString()
         {
-            string xml = "\n";
+            var xml = "\n";
             xml += $"<checkbox id=\"{Id}\" text=\"{Text}\" checked=\"{Checked}\"/>".Tab(4);
             return xml;
         }

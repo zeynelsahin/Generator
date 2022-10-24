@@ -8,8 +8,10 @@
 
         public override string ToString()
         {
-            string xml = "\n";
-            xml += $"<number-entry id=\"{Id}\" text=\"{Text}\" enable=\"{Enable}\" no-format=\"{NoFormat}\" max-lenght=\"{MaxLenght}\"/>".Tab(4);
+            var xml = "\n";
+            xml +=
+                $"<number-entry id=\"{Id}\" text=\"{Text}\" enable=\"{Enable}\" no-format=\"{NoFormat}\" max-lenght=\"{MaxLenght}\"/>"
+                    .Tab(4);
             return xml;
         }
     }

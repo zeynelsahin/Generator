@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.DirectoryServices.Protocols;
-using System.Security.Principal;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace Generator.UI.WF.Elements
 {
@@ -13,7 +9,7 @@ namespace Generator.UI.WF.Elements
 
         public override string ToString()
         {
-            string xml = "\n";
+            var xml = "\n";
             xml += $"<user-control id=\"{Id}\" control-id=\"{ControlId}\"".Tab(4);
             Parameters.ForEach(parameter => { xml += parameter.ToString(); });
             xml += "</user-control>".Tab(4);

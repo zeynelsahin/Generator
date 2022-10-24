@@ -4,7 +4,7 @@ using Generator.Entities;
 
 namespace Generator.DataAccess.Concrete
 {
-    public class EfActionOptionDal: EfEntityRepositoryBase<ActionOption, OracleContext>, IActionOptionDal
+    public class EfActionOptionDal : EfEntityRepositoryBase<ActionOption, OracleContext>, IActionOptionDal
     {
     }
 }

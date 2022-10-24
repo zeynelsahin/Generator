@@ -1,26 +1,12 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Autofac;
-using Autofac.Extras.DynamicProxy;
-using Castle.DynamicProxy;
-using Generator.Business.Abstract;
-using Generator.Business.Concrete;
-using Generator.DataAccess.Abstract;
-using Generator.DataAccess.Concrete;
-using Generator.Entities;
-using Microsoft.Extensions.DependencyInjection;
-using Module = Autofac.Module;
 
 namespace Generator.UI.WF
 {
     public static class Program
     {
         /// <summary>
-        ///  The main entry point for the application.
+        ///     The main entry point for the application.
         /// </summary>
         [STAThread]
         public static void Main()

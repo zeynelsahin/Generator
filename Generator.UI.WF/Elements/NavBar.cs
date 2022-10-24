@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Generator.UI.WF.Elements
+﻿namespace Generator.UI.WF.Elements
 {
     public class NavBar
     {
@@ -10,7 +6,7 @@ namespace Generator.UI.WF.Elements
 
         public override string ToString()
         {
-            string xml = "\n";
+            var xml = "\n";
             xml += $"<navbar title=\"{Title}\"/";
             return xml;
         }

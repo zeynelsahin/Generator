@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Generator.DataAccess.Abstract;
+﻿using Generator.DataAccess.Abstract;
 using Generator.DataAccess.EntityFramework;
 using Generator.Entities;
 
 namespace Generator.DataAccess.Concrete
 {
-    public class EfServiceOptionDal: EfEntityRepositoryBase<ServiceOption, OracleContext>, IServiceOptionDal
+    public class EfServiceOptionDal : EfEntityRepositoryBase<ServiceOption, OracleContext>, IServiceOptionDal
     {
     }
 }

@@ -11,7 +11,7 @@ namespace Generator.Business.Concrete
 
         public StringOptionService(IStringOptionDal stringOptionDal)
         {
-            _stringOptionDal = stringOptionDal; 
+            _stringOptionDal = stringOptionDal;
         }
 
         public void Add(StringOption stringOption)

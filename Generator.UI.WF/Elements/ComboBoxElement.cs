@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Generator.UI.WF.Elements
+﻿namespace Generator.UI.WF.Elements
 {
     public class ComboBoxElement : BaseElement
     {
@@ -11,7 +7,7 @@ namespace Generator.UI.WF.Elements
 
         public override string ToString()
         {
-            string xml = "\n";
+            var xml = "\n";
             xml += $"<combo id=\"{Id}\" text=\"{Text}\" key-field=\"{KeyField}\" value-field=\"{ValueField}\"/>".Tab(4);
             return xml;
         }

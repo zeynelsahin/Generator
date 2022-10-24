@@ -7,7 +7,7 @@
 
         public override string ToString()
         {
-            string xml = "\n";
+            var xml = "\n";
             xml += $"<command-bar show-searchbox=\"{ShowSearchBox}\" excel-export=\"{ExcelExport}\"/>".Tab(5);
             return xml;
         }

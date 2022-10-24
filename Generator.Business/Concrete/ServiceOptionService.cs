@@ -17,8 +17,10 @@ namespace Generator.Business.Concrete
 
         public List<string> GetServiceId()
         {
-            return _serviceOptionDal.GetAll().Where(p=>p.DomainId=="UXLocal").Select(option => option.ServiceId).ToList();
+            return _serviceOptionDal.GetAll().Where(p => p.DomainId == "UXLocal").Select(option => option.ServiceId)
+                .ToList();
         }
+
         public List<ServiceOption> GetAll()
         {
             return _serviceOptionDal.GetAll().ToList();

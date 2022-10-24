@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Microsoft.VisualBasic;
 
 namespace Generator.UI.WF
 {
@@ -86,7 +83,6 @@ namespace Generator.UI.WF
             var st = result.ToLower();
             var yeniSt = "";
             for (var j = 0; j < st.Length; j++)
-            {
                 if (j == 0)
                 {
                     yeniSt += st[0].ToString();
@@ -101,7 +97,6 @@ namespace Generator.UI.WF
 
                     if (st[j] != Convert.ToChar("_")) yeniSt += st[j];
                 }
-            }
 
             return yeniSt;
         }
@@ -111,7 +106,6 @@ namespace Generator.UI.WF
             var st = result;
             var yeniSt = "";
             for (var j = 0; j < st.Length; j++)
-            {
                 if (j == 0)
                 {
                     yeniSt += st[0].ToString();
@@ -126,7 +120,6 @@ namespace Generator.UI.WF
 
                     yeniSt += st[j];
                 }
-            }
 
             return yeniSt;
         }
@@ -136,16 +129,10 @@ namespace Generator.UI.WF
             var st = result;
             var yeniSt = "";
             for (var j = 0; j < st.Length; j++)
-            {
                 if (j == 0)
-                {
                     yeniSt += st[0].ToString().ToLower();
-                }
                 else
-                {
                     yeniSt += st[j];
-                }
-            }
 
             return yeniSt;
         }
@@ -153,22 +140,14 @@ namespace Generator.UI.WF
         public static char ConvertChar(this object value)
         {
             if ((bool)value)
-            {
                 return '1';
-            }
-            else
-            {
-                return '0';
-            }
+            return '0';
         }
 
         public static string RemoveGet(this string result)
         {
             var index = result.ToLower().IndexOf("get");
-            if (index != -1)
-            {
-                result = result[3..];
-            }
+            if (index != -1) result = result[3..];
 
             return result;
         }
@@ -176,10 +155,7 @@ namespace Generator.UI.WF
         public static string Tab(this string javaScript, int tabCount)
         {
             var javaSrciptNew = "";
-            for (int i = 0; i < tabCount; i++)
-            {
-                javaSrciptNew += "    ";
-            }
+            for (var i = 0; i < tabCount; i++) javaSrciptNew += "    ";
 
             return javaSrciptNew + javaScript;
         }

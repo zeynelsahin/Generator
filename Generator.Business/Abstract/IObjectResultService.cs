@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Text;
+﻿using System.Collections.Generic;
 using Generator.Entities;
 
 namespace Generator.Business.Abstract
@@ -24,6 +21,5 @@ namespace Generator.Business.Abstract
         List<OracleColumn> GetAll(string objectId, string profileId);
 
         ObjectResult FindResult(string resultId);
-
     }
 }

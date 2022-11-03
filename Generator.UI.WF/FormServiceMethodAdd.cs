@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 using Generator.Business.Abstract;
 using Generator.Business.Concrete;
@@ -81,7 +82,8 @@ namespace Generator.UI.WF
 
         private void List()
         {
-            var list = _serviceMethodService.GetByObjectId(_objectId, _profileId);
+            var result= _serviceMethodService.GetByObjectId(_objectId, _profileId);
+            var list = new List<ServiceMethod> { result };
             DgwList.DataSource = list;
         }
 

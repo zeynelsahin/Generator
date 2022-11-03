@@ -21,33 +21,43 @@ namespace Generator.Business.Concrete
             _objectEntityDal.Add(objectEntity);
         }
 
-        public List<ObjectEntity> GetAllOrFilter(string objectId = null, string profileId = null,
-            string schemaName = null)
+        public List<ObjectEntity> GetAllOrFilter(string objectId = null, string profileId = null, string schemaName = null)
         {
             var result = _objectEntityDal.GetAll();
             if (profileId != null) result = result.Where(p => p.ProfileId == profileId).ToList();
             if (schemaName != null) result = result.Where(p => p.SchemaName == schemaName).ToList();
-
             if (objectId != null) result = result.Where(p => p.ObjectId == objectId).ToList();
             return result;
         }
 
         public List<string> GetAllByProfileId(string profileId)
         {
-            var result = _objectEntityDal.GetAll(entity => entity.ProfileId == profileId).OrderBy(p => p.ObjectId)
+            var result = _objectEntityDal.GetAll(entity => entity.ProfileId == profileId && entity.ObjectType != "SEQUENCE").OrderBy(p => p.ObjectId)
                 .Select(entity => entity.ObjectId).ToList();
             return result ?? null;
         }
 
+        public List<string> GetAllCustomByProfileId(string profileId)
+        {
+            var result = _objectEntityDal.GetAll(entity => entity.ProfileId == profileId && entity.ObjectType == "CUSTOMSQL").OrderBy(p => p.ObjectId)
+                .Select(entity => entity.ObjectId).ToList();
+            return result ?? null;
+        }
+
+        public List<string> GetAllByProfileId(string profileId, string objectType)
+        {
+            return null;
+        }
+
         public List<ObjectEntity> GetByProfileId(string profileId)
         {
-            var result = _objectEntityDal.GetAll(entity => entity.ProfileId == profileId);
+            var result = _objectEntityDal.GetAll(entity => entity.ProfileId == profileId && entity.ObjectType != "SEQUENCE");
             return result;
         }
 
         public List<string> GetAllObjectId()
         {
-            var result = _objectEntityDal.GetAll().Select(entity => entity.ObjectId).Distinct().ToList();
+            var result = _objectEntityDal.GetAll().Select(entity => entity.ObjectId ).Distinct().ToList();
             return result;
         }
 
@@ -98,6 +108,12 @@ namespace Generator.Business.Concrete
         {
             var result = _objectEntityDal.Get(p => p.ProfileId == profileId && p.ObjectId == objectId);
             return result.ObjectType;
+        }
+
+        public List<string> GetTablePrimaryKeyList(string tableName)
+        {
+            var result = _objectEntityDal.GetTablePrimaryKeyList(tableName);
+            return result;
         }
     }
 }

@@ -15,7 +15,7 @@ namespace Generator.UI.WF.Models
         public UpdateApiMethod UpdateApiMethod { get; set; }
         public PageXml PageXml { get; set; } = null;
         public string PageName { get; set; }
-        public EventHandler EventHandler { get; set; }
+        private EventHandler EventHandler { get; set; } = new EventHandler();
 
         public override string ToString()
         {
@@ -23,9 +23,13 @@ namespace Generator.UI.WF.Models
             javaScript += "\"use strict\";\n".Tab(1);
             javaScript += $"$$.{PageName}Controller = class {PageName}Controller extends $$.Controller".Tab(1);
             javaScript += " {\n";
-            javaScript += "constructor(view, page, context, prop);\n".Tab(2);
+            javaScript += "constructor(view, page, context, prop) {\n".Tab(2);
+            javaScript += "super(view, page, context, prop);".Tab(3);
+            javaScript += "\n";  
+            javaScript += "}".Tab(2);
             javaScript += "\n";
             javaScript += "Load() {\n".Tab(2);
+
             if (PageXml != null)
             {
                 if (((PageHeader)PageXml.Header).Buttons.Any(p => p.Id == "Update"))
@@ -38,6 +42,7 @@ namespace Generator.UI.WF.Models
                 var dateEntryCount = 1;
                 var javaScriptDateSet = new List<string>();
                 var rows = ((ContentBlock)PageXml.Content).Rows;
+
                 foreach (var row in rows)
                 {
                     var rowCount = row.Elements.Count - 1;
@@ -62,69 +67,52 @@ namespace Generator.UI.WF.Models
                         }
                     }
                 }
-
-                const string dateFunc = "const d = new Date()";
-                if (javaScriptDateSet.Count > 1)
+                if (javaScriptDateSet.Count > 0)
                 {
                     javaScript += "\n";
                     javaScript += "this.SetDateValue();".Tab(3);
                     javaScript += "\n";
+                    const string dateFunc = "const d = new Date()";
                     var staticMethod = new StringStaticMethod
                     {
                         MethodName = "SetDateValue"
                     };
+
                     staticMethod.StaticMethod += dateFunc.Tab(3);
                     javaScriptDateSet.ForEach(p =>
                     {
                         staticMethod.StaticMethod += "\n";
                         staticMethod.StaticMethod += p.Tab(3);
                     });
-
                     DateTimeMethod.Add(staticMethod);
                 }
-                else if (javaScriptDateSet.Count == 1)
-                {
-                    javaScript += "\n";
-                    javaScript += dateFunc.Tab(3);
-                    javaScript += "\n";
-                    javaScript += javaScriptDateSet[0].Tab(3);
-                    javaScript += "\n";
-                }
-
-                javaScript += "}".Tab(2);
             }
-
-            if (ApiRequestMethods.Count + StaticMethods.Count > 1)
+            if (ApiRequestMethods.Count > 0)
             {
                 javaScript += "this.FillCombos();".Tab(3);
                 javaScript += "\n";
-                if (GetGridApiMethod != null) javaScript += $"this.{GetGridApiMethod.MethodName}();".Tab(3);
-
-                javaScript += "\n";
-                javaScript += "}\n".Tab(2);
-                javaScript += "FillCombos() {\n".Tab(2);
-                javaScript = ApiRequestMethods.Aggregate(javaScript,
-                    (current, requestMethod) => current + $"this.{requestMethod.MethodName}();\n".Tab(3));
-                javaScript = StaticMethods.Aggregate(javaScript,
-                    (current, requestMethod) => current + $"this.{requestMethod.MethodName}();\n".Tab(3));
-                javaScript += "}".Tab(2);
             }
-            else
-            {
-                javaScript = ApiRequestMethods.Aggregate(javaScript,
-                    (current, requestMethod) => current + $"this.{requestMethod.MethodName}();\n".Tab(3));
-                javaScript = StaticMethods.Aggregate(javaScript,
-                    (current, requestMethod) => current + $"this.{requestMethod.MethodName}();\n".Tab(3));
-            }
+            if (GetGridApiMethod != null) javaScript += $"this.{GetGridApiMethod.MethodName}();".Tab(3);
 
             javaScript += "\n";
+            javaScript += "}".Tab(2);
+            if (ApiRequestMethods.Count > 0)
+            {
+                javaScript += "FillCombos() {\n".Tab(2);
+                javaScript = ApiRequestMethods.Aggregate(javaScript,
+               (current, requestMethod) => current + $"this.{requestMethod.MethodName}();\n".Tab(3));
+                javaScript = StaticMethods.Aggregate(javaScript,
+               (current, requestMethod) => current + $"this.{requestMethod.MethodName}();\n".Tab(3));
+                javaScript += "}".Tab(2);
+                javaScript += "\n";
+            }
 
-            if (DateTimeMethod.Count == 1)
+            if (DateTimeMethod.Count > 0)
                 javaScript = DateTimeMethod.Aggregate(javaScript, (current, method) => current + method);
 
             if (StaticMethods.Count > 0)
                 javaScript = StaticMethods.Aggregate(javaScript,
-                    (current, staticMethod) => current + staticMethod);
+                    (current, staticMethod) => current + ("\n" + staticMethod));
             javaScript = ApiRequestMethods.Aggregate(javaScript,
                 (current, requestMethod) => current + requestMethod);
             if (GetGridApiMethod != null) javaScript += GetGridApiMethod.ToString();
@@ -133,21 +121,18 @@ namespace Generator.UI.WF.Models
             javaScript += "\n";
 
             //Events
-            javaScript += "EventHandler(eventName, arg1) {\n".Tab(2);
-            javaScript += "var recordInfo = arg1;\n".Tab(3);
-            javaScript += "switch (eventName) {\n".Tab(3);
-            javaScript += "case 'Clear':\n".Tab(4);
-            javaScript += "this.$Page.Clear();\n".Tab(5);
-            javaScript += "this.$Prop.Add.Enable();\n".Tab(5);
-            javaScript += "this.$Prop.Update.Disable();\n".Tab(5);
-            javaScript += "this.$Prop.ValidFlag.SetValue(true);\n".Tab(5);
-            if (GetGridApiMethod != null) javaScript += $"this.{GetGridApiMethod.MethodName}();\n".Tab(5);
-            javaScript += "break;\n".Tab(5);
+            // javaScript += "case 'Clear':\n".Tab(4);
+            // javaScript += "this.$Page.Clear();\n".Tab(5);
+            // javaScript += "this.$Prop.Add.Enable();\n".Tab(5);
+            // javaScript += "this.$Prop.Update.Disable();\n".Tab(5);
+            // javaScript += "this.$Prop.ValidFlag.SetValue(true);\n".Tab(5);
             var clearEvent = new Event { EventName = "Clear" };
-
             clearEvent.Content += "this.$Page.Clear();\n".Tab(5);
             clearEvent.Content += "this.$Prop.Add.Enable();\n".Tab(5);
             clearEvent.Content += "this.$Prop.Update.Disable();\n".Tab(5);
+            if (((ContentBlock)PageXml.Content).Rows.ToString().Contains("ValidFlag"))
+                clearEvent.Content += "this.$Prop.ValidFlag.SetValue(true);\n".Tab(5);
+            EventHandler.Events.Add(clearEvent);
 
 
             EventHandler.Events.Add(new Event
@@ -176,7 +161,7 @@ namespace Generator.UI.WF.Models
                     EventName = "Update",
                     Content = $"this.{UpdateApiMethod.MethodName}();\n".Tab(5)
                 });
-
+            javaScript += EventHandler.ToString();
             javaScript += "}\n".Tab(3);
             javaScript += "}\n".Tab(2);
             javaScript += "}\n".Tab(1);

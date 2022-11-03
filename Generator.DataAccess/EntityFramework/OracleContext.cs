@@ -31,7 +31,7 @@ namespace Generator.DataAccess.EntityFramework
             //Action Option
             modelBuilder.Entity<ActionOption>().Property(s => s.DomainId).HasColumnName("DOMAIN_ID");
             modelBuilder.Entity<ActionOption>().Property(s => s.Environment).HasColumnName("ENVIRONMENT");
-            modelBuilder.Entity<ActionOption>().Property(s => s.ActionId).HasColumnName("APPLICATION_ID");
+            modelBuilder.Entity<ActionOption>().Property(s => s.ApplicationId).HasColumnName("APPLICATION_ID");
             modelBuilder.Entity<ActionOption>().Property(s => s.ActionId).HasColumnName("ACTION_ID");
             modelBuilder.Entity<ActionOption>().Property(s => s.ServiceActionName).HasColumnName("SERVICE_ACTION_NAME");
             modelBuilder.Entity<ActionOption>().Property(s => s.Description).HasColumnName("DESCRIPTION");

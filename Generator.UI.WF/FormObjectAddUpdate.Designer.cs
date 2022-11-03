@@ -215,7 +215,6 @@ namespace Generator.UI.WF
             // 
             // BtnOracle
             // 
-            this.BtnOracle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.BtnOracle.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnOracle.FlatAppearance.BorderSize = 0;
             this.BtnOracle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1302,6 +1301,7 @@ namespace Generator.UI.WF
             this.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.Name = "FormObjectAddUpdate";
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Object Add";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormObjectAddUpdate_FormClosing);
             this.Load += new System.EventHandler(this.FormObjectAddUpdate_Load);

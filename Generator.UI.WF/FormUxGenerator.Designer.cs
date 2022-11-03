@@ -61,6 +61,12 @@ namespace Generator.UI.WF
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle38 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle39 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle40 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle37 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -105,7 +111,7 @@ namespace Generator.UI.WF
             this.label10 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.CbxProfileId = new System.Windows.Forms.ComboBox();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.TabOneService = new System.Windows.Forms.TabPage();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.RtbxSingleJavaScript = new System.Windows.Forms.RichTextBox();
             this.groupBox17 = new System.Windows.Forms.GroupBox();
@@ -123,6 +129,7 @@ namespace Generator.UI.WF
             this.label31 = new System.Windows.Forms.Label();
             this.CbxStaticJavaScript = new System.Windows.Forms.ComboBox();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.CbxOneServiceResult = new System.Windows.Forms.CheckBox();
             this.CbxOneServiceParameter = new System.Windows.Forms.CheckBox();
             this.label22 = new System.Windows.Forms.Label();
             this.TbxPropName = new System.Windows.Forms.TextBox();
@@ -188,7 +195,7 @@ namespace Generator.UI.WF
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.CbxProfile = new System.Windows.Forms.ComboBox();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.TabHeader = new System.Windows.Forms.TabPage();
             this.groupBox13 = new System.Windows.Forms.GroupBox();
             this.DgwHeader = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -218,16 +225,30 @@ namespace Generator.UI.WF
             this.groupBox24 = new System.Windows.Forms.GroupBox();
             this.RtbxPrensentation = new System.Windows.Forms.RichTextBox();
             this.TabMain = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.panel18 = new System.Windows.Forms.Panel();
-            this.groupBox26 = new System.Windows.Forms.GroupBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.groupBox27 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.groupBox25 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.GridEventName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TabGridService = new System.Windows.Forms.TabPage();
+            this.groupBox31 = new System.Windows.Forms.GroupBox();
+            this.RtbxGridServiceResult = new System.Windows.Forms.RichTextBox();
+            this.GpxUpdate = new System.Windows.Forms.GroupBox();
+            this.label35 = new System.Windows.Forms.Label();
+            this.button8 = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
+            this.CbxService2ObjectType = new System.Windows.Forms.ComboBox();
+            this.CbxService2ObjectId = new System.Windows.Forms.ComboBox();
+            this.label36 = new System.Windows.Forms.Label();
+            this.label37 = new System.Windows.Forms.Label();
+            this.CbxService2ProfileId = new System.Windows.Forms.ComboBox();
+            this.GpBxCreate = new System.Windows.Forms.GroupBox();
+            this.label32 = new System.Windows.Forms.Label();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.CbxService1ObjectType = new System.Windows.Forms.ComboBox();
+            this.CbxService1ObjectId = new System.Windows.Forms.ComboBox();
+            this.label33 = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
+            this.CbxService1ProfileId = new System.Windows.Forms.ComboBox();
+            this.groupBox28 = new System.Windows.Forms.GroupBox();
+            this.BtnGridServiceClear = new System.Windows.Forms.Button();
+            this.BtnGridServiceJavaScriptCreate = new System.Windows.Forms.Button();
             this.FileExport = new System.Windows.Forms.TabPage();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
             this.groupBox14 = new System.Windows.Forms.GroupBox();
@@ -254,20 +275,17 @@ namespace Generator.UI.WF
             this.groupBox20 = new System.Windows.Forms.GroupBox();
             this.DgwAction = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewComboBoxColumn2 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.dataGridViewComboBoxColumn3 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewComboBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewComboBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ValidFlag = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox19 = new System.Windows.Forms.GroupBox();
             this.DgwActionResult = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewComboBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ActionId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ServiceActionId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Environment = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox18 = new System.Windows.Forms.GroupBox();
+            this.label30 = new System.Windows.Forms.Label();
+            this.CbxActionOptionApplicationId = new System.Windows.Forms.ComboBox();
             this.BtnListAction = new System.Windows.Forms.Button();
             this.BtnAddActions = new System.Windows.Forms.Button();
             this.panel15 = new System.Windows.Forms.Panel();
@@ -275,18 +293,42 @@ namespace Generator.UI.WF
             this.groupBox21 = new System.Windows.Forms.GroupBox();
             this.DgwString = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewComboBoxColumn4 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.dataGridViewComboBoxColumn5 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.dataGridViewComboBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewComboBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox22 = new System.Windows.Forms.GroupBox();
             this.DgwStringResult = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewComboBoxColumn6 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.dataGridViewComboBoxColumn7 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.groupBox23 = new System.Windows.Forms.GroupBox();
             this.BtnSringList = new System.Windows.Forms.Button();
             this.BtnAddStrings = new System.Windows.Forms.Button();
             this.panel16 = new System.Windows.Forms.Panel();
-            this.CbxOneServiceResult = new System.Windows.Forms.CheckBox();
+            this.TabEvent = new System.Windows.Forms.TabPage();
+            this.panel18 = new System.Windows.Forms.Panel();
+            this.panel19 = new System.Windows.Forms.Panel();
+            this.groupBox26 = new System.Windows.Forms.GroupBox();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.groupBox25 = new System.Windows.Forms.GroupBox();
+            this.DgwEvent = new System.Windows.Forms.DataGridView();
+            this.GridEventName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBox27 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.TabPageOption = new System.Windows.Forms.TabPage();
+            this.panel20 = new System.Windows.Forms.Panel();
+            this.groupBox29 = new System.Windows.Forms.GroupBox();
+            this.label38 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.groupBox30 = new System.Windows.Forms.GroupBox();
+            this.DgwPage = new System.Windows.Forms.DataGridView();
+            this.groupBox32 = new System.Windows.Forms.GroupBox();
+            this.DgwPageResult = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TabMenu = new System.Windows.Forms.TabPage();
+            this.panel21 = new System.Windows.Forms.Panel();
             this.TabGridCreate.SuspendLayout();
             this.panel8.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -298,7 +340,7 @@ namespace Generator.UI.WF
             this.PanelDgw.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgwObject)).BeginInit();
             this.groupBox2.SuspendLayout();
-            this.tabPage4.SuspendLayout();
+            this.TabOneService.SuspendLayout();
             this.groupBox8.SuspendLayout();
             this.groupBox17.SuspendLayout();
             this.groupBox9.SuspendLayout();
@@ -316,7 +358,7 @@ namespace Generator.UI.WF
             ((System.ComponentModel.ISupportInitialize)(this.DgwView)).BeginInit();
             this.tabPage8.SuspendLayout();
             this.groupBox11.SuspendLayout();
-            this.tabPage2.SuspendLayout();
+            this.TabHeader.SuspendLayout();
             this.groupBox13.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgwHeader)).BeginInit();
             this.groupBox3.SuspendLayout();
@@ -324,12 +366,11 @@ namespace Generator.UI.WF
             this.groupBox15.SuspendLayout();
             this.groupBox24.SuspendLayout();
             this.TabMain.SuspendLayout();
-            this.tabPage1.SuspendLayout();
-            this.panel18.SuspendLayout();
-            this.groupBox26.SuspendLayout();
-            this.groupBox27.SuspendLayout();
-            this.groupBox25.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.TabGridService.SuspendLayout();
+            this.groupBox31.SuspendLayout();
+            this.GpxUpdate.SuspendLayout();
+            this.GpBxCreate.SuspendLayout();
+            this.groupBox28.SuspendLayout();
             this.FileExport.SuspendLayout();
             this.groupBox10.SuspendLayout();
             this.groupBox14.SuspendLayout();
@@ -347,6 +388,20 @@ namespace Generator.UI.WF
             this.groupBox22.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgwStringResult)).BeginInit();
             this.groupBox23.SuspendLayout();
+            this.TabEvent.SuspendLayout();
+            this.panel18.SuspendLayout();
+            this.panel19.SuspendLayout();
+            this.groupBox26.SuspendLayout();
+            this.groupBox25.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DgwEvent)).BeginInit();
+            this.groupBox27.SuspendLayout();
+            this.TabPageOption.SuspendLayout();
+            this.groupBox29.SuspendLayout();
+            this.groupBox30.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DgwPage)).BeginInit();
+            this.groupBox32.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DgwPageResult)).BeginInit();
+            this.TabMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // TabGridCreate
@@ -693,6 +748,7 @@ namespace Generator.UI.WF
             this.CbxCrudMethod.Name = "CbxCrudMethod";
             this.CbxCrudMethod.Size = new System.Drawing.Size(354, 29);
             this.CbxCrudMethod.TabIndex = 364;
+            this.CbxCrudMethod.SelectedIndexChanged += new System.EventHandler(this.CbxCrudMethod_SelectedIndexChanged);
             // 
             // BtnClearAllCheck
             // 
@@ -964,19 +1020,19 @@ namespace Generator.UI.WF
             this.CbxProfileId.TabIndex = 321;
             this.CbxProfileId.SelectedIndexChanged += new System.EventHandler(this.CbxProfileId_SelectedIndexChanged);
             // 
-            // tabPage4
+            // TabOneService
             // 
-            this.tabPage4.Controls.Add(this.groupBox8);
-            this.tabPage4.Controls.Add(this.groupBox17);
-            this.tabPage4.Controls.Add(this.groupBox9);
-            this.tabPage4.Location = new System.Drawing.Point(4, 29);
-            this.tabPage4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage4.Size = new System.Drawing.Size(1534, 752);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "One Service";
-            this.tabPage4.UseVisualStyleBackColor = true;
+            this.TabOneService.Controls.Add(this.groupBox8);
+            this.TabOneService.Controls.Add(this.groupBox17);
+            this.TabOneService.Controls.Add(this.groupBox9);
+            this.TabOneService.Location = new System.Drawing.Point(4, 29);
+            this.TabOneService.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TabOneService.Name = "TabOneService";
+            this.TabOneService.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TabOneService.Size = new System.Drawing.Size(1534, 752);
+            this.TabOneService.TabIndex = 3;
+            this.TabOneService.Text = "One Service";
+            this.TabOneService.UseVisualStyleBackColor = true;
             // 
             // groupBox8
             // 
@@ -1157,7 +1213,6 @@ namespace Generator.UI.WF
             this.CbxStaticKeyField.Name = "CbxStaticKeyField";
             this.CbxStaticKeyField.Size = new System.Drawing.Size(354, 29);
             this.CbxStaticKeyField.TabIndex = 366;
-            this.CbxStaticKeyField.SelectedIndexChanged += new System.EventHandler(this.CbxStaticKeyField_SelectedIndexChanged);
             // 
             // BtnStaticMethod
             // 
@@ -1237,12 +1292,25 @@ namespace Generator.UI.WF
             this.groupBox9.TabStop = false;
             this.groupBox9.Text = "Service JavaScript";
             // 
+            // CbxOneServiceResult
+            // 
+            this.CbxOneServiceResult.AutoSize = true;
+            this.CbxOneServiceResult.Checked = true;
+            this.CbxOneServiceResult.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.CbxOneServiceResult.Location = new System.Drawing.Point(1176, 139);
+            this.CbxOneServiceResult.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.CbxOneServiceResult.Name = "CbxOneServiceResult";
+            this.CbxOneServiceResult.Size = new System.Drawing.Size(287, 28);
+            this.CbxOneServiceResult.TabIndex = 374;
+            this.CbxOneServiceResult.Text = "Result ( Custom SQL İçin )";
+            this.CbxOneServiceResult.UseVisualStyleBackColor = true;
+            // 
             // CbxOneServiceParameter
             // 
             this.CbxOneServiceParameter.AutoSize = true;
             this.CbxOneServiceParameter.Checked = true;
             this.CbxOneServiceParameter.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.CbxOneServiceParameter.Location = new System.Drawing.Point(1193, 139);
+            this.CbxOneServiceParameter.Location = new System.Drawing.Point(1176, 67);
             this.CbxOneServiceParameter.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CbxOneServiceParameter.Name = "CbxOneServiceParameter";
             this.CbxOneServiceParameter.Size = new System.Drawing.Size(145, 28);
@@ -1354,7 +1422,7 @@ namespace Generator.UI.WF
             this.BtnContentJSCreate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnContentJSCreate.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.BtnContentJSCreate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
-            this.BtnContentJSCreate.Location = new System.Drawing.Point(1327, 56);
+            this.BtnContentJSCreate.Location = new System.Drawing.Point(1327, 62);
             this.BtnContentJSCreate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BtnContentJSCreate.Name = "BtnContentJSCreate";
             this.BtnContentJSCreate.Size = new System.Drawing.Size(175, 39);
@@ -1656,7 +1724,6 @@ namespace Generator.UI.WF
             this.DgwComboBoxes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DgwComboBoxes.Size = new System.Drawing.Size(1498, 537);
             this.DgwComboBoxes.TabIndex = 270;
-            this.DgwComboBoxes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgwComboBoxes_CellContentClick);
             this.DgwComboBoxes.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgwComboBoxes_CellEndEdit);
             this.DgwComboBoxes.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.DgwComboBoxes_RowsAdded);
             this.DgwComboBoxes.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.DgwComboBoxes_RowsRemoved);
@@ -2136,20 +2203,20 @@ namespace Generator.UI.WF
             this.CbxProfile.TabIndex = 321;
             this.CbxProfile.SelectedIndexChanged += new System.EventHandler(this.CbxProfile_SelectedIndexChanged);
             // 
-            // tabPage2
+            // TabHeader
             // 
-            this.tabPage2.Controls.Add(this.groupBox13);
-            this.tabPage2.Controls.Add(this.panel13);
-            this.tabPage2.Controls.Add(this.groupBox3);
-            this.tabPage2.Controls.Add(this.groupBox24);
-            this.tabPage2.Location = new System.Drawing.Point(4, 29);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage2.Size = new System.Drawing.Size(1534, 752);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Header Create";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.TabHeader.Controls.Add(this.groupBox13);
+            this.TabHeader.Controls.Add(this.panel13);
+            this.TabHeader.Controls.Add(this.groupBox3);
+            this.TabHeader.Controls.Add(this.groupBox24);
+            this.TabHeader.Location = new System.Drawing.Point(4, 29);
+            this.TabHeader.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TabHeader.Name = "TabHeader";
+            this.TabHeader.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TabHeader.Size = new System.Drawing.Size(1534, 752);
+            this.TabHeader.TabIndex = 1;
+            this.TabHeader.Text = "Header Create";
+            this.TabHeader.UseVisualStyleBackColor = true;
             // 
             // groupBox13
             // 
@@ -2533,14 +2600,17 @@ namespace Generator.UI.WF
             // 
             // TabMain
             // 
-            this.TabMain.Controls.Add(this.tabPage2);
+            this.TabMain.Controls.Add(this.TabHeader);
             this.TabMain.Controls.Add(this.TabContent);
             this.TabMain.Controls.Add(this.TabGridCreate);
-            this.TabMain.Controls.Add(this.tabPage1);
+            this.TabMain.Controls.Add(this.TabGridService);
             this.TabMain.Controls.Add(this.FileExport);
             this.TabMain.Controls.Add(this.TabActionOption);
             this.TabMain.Controls.Add(this.TabStringOption);
-            this.TabMain.Controls.Add(this.tabPage4);
+            this.TabMain.Controls.Add(this.TabPageOption);
+            this.TabMain.Controls.Add(this.TabMenu);
+            this.TabMain.Controls.Add(this.TabOneService);
+            this.TabMain.Controls.Add(this.TabEvent);
             this.TabMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TabMain.Location = new System.Drawing.Point(10, 10);
             this.TabMain.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -2550,164 +2620,376 @@ namespace Generator.UI.WF
             this.TabMain.TabIndex = 0;
             this.TabMain.SelectedIndexChanged += new System.EventHandler(this.TabMain_SelectedIndexChanged);
             // 
-            // tabPage1
+            // TabGridService
             // 
-            this.tabPage1.Controls.Add(this.panel18);
-            this.tabPage1.Controls.Add(this.groupBox25);
-            this.tabPage1.Location = new System.Drawing.Point(4, 29);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Size = new System.Drawing.Size(1534, 752);
-            this.tabPage1.TabIndex = 7;
-            this.tabPage1.Text = "Events";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.TabGridService.Controls.Add(this.groupBox31);
+            this.TabGridService.Controls.Add(this.GpxUpdate);
+            this.TabGridService.Controls.Add(this.GpBxCreate);
+            this.TabGridService.Controls.Add(this.groupBox28);
+            this.TabGridService.Location = new System.Drawing.Point(4, 29);
+            this.TabGridService.Name = "TabGridService";
+            this.TabGridService.Size = new System.Drawing.Size(1534, 752);
+            this.TabGridService.TabIndex = 8;
+            this.TabGridService.Text = "Grid Service";
+            this.TabGridService.UseVisualStyleBackColor = true;
             // 
-            // panel18
+            // groupBox31
             // 
-            this.panel18.Controls.Add(this.groupBox26);
-            this.panel18.Controls.Add(this.groupBox27);
-            this.panel18.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel18.Location = new System.Drawing.Point(342, 0);
-            this.panel18.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel18.Name = "panel18";
-            this.panel18.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.panel18.Size = new System.Drawing.Size(1192, 752);
-            this.panel18.TabIndex = 368;
+            this.groupBox31.Controls.Add(this.RtbxGridServiceResult);
+            this.groupBox31.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox31.Font = new System.Drawing.Font("Century Gothic", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.groupBox31.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
+            this.groupBox31.Location = new System.Drawing.Point(0, 319);
+            this.groupBox31.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox31.Name = "groupBox31";
+            this.groupBox31.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox31.Size = new System.Drawing.Size(1534, 433);
+            this.groupBox31.TabIndex = 367;
+            this.groupBox31.TabStop = false;
+            this.groupBox31.Text = "Result";
             // 
-            // groupBox26
+            // RtbxGridServiceResult
             // 
-            this.groupBox26.Controls.Add(this.richTextBox1);
-            this.groupBox26.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox26.Font = new System.Drawing.Font("Century Gothic", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.groupBox26.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
-            this.groupBox26.Location = new System.Drawing.Point(10, 100);
-            this.groupBox26.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox26.Name = "groupBox26";
-            this.groupBox26.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox26.Size = new System.Drawing.Size(1182, 652);
-            this.groupBox26.TabIndex = 363;
-            this.groupBox26.TabStop = false;
-            this.groupBox26.Text = "Content";
+            this.RtbxGridServiceResult.BackColor = System.Drawing.Color.White;
+            this.RtbxGridServiceResult.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.RtbxGridServiceResult.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.RtbxGridServiceResult.Location = new System.Drawing.Point(3, 27);
+            this.RtbxGridServiceResult.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.RtbxGridServiceResult.Name = "RtbxGridServiceResult";
+            this.RtbxGridServiceResult.Size = new System.Drawing.Size(1528, 404);
+            this.RtbxGridServiceResult.TabIndex = 366;
+            this.RtbxGridServiceResult.Text = "";
             // 
-            // richTextBox1
+            // GpxUpdate
             // 
-            this.richTextBox1.BackColor = System.Drawing.Color.White;
-            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.richTextBox1.Location = new System.Drawing.Point(3, 27);
-            this.richTextBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(1176, 623);
-            this.richTextBox1.TabIndex = 366;
-            this.richTextBox1.Text = "";
+            this.GpxUpdate.Controls.Add(this.label35);
+            this.GpxUpdate.Controls.Add(this.button8);
+            this.GpxUpdate.Controls.Add(this.button9);
+            this.GpxUpdate.Controls.Add(this.CbxService2ObjectType);
+            this.GpxUpdate.Controls.Add(this.CbxService2ObjectId);
+            this.GpxUpdate.Controls.Add(this.label36);
+            this.GpxUpdate.Controls.Add(this.label37);
+            this.GpxUpdate.Controls.Add(this.CbxService2ProfileId);
+            this.GpxUpdate.Dock = System.Windows.Forms.DockStyle.Top;
+            this.GpxUpdate.Font = new System.Drawing.Font("Century Gothic", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.GpxUpdate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
+            this.GpxUpdate.Location = new System.Drawing.Point(0, 207);
+            this.GpxUpdate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.GpxUpdate.Name = "GpxUpdate";
+            this.GpxUpdate.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.GpxUpdate.Size = new System.Drawing.Size(1534, 112);
+            this.GpxUpdate.TabIndex = 366;
+            this.GpxUpdate.TabStop = false;
+            this.GpxUpdate.Text = "Service 2 ( Update )";
+            this.GpxUpdate.Visible = false;
             // 
-            // groupBox27
+            // label35
             // 
-            this.groupBox27.Controls.Add(this.button1);
-            this.groupBox27.Controls.Add(this.button2);
-            this.groupBox27.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBox27.Font = new System.Drawing.Font("Century Gothic", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.groupBox27.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
-            this.groupBox27.Location = new System.Drawing.Point(10, 0);
-            this.groupBox27.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox27.Name = "groupBox27";
-            this.groupBox27.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox27.Size = new System.Drawing.Size(1182, 100);
-            this.groupBox27.TabIndex = 371;
-            this.groupBox27.TabStop = false;
-            this.groupBox27.Text = "Utilities";
+            this.label35.AutoSize = true;
+            this.label35.BackColor = System.Drawing.Color.Transparent;
+            this.label35.Enabled = false;
+            this.label35.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label35.ForeColor = System.Drawing.Color.Silver;
+            this.label35.Location = new System.Drawing.Point(788, 38);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(123, 23);
+            this.label35.TabIndex = 326;
+            this.label35.Text = "Object Type";
             // 
-            // button1
+            // button8
             // 
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.FlatAppearance.BorderSize = 3;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
-            this.button1.Location = new System.Drawing.Point(214, 42);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(145, 42);
-            this.button1.TabIndex = 367;
-            this.button1.Text = "List Strings";
-            this.button1.UseVisualStyleBackColor = false;
+            this.button8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button8.BackColor = System.Drawing.Color.Transparent;
+            this.button8.FlatAppearance.BorderSize = 3;
+            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button8.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
+            this.button8.Location = new System.Drawing.Point(2514, 48);
+            this.button8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(150, 42);
+            this.button8.TabIndex = 357;
+            this.button8.Text = "Grid Create";
+            this.button8.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // button9
             // 
-            this.button2.BackColor = System.Drawing.Color.Transparent;
-            this.button2.FlatAppearance.BorderSize = 3;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
-            this.button2.Location = new System.Drawing.Point(23, 42);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(107, 42);
-            this.button2.TabIndex = 366;
-            this.button2.Text = "Save";
-            this.button2.UseVisualStyleBackColor = false;
+            this.button9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button9.BackColor = System.Drawing.Color.Transparent;
+            this.button9.FlatAppearance.BorderSize = 3;
+            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button9.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
+            this.button9.Location = new System.Drawing.Point(2680, 48);
+            this.button9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(177, 42);
+            this.button9.TabIndex = 363;
+            this.button9.Text = "JavaScript Create";
+            this.button9.UseVisualStyleBackColor = false;
             // 
-            // groupBox25
+            // CbxService2ObjectType
             // 
-            this.groupBox25.Controls.Add(this.dataGridView1);
-            this.groupBox25.Dock = System.Windows.Forms.DockStyle.Left;
-            this.groupBox25.Font = new System.Drawing.Font("Century Gothic", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.groupBox25.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
-            this.groupBox25.Location = new System.Drawing.Point(0, 0);
-            this.groupBox25.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox25.Name = "groupBox25";
-            this.groupBox25.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox25.Size = new System.Drawing.Size(342, 752);
-            this.groupBox25.TabIndex = 337;
-            this.groupBox25.TabStop = false;
-            this.groupBox25.Text = "Events";
-            this.groupBox25.UseCompatibleTextRendering = true;
+            this.CbxService2ObjectType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(231)))), ((int)(((byte)(228)))));
+            this.CbxService2ObjectType.Enabled = false;
+            this.CbxService2ObjectType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CbxService2ObjectType.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.CbxService2ObjectType.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
+            this.CbxService2ObjectType.FormattingEnabled = true;
+            this.CbxService2ObjectType.Items.AddRange(new object[] {
+            "TABLE",
+            "CUSTOMSQL",
+            "SEQUENCE"});
+            this.CbxService2ObjectType.Location = new System.Drawing.Point(791, 63);
+            this.CbxService2ObjectType.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.CbxService2ObjectType.Name = "CbxService2ObjectType";
+            this.CbxService2ObjectType.Size = new System.Drawing.Size(354, 29);
+            this.CbxService2ObjectType.TabIndex = 325;
             // 
-            // dataGridView1
+            // CbxService2ObjectId
             // 
-            this.dataGridView1.AllowUserToOrderColumns = true;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle20.Font = new System.Drawing.Font("Century Gothic", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle20.NullValue = null;
-            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle20;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.GridEventName});
-            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle21.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle21.Font = new System.Drawing.Font("Century Gothic", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
-            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(231)))), ((int)(((byte)(228)))));
-            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle21;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 27);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dataGridView1.Name = "dataGridView1";
-            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
-            dataGridViewCellStyle22.Font = new System.Drawing.Font("Century Gothic", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle22.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle22;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(336, 723);
-            this.dataGridView1.TabIndex = 274;
+            this.CbxService2ObjectId.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.CbxService2ObjectId.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(231)))), ((int)(((byte)(228)))));
+            this.CbxService2ObjectId.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CbxService2ObjectId.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.CbxService2ObjectId.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
+            this.CbxService2ObjectId.FormattingEnabled = true;
+            this.CbxService2ObjectId.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.CbxService2ObjectId.Location = new System.Drawing.Point(400, 63);
+            this.CbxService2ObjectId.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.CbxService2ObjectId.Name = "CbxService2ObjectId";
+            this.CbxService2ObjectId.Size = new System.Drawing.Size(354, 29);
+            this.CbxService2ObjectId.TabIndex = 319;
+            this.CbxService2ObjectId.SelectedIndexChanged += new System.EventHandler(this.CbxService2ObjectId_SelectedIndexChanged);
             // 
-            // GridEventName
+            // label36
             // 
-            this.GridEventName.HeaderText = "EventName";
-            this.GridEventName.Name = "GridEventName";
+            this.label36.AutoSize = true;
+            this.label36.BackColor = System.Drawing.Color.Transparent;
+            this.label36.Enabled = false;
+            this.label36.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label36.ForeColor = System.Drawing.Color.Silver;
+            this.label36.Location = new System.Drawing.Point(398, 38);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(97, 23);
+            this.label36.TabIndex = 320;
+            this.label36.Text = "Object Id";
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.BackColor = System.Drawing.Color.Transparent;
+            this.label37.Enabled = false;
+            this.label37.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label37.ForeColor = System.Drawing.Color.Silver;
+            this.label37.Location = new System.Drawing.Point(20, 38);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(89, 23);
+            this.label37.TabIndex = 322;
+            this.label37.Text = "Profile Id";
+            // 
+            // CbxService2ProfileId
+            // 
+            this.CbxService2ProfileId.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(231)))), ((int)(((byte)(228)))));
+            this.CbxService2ProfileId.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CbxService2ProfileId.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.CbxService2ProfileId.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
+            this.CbxService2ProfileId.FormattingEnabled = true;
+            this.CbxService2ProfileId.Location = new System.Drawing.Point(21, 63);
+            this.CbxService2ProfileId.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.CbxService2ProfileId.Name = "CbxService2ProfileId";
+            this.CbxService2ProfileId.Size = new System.Drawing.Size(354, 29);
+            this.CbxService2ProfileId.TabIndex = 321;
+            this.CbxService2ProfileId.SelectedIndexChanged += new System.EventHandler(this.CbxService2ProfileId_SelectedIndexChanged);
+            // 
+            // GpBxCreate
+            // 
+            this.GpBxCreate.Controls.Add(this.label32);
+            this.GpBxCreate.Controls.Add(this.button6);
+            this.GpBxCreate.Controls.Add(this.button7);
+            this.GpBxCreate.Controls.Add(this.CbxService1ObjectType);
+            this.GpBxCreate.Controls.Add(this.CbxService1ObjectId);
+            this.GpBxCreate.Controls.Add(this.label33);
+            this.GpBxCreate.Controls.Add(this.label34);
+            this.GpBxCreate.Controls.Add(this.CbxService1ProfileId);
+            this.GpBxCreate.Dock = System.Windows.Forms.DockStyle.Top;
+            this.GpBxCreate.Font = new System.Drawing.Font("Century Gothic", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.GpBxCreate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
+            this.GpBxCreate.Location = new System.Drawing.Point(0, 95);
+            this.GpBxCreate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.GpBxCreate.Name = "GpBxCreate";
+            this.GpBxCreate.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.GpBxCreate.Size = new System.Drawing.Size(1534, 112);
+            this.GpBxCreate.TabIndex = 365;
+            this.GpBxCreate.TabStop = false;
+            this.GpBxCreate.Text = "Service 1 ( Create )";
+            this.GpBxCreate.Visible = false;
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.BackColor = System.Drawing.Color.Transparent;
+            this.label32.Enabled = false;
+            this.label32.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label32.ForeColor = System.Drawing.Color.Silver;
+            this.label32.Location = new System.Drawing.Point(789, 37);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(123, 23);
+            this.label32.TabIndex = 326;
+            this.label32.Text = "Object Type";
+            // 
+            // button6
+            // 
+            this.button6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button6.BackColor = System.Drawing.Color.Transparent;
+            this.button6.FlatAppearance.BorderSize = 3;
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
+            this.button6.Location = new System.Drawing.Point(2514, 48);
+            this.button6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(150, 42);
+            this.button6.TabIndex = 357;
+            this.button6.Text = "Grid Create";
+            this.button6.UseVisualStyleBackColor = false;
+            // 
+            // button7
+            // 
+            this.button7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button7.BackColor = System.Drawing.Color.Transparent;
+            this.button7.FlatAppearance.BorderSize = 3;
+            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button7.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
+            this.button7.Location = new System.Drawing.Point(2680, 48);
+            this.button7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(177, 42);
+            this.button7.TabIndex = 363;
+            this.button7.Text = "JavaScript Create";
+            this.button7.UseVisualStyleBackColor = false;
+            // 
+            // CbxService1ObjectType
+            // 
+            this.CbxService1ObjectType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(231)))), ((int)(((byte)(228)))));
+            this.CbxService1ObjectType.Enabled = false;
+            this.CbxService1ObjectType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CbxService1ObjectType.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.CbxService1ObjectType.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
+            this.CbxService1ObjectType.FormattingEnabled = true;
+            this.CbxService1ObjectType.Items.AddRange(new object[] {
+            "TABLE",
+            "CUSTOMSQL",
+            "SEQUENCE"});
+            this.CbxService1ObjectType.Location = new System.Drawing.Point(792, 62);
+            this.CbxService1ObjectType.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.CbxService1ObjectType.Name = "CbxService1ObjectType";
+            this.CbxService1ObjectType.Size = new System.Drawing.Size(354, 29);
+            this.CbxService1ObjectType.TabIndex = 325;
+            // 
+            // CbxService1ObjectId
+            // 
+            this.CbxService1ObjectId.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.CbxService1ObjectId.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(231)))), ((int)(((byte)(228)))));
+            this.CbxService1ObjectId.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CbxService1ObjectId.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.CbxService1ObjectId.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
+            this.CbxService1ObjectId.FormattingEnabled = true;
+            this.CbxService1ObjectId.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.CbxService1ObjectId.Location = new System.Drawing.Point(401, 62);
+            this.CbxService1ObjectId.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.CbxService1ObjectId.Name = "CbxService1ObjectId";
+            this.CbxService1ObjectId.Size = new System.Drawing.Size(354, 29);
+            this.CbxService1ObjectId.TabIndex = 319;
+            this.CbxService1ObjectId.SelectedIndexChanged += new System.EventHandler(this.CbxService1ObjectId_SelectedIndexChanged);
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.BackColor = System.Drawing.Color.Transparent;
+            this.label33.Enabled = false;
+            this.label33.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label33.ForeColor = System.Drawing.Color.Silver;
+            this.label33.Location = new System.Drawing.Point(399, 37);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(97, 23);
+            this.label33.TabIndex = 320;
+            this.label33.Text = "Object Id";
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.BackColor = System.Drawing.Color.Transparent;
+            this.label34.Enabled = false;
+            this.label34.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label34.ForeColor = System.Drawing.Color.Silver;
+            this.label34.Location = new System.Drawing.Point(21, 37);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(89, 23);
+            this.label34.TabIndex = 322;
+            this.label34.Text = "Profile Id";
+            // 
+            // CbxService1ProfileId
+            // 
+            this.CbxService1ProfileId.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(231)))), ((int)(((byte)(228)))));
+            this.CbxService1ProfileId.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CbxService1ProfileId.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.CbxService1ProfileId.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
+            this.CbxService1ProfileId.FormattingEnabled = true;
+            this.CbxService1ProfileId.Location = new System.Drawing.Point(22, 62);
+            this.CbxService1ProfileId.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.CbxService1ProfileId.Name = "CbxService1ProfileId";
+            this.CbxService1ProfileId.Size = new System.Drawing.Size(354, 29);
+            this.CbxService1ProfileId.TabIndex = 321;
+            this.CbxService1ProfileId.SelectedIndexChanged += new System.EventHandler(this.CbxService1ProfileId_SelectedIndexChanged);
+            // 
+            // groupBox28
+            // 
+            this.groupBox28.Controls.Add(this.BtnGridServiceClear);
+            this.groupBox28.Controls.Add(this.BtnGridServiceJavaScriptCreate);
+            this.groupBox28.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupBox28.Font = new System.Drawing.Font("Century Gothic", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.groupBox28.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
+            this.groupBox28.Location = new System.Drawing.Point(0, 0);
+            this.groupBox28.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox28.Name = "groupBox28";
+            this.groupBox28.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox28.Size = new System.Drawing.Size(1534, 95);
+            this.groupBox28.TabIndex = 364;
+            this.groupBox28.TabStop = false;
+            this.groupBox28.Text = "Utilities";
+            // 
+            // BtnGridServiceClear
+            // 
+            this.BtnGridServiceClear.FlatAppearance.BorderSize = 3;
+            this.BtnGridServiceClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnGridServiceClear.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.BtnGridServiceClear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.BtnGridServiceClear.Location = new System.Drawing.Point(6, 38);
+            this.BtnGridServiceClear.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BtnGridServiceClear.Name = "BtnGridServiceClear";
+            this.BtnGridServiceClear.Size = new System.Drawing.Size(107, 42);
+            this.BtnGridServiceClear.TabIndex = 366;
+            this.BtnGridServiceClear.Text = "Clear";
+            this.BtnGridServiceClear.UseVisualStyleBackColor = true;
+            this.BtnGridServiceClear.Click += new System.EventHandler(this.BtnGridServiceClear_Click);
+            // 
+            // BtnGridServiceJavaScriptCreate
+            // 
+            this.BtnGridServiceJavaScriptCreate.BackColor = System.Drawing.Color.Transparent;
+            this.BtnGridServiceJavaScriptCreate.FlatAppearance.BorderSize = 3;
+            this.BtnGridServiceJavaScriptCreate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnGridServiceJavaScriptCreate.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.BtnGridServiceJavaScriptCreate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
+            this.BtnGridServiceJavaScriptCreate.Location = new System.Drawing.Point(136, 38);
+            this.BtnGridServiceJavaScriptCreate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BtnGridServiceJavaScriptCreate.Name = "BtnGridServiceJavaScriptCreate";
+            this.BtnGridServiceJavaScriptCreate.Size = new System.Drawing.Size(177, 42);
+            this.BtnGridServiceJavaScriptCreate.TabIndex = 365;
+            this.BtnGridServiceJavaScriptCreate.Text = "JavaScript Create";
+            this.BtnGridServiceJavaScriptCreate.UseVisualStyleBackColor = false;
+            this.BtnGridServiceJavaScriptCreate.Click += new System.EventHandler(this.BtnGridServiceJavaScriptCreate_Click);
             // 
             // FileExport
             // 
@@ -3041,11 +3323,11 @@ namespace Generator.UI.WF
             this.groupBox20.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox20.Font = new System.Drawing.Font("Century Gothic", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.groupBox20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
-            this.groupBox20.Location = new System.Drawing.Point(3, 115);
+            this.groupBox20.Location = new System.Drawing.Point(3, 128);
             this.groupBox20.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox20.Name = "groupBox20";
             this.groupBox20.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox20.Size = new System.Drawing.Size(1528, 368);
+            this.groupBox20.Size = new System.Drawing.Size(1528, 355);
             this.groupBox20.TabIndex = 368;
             this.groupBox20.TabStop = false;
             this.groupBox20.Text = "Action List";
@@ -3058,80 +3340,92 @@ namespace Generator.UI.WF
             this.DgwAction.BackgroundColor = System.Drawing.Color.White;
             this.DgwAction.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DgwAction.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
-            dataGridViewCellStyle23.Font = new System.Drawing.Font("Century Gothic", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle23.NullValue = null;
-            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DgwAction.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle23;
+            dataGridViewCellStyle20.Font = new System.Drawing.Font("Century Gothic", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle20.NullValue = null;
+            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DgwAction.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle20;
             this.DgwAction.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgwAction.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn7,
             this.dataGridViewComboBoxColumn2,
-            this.dataGridViewComboBoxColumn3,
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn7});
-            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle24.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle24.Font = new System.Drawing.Font("Century Gothic", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle24.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
-            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(231)))), ((int)(((byte)(228)))));
-            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DgwAction.DefaultCellStyle = dataGridViewCellStyle24;
+            this.dataGridViewComboBoxColumn3,
+            this.ValidFlag});
+            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle21.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle21.Font = new System.Drawing.Font("Century Gothic", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
+            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(231)))), ((int)(((byte)(228)))));
+            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DgwAction.DefaultCellStyle = dataGridViewCellStyle21;
             this.DgwAction.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DgwAction.Location = new System.Drawing.Point(3, 27);
             this.DgwAction.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DgwAction.Name = "DgwAction";
-            dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle25.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
-            dataGridViewCellStyle25.Font = new System.Drawing.Font("Century Gothic", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle25.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle25.SelectionBackColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle25.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle25.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgwAction.RowHeadersDefaultCellStyle = dataGridViewCellStyle25;
+            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
+            dataGridViewCellStyle22.Font = new System.Drawing.Font("Century Gothic", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle22.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgwAction.RowHeadersDefaultCellStyle = dataGridViewCellStyle22;
             this.DgwAction.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DgwAction.Size = new System.Drawing.Size(1522, 339);
+            this.DgwAction.Size = new System.Drawing.Size(1522, 326);
             this.DgwAction.TabIndex = 368;
             // 
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.DataPropertyName = "DomainId";
+            this.dataGridViewTextBoxColumn3.FillWeight = 90F;
             this.dataGridViewTextBoxColumn3.HeaderText = "DominId";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.FillWeight = 113.1134F;
+            this.dataGridViewTextBoxColumn7.HeaderText = "Environment";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             // 
             // dataGridViewComboBoxColumn2
             // 
             this.dataGridViewComboBoxColumn2.DataPropertyName = "ApplicationId";
-            this.dataGridViewComboBoxColumn2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.dataGridViewComboBoxColumn2.FillWeight = 113.1134F;
             this.dataGridViewComboBoxColumn2.HeaderText = "ApplicationId";
             this.dataGridViewComboBoxColumn2.Name = "dataGridViewComboBoxColumn2";
             this.dataGridViewComboBoxColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewComboBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // dataGridViewComboBoxColumn3
-            // 
-            this.dataGridViewComboBoxColumn3.DataPropertyName = "ServiceId";
-            this.dataGridViewComboBoxColumn3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.dataGridViewComboBoxColumn3.HeaderText = "ServiceId";
-            this.dataGridViewComboBoxColumn3.Name = "dataGridViewComboBoxColumn3";
             // 
             // dataGridViewTextBoxColumn4
             // 
+            this.dataGridViewTextBoxColumn4.FillWeight = 113.1134F;
             this.dataGridViewTextBoxColumn4.HeaderText = "Action Id";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             // 
             // dataGridViewTextBoxColumn5
             // 
-            this.dataGridViewTextBoxColumn5.HeaderText = "Service Action Id";
+            this.dataGridViewTextBoxColumn5.FillWeight = 113.1134F;
+            this.dataGridViewTextBoxColumn5.HeaderText = "Service Action Name";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             // 
-            // dataGridViewTextBoxColumn7
+            // dataGridViewComboBoxColumn3
             // 
-            this.dataGridViewTextBoxColumn7.HeaderText = "Environment";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewComboBoxColumn3.DataPropertyName = "ServiceId";
+            this.dataGridViewComboBoxColumn3.FillWeight = 113.1134F;
+            this.dataGridViewComboBoxColumn3.HeaderText = "ServiceId";
+            this.dataGridViewComboBoxColumn3.Name = "dataGridViewComboBoxColumn3";
+            this.dataGridViewComboBoxColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewComboBoxColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // ValidFlag
+            // 
+            this.ValidFlag.FillWeight = 60F;
+            this.ValidFlag.HeaderText = "Valid Flag";
+            this.ValidFlag.Name = "ValidFlag";
             // 
             // groupBox19
             // 
@@ -3156,82 +3450,41 @@ namespace Generator.UI.WF
             this.DgwActionResult.BackgroundColor = System.Drawing.Color.White;
             this.DgwActionResult.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DgwActionResult.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
-            dataGridViewCellStyle26.Font = new System.Drawing.Font("Century Gothic", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle26.NullValue = null;
-            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle26.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DgwActionResult.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle26;
+            dataGridViewCellStyle23.Font = new System.Drawing.Font("Century Gothic", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle23.NullValue = null;
+            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DgwActionResult.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle23;
             this.DgwActionResult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DgwActionResult.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewComboBoxColumn1,
-            this.ActionId,
-            this.ServiceActionId,
-            this.Environment});
-            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle27.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle27.Font = new System.Drawing.Font("Century Gothic", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle27.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
-            dataGridViewCellStyle27.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(231)))), ((int)(((byte)(228)))));
-            dataGridViewCellStyle27.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle27.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DgwActionResult.DefaultCellStyle = dataGridViewCellStyle27;
+            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle24.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle24.Font = new System.Drawing.Font("Century Gothic", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle24.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
+            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(231)))), ((int)(((byte)(228)))));
+            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DgwActionResult.DefaultCellStyle = dataGridViewCellStyle24;
             this.DgwActionResult.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DgwActionResult.Location = new System.Drawing.Point(3, 27);
             this.DgwActionResult.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DgwActionResult.Name = "DgwActionResult";
-            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle28.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
-            dataGridViewCellStyle28.Font = new System.Drawing.Font("Century Gothic", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle28.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle28.SelectionBackColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle28.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle28.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgwActionResult.RowHeadersDefaultCellStyle = dataGridViewCellStyle28;
+            dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle25.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
+            dataGridViewCellStyle25.Font = new System.Drawing.Font("Century Gothic", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle25.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle25.SelectionBackColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle25.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle25.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgwActionResult.RowHeadersDefaultCellStyle = dataGridViewCellStyle25;
             this.DgwActionResult.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DgwActionResult.Size = new System.Drawing.Size(1522, 237);
             this.DgwActionResult.TabIndex = 368;
             // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "DomainId";
-            this.dataGridViewTextBoxColumn1.HeaderText = "DominId";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "ApplicationId";
-            this.dataGridViewTextBoxColumn2.HeaderText = "ApplicationId";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // dataGridViewComboBoxColumn1
-            // 
-            this.dataGridViewComboBoxColumn1.DataPropertyName = "ServiceId";
-            this.dataGridViewComboBoxColumn1.HeaderText = "ServiceId";
-            this.dataGridViewComboBoxColumn1.Name = "dataGridViewComboBoxColumn1";
-            this.dataGridViewComboBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewComboBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // ActionId
-            // 
-            this.ActionId.HeaderText = "Action Id";
-            this.ActionId.Name = "ActionId";
-            // 
-            // ServiceActionId
-            // 
-            this.ServiceActionId.HeaderText = "Service Action Id";
-            this.ServiceActionId.Name = "ServiceActionId";
-            // 
-            // Environment
-            // 
-            this.Environment.HeaderText = "Environment";
-            this.Environment.Name = "Environment";
-            // 
             // groupBox18
             // 
+            this.groupBox18.Controls.Add(this.label30);
+            this.groupBox18.Controls.Add(this.CbxActionOptionApplicationId);
             this.groupBox18.Controls.Add(this.BtnListAction);
             this.groupBox18.Controls.Add(this.BtnAddActions);
             this.groupBox18.Dock = System.Windows.Forms.DockStyle.Top;
@@ -3241,11 +3494,42 @@ namespace Generator.UI.WF
             this.groupBox18.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox18.Name = "groupBox18";
             this.groupBox18.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox18.Size = new System.Drawing.Size(1528, 100);
+            this.groupBox18.Size = new System.Drawing.Size(1528, 113);
             this.groupBox18.TabIndex = 365;
             this.groupBox18.TabStop = false;
             this.groupBox18.Text = "Utilities";
-            this.groupBox18.Enter += new System.EventHandler(this.groupBox18_Enter);
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.BackColor = System.Drawing.Color.Transparent;
+            this.label30.Enabled = false;
+            this.label30.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label30.ForeColor = System.Drawing.Color.Silver;
+            this.label30.Location = new System.Drawing.Point(14, 42);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(119, 23);
+            this.label30.TabIndex = 369;
+            this.label30.Text = "Application";
+            // 
+            // CbxActionOptionApplicationId
+            // 
+            this.CbxActionOptionApplicationId.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(231)))), ((int)(((byte)(228)))));
+            this.CbxActionOptionApplicationId.Enabled = false;
+            this.CbxActionOptionApplicationId.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CbxActionOptionApplicationId.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.CbxActionOptionApplicationId.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
+            this.CbxActionOptionApplicationId.FormattingEnabled = true;
+            this.CbxActionOptionApplicationId.Items.AddRange(new object[] {
+            "Hiçbiri",
+            "Tümü",
+            "Fiba UX",
+            "BÖS Acq UX"});
+            this.CbxActionOptionApplicationId.Location = new System.Drawing.Point(17, 68);
+            this.CbxActionOptionApplicationId.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.CbxActionOptionApplicationId.Name = "CbxActionOptionApplicationId";
+            this.CbxActionOptionApplicationId.Size = new System.Drawing.Size(354, 29);
+            this.CbxActionOptionApplicationId.TabIndex = 368;
             // 
             // BtnListAction
             // 
@@ -3254,7 +3538,7 @@ namespace Generator.UI.WF
             this.BtnListAction.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnListAction.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.BtnListAction.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
-            this.BtnListAction.Location = new System.Drawing.Point(213, 42);
+            this.BtnListAction.Location = new System.Drawing.Point(613, 55);
             this.BtnListAction.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BtnListAction.Name = "BtnListAction";
             this.BtnListAction.Size = new System.Drawing.Size(145, 42);
@@ -3270,7 +3554,7 @@ namespace Generator.UI.WF
             this.BtnAddActions.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnAddActions.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.BtnAddActions.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
-            this.BtnAddActions.Location = new System.Drawing.Point(23, 42);
+            this.BtnAddActions.Location = new System.Drawing.Point(423, 55);
             this.BtnAddActions.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BtnAddActions.Name = "BtnAddActions";
             this.BtnAddActions.Size = new System.Drawing.Size(145, 42);
@@ -3325,37 +3609,37 @@ namespace Generator.UI.WF
             this.DgwString.BackgroundColor = System.Drawing.Color.White;
             this.DgwString.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DgwString.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
-            dataGridViewCellStyle29.Font = new System.Drawing.Font("Century Gothic", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle29.NullValue = null;
-            dataGridViewCellStyle29.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle29.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle29.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DgwString.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle29;
+            dataGridViewCellStyle26.Font = new System.Drawing.Font("Century Gothic", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle26.NullValue = null;
+            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle26.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DgwString.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle26;
             this.DgwString.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgwString.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn8,
             this.dataGridViewComboBoxColumn4,
             this.dataGridViewComboBoxColumn5});
-            dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle30.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle30.Font = new System.Drawing.Font("Century Gothic", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle30.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
-            dataGridViewCellStyle30.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(231)))), ((int)(((byte)(228)))));
-            dataGridViewCellStyle30.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle30.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DgwString.DefaultCellStyle = dataGridViewCellStyle30;
+            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle27.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle27.Font = new System.Drawing.Font("Century Gothic", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle27.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
+            dataGridViewCellStyle27.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(231)))), ((int)(((byte)(228)))));
+            dataGridViewCellStyle27.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle27.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DgwString.DefaultCellStyle = dataGridViewCellStyle27;
             this.DgwString.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DgwString.Location = new System.Drawing.Point(3, 27);
             this.DgwString.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DgwString.Name = "DgwString";
-            dataGridViewCellStyle31.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle31.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
-            dataGridViewCellStyle31.Font = new System.Drawing.Font("Century Gothic", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle31.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle31.SelectionBackColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle31.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle31.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgwString.RowHeadersDefaultCellStyle = dataGridViewCellStyle31;
+            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle28.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
+            dataGridViewCellStyle28.Font = new System.Drawing.Font("Century Gothic", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle28.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle28.SelectionBackColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle28.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle28.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgwString.RowHeadersDefaultCellStyle = dataGridViewCellStyle28;
             this.DgwString.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DgwString.Size = new System.Drawing.Size(1522, 339);
             this.DgwString.TabIndex = 368;
@@ -3369,18 +3653,17 @@ namespace Generator.UI.WF
             // dataGridViewComboBoxColumn4
             // 
             this.dataGridViewComboBoxColumn4.DataPropertyName = "ApplicationId";
-            this.dataGridViewComboBoxColumn4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.dataGridViewComboBoxColumn4.HeaderText = "KeyId";
             this.dataGridViewComboBoxColumn4.Name = "dataGridViewComboBoxColumn4";
             this.dataGridViewComboBoxColumn4.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewComboBoxColumn4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // dataGridViewComboBoxColumn5
             // 
             this.dataGridViewComboBoxColumn5.DataPropertyName = "ServiceId";
-            this.dataGridViewComboBoxColumn5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.dataGridViewComboBoxColumn5.HeaderText = "Value";
             this.dataGridViewComboBoxColumn5.Name = "dataGridViewComboBoxColumn5";
+            this.dataGridViewComboBoxColumn5.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewComboBoxColumn5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // groupBox22
             // 
@@ -3405,62 +3688,36 @@ namespace Generator.UI.WF
             this.DgwStringResult.BackgroundColor = System.Drawing.Color.White;
             this.DgwStringResult.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DgwStringResult.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
-            dataGridViewCellStyle32.Font = new System.Drawing.Font("Century Gothic", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle32.NullValue = null;
-            dataGridViewCellStyle32.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle32.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle32.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DgwStringResult.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle32;
+            dataGridViewCellStyle29.Font = new System.Drawing.Font("Century Gothic", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle29.NullValue = null;
+            dataGridViewCellStyle29.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle29.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle29.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DgwStringResult.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle29;
             this.DgwStringResult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DgwStringResult.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn11,
-            this.dataGridViewComboBoxColumn6,
-            this.dataGridViewComboBoxColumn7});
-            dataGridViewCellStyle33.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle33.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle33.Font = new System.Drawing.Font("Century Gothic", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle33.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
-            dataGridViewCellStyle33.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(231)))), ((int)(((byte)(228)))));
-            dataGridViewCellStyle33.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle33.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DgwStringResult.DefaultCellStyle = dataGridViewCellStyle33;
+            dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle30.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle30.Font = new System.Drawing.Font("Century Gothic", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle30.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
+            dataGridViewCellStyle30.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(231)))), ((int)(((byte)(228)))));
+            dataGridViewCellStyle30.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle30.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DgwStringResult.DefaultCellStyle = dataGridViewCellStyle30;
             this.DgwStringResult.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DgwStringResult.Location = new System.Drawing.Point(3, 27);
             this.DgwStringResult.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DgwStringResult.Name = "DgwStringResult";
-            dataGridViewCellStyle34.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle34.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
-            dataGridViewCellStyle34.Font = new System.Drawing.Font("Century Gothic", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle34.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle34.SelectionBackColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle34.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle34.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgwStringResult.RowHeadersDefaultCellStyle = dataGridViewCellStyle34;
+            dataGridViewCellStyle31.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle31.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
+            dataGridViewCellStyle31.Font = new System.Drawing.Font("Century Gothic", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle31.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle31.SelectionBackColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle31.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle31.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgwStringResult.RowHeadersDefaultCellStyle = dataGridViewCellStyle31;
             this.DgwStringResult.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DgwStringResult.Size = new System.Drawing.Size(1522, 237);
             this.DgwStringResult.TabIndex = 369;
-            // 
-            // dataGridViewTextBoxColumn11
-            // 
-            this.dataGridViewTextBoxColumn11.DataPropertyName = "DomainId";
-            this.dataGridViewTextBoxColumn11.HeaderText = "LanguageId";
-            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
-            // 
-            // dataGridViewComboBoxColumn6
-            // 
-            this.dataGridViewComboBoxColumn6.DataPropertyName = "ApplicationId";
-            this.dataGridViewComboBoxColumn6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.dataGridViewComboBoxColumn6.HeaderText = "KeyId";
-            this.dataGridViewComboBoxColumn6.Name = "dataGridViewComboBoxColumn6";
-            this.dataGridViewComboBoxColumn6.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewComboBoxColumn6.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // dataGridViewComboBoxColumn7
-            // 
-            this.dataGridViewComboBoxColumn7.DataPropertyName = "ServiceId";
-            this.dataGridViewComboBoxColumn7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.dataGridViewComboBoxColumn7.HeaderText = "Value";
-            this.dataGridViewComboBoxColumn7.Name = "dataGridViewComboBoxColumn7";
             // 
             // groupBox23
             // 
@@ -3492,6 +3749,7 @@ namespace Generator.UI.WF
             this.BtnSringList.TabIndex = 367;
             this.BtnSringList.Text = "List Strings";
             this.BtnSringList.UseVisualStyleBackColor = false;
+            this.BtnSringList.Click += new System.EventHandler(this.BtnSringList_Click);
             // 
             // BtnAddStrings
             // 
@@ -3507,6 +3765,7 @@ namespace Generator.UI.WF
             this.BtnAddStrings.TabIndex = 366;
             this.BtnAddStrings.Text = "Add Strings";
             this.BtnAddStrings.UseVisualStyleBackColor = false;
+            this.BtnAddStrings.Click += new System.EventHandler(this.BtnAddStrings_Click);
             // 
             // panel16
             // 
@@ -3517,18 +3776,418 @@ namespace Generator.UI.WF
             this.panel16.Size = new System.Drawing.Size(1528, 12);
             this.panel16.TabIndex = 373;
             // 
-            // CbxOneServiceResult
+            // TabEvent
             // 
-            this.CbxOneServiceResult.AutoSize = true;
-            this.CbxOneServiceResult.Checked = true;
-            this.CbxOneServiceResult.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.CbxOneServiceResult.Location = new System.Drawing.Point(1357, 139);
-            this.CbxOneServiceResult.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.CbxOneServiceResult.Name = "CbxOneServiceResult";
-            this.CbxOneServiceResult.Size = new System.Drawing.Size(97, 28);
-            this.CbxOneServiceResult.TabIndex = 374;
-            this.CbxOneServiceResult.Text = "Results";
-            this.CbxOneServiceResult.UseVisualStyleBackColor = true;
+            this.TabEvent.Controls.Add(this.panel18);
+            this.TabEvent.Location = new System.Drawing.Point(4, 29);
+            this.TabEvent.Name = "TabEvent";
+            this.TabEvent.Size = new System.Drawing.Size(1534, 752);
+            this.TabEvent.TabIndex = 7;
+            this.TabEvent.Text = "Events";
+            this.TabEvent.UseVisualStyleBackColor = true;
+            // 
+            // panel18
+            // 
+            this.panel18.Controls.Add(this.panel19);
+            this.panel18.Controls.Add(this.groupBox25);
+            this.panel18.Controls.Add(this.groupBox27);
+            this.panel18.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel18.Location = new System.Drawing.Point(0, 0);
+            this.panel18.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel18.Name = "panel18";
+            this.panel18.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.panel18.Size = new System.Drawing.Size(1534, 752);
+            this.panel18.TabIndex = 368;
+            // 
+            // panel19
+            // 
+            this.panel19.Controls.Add(this.groupBox26);
+            this.panel19.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel19.Location = new System.Drawing.Point(352, 100);
+            this.panel19.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel19.Name = "panel19";
+            this.panel19.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.panel19.Size = new System.Drawing.Size(1182, 652);
+            this.panel19.TabIndex = 373;
+            // 
+            // groupBox26
+            // 
+            this.groupBox26.Controls.Add(this.richTextBox1);
+            this.groupBox26.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox26.Font = new System.Drawing.Font("Century Gothic", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.groupBox26.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
+            this.groupBox26.Location = new System.Drawing.Point(10, 0);
+            this.groupBox26.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox26.Name = "groupBox26";
+            this.groupBox26.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox26.Size = new System.Drawing.Size(1172, 652);
+            this.groupBox26.TabIndex = 363;
+            this.groupBox26.TabStop = false;
+            this.groupBox26.Text = "Event Content";
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.BackColor = System.Drawing.Color.White;
+            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.richTextBox1.Location = new System.Drawing.Point(3, 27);
+            this.richTextBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(1166, 623);
+            this.richTextBox1.TabIndex = 366;
+            this.richTextBox1.Text = "";
+            // 
+            // groupBox25
+            // 
+            this.groupBox25.Controls.Add(this.DgwEvent);
+            this.groupBox25.Dock = System.Windows.Forms.DockStyle.Left;
+            this.groupBox25.Font = new System.Drawing.Font("Century Gothic", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.groupBox25.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
+            this.groupBox25.Location = new System.Drawing.Point(10, 100);
+            this.groupBox25.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox25.Name = "groupBox25";
+            this.groupBox25.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox25.Size = new System.Drawing.Size(342, 652);
+            this.groupBox25.TabIndex = 372;
+            this.groupBox25.TabStop = false;
+            this.groupBox25.Text = "Events";
+            this.groupBox25.UseCompatibleTextRendering = true;
+            // 
+            // DgwEvent
+            // 
+            this.DgwEvent.AllowUserToOrderColumns = true;
+            this.DgwEvent.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.DgwEvent.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.DgwEvent.BackgroundColor = System.Drawing.Color.White;
+            this.DgwEvent.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.DgwEvent.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
+            dataGridViewCellStyle38.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle38.Font = new System.Drawing.Font("Century Gothic", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle38.NullValue = null;
+            dataGridViewCellStyle38.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle38.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle38.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DgwEvent.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle38;
+            this.DgwEvent.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgwEvent.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.GridEventName});
+            dataGridViewCellStyle39.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle39.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle39.Font = new System.Drawing.Font("Century Gothic", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle39.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
+            dataGridViewCellStyle39.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(231)))), ((int)(((byte)(228)))));
+            dataGridViewCellStyle39.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle39.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DgwEvent.DefaultCellStyle = dataGridViewCellStyle39;
+            this.DgwEvent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DgwEvent.Location = new System.Drawing.Point(3, 27);
+            this.DgwEvent.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.DgwEvent.Name = "DgwEvent";
+            dataGridViewCellStyle40.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle40.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
+            dataGridViewCellStyle40.Font = new System.Drawing.Font("Century Gothic", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle40.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle40.SelectionBackColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle40.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle40.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgwEvent.RowHeadersDefaultCellStyle = dataGridViewCellStyle40;
+            this.DgwEvent.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.DgwEvent.Size = new System.Drawing.Size(336, 623);
+            this.DgwEvent.TabIndex = 274;
+            // 
+            // GridEventName
+            // 
+            this.GridEventName.HeaderText = "EventName";
+            this.GridEventName.Name = "GridEventName";
+            // 
+            // groupBox27
+            // 
+            this.groupBox27.Controls.Add(this.button1);
+            this.groupBox27.Controls.Add(this.button2);
+            this.groupBox27.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupBox27.Font = new System.Drawing.Font("Century Gothic", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.groupBox27.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
+            this.groupBox27.Location = new System.Drawing.Point(10, 0);
+            this.groupBox27.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox27.Name = "groupBox27";
+            this.groupBox27.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox27.Size = new System.Drawing.Size(1524, 100);
+            this.groupBox27.TabIndex = 371;
+            this.groupBox27.TabStop = false;
+            this.groupBox27.Text = "Utilities";
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.FlatAppearance.BorderSize = 3;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
+            this.button1.Location = new System.Drawing.Point(165, 42);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(145, 42);
+            this.button1.TabIndex = 367;
+            this.button1.Text = "List Strings";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.Transparent;
+            this.button2.FlatAppearance.BorderSize = 3;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
+            this.button2.Location = new System.Drawing.Point(23, 42);
+            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(107, 42);
+            this.button2.TabIndex = 366;
+            this.button2.Text = "Save";
+            this.button2.UseVisualStyleBackColor = false;
+            // 
+            // TabPageOption
+            // 
+            this.TabPageOption.Controls.Add(this.groupBox32);
+            this.TabPageOption.Controls.Add(this.groupBox30);
+            this.TabPageOption.Controls.Add(this.groupBox29);
+            this.TabPageOption.Controls.Add(this.panel20);
+            this.TabPageOption.Location = new System.Drawing.Point(4, 29);
+            this.TabPageOption.Name = "TabPageOption";
+            this.TabPageOption.Size = new System.Drawing.Size(1534, 752);
+            this.TabPageOption.TabIndex = 9;
+            this.TabPageOption.Text = "Page Option";
+            this.TabPageOption.UseVisualStyleBackColor = true;
+            // 
+            // panel20
+            // 
+            this.panel20.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel20.Location = new System.Drawing.Point(0, 0);
+            this.panel20.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel20.Name = "panel20";
+            this.panel20.Size = new System.Drawing.Size(1534, 12);
+            this.panel20.TabIndex = 370;
+            // 
+            // groupBox29
+            // 
+            this.groupBox29.Controls.Add(this.label38);
+            this.groupBox29.Controls.Add(this.comboBox1);
+            this.groupBox29.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupBox29.Font = new System.Drawing.Font("Century Gothic", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.groupBox29.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
+            this.groupBox29.Location = new System.Drawing.Point(0, 12);
+            this.groupBox29.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox29.Name = "groupBox29";
+            this.groupBox29.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox29.Size = new System.Drawing.Size(1534, 103);
+            this.groupBox29.TabIndex = 371;
+            this.groupBox29.TabStop = false;
+            this.groupBox29.Text = "Utilities";
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.BackColor = System.Drawing.Color.Transparent;
+            this.label38.Enabled = false;
+            this.label38.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label38.ForeColor = System.Drawing.Color.Silver;
+            this.label38.Location = new System.Drawing.Point(13, 33);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(119, 23);
+            this.label38.TabIndex = 369;
+            this.label38.Text = "Application";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(231)))), ((int)(((byte)(228)))));
+            this.comboBox1.Enabled = false;
+            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBox1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.comboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Hiçbiri",
+            "Tümü",
+            "Fiba UX",
+            "BÖS Acq UX"});
+            this.comboBox1.Location = new System.Drawing.Point(16, 60);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(354, 29);
+            this.comboBox1.TabIndex = 368;
+            // 
+            // groupBox30
+            // 
+            this.groupBox30.Controls.Add(this.DgwPage);
+            this.groupBox30.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupBox30.Font = new System.Drawing.Font("Century Gothic", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.groupBox30.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
+            this.groupBox30.Location = new System.Drawing.Point(0, 115);
+            this.groupBox30.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox30.Name = "groupBox30";
+            this.groupBox30.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox30.Size = new System.Drawing.Size(1534, 355);
+            this.groupBox30.TabIndex = 372;
+            this.groupBox30.TabStop = false;
+            this.groupBox30.Text = "Action List";
+            // 
+            // DgwPage
+            // 
+            this.DgwPage.AllowUserToOrderColumns = true;
+            this.DgwPage.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.DgwPage.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.DgwPage.BackgroundColor = System.Drawing.Color.White;
+            this.DgwPage.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.DgwPage.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
+            dataGridViewCellStyle35.Font = new System.Drawing.Font("Century Gothic", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle35.NullValue = null;
+            dataGridViewCellStyle35.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle35.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle35.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DgwPage.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle35;
+            this.DgwPage.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgwPage.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn11,
+            this.dataGridViewTextBoxColumn12,
+            this.dataGridViewTextBoxColumn13,
+            this.dataGridViewTextBoxColumn15});
+            dataGridViewCellStyle36.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle36.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle36.Font = new System.Drawing.Font("Century Gothic", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle36.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
+            dataGridViewCellStyle36.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(231)))), ((int)(((byte)(228)))));
+            dataGridViewCellStyle36.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle36.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DgwPage.DefaultCellStyle = dataGridViewCellStyle36;
+            this.DgwPage.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DgwPage.Location = new System.Drawing.Point(3, 27);
+            this.DgwPage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.DgwPage.Name = "DgwPage";
+            dataGridViewCellStyle37.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle37.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
+            dataGridViewCellStyle37.Font = new System.Drawing.Font("Century Gothic", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle37.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle37.SelectionBackColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle37.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle37.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgwPage.RowHeadersDefaultCellStyle = dataGridViewCellStyle37;
+            this.DgwPage.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.DgwPage.Size = new System.Drawing.Size(1528, 326);
+            this.DgwPage.TabIndex = 368;
+            // 
+            // groupBox32
+            // 
+            this.groupBox32.Controls.Add(this.DgwPageResult);
+            this.groupBox32.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.groupBox32.Font = new System.Drawing.Font("Century Gothic", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.groupBox32.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
+            this.groupBox32.Location = new System.Drawing.Point(0, 486);
+            this.groupBox32.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox32.Name = "groupBox32";
+            this.groupBox32.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox32.Size = new System.Drawing.Size(1534, 266);
+            this.groupBox32.TabIndex = 373;
+            this.groupBox32.TabStop = false;
+            this.groupBox32.Text = "Result";
+            // 
+            // DgwPageResult
+            // 
+            this.DgwPageResult.AllowUserToOrderColumns = true;
+            this.DgwPageResult.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.DgwPageResult.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.DgwPageResult.BackgroundColor = System.Drawing.Color.White;
+            this.DgwPageResult.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.DgwPageResult.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
+            dataGridViewCellStyle32.Font = new System.Drawing.Font("Century Gothic", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle32.NullValue = null;
+            dataGridViewCellStyle32.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle32.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle32.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DgwPageResult.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle32;
+            this.DgwPageResult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle33.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle33.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle33.Font = new System.Drawing.Font("Century Gothic", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle33.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
+            dataGridViewCellStyle33.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(231)))), ((int)(((byte)(228)))));
+            dataGridViewCellStyle33.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle33.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DgwPageResult.DefaultCellStyle = dataGridViewCellStyle33;
+            this.DgwPageResult.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DgwPageResult.Location = new System.Drawing.Point(3, 27);
+            this.DgwPageResult.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.DgwPageResult.Name = "DgwPageResult";
+            dataGridViewCellStyle34.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle34.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
+            dataGridViewCellStyle34.Font = new System.Drawing.Font("Century Gothic", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle34.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle34.SelectionBackColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle34.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle34.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgwPageResult.RowHeadersDefaultCellStyle = dataGridViewCellStyle34;
+            this.DgwPageResult.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.DgwPageResult.Size = new System.Drawing.Size(1528, 237);
+            this.DgwPageResult.TabIndex = 368;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "DomainId";
+            this.dataGridViewTextBoxColumn1.FillWeight = 90F;
+            this.dataGridViewTextBoxColumn1.HeaderText = "DominId";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.FillWeight = 113.1134F;
+            this.dataGridViewTextBoxColumn2.HeaderText = "Environment";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // dataGridViewTextBoxColumn11
+            // 
+            this.dataGridViewTextBoxColumn11.DataPropertyName = "ApplicationId";
+            this.dataGridViewTextBoxColumn11.FillWeight = 113.1134F;
+            this.dataGridViewTextBoxColumn11.HeaderText = "ApplicationId";
+            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            this.dataGridViewTextBoxColumn11.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // dataGridViewTextBoxColumn12
+            // 
+            this.dataGridViewTextBoxColumn12.FillWeight = 113.1134F;
+            this.dataGridViewTextBoxColumn12.HeaderText = "Page Id";
+            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+            // 
+            // dataGridViewTextBoxColumn13
+            // 
+            this.dataGridViewTextBoxColumn13.FillWeight = 113.1134F;
+            this.dataGridViewTextBoxColumn13.HeaderText = "Name";
+            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
+            // 
+            // dataGridViewTextBoxColumn15
+            // 
+            this.dataGridViewTextBoxColumn15.FillWeight = 60F;
+            this.dataGridViewTextBoxColumn15.HeaderText = "Valid Flag";
+            this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
+            // 
+            // TabMenu
+            // 
+            this.TabMenu.Controls.Add(this.panel21);
+            this.TabMenu.Location = new System.Drawing.Point(4, 29);
+            this.TabMenu.Name = "TabMenu";
+            this.TabMenu.Size = new System.Drawing.Size(1534, 752);
+            this.TabMenu.TabIndex = 10;
+            this.TabMenu.Text = "Menu Option";
+            this.TabMenu.UseVisualStyleBackColor = true;
+            // 
+            // panel21
+            // 
+            this.panel21.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel21.Location = new System.Drawing.Point(0, 0);
+            this.panel21.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel21.Name = "panel21";
+            this.panel21.Size = new System.Drawing.Size(1534, 12);
+            this.panel21.TabIndex = 371;
             // 
             // FormUxGenerator
             // 
@@ -3558,7 +4217,7 @@ namespace Generator.UI.WF
             ((System.ComponentModel.ISupportInitialize)(this.DgwObject)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            this.tabPage4.ResumeLayout(false);
+            this.TabOneService.ResumeLayout(false);
             this.groupBox8.ResumeLayout(false);
             this.groupBox17.ResumeLayout(false);
             this.groupBox17.PerformLayout();
@@ -3583,7 +4242,7 @@ namespace Generator.UI.WF
             this.tabPage8.ResumeLayout(false);
             this.groupBox11.ResumeLayout(false);
             this.groupBox11.PerformLayout();
-            this.tabPage2.ResumeLayout(false);
+            this.TabHeader.ResumeLayout(false);
             this.groupBox13.ResumeLayout(false);
             this.groupBox13.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgwHeader)).EndInit();
@@ -3593,12 +4252,13 @@ namespace Generator.UI.WF
             this.groupBox15.ResumeLayout(false);
             this.groupBox24.ResumeLayout(false);
             this.TabMain.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.panel18.ResumeLayout(false);
-            this.groupBox26.ResumeLayout(false);
-            this.groupBox27.ResumeLayout(false);
-            this.groupBox25.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.TabGridService.ResumeLayout(false);
+            this.groupBox31.ResumeLayout(false);
+            this.GpxUpdate.ResumeLayout(false);
+            this.GpxUpdate.PerformLayout();
+            this.GpBxCreate.ResumeLayout(false);
+            this.GpBxCreate.PerformLayout();
+            this.groupBox28.ResumeLayout(false);
             this.FileExport.ResumeLayout(false);
             this.groupBox10.ResumeLayout(false);
             this.groupBox10.PerformLayout();
@@ -3613,12 +4273,28 @@ namespace Generator.UI.WF
             this.groupBox19.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DgwActionResult)).EndInit();
             this.groupBox18.ResumeLayout(false);
+            this.groupBox18.PerformLayout();
             this.TabStringOption.ResumeLayout(false);
             this.groupBox21.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DgwString)).EndInit();
             this.groupBox22.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DgwStringResult)).EndInit();
             this.groupBox23.ResumeLayout(false);
+            this.TabEvent.ResumeLayout(false);
+            this.panel18.ResumeLayout(false);
+            this.panel19.ResumeLayout(false);
+            this.groupBox26.ResumeLayout(false);
+            this.groupBox25.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.DgwEvent)).EndInit();
+            this.groupBox27.ResumeLayout(false);
+            this.TabPageOption.ResumeLayout(false);
+            this.groupBox29.ResumeLayout(false);
+            this.groupBox29.PerformLayout();
+            this.groupBox30.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.DgwPage)).EndInit();
+            this.groupBox32.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.DgwPageResult)).EndInit();
+            this.TabMenu.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -3627,7 +4303,7 @@ namespace Generator.UI.WF
 
         private System.Windows.Forms.TabControl TabMain;
         private System.Windows.Forms.TabPage TabGridCreate;
-        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage TabHeader;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.CheckedListBox ClbColumnNames;
         private System.Windows.Forms.Panel PanelDgw;
@@ -3686,7 +4362,7 @@ namespace Generator.UI.WF
         private System.Windows.Forms.Button BtnContentJavaScript;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.GroupBox GbxResult;
-        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.TabPage TabOneService;
         private System.Windows.Forms.TabControl TabElement;
         private System.Windows.Forms.TabPage tabPage5;
         private System.Windows.Forms.TabPage tabPage6;
@@ -3800,20 +4476,8 @@ namespace Generator.UI.WF
         private System.Windows.Forms.Button BtnAddActions;
         private System.Windows.Forms.GroupBox groupBox19;
         private System.Windows.Forms.DataGridView DgwActionResult;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewComboBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ActionId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ServiceActionId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Environment;
         private System.Windows.Forms.GroupBox groupBox20;
         private System.Windows.Forms.DataGridView DgwAction;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewComboBoxColumn2;
-        private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewComboBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.Panel panel15;
         private System.Windows.Forms.Button BtnListAction;
         private System.Windows.Forms.TabPage TabStringOption;
@@ -3831,24 +4495,72 @@ namespace Generator.UI.WF
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.TextBox TbxMethodName;
         private System.Windows.Forms.Panel panel17;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
-        private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewComboBoxColumn4;
-        private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewComboBoxColumn5;
         private System.Windows.Forms.DataGridView DgwStringResult;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
-        private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewComboBoxColumn6;
-        private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewComboBoxColumn7;
         private System.Windows.Forms.CheckBox CbxOneServiceParameter;
         private System.Windows.Forms.GroupBox groupBox24;
-        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage TabEvent;
         private System.Windows.Forms.Panel panel18;
-        private System.Windows.Forms.GroupBox groupBox26;
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.GroupBox groupBox25;
         private System.Windows.Forms.GroupBox groupBox27;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn GridEventName;
         private System.Windows.Forms.CheckBox CbxOneServiceResult;
+        private System.Windows.Forms.GroupBox groupBox25;
+        private System.Windows.Forms.DataGridView DgwEvent;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GridEventName;
+        private System.Windows.Forms.TabPage TabGridService;
+        private System.Windows.Forms.GroupBox groupBox31;
+        private System.Windows.Forms.RichTextBox RtbxGridServiceResult;
+        private System.Windows.Forms.GroupBox GpxUpdate;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.ComboBox CbxService2ObjectType;
+        private System.Windows.Forms.ComboBox CbxService2ObjectId;
+        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.ComboBox CbxService2ProfileId;
+        private System.Windows.Forms.GroupBox GpBxCreate;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.ComboBox CbxService1ObjectType;
+        private System.Windows.Forms.ComboBox CbxService1ObjectId;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.ComboBox CbxService1ProfileId;
+        private System.Windows.Forms.GroupBox groupBox28;
+        private System.Windows.Forms.Panel panel19;
+        private System.Windows.Forms.GroupBox groupBox26;
+        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.Button BtnGridServiceJavaScriptCreate;
+        private System.Windows.Forms.Button BtnGridServiceClear;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox CbxActionOptionApplicationId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewComboBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewComboBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ValidFlag;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewComboBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewComboBoxColumn5;
+        private System.Windows.Forms.TabPage TabPageOption;
+        private System.Windows.Forms.GroupBox groupBox32;
+        private System.Windows.Forms.DataGridView DgwPageResult;
+        private System.Windows.Forms.GroupBox groupBox30;
+        private System.Windows.Forms.DataGridView DgwPage;
+        private System.Windows.Forms.GroupBox groupBox29;
+        private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.Panel panel20;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
+        private System.Windows.Forms.TabPage TabMenu;
+        private System.Windows.Forms.Panel panel21;
     }
 }

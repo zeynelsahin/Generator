@@ -8,5 +8,6 @@ namespace Generator.DataAccess.Abstract
     {
         List<string> ColumnNames(string tableName);
         List<OracleColumn> ColumnNamesAndType(string tableName);
+        public List<string> GetTablePrimaryKeyList(string tableName);
     }
 }

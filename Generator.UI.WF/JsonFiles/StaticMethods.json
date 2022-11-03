@@ -353,7 +353,7 @@
     ]
   },
   {
-    "MethodName": "ReportTypeList",
+    "MethodName": "ReportType",
     "MethodDescription": "05, 06, 07, 08",
     "KeyType": "int",
     "KeyName": "Id",
@@ -369,7 +369,7 @@
     ]
   },
   {
-    "MethodName": "FileTypeList",
+    "MethodName": "FileType",
     "MethodDescription": "Visa Incoming,Outgoing File",
     "KeyType": "string",
     "KeyName": "FileType",

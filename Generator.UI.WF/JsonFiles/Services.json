@@ -1,0 +1,19 @@
+﻿[
+  {
+    "ProfileId": "MerchantBackoffice",
+    "ServiceId": "MerchantBackoffice"
+  },
+  {
+    "ProfileId": "ISS_PRM",
+    "ServiceId": "PRMBackoffice"
+  },
+  {
+    "ProfileId": "IssuingCreditBackoffice",
+    "ServiceId": "CreditBackoffice"
+  },
+  {
+    "ProfileId": "CLEARING_BACKOFFICE_V2",
+    "ServiceId": "ClearingBackoffice"
+  }
+]
+ 

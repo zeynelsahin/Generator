@@ -20,7 +20,7 @@ namespace Generator.UI.WF.JavaScriptGenerate
         public override string ToString()
         {
             var javaScript = "";
-            javaScript += $"{MethodName} ()".Tab(2);
+            javaScript += $"{MethodName}() ".Tab(2);
             javaScript += "{\n";
             javaScript += $"let {MethodName} = [".Tab(3);
             if (ValueList != null)

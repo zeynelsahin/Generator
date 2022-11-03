@@ -148,14 +148,31 @@ namespace Generator.UI.WF
         {
             var index = result.ToLower().IndexOf("get");
             if (index != -1) result = result[3..];
-
             return result;
         }
-
+        public static string RemoveCreate(this string result)
+        {
+            var index = result.ToLower().IndexOf("create");
+            if (index != -1) result = result[6..];
+            return result;
+        }
+        public static string RemoveUpdate(this string result)
+        {
+            var index = result.ToLower().IndexOf("update");
+            if (index != -1) result = result[6..];
+            return result;
+        }
+        public static string RemoveBy(this string result)
+        {
+            var index = result.ToLower().IndexOf("by");
+            if (index != -1) result = result[..index];
+            string asd = "sdf";
+            return result;
+        }
         public static string Tab(this string javaScript, int tabCount)
         {
             var javaSrciptNew = "";
-            for (var i = 0; i < tabCount; i++) javaSrciptNew += "    ";
+            for (var i = 0; i < tabCount; i++) javaSrciptNew += "\t";
 
             return javaSrciptNew + javaScript;
         }
@@ -187,6 +204,21 @@ namespace Generator.UI.WF
             json = json.Replace("\\u00FC", "ü");
             json = json.Replace("\\u00DC", "ü");
             return json;
+        }
+
+        public static string TitleConfig(this string text)
+        {
+            var textNew = "";
+            foreach (var c in text)
+            {
+                if (c.ToString()==c.ToString().ToUpper())
+                {
+                    textNew += " ";
+                }
+                textNew += c;
+            }
+
+            return textNew;
         }
     }
 }

@@ -8,7 +8,8 @@
         public override string ToString()
         {
             var javaScript = "";
-            javaScript += $"case '{EventName}:".Tab(4);
+            javaScript += $"case '{EventName}':".Tab(4);
+            javaScript += "\n";
             javaScript += Content;
             javaScript += "break;\n".Tab(5);
             return javaScript;

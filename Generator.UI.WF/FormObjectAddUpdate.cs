@@ -40,10 +40,7 @@ namespace Generator.UI.WF
 
         private void FillProfileId()
         {
-            var objectIdList = new List<string>
-            {
-                "Hiçbiri"
-            };
+            var objectIdList = new List<string>();
             var profiles = File.ReadAllText(@"../../../JsonFiles/ObjectProfiles.json");
             objectIdList.AddRange(JsonSerializer.Deserialize<List<string>>(profiles));
             CbxProfileId.DataSource = objectIdList;
@@ -132,7 +129,7 @@ namespace Generator.UI.WF
             {
                 _objectEntityService.Add(objectEntity);
             }
-            catch (Exception exception)
+            catch (Exception)
             {
             }
         }
@@ -203,7 +200,7 @@ namespace Generator.UI.WF
 
         private void BtnParametre_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(TbxObjectId.Text))
+            if (!string.IsNullOrWhiteSpace(TbxObjectId.Text))
             {
                 var parameterAdd =
                     new FormParameterAndResultAdd(TbxObjectId.Text, TbxProfileId.Text, TbxSchemaName.Text);
@@ -213,7 +210,7 @@ namespace Generator.UI.WF
 
         private void BtnResultAdd_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(TbxObjectId.Text))
+            if (!string.IsNullOrWhiteSpace(TbxObjectId.Text))
             {
                 var formResult = new FormResultAdd(TbxObjectId.Text, TbxProfileId.Text, TbxSchemaName.Text);
                 formResult.Show();

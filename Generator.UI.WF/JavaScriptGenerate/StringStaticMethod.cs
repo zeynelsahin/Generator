@@ -7,12 +7,11 @@
         public override string ToString()
         {
             var javaScript = "";
-            javaScript += $"{MethodName} ()".Tab(2);
+            javaScript += $"{MethodName}() ".Tab(2);
             javaScript += "{\n";
             javaScript += StaticMethod;
             javaScript += "\n";
             javaScript += "}".Tab(2);
-            javaScript += "\n";
             return javaScript;
         }
     }

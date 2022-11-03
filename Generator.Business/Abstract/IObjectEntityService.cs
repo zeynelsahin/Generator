@@ -8,6 +8,7 @@ namespace Generator.Business.Abstract
         void Add(ObjectEntity objectEntity);
         List<ObjectEntity> GetAllOrFilter(string objectId = null, string profileId = null, string schemaName = null);
         List<string> GetAllByProfileId(string profileId);
+        List<string> GetAllCustomByProfileId(string profileId);
         List<ObjectEntity> GetByProfileId(string profileId);
         List<string> GetAllObjectId();
         List<ObjectEntity> GetByObjectIdContains(string objectId);
@@ -20,5 +21,6 @@ namespace Generator.Business.Abstract
         List<OracleColumn> GetOracleColumns(string tableName);
 
         string GetObjectType(string objectId, string profileId);
+        List<string> GetTablePrimaryKeyList(string tableName);
     }
 }

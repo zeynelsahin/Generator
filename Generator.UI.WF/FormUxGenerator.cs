@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text.Json;
 using System.Text.Json.Nodes;
 using System.Windows.Forms;
+using System.Xml;
 using Generator.Business.Abstract;
 using Generator.Business.Concrete;
 using Generator.DataAccess.Concrete;
@@ -218,23 +219,26 @@ namespace Generator.UI.WF
             GpxUpdate.Visible = true;
 
             if (CbxObjectType.Text != "TABLE") return;
-
-            if (CbxCrudMethod.SelectedItem.ToString() == "Tümü")
+            if (CbxCrudMethod.SelectedItem != null)
             {
-                if (CbxCrudMethod.Items.Contains("Create"))
-                    GpBxCreate.Visible = false;
+                if (CbxCrudMethod.SelectedItem.ToString() == "Tümü")
+                {
+                    if (CbxCrudMethod.Items.Contains("Create"))
+                        GpBxCreate.Visible = false;
 
-                if (CbxCrudMethod.Items.Contains("Modify"))
-                    GpxUpdate.Visible = false;
-            }
-            else
-            {
-                if (CbxCrudMethod.SelectedItem.ToString() == "Create")
-                    GpBxCreate.Visible = false;
+                    if (CbxCrudMethod.Items.Contains("Modify"))
+                        GpxUpdate.Visible = false;
+                }
+                else
+                {
+                    if (CbxCrudMethod.SelectedItem.ToString() == "Create")
+                        GpBxCreate.Visible = false;
 
-                if (CbxCrudMethod.SelectedItem.ToString() == "Modify")
-                    GpxUpdate.Visible = false;
+                    if (CbxCrudMethod.SelectedItem.ToString() == "Modify")
+                        GpxUpdate.Visible = false;
+                }
             }
+
         }
 
         private List<string> ServiceMethodList(string objectId, string profileId)
@@ -533,11 +537,23 @@ namespace Generator.UI.WF
 
             var serviceId = GetServiceId(profileId);
             if (gridJavaScriptMethod.GetGridApiMethod != null)
+            {
                 gridJavaScriptMethod.GetGridApiMethod.ServiceId = serviceId;
+                gridJavaScriptMethod.GetGridApiMethod.ProfileId = profileId;
+            }
+
             if (gridJavaScriptMethod.UpdateApiMethod != null)
+            {
                 gridJavaScriptMethod.UpdateApiMethod.ServiceId = serviceId;
+                gridJavaScriptMethod.UpdateApiMethod.ProfileId = profileId;
+            }
+
             if (gridJavaScriptMethod.CreateApiMethod != null)
+            {
                 gridJavaScriptMethod.CreateApiMethod.ServiceId = serviceId;
+                gridJavaScriptMethod.CreateApiMethod.ProfileId = profileId;
+            }
+
             return gridJavaScriptMethod;
         }
 
@@ -548,7 +564,8 @@ namespace Generator.UI.WF
                 MethodName = "Modify" + (objectId.NameConfigure().RemoveGet().RemoveUpdate()),
                 ServiceName = objectId.CamelCaseConfigure(),
                 ParameterName = objectId.NameConfigure() + "Param",
-                ResultName = objectId.NameConfigure() + "Result"
+                ResultName = objectId.NameConfigure() + "Result",
+                ProfileId = profileId
             };
             var parameters = _objectParameterService.GetAllByObjectId(objectId,
                 profileId);
@@ -564,7 +581,8 @@ namespace Generator.UI.WF
                 MethodName = "Create" + (objectId.NameConfigure().RemoveGet().RemoveCreate()),
                 ServiceName = objectId.CamelCaseConfigure(),
                 ParameterName = objectId.NameConfigure() + "Param",
-                ResultName = objectId.NameConfigure() + "Result"
+                ResultName = objectId.NameConfigure() + "Result",
+                ProfileId = profileId
             };
             var parameters = _objectParameterService.GetAllByObjectId(objectId,
                 profileId);
@@ -598,7 +616,7 @@ namespace Generator.UI.WF
                 ServiceName = objectId.CamelCaseConfigure(),
                 PropName = objectId.NameConfigure() + "Grid",
                 ParameterName = objectId.NameConfigure() + "Request",
-                ResultName = objectId.NameConfigure() + "Result"
+                ResultName = objectId.NameConfigure() + "Result",
             };
             return get;
         }
@@ -1431,7 +1449,7 @@ namespace Generator.UI.WF
                         method.ServiceName, method.ServiceName,
                         method.ServiceId, "1");
                     DgwAction.Rows.Add("UXLocal", "Development", CbxActionOptionApplicationId.SelectedItem.ToString(),
-                        method.ServiceName, method.ServiceName+"Local",
+                        method.ServiceName, method.ServiceName + "Local",
                         method.ServiceId, "1");
                 }
             }
@@ -1625,12 +1643,106 @@ namespace Generator.UI.WF
             PageFilesCreate(TbxPath.Text, TbxPageName.Text, pageXml, pageJs);
             //PageFilesCreate(TbxPath.Text, TbxPageName.Text, pageXml.ToString(), modify);
 
+            var basePath = Path.Combine("App", CbxFolder.SelectedItem.ToString());
+            ContentInclude(basePath, TbxPageName.Text + ".xml");
+            ContentInclude(basePath, TbxPageName.Text + ".xml.js");
+
             Actions(pageJs);
-            //String Option
+            StringOption(pageXml);
+            PageOption();
+        }
+
+        private void ContentInclude(string basePath, string path)
+        {
+            var xmlFile = Path.Combine(((DirectoryPath)CbxApplication.SelectedItem).Path, "UX.Web.csproj");
+            var xmlns = "http://schemas.microsoft.com/developer/msbuild/2003";
+            //Xmlns attribute siliniyor
+            var file = File.ReadAllText(xmlFile);
+            if (file.IndexOf(Path.Combine(basePath,path))!=-1)
+            {
+                return;
+            }
+            var indexXmlns = file.IndexOf("xmlns");
+            if (indexXmlns < 100 && indexXmlns != -1)
+            {
+                var define = file.Remove(indexXmlns, 59);
+                File.WriteAllText(xmlFile, define);
+            }
+
+            var doc = new XmlDocument();
+            doc.Load(xmlFile);
+            var root = doc.DocumentElement;
+            var list = root?.ChildNodes[6];
+            var nodeList = list.Cast<object>().Cast<XmlNode>().ToList();
+
+            var element = doc.CreateElement("Content");
+            var attribute = doc.CreateAttribute("Include");
+            attribute.Value = Path.Combine(basePath, path);
+            element.Attributes.Append(attribute);
+            nodeList.Add(element);
+            var basePathSelect = nodeList.Where(p => p.Attributes[0].Value.Contains(basePath)==true).ToList();
+
+
+            if (basePathSelect == null || basePathSelect.Count<=0)
+            {
+                MessageBox.Show("Lütfen tek seferlik enerate ettiğiniz projeyi existing ediniz");
+            }
+            else
+            {
+                basePathSelect = basePathSelect.OrderBy(p => p.Attributes[0].Value).ToList();
+
+                var elementIndex = basePathSelect.IndexOf(element);
+                if (elementIndex==basePathSelect.Count-1)
+                {
+                    var refChild = basePathSelect[elementIndex -1];
+                    list.InsertAfter(element, refChild);
+                }
+                else
+                {
+                    var refChild = basePathSelect[elementIndex + 1];
+                    list.InsertBefore(element, refChild);
+                }
+              
+                doc.Save(xmlFile);
+            }
+            var attribute1 = doc.CreateAttribute("xmlns");
+            attribute1.Value = xmlns;
+            root.Attributes.Append(attribute1);
+            doc.Save(xmlFile);
+        }
+
+        private XmlElement CreateElement(string path, XmlDocument doc)
+        {
+            var elementXml = doc.CreateElement("Content");
+            var attribute = doc.CreateAttribute("Include");
+            attribute.Value = path;
+            elementXml.Attributes.Append(attribute);
+            return elementXml;
+        }
+
+        private void StringOption(PageXml pageXml)
+        {
             var title = ((PageHeader)pageXml.Header).Title;
             DgwString.Rows.Clear();
             DgwString.Rows.Add("tr-TR", title, title.TitleConfig());
             DgwString.Rows.Add("en-US", title, title.TitleConfig());
+        }
+
+        private void PageOption()
+        {
+            DgwPage.Rows.Clear();
+            if (CbxFolder.SelectedItem == null)
+            {
+                MessageBox.Show("PageOption için Applicaiton Id Applicaiton Folder dan geliyor boş olamaz");
+                return;
+            }
+
+            DgwPage.Rows.Add("EVUX", "Development", CbxFolder.SelectedItem.ToString(), TbxPageName.Text,
+                TbxPageName.Text, '1');
+            DgwPage.Rows.Add("UXLocal", "Development", CbxFolder.SelectedItem.ToString(), TbxPageName.Text,
+                TbxPageName.Text, '1');
+            DgwPage.Rows.Add("EVFBUX", "Development", CbxFolder.SelectedItem.ToString(), TbxPageName.Text,
+                TbxPageName.Text, '1');
         }
 
         private void CbxContentJSProfileId_SelectedIndexChanged(object sender, EventArgs e)
@@ -1646,6 +1758,8 @@ namespace Generator.UI.WF
         {
             if (CbxContentJSObjectId.SelectedIndex != 0 && CbxContentJSObjectId.SelectedIndex != -1)
             {
+                CbxKeyField.Items.Clear();
+                CbxValueField.Items.Clear();
                 var objectType = _objectEntityService.GetObjectType(CbxContentJSObjectId.SelectedItem.ToString(),
                     CbxContentJSProfileId.SelectedItem.ToString());
                 CbxContentJSObjectType.SelectedItem = objectType;
@@ -1657,6 +1771,8 @@ namespace Generator.UI.WF
                     CbxKeyField.Items.Add(p.Name);
                     CbxValueField.Items.Add(p.Name);
                 });
+                CbxContentJsCrudType.DataSource = ServiceMethodList(CbxContentJSObjectId.SelectedItem.ToString(),
+                    CbxContentJSProfileId.SelectedItem.ToString());
             }
         }
 
@@ -1920,8 +2036,8 @@ namespace Generator.UI.WF
         private string GetCbxApplicationValue()
         {
             return CbxApplication.SelectedValue.GetType() == typeof(DirectoryPath)
-                ? ((DirectoryPath)CbxApplication.SelectedValue).Path
-                : CbxApplication.SelectedValue.ToString();
+                ? Path.Combine(((DirectoryPath)CbxApplication.SelectedValue).Path, "App")
+                : Path.Combine(CbxApplication.SelectedValue.ToString(), "App");
         }
 
         private void CbxApplication_SelectedIndexChanged(object sender, EventArgs e)
@@ -1933,6 +2049,7 @@ namespace Generator.UI.WF
             {
                 CbxFolder.Items.Add(Path.GetFileName(file));
                 CbxActionOptionApplicationId.Items.Add(Path.GetFileName(file));
+                CbxPageOptionApplication.Items.Add(Path.GetFileName(file));
             }
 
             CbxFolder.SelectedIndex = 0;
@@ -1944,6 +2061,7 @@ namespace Generator.UI.WF
             TbxPath.Text = Path.GetFullPath(path);
             TbxPath.Text = Path.Combine(TbxPath.Text, CbxFolder.SelectedItem.ToString()!);
             CbxActionOptionApplicationId.SelectedItem = CbxFolder.SelectedItem;
+            CbxPageOptionApplication.SelectedItem = CbxFolder.SelectedItem;
         }
 
         private void BtnPath_Click(object sender, EventArgs e)
@@ -2190,8 +2308,8 @@ namespace Generator.UI.WF
                 var stringOption = new StringOption
                 {
                     LanguageId = row.Cells[0].Value.ToString(),
-                    KeyId= row.Cells[1].Value.ToString(),
-                    Value= row.Cells[2].Value.ToString()
+                    KeyId = row.Cells[1].Value.ToString(),
+                    Value = row.Cells[2].Value.ToString()
                 };
                 var stringOptionIfCheck = _stringOptionService.Get(stringOption.LanguageId, stringOption.KeyId);
                 if (stringOptionIfCheck != null) return;

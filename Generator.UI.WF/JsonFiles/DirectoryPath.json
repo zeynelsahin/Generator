@@ -1,10 +1,14 @@
 [
   {
     "Application": "Fiba Ux",
-    "path": "G:\\UX\\ux-everest-web-v31\\UX.Web\\App"
+    "path": "G:\\UX\\ux-everest-web-v31\\UX.Web"
   },
   {
     "Application": "BOS Acquiring Ux",
-    "path": "T:\\BOS\\Everest_V2\\UX\\Main\\UX.Web\\App"
+    "path": "T:\\BOS\\Everest_V2\\UX\\Main\\UX.Web"
+  },
+  {
+    "Application": "BOS Clearing Ux",
+    "path": "G:\\Clearing\\clearing-ux-web\\UX.Web"
   }
 ]

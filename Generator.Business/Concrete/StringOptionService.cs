@@ -17,6 +17,7 @@ namespace Generator.Business.Concrete
         public void Add(StringOption stringOption)
         {
             _stringOptionDal.Add(stringOption);
+            
         }
 
         public List<StringOption> GetAll()

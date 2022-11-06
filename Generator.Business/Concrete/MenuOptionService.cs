@@ -5,7 +5,7 @@ using Generator.Entities;
 
 namespace Generator.Business.Concrete
 {
-    public class MenuOptionService: IMenuOptionService
+    public class MenuOptionService : IMenuOptionService
     {
         private readonly IMenuOptionDal _menuOptionDal;
 

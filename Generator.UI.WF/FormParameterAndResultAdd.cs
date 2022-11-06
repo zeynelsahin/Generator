@@ -275,10 +275,7 @@ namespace Generator.UI.WF
                 row.Cells[0].Value = p.ProfileId;
                 row.Cells[1].Value = p.ObjectId;
                 row.Cells[2].Value = p.ParameterId;
-                if (results.Contains(p.DataType))
-                {
-                    row.Cells[3].Value = p.DataType;
-                }
+                if (results.Contains(p.DataType)) row.Cells[3].Value = p.DataType;
 
                 row.Cells[4].Value = p.InputOutput;
                 row.Cells[5].Value = p.NullableFlag;

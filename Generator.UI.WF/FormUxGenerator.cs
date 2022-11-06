@@ -238,7 +238,6 @@ namespace Generator.UI.WF
                         GpxUpdate.Visible = false;
                 }
             }
-
         }
 
         private List<string> ServiceMethodList(string objectId, string profileId)
@@ -273,10 +272,10 @@ namespace Generator.UI.WF
                     columnNames = _objectEntityService.GetOracleColumns(objectId);
                     break;
                 case "CUSTOMSQL":
-                    {
-                        columnNames = _objectResultService.GetAll(objectId, profileId);
-                        break;
-                    }
+                {
+                    columnNames = _objectResultService.GetAll(objectId, profileId);
+                    break;
+                }
             }
 
             return columnNames;
@@ -293,10 +292,10 @@ namespace Generator.UI.WF
                     columnNames = _objectEntityService.GetOracleColumns(objectId);
                     break;
                 case "CUSTOMSQL":
-                    {
-                        columnNames = _objectParameterService.GetAll(objectId, profileId);
-                        break;
-                    }
+                {
+                    columnNames = _objectParameterService.GetAll(objectId, profileId);
+                    break;
+                }
             }
 
             return columnNames;
@@ -452,9 +451,9 @@ namespace Generator.UI.WF
                         case "Update":
                             method.MethodName = $"Update{objectId}";
                             break;
-                            //case "Delete":
-                            //    method.MethodName = $"Delete{objectId}";
-                            //    break;
+                        //case "Delete":
+                        //    method.MethodName = $"Delete{objectId}";
+                        //    break;
                     }
 
                     method.ServiceName = $"get{objectId}";
@@ -471,35 +470,22 @@ namespace Generator.UI.WF
             switch (objectType)
             {
                 case "TABLE" when crudMethod == "Tümü":
-                    {
-                        foreach (var item in CbxCrudMethod.Items)
-                            if (item.ToString() == "Get")
-                            {
-                                gridJavaScriptMethod.GetGridApiMethod = GridGetApiMethod(objectId);
-                            }
-                            else if (item.ToString() == "GetByPrimaryKey")
-                            {
-                                gridJavaScriptMethod.GetGridApiMethod = GridGetByPrimaryKeyApiMethod(objectId);
-                            }
-                            else if (item.ToString() == "GetByValidFlag")
-                            {
-                                gridJavaScriptMethod.GetGridApiMethod = GridGetByValidFlagApiMethod(objectId);
-                            }
-                            else if (item.ToString() == "Create")
-                            {
-                                gridJavaScriptMethod.CreateApiMethod = GridCreateApiMethod(objectId);
-                            }
-                            else if (item.ToString() == "Modify")
-                            {
-                                gridJavaScriptMethod.UpdateApiMethod = GridUpdateApiMethod(objectId);
-                            }
-                            else if (item.ToString() == "Delete")
-                            {
-                                MessageBox.Show("Delete Metodu Boş");
-                            }
+                {
+                    foreach (var item in CbxCrudMethod.Items)
+                        if (item.ToString() == "Get")
+                            gridJavaScriptMethod.GetGridApiMethod = GridGetApiMethod(objectId);
+                        else if (item.ToString() == "GetByPrimaryKey")
+                            gridJavaScriptMethod.GetGridApiMethod = GridGetByPrimaryKeyApiMethod(objectId);
+                        else if (item.ToString() == "GetByValidFlag")
+                            gridJavaScriptMethod.GetGridApiMethod = GridGetByValidFlagApiMethod(objectId);
+                        else if (item.ToString() == "Create")
+                            gridJavaScriptMethod.CreateApiMethod = GridCreateApiMethod(objectId);
+                        else if (item.ToString() == "Modify")
+                            gridJavaScriptMethod.UpdateApiMethod = GridUpdateApiMethod(objectId);
+                        else if (item.ToString() == "Delete") MessageBox.Show("Delete Metodu Boş");
 
-                        break;
-                    }
+                    break;
+                }
                 case "TABLE" when crudMethod == "Create":
                     gridJavaScriptMethod.CreateApiMethod = GridCreateApiMethod(objectId);
                     break;
@@ -516,23 +502,23 @@ namespace Generator.UI.WF
                     gridJavaScriptMethod.GetGridApiMethod = GridGetByValidFlagApiMethod(objectId);
                     break;
                 case "CUSTOMSQL":
+                {
+                    if (objectId.ToLower().Contains("create"))
                     {
-                        if (objectId.ToLower().Contains("create"))
-                        {
-                            gridJavaScriptMethod.CreateApiMethod = GridCreateApiMethod(objectId);
-                        }
-                        else if (objectId.ToLower().Contains("update"))
-                        {
-                            gridJavaScriptMethod.UpdateApiMethod = GridUpdateApiMethod(objectId);
-                        }
-                        else
-                        {
-                            var get = GetGridApiMethodCustomSql(objectId, profileId);
-                            gridJavaScriptMethod.GetGridApiMethod = get;
-                        }
-
-                        break;
+                        gridJavaScriptMethod.CreateApiMethod = GridCreateApiMethod(objectId);
                     }
+                    else if (objectId.ToLower().Contains("update"))
+                    {
+                        gridJavaScriptMethod.UpdateApiMethod = GridUpdateApiMethod(objectId);
+                    }
+                    else
+                    {
+                        var get = GetGridApiMethodCustomSql(objectId, profileId);
+                        gridJavaScriptMethod.GetGridApiMethod = get;
+                    }
+
+                    break;
+                }
             }
 
             var serviceId = GetServiceId(profileId);
@@ -561,7 +547,7 @@ namespace Generator.UI.WF
         {
             var update = new UpdateApiMethod
             {
-                MethodName = "Modify" + (objectId.NameConfigure().RemoveGet().RemoveUpdate()),
+                MethodName = "Modify" + objectId.NameConfigure().RemoveGet().RemoveUpdate(),
                 ServiceName = objectId.CamelCaseConfigure(),
                 ParameterName = objectId.NameConfigure() + "Param",
                 ResultName = objectId.NameConfigure() + "Result",
@@ -578,7 +564,7 @@ namespace Generator.UI.WF
         {
             var create = new CreateApiMethod()
             {
-                MethodName = "Create" + (objectId.NameConfigure().RemoveGet().RemoveCreate()),
+                MethodName = "Create" + objectId.NameConfigure().RemoveGet().RemoveCreate(),
                 ServiceName = objectId.CamelCaseConfigure(),
                 ParameterName = objectId.NameConfigure() + "Param",
                 ResultName = objectId.NameConfigure() + "Result",
@@ -616,7 +602,7 @@ namespace Generator.UI.WF
                 ServiceName = objectId.CamelCaseConfigure(),
                 PropName = objectId.NameConfigure() + "Grid",
                 ParameterName = objectId.NameConfigure() + "Request",
-                ResultName = objectId.NameConfigure() + "Result",
+                ResultName = objectId.NameConfigure() + "Result"
             };
             return get;
         }
@@ -634,7 +620,7 @@ namespace Generator.UI.WF
             var primaryKey = _objectEntityService.GetTablePrimaryKeyList(objectId);
             if (primaryKey.Count != 0)
                 get.Parameter.Params.Add(new Param
-                { Key = primaryKey[0].NameConfigure(), Value = primaryKey[0].NameConfigure() });
+                    { Key = primaryKey[0].NameConfigure(), Value = primaryKey[0].NameConfigure() });
             return get;
         }
 
@@ -1442,7 +1428,6 @@ namespace Generator.UI.WF
         {
             DgwAction.Rows.Clear();
             if (pageJs.ApiRequestMethods.Count > 0)
-            {
                 foreach (var method in pageJs.ApiRequestMethods)
                 {
                     DgwAction.Rows.Add("EVUX", "Development", CbxActionOptionApplicationId.SelectedItem.ToString(),
@@ -1452,7 +1437,6 @@ namespace Generator.UI.WF
                         method.ServiceName, method.ServiceName + "Local",
                         method.ServiceId, "1");
                 }
-            }
 
             if (pageJs.CreateApiMethod != null)
             {
@@ -1592,10 +1576,7 @@ namespace Generator.UI.WF
                     PageXml = pageXml,
                     StaticMethods = ComboBoxStaticMethod()
                 };
-                if (gridMethod.CreateApiMethod == null)
-                {
-                    pageJs.CreateApiMethod = Service1Create();
-                }
+                if (gridMethod.CreateApiMethod == null) pageJs.CreateApiMethod = Service1Create();
 
                 if (gridMethod.UpdateApiMethod == null) pageJs.UpdateApiMethod = Service2Create();
 
@@ -1658,10 +1639,7 @@ namespace Generator.UI.WF
             var xmlns = "http://schemas.microsoft.com/developer/msbuild/2003";
             //Xmlns attribute siliniyor
             var file = File.ReadAllText(xmlFile);
-            if (file.IndexOf(Path.Combine(basePath,path))!=-1)
-            {
-                return;
-            }
+            if (file.IndexOf(Path.Combine(basePath, path)) != -1) return;
             var indexXmlns = file.IndexOf("xmlns");
             if (indexXmlns < 100 && indexXmlns != -1)
             {
@@ -1680,10 +1658,10 @@ namespace Generator.UI.WF
             attribute.Value = Path.Combine(basePath, path);
             element.Attributes.Append(attribute);
             nodeList.Add(element);
-            var basePathSelect = nodeList.Where(p => p.Attributes[0].Value.Contains(basePath)==true).ToList();
+            var basePathSelect = nodeList.Where(p => p.Attributes[0].Value.Contains(basePath) == true).ToList();
 
 
-            if (basePathSelect == null || basePathSelect.Count<=0)
+            if (basePathSelect == null || basePathSelect.Count <= 0)
             {
                 MessageBox.Show("Lütfen tek seferlik enerate ettiğiniz projeyi existing ediniz");
             }
@@ -1692,9 +1670,9 @@ namespace Generator.UI.WF
                 basePathSelect = basePathSelect.OrderBy(p => p.Attributes[0].Value).ToList();
 
                 var elementIndex = basePathSelect.IndexOf(element);
-                if (elementIndex==basePathSelect.Count-1)
+                if (elementIndex == basePathSelect.Count - 1)
                 {
-                    var refChild = basePathSelect[elementIndex -1];
+                    var refChild = basePathSelect[elementIndex - 1];
                     list.InsertAfter(element, refChild);
                 }
                 else
@@ -1702,9 +1680,10 @@ namespace Generator.UI.WF
                     var refChild = basePathSelect[elementIndex + 1];
                     list.InsertBefore(element, refChild);
                 }
-              
+
                 doc.Save(xmlFile);
             }
+
             var attribute1 = doc.CreateAttribute("xmlns");
             attribute1.Value = xmlns;
             root.Attributes.Append(attribute1);
@@ -2255,10 +2234,7 @@ namespace Generator.UI.WF
                 EventName = eventName,
                 Content = content
             });
-            if (Events.All(p => p.EventName != eventName))
-            {
-                DgwEvent.Rows.Add(eventName);
-            }
+            if (Events.All(p => p.EventName != eventName)) DgwEvent.Rows.Add(eventName);
         }
 
         private void EventRemove(string eventName)

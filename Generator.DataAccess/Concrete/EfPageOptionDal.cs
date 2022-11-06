@@ -4,8 +4,7 @@ using Generator.Entities;
 
 namespace Generator.DataAccess.Concrete
 {
-    public class EfPageOptionDal: EfEntityRepositoryBase<PageOption,OracleContext>,IPageOptionDal
+    public class EfPageOptionDal : EfEntityRepositoryBase<PageOption, OracleContext>, IPageOptionDal
     {
-        
     }
 }

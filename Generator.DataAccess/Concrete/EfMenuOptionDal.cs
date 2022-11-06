@@ -4,8 +4,7 @@ using Generator.Entities;
 
 namespace Generator.DataAccess.Concrete
 {
-    public class EfMenuOptionDal:  EfEntityRepositoryBase<MenuOption, OracleContext>, IMenuOptionDal
+    public class EfMenuOptionDal : EfEntityRepositoryBase<MenuOption, OracleContext>, IMenuOptionDal
     {
-        
     }
 }

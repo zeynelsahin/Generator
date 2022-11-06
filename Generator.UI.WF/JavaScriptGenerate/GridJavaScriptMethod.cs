@@ -2,7 +2,7 @@
 {
     public class GridJavaScriptMethod
     {
-        public GetGridApiMethod GetGridApiMethod { get; set; } 
+        public GetGridApiMethod GetGridApiMethod { get; set; }
         public UpdateApiMethod UpdateApiMethod { get; set; }
         public CreateApiMethod CreateApiMethod { get; set; }
         public DeleteApiMethod DeleteApiMethod { get; set; }

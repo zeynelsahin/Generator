@@ -82,7 +82,7 @@ namespace Generator.UI.WF
 
         private void List()
         {
-            var result= _serviceMethodService.GetByObjectId(_objectId, _profileId);
+            var result = _serviceMethodService.GetByObjectId(_objectId, _profileId);
             var list = new List<ServiceMethod> { result };
             DgwList.DataSource = list;
         }

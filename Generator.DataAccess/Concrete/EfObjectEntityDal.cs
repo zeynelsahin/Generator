@@ -8,8 +8,9 @@ namespace Generator.DataAccess.Concrete
 {
     public class EfObjectEntityDal : EfEntityRepositoryBase<ObjectEntity, GeneratorContext>, IObjectEntityDal
     {
-        string constr =
+        private string constr =
             "User Id=CMS_APP_USER;Password=Panda1881;Data Source=(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.0.59)(PORT=1521))(CONNECT_DATA=(SID=ORCLSRV19)))";
+
         public List<string> ColumnNames(string tableName)
         {
             var response = new List<string>();
@@ -47,6 +48,7 @@ namespace Generator.DataAccess.Concrete
             con.Close();
             return response;
         }
+
         public List<string> GetTablePrimaryKeyList(string tableName)
         {
             var response = new List<string>();

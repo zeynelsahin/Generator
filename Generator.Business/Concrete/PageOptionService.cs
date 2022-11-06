@@ -20,7 +20,7 @@ namespace Generator.Business.Concrete
 
         public PageOption Get(string domainId, string environment, string applicationId, string pageId)
         {
-            var result=_pageOptionDal.Get(p =>
+            var result = _pageOptionDal.Get(p =>
                 p.DomainId == domainId && p.Environment == environment && p.ApplicationId == applicationId &&
                 p.PageId == pageId);
             return result;

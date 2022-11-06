@@ -25,7 +25,7 @@ namespace Generator.UI.WF.Models
             javaScript += " {\n";
             javaScript += "constructor(view, page, context, prop) {\n".Tab(2);
             javaScript += "super(view, page, context, prop);".Tab(3);
-            javaScript += "\n";  
+            javaScript += "\n";
             javaScript += "}".Tab(2);
             javaScript += "\n";
             javaScript += "Load() {\n".Tab(2);
@@ -67,6 +67,7 @@ namespace Generator.UI.WF.Models
                         }
                     }
                 }
+
                 if (javaScriptDateSet.Count > 0)
                 {
                     javaScript += "\n";
@@ -87,11 +88,13 @@ namespace Generator.UI.WF.Models
                     DateTimeMethod.Add(staticMethod);
                 }
             }
+
             if (ApiRequestMethods.Count > 0)
             {
                 javaScript += "this.FillCombos();".Tab(3);
                 javaScript += "\n";
             }
+
             if (GetGridApiMethod != null) javaScript += $"this.{GetGridApiMethod.MethodName}();".Tab(3);
 
             javaScript += "\n";
@@ -100,9 +103,9 @@ namespace Generator.UI.WF.Models
             {
                 javaScript += "FillCombos() {\n".Tab(2);
                 javaScript = ApiRequestMethods.Aggregate(javaScript,
-               (current, requestMethod) => current + $"this.{requestMethod.MethodName}();\n".Tab(3));
+                    (current, requestMethod) => current + $"this.{requestMethod.MethodName}();\n".Tab(3));
                 javaScript = StaticMethods.Aggregate(javaScript,
-               (current, requestMethod) => current + $"this.{requestMethod.MethodName}();\n".Tab(3));
+                    (current, requestMethod) => current + $"this.{requestMethod.MethodName}();\n".Tab(3));
                 javaScript += "}".Tab(2);
                 javaScript += "\n";
             }

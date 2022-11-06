@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
 using Generator.Business.Abstract;
 using Generator.DataAccess.Abstract;
 using Generator.Entities;
@@ -21,25 +22,86 @@ namespace Generator.Business.Concrete
             _objectEntityDal.Add(objectEntity);
         }
 
-        public List<ObjectEntity> GetAllOrFilter(string objectId = null, string profileId = null, string schemaName = null)
+        public List<ObjectEntity> GetAllOrFilter(string objectId = null, string profileId = null,
+            string schemaName = null)
         {
             var result = _objectEntityDal.GetAll();
-            if (profileId != null) result = result.Where(p => p.ProfileId == profileId).ToList();
-            if (schemaName != null) result = result.Where(p => p.SchemaName == schemaName).ToList();
-            if (objectId != null) result = result.Where(p => p.ObjectId == objectId).ToList();
+
+            // if (profileId != null) result = result.Where(p => p.ProfileId == profileId).ToList();
+            // if (schemaName != null) result = result.Where(p => p.SchemaName == schemaName).ToList();
+            // if (objectId != null) result = result.Where(p => p.ObjectId == objectId).ToList();
+            // return result;
+            if (objectId != null)
+            {
+                if (profileId != null)
+                {
+                    if (schemaName != null)
+                    {
+                        result = _objectEntityDal.GetAll(entity =>
+                            entity.ObjectId == objectId && entity.ProfileId == profileId &&
+                            entity.SchemaName == schemaName);
+                        return result;
+                    }
+
+                    result = _objectEntityDal.GetAll(entity =>
+                        entity.ObjectId == objectId && entity.ProfileId == profileId);
+                    return result;
+                }
+
+                if (schemaName != null)
+                {
+                    result = _objectEntityDal.GetAll(entity =>
+                        entity.ObjectId == objectId && entity.SchemaName == schemaName);
+
+                    return result;
+                }
+
+                result = _objectEntityDal.GetAll(entity =>
+                    entity.ObjectId == objectId);
+                return result;
+            }
+
+            //Object Id null ise
+            if (profileId != null)
+            {
+                if (schemaName != null)
+                {
+                    result = _objectEntityDal.GetAll(entity =>
+                        entity.ProfileId == profileId &&
+                        entity.SchemaName == schemaName);
+                    return result;
+                }
+
+                result = _objectEntityDal.GetAll(entity =>
+                    entity.ProfileId == profileId);
+                return result;
+            }
+
+            if (schemaName != null)
+            {
+                result = _objectEntityDal.GetAll(entity =>
+                    entity.SchemaName == schemaName);
+                return result;
+            }
+
+            result = _objectEntityDal.GetAll();
             return result;
         }
 
         public List<string> GetAllByProfileId(string profileId)
         {
-            var result = _objectEntityDal.GetAll(entity => entity.ProfileId == profileId && entity.ObjectType != "SEQUENCE").OrderBy(p => p.ObjectId)
+            var result = _objectEntityDal
+                .GetAll(entity => entity.ProfileId == profileId && entity.ObjectType != "SEQUENCE")
+                .OrderBy(p => p.ObjectId)
                 .Select(entity => entity.ObjectId).ToList();
             return result ?? null;
         }
 
         public List<string> GetAllCustomByProfileId(string profileId)
         {
-            var result = _objectEntityDal.GetAll(entity => entity.ProfileId == profileId && entity.ObjectType == "CUSTOMSQL").OrderBy(p => p.ObjectId)
+            var result = _objectEntityDal
+                .GetAll(entity => entity.ProfileId == profileId && entity.ObjectType == "CUSTOMSQL")
+                .OrderBy(p => p.ObjectId)
                 .Select(entity => entity.ObjectId).ToList();
             return result ?? null;
         }
@@ -51,13 +113,14 @@ namespace Generator.Business.Concrete
 
         public List<ObjectEntity> GetByProfileId(string profileId)
         {
-            var result = _objectEntityDal.GetAll(entity => entity.ProfileId == profileId && entity.ObjectType != "SEQUENCE");
+            var result = _objectEntityDal.GetAll(entity =>
+                entity.ProfileId == profileId && entity.ObjectType != "SEQUENCE");
             return result;
         }
 
         public List<string> GetAllObjectId()
         {
-            var result = _objectEntityDal.GetAll().Select(entity => entity.ObjectId ).Distinct().ToList();
+            var result = _objectEntityDal.GetAll().Select(entity => entity.ObjectId).Distinct().ToList();
             return result;
         }
 
@@ -85,7 +148,8 @@ namespace Generator.Business.Concrete
             try
             {
                 var result = _objectEntityDal.Get(entity =>
-                    entity.ObjectId == objectId && entity.ProfileId == profileId && entity.SchemaName == schemaName);
+                    entity.ObjectId == objectId && entity.ProfileId == profileId &&
+                    entity.SchemaName == schemaName);
                 return result.OracleText;
             }
             catch (Exception)

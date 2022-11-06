@@ -3,8 +3,7 @@ using Generator.Entities;
 
 namespace Generator.DataAccess.Abstract
 {
-    public interface IPageOptionDal: IEntityRepository<PageOption>
+    public interface IPageOptionDal : IEntityRepository<PageOption>
     {
-        
     }
 }

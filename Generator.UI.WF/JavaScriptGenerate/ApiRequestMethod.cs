@@ -5,7 +5,7 @@
         public string ParameterName { get; set; } = "";
         public Parameter Parameter { get; set; } = new Parameter();
         public string ServiceName { get; set; } = "";
-        public string ProfileId { get; set; }//for action option 
+        public string ProfileId { get; set; } //for action option 
         public string ServiceId { get; set; }
 
         public override string ToString()

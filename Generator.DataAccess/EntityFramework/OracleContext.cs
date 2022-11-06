@@ -54,7 +54,7 @@ namespace Generator.DataAccess.EntityFramework
             modelBuilder.Entity<MenuOption>().Property(s => s.Icon).HasColumnName("ICON");
             modelBuilder.Entity<MenuOption>().Property(s => s.SortId).HasColumnName("SORT_ID");
             modelBuilder.Entity<MenuOption>().Property(s => s.ValidFlag).HasColumnName("VALID_FLAG");
-            
+
             //Service Option
             modelBuilder.Entity<ServiceOption>().Property(s => s.DomainId).HasColumnName("DOMAIN_ID");
             modelBuilder.Entity<ServiceOption>().Property(s => s.Environment).HasColumnName("ENVIRONMENT");

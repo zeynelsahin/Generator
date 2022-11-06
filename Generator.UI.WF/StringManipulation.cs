@@ -150,25 +150,29 @@ namespace Generator.UI.WF
             if (index != -1) result = result[3..];
             return result;
         }
+
         public static string RemoveCreate(this string result)
         {
             var index = result.ToLower().IndexOf("create");
             if (index != -1) result = result[6..];
             return result;
         }
+
         public static string RemoveUpdate(this string result)
         {
             var index = result.ToLower().IndexOf("update");
             if (index != -1) result = result[6..];
             return result;
         }
+
         public static string RemoveBy(this string result)
         {
             var index = result.ToLower().IndexOf("by");
             if (index != -1) result = result[..index];
-            string asd = "sdf";
+            var asd = "sdf";
             return result;
         }
+
         public static string Tab(this string javaScript, int tabCount)
         {
             var javaSrciptNew = "";
@@ -211,10 +215,7 @@ namespace Generator.UI.WF
             var textNew = "";
             foreach (var c in text)
             {
-                if (c.ToString()==c.ToString().ToUpper())
-                {
-                    textNew += " ";
-                }
+                if (c.ToString() == c.ToString().ToUpper()) textNew += " ";
                 textNew += c;
             }
 

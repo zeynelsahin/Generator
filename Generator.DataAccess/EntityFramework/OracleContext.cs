@@ -9,6 +9,7 @@ namespace Generator.DataAccess.EntityFramework
         public DbSet<StringOption> StringOptions { get; set; }
         public DbSet<ServiceOption> ServiceOptions { get; set; }
         public DbSet<MenuOption> MenuOptions { get; set; }
+        public DbSet<PageOption> PageOptions { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -16,6 +17,8 @@ namespace Generator.DataAccess.EntityFramework
             modelBuilder.Entity<ActionOption>().ToTable("UX_ACTION_OPTION");
             modelBuilder.Entity<StringOption>().ToTable("UX_STRING_OPTION");
             modelBuilder.Entity<ServiceOption>().ToTable("UX_SERVICE_OPTION");
+            modelBuilder.Entity<MenuOption>().ToTable("UX_MENU_OPTION");
+            modelBuilder.Entity<PageOption>().ToTable("UX_PAGE_OPTION");
 
             //Primary Key
             modelBuilder.Entity<ActionOption>()
@@ -25,6 +28,8 @@ namespace Generator.DataAccess.EntityFramework
             modelBuilder.Entity<ServiceOption>()
                 .HasKey(o => new { o.DomainId, o.Environment, o.ServiceId });
             modelBuilder.Entity<MenuOption>().HasKey(o => new { o.DomainId, o.Environment, o.ApplicationId, o.MenuId });
+            modelBuilder.Entity<PageOption>().HasKey(o => new { o.DomainId, o.Environment, o.ApplicationId, o.PageId });
+
             //Schema
             modelBuilder.HasDefaultSchema("CMS_CFG");
 
@@ -54,6 +59,14 @@ namespace Generator.DataAccess.EntityFramework
             modelBuilder.Entity<MenuOption>().Property(s => s.Icon).HasColumnName("ICON");
             modelBuilder.Entity<MenuOption>().Property(s => s.SortId).HasColumnName("SORT_ID");
             modelBuilder.Entity<MenuOption>().Property(s => s.ValidFlag).HasColumnName("VALID_FLAG");
+            
+            //PageOption
+            modelBuilder.Entity<PageOption>().Property(s => s.DomainId).HasColumnName("DOMAIN_ID");
+            modelBuilder.Entity<PageOption>().Property(s => s.Environment).HasColumnName("ENVIRONMENT");
+            modelBuilder.Entity<PageOption>().Property(s => s.ApplicationId).HasColumnName("APPLICATION_ID");
+            modelBuilder.Entity<PageOption>().Property(s => s.PageId).HasColumnName("PAGE_ID");
+            modelBuilder.Entity<PageOption>().Property(s => s.Name).HasColumnName("NAME");
+            modelBuilder.Entity<PageOption>().Property(s => s.ValidFlag).HasColumnName("VALID_FLAG");
 
             //Service Option
             modelBuilder.Entity<ServiceOption>().Property(s => s.DomainId).HasColumnName("DOMAIN_ID");

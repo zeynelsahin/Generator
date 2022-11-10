@@ -21,7 +21,7 @@ namespace Generator.Business.Concrete
 
         public List<MenuOption> GetAll()
         {
-            return _menuOptionDal.GetAll();
+            return _menuOptionDal.GetAll(p => p.DomainId == "UXLocal");
         }
 
         public MenuOption Get(string domainId, string environment, string applicationId, string menuId)

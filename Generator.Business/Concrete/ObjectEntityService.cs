@@ -25,8 +25,7 @@ namespace Generator.Business.Concrete
         public List<ObjectEntity> GetAllOrFilter(string objectId = null, string profileId = null,
             string schemaName = null)
         {
-            var result = _objectEntityDal.GetAll();
-
+            List<ObjectEntity> result = null;
             // if (profileId != null) result = result.Where(p => p.ProfileId == profileId).ToList();
             // if (schemaName != null) result = result.Where(p => p.SchemaName == schemaName).ToList();
             // if (objectId != null) result = result.Where(p => p.ObjectId == objectId).ToList();

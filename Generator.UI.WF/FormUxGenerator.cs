@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using System.Xml;
 using Generator.Business.Abstract;
 using Generator.Business.Concrete;
+using Generator.Business.Constants;
 using Generator.DataAccess.Concrete;
 using Generator.Entities;
 using Generator.UI.WF.Elements;
@@ -47,6 +48,9 @@ namespace Generator.UI.WF
 
         private readonly IStringOptionService _stringOptionService = new StringOptionService(new EfStringOptionDal());
 
+        private readonly IMenuOptionService _menuOptionService = new MenuOptionService(new EfMenuOptionDal());
+
+        private readonly IPageOptionService _pageOptionService = new PageOptionService(new EfPageOptionDal());
         private bool isBasicElementAddView;
         private bool isComboBoxAddView;
         private bool isUserControlAddView;
@@ -272,10 +276,10 @@ namespace Generator.UI.WF
                     columnNames = _objectEntityService.GetOracleColumns(objectId);
                     break;
                 case "CUSTOMSQL":
-                {
-                    columnNames = _objectResultService.GetAll(objectId, profileId);
-                    break;
-                }
+                    {
+                        columnNames = _objectResultService.GetAll(objectId, profileId);
+                        break;
+                    }
             }
 
             return columnNames;
@@ -292,10 +296,10 @@ namespace Generator.UI.WF
                     columnNames = _objectEntityService.GetOracleColumns(objectId);
                     break;
                 case "CUSTOMSQL":
-                {
-                    columnNames = _objectParameterService.GetAll(objectId, profileId);
-                    break;
-                }
+                    {
+                        columnNames = _objectParameterService.GetAll(objectId, profileId);
+                        break;
+                    }
             }
 
             return columnNames;
@@ -341,56 +345,31 @@ namespace Generator.UI.WF
             if (CbxObjectId.SelectedItem != null && CbxObjectId.SelectedIndex != 0)
             {
                 if (GetObjectType()) return;
-
+                CbxStatusColor.DataSource = null;
                 ClbColumnNames.Items.Clear();
                 var columnNames = new List<string>();
-                //columnNames.Add("Hiçbiri");
+                columnNames.Add("Hiçbiri");
                 if (CbxObjectType.SelectedItem.ToString() == "TABLE")
                 {
-                    columnNames.AddRange(_objectEntityService.GetColumnsName(CbxObjectId.SelectedItem.ToString()));
-                    columnNames = columnNames.NameConfigure();
-                    columnNames.ForEach(p =>
-                    {
-                        if (p == "Hiçbiri") return;
-                        ClbColumnNames.Items.Add(p, true);
-                    });
+                    var result = _objectEntityService.GetColumnsName(CbxObjectId.SelectedItem.ToString()).NameConfigure();
+                    result.ForEach(p => columnNames.Add(p));
+                    result.ForEach(p => ClbColumnNames.Items.Add(p, true));
+
                     CbxLinkButton.DataSource = columnNames;
-                    var columnNamesCopy = new List<string>();
-                    columnNames.ForEach(s => columnNamesCopy.Add(s));
+                    var columnNamesCopy = columnNames.Select(s => s).ToList();
                     CbxStatusColor.DataSource = columnNamesCopy;
-                    if (columnNamesCopy.Contains("VALID_FLAG")) CbxStatusColor.SelectedValue = "VALID_FLAG";
+                    if (columnNamesCopy.Contains("ValidFlag")) CbxStatusColor.SelectedItem = "ValidFlag";
                 }
                 else if (CbxObjectType.SelectedItem.ToString() == "CUSTOMSQL")
                 {
                     var result = _objectResultService.GetAllByObjectId(CbxObjectId.SelectedItem.ToString(),
-                        CbxProfileId.SelectedItem.ToString());
-                    result.ForEach(result => columnNames.Add(result.ResultId));
-                    columnNames = columnNames.NameConfigure();
-                    //var parameters = _objectParameterService.GetAllByObjectId(CbxObjectId.SelectedItem.ToString(), CbxProfileId.SelectedItem.ToString());
-                    var columnNamesCopy = new List<string>();
-                    columnNames.ForEach(s => columnNamesCopy.Add(s));
-                    columnNames.ForEach(p =>
-                    {
-                        if (p == "Hiçbiri") return;
-                        ClbColumnNames.Items.Add(p, true);
-                    });
-                    //if (parameters != null)
-                    //{
-                    //    for (var i = 0; i < ClbColumnNames.Items.Count; i++)
-                    //    {
-                    //        for (var j = 0; j < parameters.Count; j++)
-                    //        {
-                    //            var name = ClbColumnNames.Items[i];
-                    //            if (name.ToString() == parameters[j].NameConfigure())
-                    //            {
-                    //                ClbColumnNames.SetItemCheckState(i, CheckState.Checked);
-                    //            }
-                    //        }
-                    //    }
-                    //}
+                        CbxProfileId.SelectedItem.ToString()).Select(p => p.ResultId).ToList().NameConfigure();
 
+                    result.ForEach(p => ClbColumnNames.Items.Add(p, true));
+                    result.ForEach(result => columnNames.Add(result));
+                    //var parameters = _objectParameterService.GetAllByObjectId(CbxObjectId.SelectedItem.ToString(), CbxProfileId.SelectedItem.ToString());
                     CbxLinkButton.DataSource = columnNames;
-                    columnNames.ForEach(s => columnNamesCopy.Add(s));
+                    var columnNamesCopy = columnNames.Select(p => p).ToList();
                     CbxStatusColor.DataSource = columnNamesCopy;
                 }
             }
@@ -451,9 +430,9 @@ namespace Generator.UI.WF
                         case "Update":
                             method.MethodName = $"Update{objectId}";
                             break;
-                        //case "Delete":
-                        //    method.MethodName = $"Delete{objectId}";
-                        //    break;
+                            //case "Delete":
+                            //    method.MethodName = $"Delete{objectId}";
+                            //    break;
                     }
 
                     method.ServiceName = $"get{objectId}";
@@ -470,27 +449,27 @@ namespace Generator.UI.WF
             switch (objectType)
             {
                 case "TABLE" when crudMethod == "Tümü":
-                {
-                    foreach (var item in CbxCrudMethod.Items)
-                        if (item.ToString() == "Get")
-                            gridJavaScriptMethod.GetGridApiMethod = GridGetApiMethod(objectId);
-                        else if (item.ToString() == "GetByPrimaryKey")
-                            gridJavaScriptMethod.GetGridApiMethod = GridGetByPrimaryKeyApiMethod(objectId);
-                        else if (item.ToString() == "GetByValidFlag")
-                            gridJavaScriptMethod.GetGridApiMethod = GridGetByValidFlagApiMethod(objectId);
-                        else if (item.ToString() == "Create")
-                            gridJavaScriptMethod.CreateApiMethod = GridCreateApiMethod(objectId);
-                        else if (item.ToString() == "Modify")
-                            gridJavaScriptMethod.UpdateApiMethod = GridUpdateApiMethod(objectId);
-                        else if (item.ToString() == "Delete") MessageBox.Show("Delete Metodu Boş");
+                    {
+                        foreach (var item in CbxCrudMethod.Items)
+                            if (item.ToString() == "Get")
+                                gridJavaScriptMethod.GetGridApiMethod = GridGetApiMethod(objectId);
+                            else if (item.ToString() == "GetByPrimaryKey")
+                                gridJavaScriptMethod.GetGridApiMethod = GridGetByPrimaryKeyApiMethod(objectId);
+                            else if (item.ToString() == "GetByValidFlag")
+                                gridJavaScriptMethod.GetGridApiMethod = GridGetByValidFlagApiMethod(objectId);
+                            else if (item.ToString() == "Create")
+                                gridJavaScriptMethod.CreateApiMethod = GridCreateApiMethod(objectId, "TABLE", profileId, objectType);
+                            else if (item.ToString() == "Modify")
+                                gridJavaScriptMethod.UpdateApiMethod = GridUpdateApiMethod(objectId, "TABLE", profileId, objectType);
+                            else if (item.ToString() == "Delete") MessageBox.Show("Delete Metodu Boş");
 
-                    break;
-                }
+                        break;
+                    }
                 case "TABLE" when crudMethod == "Create":
-                    gridJavaScriptMethod.CreateApiMethod = GridCreateApiMethod(objectId);
+                    gridJavaScriptMethod.CreateApiMethod = GridCreateApiMethod(objectId, "TABLE", profileId, objectType);
                     break;
                 case "TABLE" when crudMethod == "Modify":
-                    gridJavaScriptMethod.UpdateApiMethod = GridUpdateApiMethod(objectId);
+                    gridJavaScriptMethod.UpdateApiMethod = GridUpdateApiMethod(objectId, "TABLE", profileId, objectType);
                     break;
                 case "TABLE" when crudMethod == "Get":
                     gridJavaScriptMethod.GetGridApiMethod = GridGetApiMethod(objectId);
@@ -502,23 +481,23 @@ namespace Generator.UI.WF
                     gridJavaScriptMethod.GetGridApiMethod = GridGetByValidFlagApiMethod(objectId);
                     break;
                 case "CUSTOMSQL":
-                {
-                    if (objectId.ToLower().Contains("create"))
                     {
-                        gridJavaScriptMethod.CreateApiMethod = GridCreateApiMethod(objectId);
-                    }
-                    else if (objectId.ToLower().Contains("update"))
-                    {
-                        gridJavaScriptMethod.UpdateApiMethod = GridUpdateApiMethod(objectId);
-                    }
-                    else
-                    {
-                        var get = GetGridApiMethodCustomSql(objectId, profileId);
-                        gridJavaScriptMethod.GetGridApiMethod = get;
-                    }
+                        if (objectId.ToLower().Contains("create"))
+                        {
+                            gridJavaScriptMethod.CreateApiMethod = GridCreateApiMethod(objectId, "CUSTOM_SQL", profileId,objectType);
+                        }
+                        else if (objectId.ToLower().Contains("update"))
+                        {
+                            gridJavaScriptMethod.UpdateApiMethod = GridUpdateApiMethod(objectId, "CUSTOM_SQL", profileId, objectType);
+                        }
+                        else
+                        {
+                            var get = GetGridApiMethodCustomSql(objectId, profileId);
+                            gridJavaScriptMethod.GetGridApiMethod = get;
+                        }
 
-                    break;
-                }
+                        break;
+                    }
             }
 
             var serviceId = GetServiceId(profileId);
@@ -551,7 +530,8 @@ namespace Generator.UI.WF
                 ServiceName = objectId.CamelCaseConfigure(),
                 ParameterName = objectId.NameConfigure() + "Param",
                 ResultName = objectId.NameConfigure() + "Result",
-                ProfileId = profileId
+                ProfileId = profileId,
+                CrudType = "CUSTOM_SQL"
             };
             var parameters = _objectParameterService.GetAllByObjectId(objectId,
                 profileId);
@@ -568,7 +548,8 @@ namespace Generator.UI.WF
                 ServiceName = objectId.CamelCaseConfigure(),
                 ParameterName = objectId.NameConfigure() + "Param",
                 ResultName = objectId.NameConfigure() + "Result",
-                ProfileId = profileId
+                ProfileId = profileId,
+                CrudType = "CUSTOM_SQL"
             };
             var parameters = _objectParameterService.GetAllByObjectId(objectId,
                 profileId);
@@ -585,7 +566,8 @@ namespace Generator.UI.WF
                 ServiceName = objectId.CamelCaseConfigure(),
                 ParameterName = objectId.NameConfigure() + "Param",
                 PropName = objectId.NameConfigure().GridNameConfig() + "Grid",
-                ResultName = objectId.NameConfigure() + "Result"
+                ResultName = objectId.NameConfigure() + "Result",
+                CrudType = "CUSTOM_SQL"
             };
             var parameters = _objectParameterService.GetAllByObjectId(objectId,
                 profileId);
@@ -599,10 +581,11 @@ namespace Generator.UI.WF
             var get = new GetGridApiMethod
             {
                 MethodName = "Fill" + objectId.NameConfigure() + "List",
-                ServiceName = objectId.CamelCaseConfigure(),
+                ServiceName = ("get_" + objectId).CamelCaseConfigure(),
                 PropName = objectId.NameConfigure() + "Grid",
                 ParameterName = objectId.NameConfigure() + "Request",
-                ResultName = objectId.NameConfigure() + "Result"
+                ResultName = objectId.NameConfigure() + "Result",
+                CrudType = "TABLE"
             };
             return get;
         }
@@ -612,15 +595,16 @@ namespace Generator.UI.WF
             var get = new GetGridApiMethod
             {
                 MethodName = "Fill" + objectId.NameConfigure() + "List",
-                ServiceName = objectId.CamelCaseConfigure(),
+                ServiceName = ("get_" + objectId).CamelCaseConfigure(),
                 PropName = objectId.NameConfigure() + "Grid",
                 // ParameterName = objectId.NameConfigure() + "Request",
-                ResultName = objectId.NameConfigure()
+                ResultName = objectId.NameConfigure(),
+                CrudType = "TABLE"
             };
             var primaryKey = _objectEntityService.GetTablePrimaryKeyList(objectId);
             if (primaryKey.Count != 0)
                 get.Parameter.Params.Add(new Param
-                    { Key = primaryKey[0].NameConfigure(), Value = primaryKey[0].NameConfigure() });
+                { Key = primaryKey[0].NameConfigure(), Value = primaryKey[0].NameConfigure() });
             return get;
         }
 
@@ -629,45 +613,48 @@ namespace Generator.UI.WF
             var get = new GetGridApiMethod
             {
                 MethodName = "Fill" + objectId.NameConfigure() + "List",
-                ServiceName = objectId.CamelCaseConfigure(),
+                ServiceName = ("get_" + objectId).CamelCaseConfigure(),
                 PropName = objectId.NameConfigure() + "Grid",
                 // ParameterName = objectId.NameConfigure() + "Request",
-                ResultName = objectId.NameConfigure()
+                ResultName = objectId.NameConfigure(),
+                CrudType = "TABLE"
             };
             get.Parameter.Params.Add(new Param { Key = "ValidFlag", Value = "ValidFlag" });
             return get;
         }
 
-        private CreateApiMethod GridCreateApiMethod(string objectId)
+        private CreateApiMethod GridCreateApiMethod(string objectId, string crudType,string profileId,string objectType)
         {
             var create = new CreateApiMethod
             {
                 MethodName = "Create" + objectId.NameConfigure(),
-                ServiceName = ("Create" + objectId).CamelCaseConfigure(),
-                ParameterName = objectId.NameConfigure()
+                ServiceName = ("create_" + objectId).CamelCaseConfigure(),
+                ParameterName = objectId.NameConfigure(),
+                CrudType = crudType,
+                ResultName = ("create_" + objectId).NameConfigure()
             };
-            GridJavaScriptParams(create);
+            var result = ParameterList(objectId, profileId, objectType);
+            var parameters = result.Select(p => p.Name.NameConfigure()).ToList().DarkListRemove();
+            JavaScriptParams(create, parameters);
             return create;
         }
 
-        private UpdateApiMethod GridUpdateApiMethod(string objectId)
+        private UpdateApiMethod GridUpdateApiMethod(string objectId, string crudType,string profileId,string objectType)
         {
             var modify = new UpdateApiMethod
             {
                 MethodName = "Modify" + objectId.NameConfigure(),
-                ServiceName = ("Modify" + objectId).CamelCaseConfigure(),
-                ParameterName = objectId.NameConfigure()
+                ServiceName = ("Modify_" + objectId).CamelCaseConfigure(),
+                ParameterName = objectId.NameConfigure(),
+                CrudType = crudType,
+                 ResultName = ("update" + objectId).NameConfigure()
             };
-            GridJavaScriptParams(modify);
+            var result = ParameterList(objectId, profileId, objectType);
+            var parameters = result.Select(p => p.Name.NameConfigure()).ToList().DarkListRemove();
+            JavaScriptParams(modify, parameters);
             return modify;
         }
-
-        private void GridJavaScriptParams(ApiRequestMethod method)
-        {
-            foreach (var param in ClbColumnNames.CheckedItems)
-                method.Parameter.Params.Add(new Param { Key = param.ToString(), Value = param.ToString() });
-        }
-
+       
         private void JavaScriptParams(ApiRequestMethod method, IList paramList)
         {
             foreach (var param in paramList)
@@ -1476,65 +1463,62 @@ namespace Generator.UI.WF
             else if (TabMain.SelectedTab == TabGridCreate) CbxProfileId.Focus();
         }
 
-        private void PageFilesCreate(string path, string fileName, PageXml pageXml, PageJs pageJs)
+        private void XmlFileCreate(string path, string fileName, PageXml pageXml)
         {
             var xmlPath = Path.Combine(path, fileName + ".xml");
-            var jsPath = Path.Combine(path, fileName + ".xml.js");
+
+            var basePath = Path.Combine("App", CbxFolder.SelectedItem.ToString());
 
             if (File.Exists(xmlPath))
             {
                 if (CbxOverrideWriteFile.Checked)
+                {
                     File.WriteAllText(xmlPath, pageXml.ToString());
+                    ContentInclude(basePath, fileName + ".xml");
+                    CreateExportLog(Messages.XMLFileOvveride, fileName + ".xml", xmlPath);
+                }
                 else
+                {
                     File.WriteAllText(Path.Combine(path, fileName + "_Copy.xml"), pageXml.ToString());
+                    ContentInclude(basePath, fileName + "_Copy.xml");
+                    CreateExportLog(Messages.XMLCopyFileCreated, fileName + "_Copy.xml", Path.Combine(path, fileName + "_Copy.xml"));
+                }
             }
             else
             {
                 File.WriteAllText(xmlPath, pageXml.ToString());
+                ContentInclude(basePath, fileName + ".xml");
+                CreateExportLog(Messages.XMLFileCreated, fileName + ".xml", xmlPath);
             }
+        }
 
+        private void JsFileCreate(string path, string fileName, PageJs pageJs)
+        {
+            var jsPath = Path.Combine(path, fileName + ".xml.js");
+            var basePath = Path.Combine("App", CbxFolder.SelectedItem.ToString());
             if (File.Exists(jsPath))
             {
                 if (CbxOverrideWriteFile.Checked)
+                {
                     File.WriteAllText(jsPath, pageJs.ToString());
+                    ContentInclude(basePath, fileName + ".xml.js");
+                    CreateExportLog(Messages.JSFileOvveride, fileName, jsPath);
+                }
                 else
+                {
                     File.WriteAllText(Path.Combine(path, fileName + "_Copy.xml.js"), pageJs.ToString());
+                    ContentInclude(basePath, fileName + "_Copy.xml.js");
+                    CreateExportLog(Messages.JSCopyFileCreated, fileName + "_Copy.xml.js", Path.Combine(path, fileName + "_Copy.xml.js"));
+                }
             }
             else
             {
                 File.WriteAllText(jsPath, pageJs.ToString());
+                ContentInclude(basePath, fileName + ".xml.js");
+                CreateExportLog(Messages.JSFileCreated, fileName, jsPath);
             }
         }
 
-        private void PageFilesCreate(string path, string fileName, string pageXml, string pageJs)
-        {
-            var xmlPath = Path.Combine(path, fileName + ".xml");
-            var jsPath = Path.Combine(path, fileName + ".xml.js");
-
-            if (File.Exists(xmlPath))
-            {
-                if (CbxOverrideWriteFile.Checked)
-                    File.WriteAllText(xmlPath, pageXml);
-                else
-                    File.WriteAllText(Path.Combine(path, fileName + "_Copy.xml"), pageXml);
-            }
-            else
-            {
-                File.WriteAllText(xmlPath, pageXml);
-            }
-
-            if (File.Exists(jsPath))
-            {
-                if (CbxOverrideWriteFile.Checked)
-                    File.WriteAllText(jsPath, pageJs);
-                else
-                    File.WriteAllText(Path.Combine(path, fileName + "_Copy.xml.js"), pageJs);
-            }
-            else
-            {
-                File.WriteAllText(jsPath, pageJs);
-            }
-        }
 
         private PageXml PageXmlCreate()
         {
@@ -1549,6 +1533,7 @@ namespace Generator.UI.WF
                 return pageXml;
             }
 
+            CreateExportLog(Messages.CbxXMLtNotChecked);
             return null;
         }
 
@@ -1556,10 +1541,29 @@ namespace Generator.UI.WF
         {
             if (CbxJavaScriptExport.Checked)
             {
-                if (CbxObjectId.SelectedItem == null) return null;
-                if (CbxProfileId.SelectedItem == null) return null;
-                if (CbxObjectType.SelectedItem == null) return null;
-                if (string.IsNullOrWhiteSpace(CbxCrudMethod.Text)) return null;
+                if (CbxObjectId.SelectedItem == null)
+                {
+                    CreateExportLog(Messages.ObjectIdNotSelected);
+                    return null;
+                }
+
+                if (CbxProfileId.SelectedItem == null)
+                {
+                    CreateExportLog(Messages.ProfileIdNotSelected);
+                    return null;
+                }
+
+                if (CbxObjectType.SelectedItem == null)
+                {
+                    CreateExportLog(Messages.ObjectTypeNull);
+                    return null;
+                }
+
+                if (string.IsNullOrWhiteSpace(CbxCrudMethod.Text))
+                {
+                    CreateExportLog(Messages.CrudMethodNull);
+                    return null;
+                }
 
                 var gridMethod = GridJavaScript(CbxObjectId.SelectedItem.ToString(),
                     CbxProfileId.SelectedItem.ToString(),
@@ -1583,55 +1587,60 @@ namespace Generator.UI.WF
                 return pageJs;
             }
 
+            CreateExportLog(Messages.CbxJavaSricptNotChecked);
             return null;
         }
 
         private void BtnExport_Click(object sender, EventArgs e)
         {
+            DgwAction.Rows.Clear();
+            if (string.IsNullOrWhiteSpace(TbxPageName.Text))
+            {
+                CreateExportLog(Messages.PageNameNull);
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(TbxPath.Text))
+            {
+                CreateExportLog(Messages.PathNull);
+                return;
+            }
+
+            RtbxFileExportLog.Text += "\n";
+            CreateExportLog("******** XML LOG START ********");
             var pageXml = PageXmlCreate();
+
+            if (pageXml == null)
+            {
+                CreateExportLog(Messages.XMLFileNotCreated);
+            }
+            else
+            {
+                XmlFileCreate(TbxPath.Text, TbxPageName.Text, pageXml);
+                StringOption(pageXml);
+            }
+
+            CreateExportLog("******** XML LOG END ********");
+            RtbxFileExportLog.Text += "\n";
+            CreateExportLog("******** JS LOG START ********");
             var pageJs = PageJsCreate(pageXml);
-            //var pageJsString = pageJs.ToString().Trim();
-            //var modify = "";
-            //for (int i = 0; i < pageJsString.Length - 1; i++)
-            //{
-            //    if ((pageJsString[i].ToString() != "}"))
-            //    {
 
-            //        modify += pageJsString[i];
-            //        if (pageJsString[i].ToString() + pageJsString[i].ToString() == "\n")
-            //        {
-            //            modify += tab;
-            //        }
+            if (pageJs == null)
+            {
+                CreateExportLog(Messages.JSFileNotCreated);
+            }
+            else
+            {
+                JsFileCreate(TbxPath.Text, TbxPageName.Text, pageJs);
+                Actions(pageJs);
+            }
 
-            //    }
-            //    if (pageJsString[i].ToString() == "{")
-            //    {
-
-            //        tab += "    ";
-            //        modify += tab;
-
-            //    }
-            //    else if (pageJsString[i + 1].ToString() == "}")
-            //    {
-            //        tab = tab[3..];
-            //        modify += tab;
-            //        modify += pageJsString[i];
-            //    }
-            //}
-
-            if (pageJs == null) return;
-            if (string.IsNullOrWhiteSpace(TbxPageName.Text) || string.IsNullOrWhiteSpace(TbxPath.Text)) return;
-            PageFilesCreate(TbxPath.Text, TbxPageName.Text, pageXml, pageJs);
-            //PageFilesCreate(TbxPath.Text, TbxPageName.Text, pageXml.ToString(), modify);
-
-            var basePath = Path.Combine("App", CbxFolder.SelectedItem.ToString());
-            ContentInclude(basePath, TbxPageName.Text + ".xml");
-            ContentInclude(basePath, TbxPageName.Text + ".xml.js");
-
-            Actions(pageJs);
-            StringOption(pageXml);
+            CreateExportLog("******** JS LOG END ********");
             PageOption();
+            LoadMenuView();
+            MenuOption();
         }
+
 
         private void ContentInclude(string basePath, string path)
         {
@@ -1712,7 +1721,7 @@ namespace Generator.UI.WF
             DgwPage.Rows.Clear();
             if (CbxFolder.SelectedItem == null)
             {
-                MessageBox.Show("PageOption için Applicaiton Id Applicaiton Folder dan geliyor boş olamaz");
+                MessageBox.Show("PageOption için ApplicaitonId gerekli. Applicaiton Folder dan geliyor boş olamaz");
                 return;
             }
 
@@ -1722,6 +1731,54 @@ namespace Generator.UI.WF
                 TbxPageName.Text, '1');
             DgwPage.Rows.Add("EVFBUX", "Development", CbxFolder.SelectedItem.ToString(), TbxPageName.Text,
                 TbxPageName.Text, '1');
+        }
+
+        private void MenuOption()
+        {
+            DgwMenu.Rows.Clear();
+            if (CbxFolder.SelectedItem == null)
+            {
+                MessageBox.Show("Menu Option için ApplicaitonId  gerekli. Applicaiton Folder dan geliyor boş olamaz");
+                return;
+            }
+
+            DgwMenu.Rows.Add("EVUX", "Development", CbxFolder.SelectedItem.ToString(), TbxPageName.Text, "", TbxPageName.Text, TbxPageName.Text.TitleConfig());
+            DgwMenu.Rows.Add("UXLocal", "Development", CbxFolder.SelectedItem.ToString(), TbxPageName.Text, "", TbxPageName.Text, TbxPageName.Text.TitleConfig());
+            DgwMenu.Rows.Add("EVFBUX", "Development", CbxFolder.SelectedItem.ToString(), TbxPageName.Text, "", TbxPageName.Text, TbxPageName.Text.TitleConfig());
+        }
+
+        private void LoadMenuView()
+        {
+            MenuView.Nodes.Clear();
+            var menuViewList = new List<TreeNode>();
+            var allMenu = _menuOptionService.GetAll().OrderBy(p => p.MenuId);
+            var baseMenuList = allMenu.Where(p => p.ParentMenuId == null).ToList();
+            baseMenuList.ForEach(p =>
+            {
+                var node = new TreeNode() { Text = p.Name, Name = p.MenuId };
+                MenuView.Nodes.Add(node);
+                menuViewList.Add(node);
+            });
+
+            var notBaseMenuList = allMenu.Where(p => p.ParentMenuId != null).ToList();
+
+            var addMenuList = new List<TreeNode>();
+            while (notBaseMenuList.Count != 0)
+            {
+                for (var index = 0; index < notBaseMenuList.Count; index++)
+                {
+                    var a = notBaseMenuList[index];
+                    foreach (var t in menuViewList)
+                    {
+                        if (a.ParentMenuId != t.Name) continue;
+                        var node = new TreeNode() { Text = a.Name, Name = a.MenuId };
+                        t.Nodes.Add(node);
+                        menuViewList.Add(node);
+                        notBaseMenuList.RemoveAt(index);
+                        break;
+                    }
+                }
+            }
         }
 
         private void CbxContentJSProfileId_SelectedIndexChanged(object sender, EventArgs e)
@@ -2029,6 +2086,7 @@ namespace Generator.UI.WF
                 CbxFolder.Items.Add(Path.GetFileName(file));
                 CbxActionOptionApplicationId.Items.Add(Path.GetFileName(file));
                 CbxPageOptionApplication.Items.Add(Path.GetFileName(file));
+                CbxMenuOptionApplication.Items.Add(Path.GetFileName(file));
             }
 
             CbxFolder.SelectedIndex = 0;
@@ -2041,6 +2099,7 @@ namespace Generator.UI.WF
             TbxPath.Text = Path.Combine(TbxPath.Text, CbxFolder.SelectedItem.ToString()!);
             CbxActionOptionApplicationId.SelectedItem = CbxFolder.SelectedItem;
             CbxPageOptionApplication.SelectedItem = CbxFolder.SelectedItem;
+            CbxMenuOptionApplication.SelectedItem = CbxFolder.SelectedItem;
         }
 
         private void BtnPath_Click(object sender, EventArgs e)
@@ -2140,7 +2199,7 @@ namespace Generator.UI.WF
 
         private CreateApiMethod Service1Create()
         {
-            if (CbxService1ObjectId.SelectedItem == null || CbxService1ObjectId.Visible == false) return null;
+            if (CbxService1ObjectId.SelectedItem == null) return null;
 
             var service1 = CreateGridApiMethodCustomSql(CbxService1ObjectId.SelectedItem.ToString(),
                 CbxService1ProfileId.SelectedItem.ToString());
@@ -2150,7 +2209,7 @@ namespace Generator.UI.WF
 
         private UpdateApiMethod Service2Create()
         {
-            if (CbxService2ObjectId.SelectedItem == null || CbxService2ObjectId.Visible == false) return null;
+            if (CbxService2ObjectId.SelectedItem == null) return null;
             var service2 = UpdateGridApiMethodCustomSql(CbxService2ObjectId.SelectedItem.ToString(),
                 CbxService2ProfileId.SelectedItem.ToString());
             service2.ServiceId = GetServiceId(service2.ProfileId);
@@ -2255,29 +2314,45 @@ namespace Generator.UI.WF
             ServiceMethodDisable();
         }
 
-        private void BtnSringList_Click(object sender, EventArgs e)
+        private void BtnStringList_Click(object sender, EventArgs e)
         {
-            GetSringOptionList();
+            GetStringOptionList();
         }
 
-        private void GetSringOptionList()
+        private void GetStringOptionList()
         {
             if (DgwString.Rows.Count == 0) return;
             var stringOptions = new List<StringOption>();
             for (var i = 0; i < DgwString.Rows.Count - 1; i++)
             {
                 var row = DgwString.Rows[i];
-                var lauguageId = row.Cells[0].Value.ToString();
+                var languageId = row.Cells[0].Value.ToString();
                 var keyId = row.Cells[1].Value.ToString();
-                var result = _stringOptionService.Get(lauguageId, keyId);
+                var result = _stringOptionService.Get(languageId, keyId);
                 stringOptions.Add(result);
             }
 
             DgwStringResult.DataSource = stringOptions;
         }
 
+        private void CreateExportLog(string message)
+        {
+            RtbxFileExportLog.Text += "Date time: " + DateTime.Now.ToString("MM/dd HH:mm") + "  Message : " + message + "\n";
+        }
+
+        private void CreateExportLog(string message, string pageName)
+        {
+            RtbxFileExportLog.Text += "Date time: " + DateTime.Now.ToString("MM/dd HH:mm") + " + Message : " + message + "\n" + "  PageName : " + pageName;
+        }
+
+        private void CreateExportLog(string message, string pageName, string path)
+        {
+            RtbxFileExportLog.Text += "Date time: " + DateTime.Now.ToString("MM/dd HH:mm") + "  Message : " + message + "  PageName : " + pageName + "  Path : " + path + "\n";
+        }
+
         private void BtnAddStrings_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(TbxTitle.Text)) return;
             for (var i = 0; i < DgwString.Rows.Count - 1; i++)
             {
                 var row = DgwString.Rows[i];
@@ -2291,6 +2366,113 @@ namespace Generator.UI.WF
                 if (stringOptionIfCheck != null) return;
                 _stringOptionService.Add(stringOption);
             }
+        }
+
+        private void BtnClearLog_Click(object sender, EventArgs e)
+        {
+            RtbxFileExportLog.Text = null;
+        }
+
+        private void BtnMenuAdd_Click(object sender, EventArgs e)
+        {
+            for (var i = 0; i < DgwMenu.Rows.Count - 1; i++)
+            {
+                var row = DgwMenu.Rows[i];
+                var menuOption = new MenuOption()
+                {
+                    DomainId = row.Cells[0].Value.ToString(),
+                    Environment = row.Cells[1].Value.ToString(),
+                    ApplicationId = row.Cells[2].Value.ToString(),
+                    MenuId = row.Cells[3].Value.ToString(),
+                    ParentMenuId = row.Cells[4].Value.ToString(),
+                    PageId = row.Cells[5].Value.ToString(),
+                    Name = row.Cells[6].Value.ToString(),
+                    Icon = null,
+                    SortId = 1,
+                    ValidFlag = '1'
+                };
+                var menuOptionCheck = _menuOptionService.Get(menuOption.DomainId, menuOption.Environment, menuOption.ApplicationId, menuOption.MenuId);
+                if (menuOptionCheck != null) return;
+                _menuOptionService.Add(menuOption);
+            }
+            LoadMenuView();
+        }
+
+        private void BtnMenuResult_Click(object sender, EventArgs e)
+        {
+            GetMenuOptions();
+        }
+
+        private void GetMenuOptions()
+        {
+            if (DgwMenu.Rows.Count == 0) return;
+            var menuOption = new List<MenuOption>();
+            for (var i = 0; i < DgwMenu.Rows.Count - 1; i++)
+            {
+                var row = DgwMenu.Rows[i];
+                var domainId = row.Cells[0].Value.ToString();
+                var environment = row.Cells[1].Value.ToString();
+                var applicationId = row.Cells[2].Value.ToString();
+                var menuId = row.Cells[3].Value.ToString();
+
+                var result = _menuOptionService.Get(domainId, environment, applicationId, menuId);
+                menuOption.Add(result);
+            }
+
+            DgwMenuResult.DataSource = menuOption;
+        }
+
+        private void MenuView_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+            var selectedMenu = MenuView.SelectedNode.Name;
+            if (selectedMenu == null) return;
+            for (var i = 0; i < DgwMenu.Rows.Count - 1; i++)
+            {
+                var row = DgwMenu.Rows[i];
+                row.Cells[4].Value = selectedMenu;
+            }
+        }
+
+        private void BtnPageAdd_Click(object sender, EventArgs e)
+        {
+            for (var i = 0; i < DgwPage.Rows.Count - 1; i++)
+            {
+                var row = DgwPage.Rows[i];
+                var pageOption = new PageOption()
+                {
+                    DomainId = row.Cells[0].Value.ToString(),
+                    Environment = row.Cells[1].Value.ToString(),
+                    ApplicationId = row.Cells[2].Value.ToString(),
+                    PageId = row.Cells[3].Value.ToString(),
+                    Name = row.Cells[4].Value.ToString(),
+                    ValidFlag = '1'
+                };
+                var pageOptionCheck = _pageOptionService.Get(pageOption.DomainId, pageOption.Environment, pageOption.ApplicationId, pageOption.PageId);
+                if (pageOptionCheck != null) return;
+                _pageOptionService.Add(pageOption);
+            }
+        }
+
+        private void BtnPageList_Click(object sender, EventArgs e)
+        {
+            GetPageOptions();
+        }
+        private void GetPageOptions()
+        {
+            if (DgwPage.Rows.Count == 0) return;
+            var pageOption = new List<PageOption>();
+            for (var i = 0; i < DgwPage.Rows.Count - 1; i++)
+            {
+                var row = DgwPage.Rows[i];
+                var domainId = row.Cells[0].Value.ToString();
+                var environment = row.Cells[1].Value.ToString();
+                var applicationId = row.Cells[2].Value.ToString();
+                var pageId = row.Cells[3].Value.ToString();
+                var result = _pageOptionService.Get(domainId, environment, applicationId, pageId);
+                pageOption.Add(result);
+            }
+
+            DgwPageResult.DataSource = pageOption;
         }
     }
 }

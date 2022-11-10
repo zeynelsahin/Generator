@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Generator.UI.WF
 {
@@ -220,6 +221,12 @@ namespace Generator.UI.WF
             }
 
             return textNew;
+        }
+
+        public static List<string> DarkListRemove(this List<string> list)
+        {
+            var dartList = new List<string>(){ "InsertDate","InsertUserId","InsertTokenId","UpdateDate","UpdateUserId","UpdateTokenId" };
+            return list.Where(p => !dartList.Contains(p)).ToList();
         }
     }
 }

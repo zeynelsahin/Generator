@@ -34,7 +34,7 @@ namespace Generator.UI.WF
             if (profile != null)
             {
                 Hide();
-                var formHomeScreen = new FormObjectAddUpdate(profile, new ObjectEntityService(new EfObjectEntityDal()));
+                var formHomeScreen = new FormObjectAddUpdate(profile);
                 formHomeScreen.Show();
             }
             else

@@ -70,7 +70,6 @@ namespace Generator.UI.WF.Models
 
                 if (javaScriptDateSet.Count > 0)
                 {
-                    javaScript += "\n";
                     javaScript += "this.SetDateValue();".Tab(3);
                     javaScript += "\n";
                     const string dateFunc = "const d = new Date()";
@@ -101,6 +100,7 @@ namespace Generator.UI.WF.Models
             javaScript += "}".Tab(2);
             if (ApiRequestMethods.Count > 0)
             {
+                javaScript += "\n";
                 javaScript += "FillCombos() {\n".Tab(2);
                 javaScript = ApiRequestMethods.Aggregate(javaScript,
                     (current, requestMethod) => current + $"this.{requestMethod.MethodName}();\n".Tab(3));

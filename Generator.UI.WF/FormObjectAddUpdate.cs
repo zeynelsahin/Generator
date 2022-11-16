@@ -5,35 +5,39 @@ using System.Linq;
 using System.Text.Json;
 using System.Windows.Forms;
 using Generator.Business.Abstract;
-using Generator.Business.Constants;
+using Generator.Business.Concrete;
+using Generator.DataAccess.Concrete;
 using Generator.Entities;
 
 namespace Generator.UI.WF
 {
     public partial class FormObjectAddUpdate : Form
     {
-        private readonly IObjectEntityService _objectEntityService;
-        //private IObjectEntityService _objectEntityService = new ObjectEntityService(new EfObjectEntityDal());
+        private IObjectEntityService _objectEntityService = new ObjectEntityService(new EfObjectEntityDal());
 
         private readonly Profile _profile;
 
         private bool canFilter;
 
-        public FormObjectAddUpdate(Profile profile, IObjectEntityService objectEntityService)
+        public FormObjectAddUpdate(Profile profile)
         {
             _profile = profile;
-            _objectEntityService = objectEntityService;
             InitializeComponent();
         }
 
         private void FillObjectId()
         {
             CbxOjectId.DataSource = null;
+
+            string profileId = null;
+            string schemaName = null;
+            if (CbxProfileId.SelectedIndex != -1 && CbxProfileId.SelectedIndex != 0) profileId = CbxProfileId.SelectedItem.ToString();
+            if (CbxSchemaName.SelectedIndex != -1 && CbxSchemaName.SelectedIndex != 0) schemaName = CbxSchemaName.SelectedItem.ToString();
             var objectIdList = new List<string>
             {
                 "Hiçbiri"
             };
-            var result = _objectEntityService.GetAllObjectId();
+            var result = _objectEntityService.GetAllOrFilter(null, profileId, schemaName).Select(p => p.ObjectId).ToList();
             objectIdList.AddRange(result);
             CbxOjectId.DataSource = objectIdList;
         }
@@ -61,46 +65,7 @@ namespace Generator.UI.WF
         private void FillProfile()
         {
             var objectEntity = _profile.ObjectEntity;
-            TbxValidFlag.Text = objectEntity.ValidFlag.ToString();
-            TbxGenerateUIFlag.Text = objectEntity.GenerateUIFlag.ToString();
-            TbxUIPathSuffix.Text = objectEntity.UIPathSuffix;
-            TbxObjectId.Text = objectEntity.ObjectId;
-            CbxObjectType.SelectedItem = objectEntity.ObjectType;
-            TbxProfileId.Text = objectEntity.ProfileId;
-            TbxRepositoryName.Text = objectEntity.RepositoryName;
-            TbxSchemaName.Text = objectEntity.SchemaName;
-            TbxOracleSchemaName.Text = objectEntity.OracleSchemaName;
-            TbxText.Text = objectEntity.Text;
-            TbxOracleText.Text = objectEntity.OracleText;
-            TbxResultCollectionFlag.Text = objectEntity.ResultCollectionFlag.ToString();
-            TbxSpcallFlag.Text = objectEntity.SpcallFlag.ToString();
-            TbxIgnoreDefaultCollumnsFlag.Text = objectEntity.IgnoreDefaultColumnsFlag.ToString();
-            TbxLocalTransactionFlag.Text = objectEntity.LocalTransactionFlag.ToString();
-            TbxCustomPagedFlag.Text = objectEntity.CustomPagedFlag.ToString();
-        }
 
-        private ObjectEntity NewObjectEntity()
-        {
-            var objectEntity = new ObjectEntity
-            {
-                ValidFlag = Convert.ToChar(TbxValidFlag.Text),
-                GenerateUIFlag = Convert.ToChar(TbxGenerateUIFlag.Text),
-                UIPathSuffix = TbxUIPathSuffix.Text,
-                ObjectId = TbxObjectId.Text,
-                ObjectType = CbxObjectType.SelectedItem.ToString(),
-                ProfileId = TbxProfileId.Text,
-                RepositoryName = TbxRepositoryName.Text,
-                SchemaName = TbxSchemaName.Text,
-                OracleSchemaName = TbxOracleSchemaName.Text,
-                Text = TbxText.Text,
-                OracleText = TbxOracleText.Text,
-                ResultCollectionFlag = Convert.ToChar(TbxResultCollectionFlag.Text),
-                SpcallFlag = Convert.ToChar(TbxSpcallFlag.Text),
-                IgnoreDefaultColumnsFlag = Convert.ToChar(TbxIgnoreDefaultCollumnsFlag.Text),
-                LocalTransactionFlag = Convert.ToChar(TbxLocalTransactionFlag.Text),
-                CustomPagedFlag = Convert.ToChar(TbxCustomPagedFlag.Text)
-            };
-            return objectEntity;
         }
 
         private void FormObjectAddUpdate_Load(object sender, EventArgs e)
@@ -118,28 +83,13 @@ namespace Generator.UI.WF
             return result;
         }
 
-        private void BtnEkle_Click(object sender, EventArgs e)
-        {
-            var objectEntity = NewObjectEntity();
-            var objectExists = CheckIfObjectExists(objectEntity.ObjectId);
-
-            if (objectExists) LblSonuc.Text = "Sonuç : " + Messages.ObjectIdAlreadyExists;
-
-            try
-            {
-                _objectEntityService.Add(objectEntity);
-            }
-            catch (Exception)
-            {
-            }
-        }
 
         public void DatagridLabelSize() //datagridview in boyutunu ayarlar
         {
             var height = 41;
             foreach (DataGridViewRow dr in DgwObject.Rows) height += dr.Height;
-            if (height > PanelPresentation.Height - 130)
-                DgwObject.Height = PanelPresentation.Height - 130;
+            if (height > PanelPresentation.Height - 150)
+                DgwObject.Height = PanelPresentation.Height - 150;
             else
                 DgwObject.Height = height;
             LblAdet.Top = DgwObject.Bottom + 10;
@@ -157,11 +107,6 @@ namespace Generator.UI.WF
 
         private void FormObjectAddUpdate_SizeChanged(object sender, EventArgs e)
         {
-            var width = PanelTop.Width / 4;
-            PanelFirst.Width = width;
-            PanelSecond.Width = width;
-            PanelThird.Width = width;
-            PanelFourth.Width = width;
             DatagridLabelSize();
         }
 
@@ -181,12 +126,19 @@ namespace Generator.UI.WF
 
         private void CbxOjectId_SelectedIndexChanged(object sender, EventArgs e)
         {
-            FilterObject();
+            if (CbxOjectId.SelectedIndex != -1)
+            {
+                FilterObject();
+            }
         }
 
         private void CbxProfileId_SelectedIndexChanged(object sender, EventArgs e)
         {
-            FilterObject();
+            if (CbxProfileId.SelectedIndex != -1)
+            {
+                FilterObject();
+                FillObjectId();
+            }
         }
 
         private void DgwObject_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -195,12 +147,17 @@ namespace Generator.UI.WF
 
         private void CbxSchemaName_SelectedIndexChanged(object sender, EventArgs e)
         {
-            FilterObject();
+            if (CbxSchemaName.SelectedIndex != -1)
+            {
+                FilterObject();
+                FillObjectId();
+            }
         }
 
         private void BtnParametre_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(TbxObjectId.Text))
+
+            if (!string.IsNullOrWhiteSpace(CbxObjectType.Text) && !string.IsNullOrWhiteSpace(TbxProfileId.Text) && !string.IsNullOrWhiteSpace(TbxSchemaName.Text))
             {
                 var parameterAdd =
                     new FormParameterAndResultAdd(TbxObjectId.Text, TbxProfileId.Text, TbxSchemaName.Text);
@@ -210,7 +167,7 @@ namespace Generator.UI.WF
 
         private void BtnResultAdd_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(TbxObjectId.Text))
+            if (!string.IsNullOrWhiteSpace(CbxObjectType.Text) && !string.IsNullOrWhiteSpace(TbxProfileId.Text) && !string.IsNullOrWhiteSpace(TbxSchemaName.Text))
             {
                 var formResult = new FormResultAdd(TbxObjectId.Text, TbxProfileId.Text, TbxSchemaName.Text);
                 formResult.Show();
@@ -222,8 +179,7 @@ namespace Generator.UI.WF
             TbxObjectId.Text = DgwObject.CurrentRow.Cells[3].Value.ToString();
             TbxProfileId.Text = DgwObject.CurrentRow.Cells[5].Value.ToString();
             TbxSchemaName.Text = DgwObject.CurrentRow.Cells[7].Value.ToString();
-            if (DgwObject.CurrentRow.Cells[10].Value != null)
-                TbxOracleText.Text = DgwObject.CurrentRow.Cells[10].Value.ToString();
+            CbxObjectType.SelectedItem = DgwObject.CurrentRow.Cells[4].Value.ToString();
         }
 
         private void TbxOracleText_MouseClick(object sender, MouseEventArgs e)
@@ -255,7 +211,7 @@ namespace Generator.UI.WF
 
         private void BtnServiceMethodAdd_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(TbxObjectId.Text))
+            if (!string.IsNullOrWhiteSpace(CbxObjectType.Text) && !string.IsNullOrWhiteSpace(TbxProfileId.Text) && !string.IsNullOrWhiteSpace(CbxObjectType.Text))
             {
                 var form = new FormServiceMethodAdd(TbxObjectId.Text, TbxProfileId.Text, CbxObjectType.Text);
                 form.Show();
@@ -264,6 +220,11 @@ namespace Generator.UI.WF
 
         private void TbxProfileId_TextChanged(object sender, EventArgs e)
         {
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

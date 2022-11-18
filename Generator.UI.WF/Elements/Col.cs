@@ -16,6 +16,7 @@ namespace Generator.UI.WF.Elements
             xml += Element.ToString();
             xml += "\n";
             xml += "</col>".Tab(3);
+            
             return xml;
         }
     }

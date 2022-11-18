@@ -104,7 +104,7 @@ namespace Generator.UI.WF
             else
             {
                 AddServiceMethod();
-                LblSonuc.Text = "";
+                LblSonuc.Text = "   Eklendi";
             }
 
             List();

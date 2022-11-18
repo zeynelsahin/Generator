@@ -62,15 +62,8 @@ namespace Generator.UI.WF
             CbxSchemaName.DataSource = schemaList;
         }
 
-        private void FillProfile()
-        {
-            var objectEntity = _profile.ObjectEntity;
-
-        }
-
         private void FormObjectAddUpdate_Load(object sender, EventArgs e)
         {
-            FillProfile();
             FillObjectId();
             FillProfileId();
             FillSchemaName();

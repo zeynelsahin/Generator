@@ -484,7 +484,7 @@ namespace Generator.UI.WF
                     {
                         if (objectId.ToLower().Contains("create"))
                         {
-                            gridJavaScriptMethod.CreateApiMethod = GridCreateApiMethod(objectId, "CUSTOM_SQL", profileId,objectType);
+                            gridJavaScriptMethod.CreateApiMethod = GridCreateApiMethod(objectId, "CUSTOM_SQL", profileId, objectType);
                         }
                         else if (objectId.ToLower().Contains("update"))
                         {
@@ -531,7 +531,7 @@ namespace Generator.UI.WF
                 ParameterName = objectId.NameConfigure() + "Param",
                 ResultName = objectId.NameConfigure() + "Result",
                 ProfileId = profileId,
-                CrudType = "CUSTOM_SQL"
+                ObjectType = "CUSTOM_SQL"
             };
             var parameters = _objectParameterService.GetAllByObjectId(objectId,
                 profileId);
@@ -549,7 +549,7 @@ namespace Generator.UI.WF
                 ParameterName = objectId.NameConfigure() + "Param",
                 ResultName = objectId.NameConfigure() + "Result",
                 ProfileId = profileId,
-                CrudType = "CUSTOM_SQL"
+                ObjectType = "CUSTOM_SQL"
             };
             var parameters = _objectParameterService.GetAllByObjectId(objectId,
                 profileId);
@@ -567,7 +567,7 @@ namespace Generator.UI.WF
                 ParameterName = objectId.NameConfigure() + "Param",
                 PropName = objectId.NameConfigure().GridNameConfig() + "Grid",
                 ResultName = objectId.NameConfigure() + "Result",
-                CrudType = "CUSTOM_SQL"
+                ObjectType = "CUSTOM_SQL"
             };
             var parameters = _objectParameterService.GetAllByObjectId(objectId,
                 profileId);
@@ -585,7 +585,7 @@ namespace Generator.UI.WF
                 PropName = objectId.NameConfigure() + "Grid",
                 ParameterName = objectId.NameConfigure() + "Request",
                 ResultName = objectId.NameConfigure() + "Result",
-                CrudType = "TABLE"
+                ObjectType = "TABLE"
             };
             return get;
         }
@@ -599,7 +599,7 @@ namespace Generator.UI.WF
                 PropName = objectId.NameConfigure() + "Grid",
                 // ParameterName = objectId.NameConfigure() + "Request",
                 ResultName = objectId.NameConfigure(),
-                CrudType = "TABLE"
+                ObjectType = "TABLE"
             };
             var primaryKey = _objectEntityService.GetTablePrimaryKeyList(objectId);
             if (primaryKey.Count != 0)
@@ -617,20 +617,20 @@ namespace Generator.UI.WF
                 PropName = objectId.NameConfigure() + "Grid",
                 // ParameterName = objectId.NameConfigure() + "Request",
                 ResultName = objectId.NameConfigure(),
-                CrudType = "TABLE"
+                ObjectType = "TABLE"
             };
             get.Parameter.Params.Add(new Param { Key = "ValidFlag", Value = "ValidFlag" });
             return get;
         }
 
-        private CreateApiMethod GridCreateApiMethod(string objectId, string crudType,string profileId,string objectType)
+        private CreateApiMethod GridCreateApiMethod(string objectId, string crudType, string profileId, string objectType)
         {
             var create = new CreateApiMethod
             {
                 MethodName = "Create" + objectId.NameConfigure(),
                 ServiceName = ("create_" + objectId).CamelCaseConfigure(),
                 ParameterName = objectId.NameConfigure(),
-                CrudType = crudType,
+                ObjectType = crudType,
                 ResultName = ("create_" + objectId).NameConfigure()
             };
             var result = ParameterList(objectId, profileId, objectType);
@@ -639,22 +639,22 @@ namespace Generator.UI.WF
             return create;
         }
 
-        private UpdateApiMethod GridUpdateApiMethod(string objectId, string crudType,string profileId,string objectType)
+        private UpdateApiMethod GridUpdateApiMethod(string objectId, string crudType, string profileId, string objectType)
         {
             var modify = new UpdateApiMethod
             {
                 MethodName = "Modify" + objectId.NameConfigure(),
                 ServiceName = ("Modify_" + objectId).CamelCaseConfigure(),
                 ParameterName = objectId.NameConfigure(),
-                CrudType = crudType,
-                 ResultName = ("update" + objectId).NameConfigure()
+                ObjectType = crudType,
+                ResultName = ("update" + objectId).NameConfigure()
             };
             var result = ParameterList(objectId, profileId, objectType);
             var parameters = result.Select(p => p.Name.NameConfigure()).ToList().DarkListRemove();
             JavaScriptParams(modify, parameters);
             return modify;
         }
-       
+
         private void JavaScriptParams(ApiRequestMethod method, IList paramList)
         {
             foreach (var param in paramList)
@@ -774,25 +774,33 @@ namespace Generator.UI.WF
         {
             var dateList = new List<string>();
             var otherList = new List<string>();
+            var amountList = new List<string>();
             var rowTemplate = new RowTemplate();
             foreach (var item in ClbColumnNames.CheckedItems)
             {
                 var column = new Column { Id = item.ToString(), Text = item.ToString(), FieldId = item.ToString() };
-                column.Witdh = item.ToString()!.Length > 18 ? "150" : "100";
+
+                column.Witdh = Math.Ceiling(item.ToString().TitleConfig()!.Length * 7.09).ToString();
                 column.LinkButton = CbxLinkButton.SelectedItem.ToString() == item.ToString()
                     ? new LinkButton { ActionCode = CbxActionCode.Text }
                     : null;
 
-                rowTemplate.Columns.Add(column);
                 if (item.ToString()!.Contains("Date"))
                     dateList.Add(item.ToString());
+                else if (item.ToString().ToLower().Contains("amount"))
+                {
+                    amountList.Add(item.ToString());
+                    column.Alignment = "Right";
+                }
                 else
                     otherList.Add(item.ToString());
+
+                rowTemplate.Columns.Add(column);
             }
 
             var model = new Model();
-            dateList.ForEach(s =>
-                model.Fields.Add(new Field { Id = s.ToString(), DataSource = s.ToString(), Type = Types.Date }));
+            amountList.ForEach(s => model.Fields.Add(new Field { Id = s.ToString(), DataSource = s.ToString(), Type = Types.Money }));
+            dateList.ForEach(s => model.Fields.Add(new Field { Id = s.ToString(), DataSource = s.ToString(), Type = Types.Date }));
             otherList.ForEach(s => model.Fields.Add(new Field { Id = s.ToString(), DataSource = s.ToString() }));
 
             var commandBar = new CommandBar
@@ -2196,24 +2204,62 @@ namespace Generator.UI.WF
         {
             if (CbxStaticJavaScript.SelectedItem != null) GetStaticMethodKeyValue();
         }
+        private string GridApiMethod(string objectId, string profileId, string crudMethod, string objectType)
+        {
+            var method = "";
+            switch (crudMethod)
+            {
+                case "Create":
+                    method = GridCreateApiMethod(objectId, "TABLE", profileId, objectType).ToString();
+                    break;
+                case "Modify":
+                    method = GridUpdateApiMethod(objectId, "TABLE", profileId, objectType).ToString();
+                    break;
+                case "Get":
+                    method = GridGetApiMethod(objectId).ToString();
+                    break;
+                case "GetByPrimaryKey":
+                    method = GridGetByPrimaryKeyApiMethod(objectId).ToString();
+                    break;
+                case "GetByValidFlag":
+                    method = GridGetByValidFlagApiMethod(objectId).ToString();
+                    break;
+            }
+            return method;
 
+        }
         private CreateApiMethod Service1Create()
         {
             if (CbxService1ObjectId.SelectedItem == null) return null;
-
-            var service1 = CreateGridApiMethodCustomSql(CbxService1ObjectId.SelectedItem.ToString(),
+            if (CbxService1ObjectType.SelectedItem.ToString() == "TABLE")
+            {
+                var create = GridCreateApiMethod(CbxService1ObjectId.SelectedItem.ToString(), "TABLE", CbxService1ProfileId.SelectedItem.ToString(), CbxService1ObjectType.SelectedItem.ToString());
+                return create;
+            }
+            else
+            {
+                var service1 = CreateGridApiMethodCustomSql(CbxService1ObjectId.SelectedItem.ToString(),
                 CbxService1ProfileId.SelectedItem.ToString());
-            service1.ServiceId = GetServiceId(service1.ProfileId);
-            return service1;
+                service1.ServiceId = GetServiceId(service1.ProfileId);
+                return service1;
+            }
         }
 
         private UpdateApiMethod Service2Create()
         {
             if (CbxService2ObjectId.SelectedItem == null) return null;
-            var service2 = UpdateGridApiMethodCustomSql(CbxService2ObjectId.SelectedItem.ToString(),
-                CbxService2ProfileId.SelectedItem.ToString());
-            service2.ServiceId = GetServiceId(service2.ProfileId);
-            return service2;
+            if (CbxService2ObjectType.SelectedItem.ToString() == "TABLE")
+            {
+                var update = GridUpdateApiMethod(CbxService2ObjectId.SelectedItem.ToString(), "TABLE", CbxService2ProfileId.SelectedItem.ToString(), CbxService2ObjectType.SelectedItem.ToString());
+                return update;
+            }
+            else
+            {
+                var service2 = UpdateGridApiMethodCustomSql(CbxService2ObjectId.SelectedItem.ToString(),
+             CbxService2ProfileId.SelectedItem.ToString());
+                service2.ServiceId = GetServiceId(service2.ProfileId);
+                return service2;
+            }
         }
 
         private void BtnGridServiceJavaScriptCreate_Click(object sender, EventArgs e)
@@ -2228,7 +2274,25 @@ namespace Generator.UI.WF
         {
             if (CbxService1ProfileId.SelectedIndex != 0)
             {
-                var list = GetCustomObjectIdList(CbxService1ProfileId.SelectedItem.ToString());
+                var list = new List<string>();
+                var objectIdList = GetObjectIdList(CbxService1ProfileId.SelectedItem.ToString());
+
+                foreach (var item in objectIdList)
+                {
+                    var serviceMethods = _serviceMethodService.GetByObjectId(item, CbxService1ProfileId.SelectedItem.ToString());
+                    if (serviceMethods != null) continue;
+                    if (serviceMethods.CreateMethodFlag == '1' )
+                    {
+                        list.Add(item);
+                    }
+                    else if (serviceMethods.CustomMethodFlag == '1')
+                    {
+                        if (item.ToLower().Contains("update")|| item.ToLower().Contains("modify"))
+                        {
+                            list.Add(item);
+                        }
+                    }
+                }
                 CbxService1ObjectId.DataSource = list;
             }
             else if (CbxService1ProfileId.SelectedIndex == 0)
@@ -2243,8 +2307,26 @@ namespace Generator.UI.WF
         {
             if (CbxService2ProfileId.SelectedIndex != 0)
             {
-                var list = GetCustomObjectIdList(CbxService2ProfileId.SelectedItem.ToString());
-                CbxService2ObjectId.DataSource = list;
+                var list = new List<string>();
+                var objectIdList = GetObjectIdList(CbxService2ProfileId.SelectedItem.ToString());
+
+                foreach (var item in objectIdList)
+                {
+                    var serviceMethods = _serviceMethodService.GetByObjectId(item, CbxService2ProfileId.SelectedItem.ToString());
+                    if (serviceMethods != null) continue;
+                    if (serviceMethods.ModifyMethodFlag == '1')
+                    {
+                        list.Add(item);
+                    }
+                    else if(serviceMethods.CustomMethodFlag == '1')
+                    {
+                        if (item.ToLower().Contains("create") || item.ToLower().Contains("add"))
+                        {
+                            list.Add(item);
+                        }
+                    }
+                }
+
             }
             else if (CbxService2ProfileId.SelectedIndex == 0)
             {
@@ -2262,6 +2344,13 @@ namespace Generator.UI.WF
                     CbxService1ProfileId.SelectedItem.ToString());
             CbxService1ObjectType.SelectedItem = objectType;
             CbxService1ObjectType.Text = objectType;
+            //if (objectType == "TABLE")
+            //{
+            //    var crudTypes = ServiceMethodList(CbxService1ObjectId.SelectedItem.ToString(), CbxService1ProfileId.SelectedItem.ToString());
+            //    crudTypes.Remove("Tümü");
+            //    CbxService1CrudType.DataSource = crudTypes;
+            //}
+
         }
 
         private void CbxService2ObjectId_SelectedIndexChanged(object sender, EventArgs e)
@@ -2272,6 +2361,13 @@ namespace Generator.UI.WF
                     CbxService2ProfileId.SelectedItem.ToString());
             CbxService2ObjectType.SelectedItem = objectType;
             CbxService2ObjectType.Text = objectType;
+            //if (objectType == "TABLE")
+            //{
+            //    var crudTypes = ServiceMethodList(CbxService2ObjectId.SelectedItem.ToString(), CbxService2ProfileId.SelectedItem.ToString());
+            //    crudTypes.Remove("Tümü");
+            //    CbxService2CrudType.DataSource = crudTypes;
+            //}
+
         }
 
         private void BtnGridServiceClear_Click(object sender, EventArgs e)

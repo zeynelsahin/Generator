@@ -3,6 +3,8 @@
     public enum Types
     {
         Date,
-        DateTime
+        DateTime,   
+        Money,
+        Number
     }
 }

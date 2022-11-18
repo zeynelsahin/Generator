@@ -48,6 +48,10 @@ namespace Generator.UI.WF
             this.BtnUxGenerator = new System.Windows.Forms.Button();
             this.label_copadet = new System.Windows.Forms.Label();
             this.PanelTop = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
@@ -77,6 +81,8 @@ namespace Generator.UI.WF
             this.panel3 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.DgwObject)).BeginInit();
             this.PanelTop.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.PanelPresentation.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -90,7 +96,7 @@ namespace Generator.UI.WF
             this.label25.Enabled = false;
             this.label25.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label25.ForeColor = System.Drawing.Color.Silver;
-            this.label25.Location = new System.Drawing.Point(920, 93);
+            this.label25.Location = new System.Drawing.Point(900, 52);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(199, 23);
             this.label25.TabIndex = 330;
@@ -103,7 +109,7 @@ namespace Generator.UI.WF
             this.BtnServiceMethodAdd.FlatAppearance.BorderSize = 0;
             this.BtnServiceMethodAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnServiceMethodAdd.Image = global::Generator.UI.WF.Properties.Resources.ekle_32px;
-            this.BtnServiceMethodAdd.Location = new System.Drawing.Point(883, 86);
+            this.BtnServiceMethodAdd.Location = new System.Drawing.Point(863, 45);
             this.BtnServiceMethodAdd.Name = "BtnServiceMethodAdd";
             this.BtnServiceMethodAdd.Size = new System.Drawing.Size(31, 32);
             this.BtnServiceMethodAdd.TabIndex = 329;
@@ -133,7 +139,7 @@ namespace Generator.UI.WF
             this.label24.Enabled = false;
             this.label24.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label24.ForeColor = System.Drawing.Color.Silver;
-            this.label24.Location = new System.Drawing.Point(1172, 94);
+            this.label24.Location = new System.Drawing.Point(1152, 53);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(253, 23);
             this.label24.TabIndex = 324;
@@ -146,7 +152,7 @@ namespace Generator.UI.WF
             this.BtnParametre.FlatAppearance.BorderSize = 0;
             this.BtnParametre.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnParametre.Image = global::Generator.UI.WF.Properties.Resources.ekle_32px;
-            this.BtnParametre.Location = new System.Drawing.Point(1135, 87);
+            this.BtnParametre.Location = new System.Drawing.Point(1115, 46);
             this.BtnParametre.Name = "BtnParametre";
             this.BtnParametre.Size = new System.Drawing.Size(31, 32);
             this.BtnParametre.TabIndex = 323;
@@ -277,7 +283,7 @@ namespace Generator.UI.WF
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.DgwObject.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.DgwObject.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DgwObject.Size = new System.Drawing.Size(1396, 213);
+            this.DgwObject.Size = new System.Drawing.Size(1396, 186);
             this.DgwObject.TabIndex = 1;
             this.DgwObject.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgwObject_CellDoubleClick);
             this.DgwObject.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgwObject_CellEnter);
@@ -290,7 +296,7 @@ namespace Generator.UI.WF
             this.label26.Enabled = false;
             this.label26.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label26.ForeColor = System.Drawing.Color.Silver;
-            this.label26.Location = new System.Drawing.Point(57, 74);
+            this.label26.Location = new System.Drawing.Point(57, 45);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(133, 23);
             this.label26.TabIndex = 328;
@@ -302,7 +308,7 @@ namespace Generator.UI.WF
             this.BtnUxGenerator.FlatAppearance.BorderSize = 0;
             this.BtnUxGenerator.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnUxGenerator.Image = global::Generator.UI.WF.Properties.Resources.buyuk;
-            this.BtnUxGenerator.Location = new System.Drawing.Point(12, 67);
+            this.BtnUxGenerator.Location = new System.Drawing.Point(12, 38);
             this.BtnUxGenerator.Name = "BtnUxGenerator";
             this.BtnUxGenerator.Size = new System.Drawing.Size(45, 39);
             this.BtnUxGenerator.TabIndex = 327;
@@ -321,19 +327,78 @@ namespace Generator.UI.WF
             // 
             // PanelTop
             // 
+            this.PanelTop.Controls.Add(this.panel5);
             this.PanelTop.Controls.Add(this.label_copadet);
-            this.PanelTop.Controls.Add(this.label26);
-            this.PanelTop.Controls.Add(this.BtnUxGenerator);
-            this.PanelTop.Controls.Add(this.label25);
-            this.PanelTop.Controls.Add(this.BtnParametre);
-            this.PanelTop.Controls.Add(this.BtnServiceMethodAdd);
-            this.PanelTop.Controls.Add(this.label24);
             this.PanelTop.Controls.Add(this.label1);
             this.PanelTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.PanelTop.Location = new System.Drawing.Point(0, 0);
             this.PanelTop.Name = "PanelTop";
-            this.PanelTop.Size = new System.Drawing.Size(1430, 123);
+            this.PanelTop.Size = new System.Drawing.Size(1430, 150);
             this.PanelTop.TabIndex = 26;
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.groupBox1);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel5.Location = new System.Drawing.Point(0, 50);
+            this.panel5.Name = "panel5";
+            this.panel5.Padding = new System.Windows.Forms.Padding(5);
+            this.panel5.Size = new System.Drawing.Size(1430, 100);
+            this.panel5.TabIndex = 101;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.button5);
+            this.groupBox1.Controls.Add(this.label25);
+            this.groupBox1.Controls.Add(this.label26);
+            this.groupBox1.Controls.Add(this.BtnParametre);
+            this.groupBox1.Controls.Add(this.button6);
+            this.groupBox1.Controls.Add(this.BtnServiceMethodAdd);
+            this.groupBox1.Controls.Add(this.BtnUxGenerator);
+            this.groupBox1.Controls.Add(this.label24);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
+            this.groupBox1.Location = new System.Drawing.Point(5, 5);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(0);
+            this.groupBox1.Size = new System.Drawing.Size(1420, 88);
+            this.groupBox1.TabIndex = 339;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Utilities";
+            // 
+            // button5
+            // 
+            this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button5.BackColor = System.Drawing.Color.Transparent;
+            this.button5.FlatAppearance.BorderSize = 3;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
+            this.button5.Location = new System.Drawing.Point(3626, 43);
+            this.button5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(150, 42);
+            this.button5.TabIndex = 357;
+            this.button5.Text = "Grid Create";
+            this.button5.UseVisualStyleBackColor = false;
+            // 
+            // button6
+            // 
+            this.button6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button6.BackColor = System.Drawing.Color.Transparent;
+            this.button6.FlatAppearance.BorderSize = 3;
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
+            this.button6.Location = new System.Drawing.Point(3792, 43);
+            this.button6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(177, 42);
+            this.button6.TabIndex = 363;
+            this.button6.Text = "JavaScript Create";
+            this.button6.UseVisualStyleBackColor = false;
             // 
             // label1
             // 
@@ -431,7 +496,7 @@ namespace Generator.UI.WF
             this.groupBox2.Size = new System.Drawing.Size(1420, 127);
             this.groupBox2.TabIndex = 338;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Utilities";
+            this.groupBox2.Text = "Selected Data";
             // 
             // label5
             // 
@@ -592,7 +657,7 @@ namespace Generator.UI.WF
             this.PanelPresentation.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PanelPresentation.Name = "PanelPresentation";
             this.PanelPresentation.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.PanelPresentation.Size = new System.Drawing.Size(1420, 405);
+            this.PanelPresentation.Size = new System.Drawing.Size(1420, 378);
             this.PanelPresentation.TabIndex = 339;
             this.PanelPresentation.TabStop = false;
             this.PanelPresentation.Text = "Search";
@@ -697,10 +762,10 @@ namespace Generator.UI.WF
             this.panel3.Controls.Add(this.PanelPresentation);
             this.panel3.Controls.Add(this.groupBox2);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(0, 123);
+            this.panel3.Location = new System.Drawing.Point(0, 150);
             this.panel3.Name = "panel3";
             this.panel3.Padding = new System.Windows.Forms.Padding(5);
-            this.panel3.Size = new System.Drawing.Size(1430, 542);
+            this.panel3.Size = new System.Drawing.Size(1430, 515);
             this.panel3.TabIndex = 340;
             // 
             // FormObjectAddUpdate
@@ -724,6 +789,9 @@ namespace Generator.UI.WF
             ((System.ComponentModel.ISupportInitialize)(this.DgwObject)).EndInit();
             this.PanelTop.ResumeLayout(false);
             this.PanelTop.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.PanelPresentation.ResumeLayout(false);
@@ -778,5 +846,9 @@ namespace Generator.UI.WF
         private System.Windows.Forms.Panel panel2;
         public System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button6;
     }
 }

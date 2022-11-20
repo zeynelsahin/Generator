@@ -86,8 +86,7 @@ namespace Generator.UI.WF
 
         private void DgwObject_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
-            DatagridLabelSize();
-            LblAdet.Text = "Toplam : " + DgwObject.RowCount;
+            
         }
 
         private void panel23_Paint(object sender, PaintEventArgs e)
@@ -107,15 +106,23 @@ namespace Generator.UI.WF
                 var selectedProfileId = CbxProfileId.SelectedIndex == 0 ? null : CbxProfileId.SelectedItem.ToString();
                 var selectedSchemaName =
                     CbxSchemaName.SelectedIndex == 0 ? null : CbxSchemaName.SelectedItem.ToString();
-                var result =
-                    _objectEntityService.GetAllOrFilter(selectedObjectId, selectedProfileId, selectedSchemaName);
-                DgwObject.DataSource = result;
+                if (selectedProfileId!=null )
+                {
+                    var result =
+                   _objectEntityService.GetAllOrFilter(selectedObjectId, selectedProfileId, selectedSchemaName);
+                    DgwObject.DataSource = result;
+                }
+                else
+                {
+                    DgwObject.DataSource = null;
+                }
+               
             }
         }
 
         private void CbxOjectId_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (CbxOjectId.SelectedIndex != -1)
+            if (CbxOjectId.SelectedIndex != -1 )
             {
                 FilterObject();
             }
@@ -214,6 +221,12 @@ namespace Generator.UI.WF
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void DgwObject_DataSourceChanged(object sender, EventArgs e)
+        {
+            DatagridLabelSize();
+            LblAdet.Text = "Toplam : " + DgwObject.RowCount;
         }
     }
 }

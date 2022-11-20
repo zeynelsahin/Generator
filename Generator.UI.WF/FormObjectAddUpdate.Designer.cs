@@ -285,6 +285,7 @@ namespace Generator.UI.WF
             this.DgwObject.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DgwObject.Size = new System.Drawing.Size(1396, 186);
             this.DgwObject.TabIndex = 1;
+            this.DgwObject.DataSourceChanged += new System.EventHandler(this.DgwObject_DataSourceChanged);
             this.DgwObject.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgwObject_CellDoubleClick);
             this.DgwObject.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgwObject_CellEnter);
             this.DgwObject.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.DgwObject_DataBindingComplete);
@@ -298,9 +299,9 @@ namespace Generator.UI.WF
             this.label26.ForeColor = System.Drawing.Color.Silver;
             this.label26.Location = new System.Drawing.Point(57, 45);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(133, 23);
+            this.label26.Size = new System.Drawing.Size(135, 23);
             this.label26.TabIndex = 328;
-            this.label26.Text = "Ux Generator";
+            this.label26.Text = "UX Generator";
             // 
             // BtnUxGenerator
             // 

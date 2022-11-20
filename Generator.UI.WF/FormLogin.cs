@@ -34,7 +34,7 @@ namespace Generator.UI.WF
             if (profile != null)
             {
                 Hide();
-                var formHomeScreen = new FormObjectAddUpdate(profile);
+                var formHomeScreen = new FormObjectAddUpdate();
                 formHomeScreen.Show();
             }
             else

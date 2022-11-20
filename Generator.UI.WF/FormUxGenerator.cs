@@ -73,7 +73,7 @@ namespace Generator.UI.WF
         private void LoadMethodTypes()
         {
             var comboBoxServiceType = (DataGridViewComboBoxColumn)DgwComboBoxes.Columns[6];
-            var methodTypes = File.ReadAllText(@"../../../JsonFiles/MethodTypes.json");
+            var methodTypes = File.ReadAllText(@"JsonFiles/MethodTypes.json");
             var methodTypeList = JsonSerializer.Deserialize<List<string>>(methodTypes);
             comboBoxServiceType.DataSource = methodTypeList;
         }
@@ -81,13 +81,13 @@ namespace Generator.UI.WF
         private void LoadProfiles(int rowIndex)
         {
             var comboBoxProfileType = (DataGridViewComboBoxCell)DgwComboBoxes.Rows[rowIndex].Cells[5];
-            var profiles = File.ReadAllText(@"../../../JsonFiles/ObjectProfiles.json");
+            var profiles = File.ReadAllText(@"JsonFiles/ObjectProfiles.json");
             comboBoxProfileType.DataSource = JsonSerializer.Deserialize<List<string>>(profiles);
         }
 
         private void LoadProfiles()
         {
-            var profiles = File.ReadAllText(@"../../../JsonFiles/ObjectProfiles.json");
+            var profiles = File.ReadAllText(@"JsonFiles/ObjectProfiles.json");
             CbxProfile.DataSource = JsonSerializer.Deserialize<List<string>>(profiles);
             CbxContentJSProfileId.DataSource = JsonSerializer.Deserialize<List<string>>(profiles);
             CbxProfileId.DataSource = JsonSerializer.Deserialize<List<string>>(profiles);
@@ -97,7 +97,7 @@ namespace Generator.UI.WF
 
         private void LoadDirectoryPaths()
         {
-            var jsonString = File.ReadAllText(@"../../../JsonFiles/DirectoryPath.json");
+            var jsonString = File.ReadAllText(@"JsonFiles/DirectoryPath.json");
             CbxApplication.DataSource = JsonSerializer.Deserialize<List<DirectoryPath>>(jsonString,
                 new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
             ;
@@ -828,7 +828,7 @@ namespace Generator.UI.WF
 
         private string GetServiceId(string profileId)
         {
-            var text = File.ReadAllText(@"../../../JsonFiles/Services.json");
+            var text = File.ReadAllText(@"JsonFiles/Services.json");
             var services = JsonSerializer.Deserialize<List<Service>>(text);
             var serviceId = services.SingleOrDefault(p => p.ProfileId == profileId).ServiceId;
             if (string.IsNullOrWhiteSpace(serviceId))
@@ -928,7 +928,7 @@ namespace Generator.UI.WF
 
         private void CbxProfile_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var jsonString = File.ReadAllText(@"../../../JsonFiles/Elements.json");
+            var jsonString = File.ReadAllText(@"JsonFiles/Elements.json");
             if (CbxProfile.SelectedIndex != 0)
             {
                 var objectList = GetObjectIdList(CbxProfile.SelectedItem.ToString());
@@ -1854,7 +1854,7 @@ namespace Generator.UI.WF
 
         private void LoadStaticMethod(int rowIndex)
         {
-            var jsonString = File.ReadAllText(@"../../../JsonFiles/StaticMethods.json");
+            var jsonString = File.ReadAllText(@"JsonFiles/StaticMethods.json");
             var jsonNode = JsonNode.Parse(jsonString);
             var comboBoxMethod = (DataGridViewComboBoxCell)DgwComboBoxes.Rows[rowIndex].Cells[4];
             var methodList = jsonNode.AsArray().Select(p => p.AsObject()["MethodName"].ToString()).ToList();
@@ -1863,7 +1863,7 @@ namespace Generator.UI.WF
 
         private void LoadStaticMethod()
         {
-            var jsonString = File.ReadAllText(@"../../../JsonFiles/StaticMethods.json");
+            var jsonString = File.ReadAllText(@"JsonFiles/StaticMethods.json");
             var jsonNode = JsonNode.Parse(jsonString);
             var methodList = jsonNode.AsArray().Select(p => p.AsObject()["MethodName"].ToString()).ToList();
             CbxStaticJavaScript.DataSource = methodList;
@@ -1872,7 +1872,7 @@ namespace Generator.UI.WF
         private void GetStaticMethodKeyValue(int rowIndex)
         {
             var list = new List<string>();
-            var jsonString = File.ReadAllText(@"../../../JsonFiles/StaticMethods.json");
+            var jsonString = File.ReadAllText(@"JsonFiles/StaticMethods.json");
             var jsonNode = JsonNode.Parse(jsonString);
 
             var comboBoxKey = (DataGridViewComboBoxCell)DgwComboBoxes.Rows[rowIndex].Cells["KeyField"];
@@ -1907,7 +1907,7 @@ namespace Generator.UI.WF
 
         private void GetStaticMethodKeyValue()
         {
-            var jsonString = File.ReadAllText(@"../../../JsonFiles/StaticMethods.json");
+            var jsonString = File.ReadAllText(@"JsonFiles/StaticMethods.json");
             var jsonNode = JsonNode.Parse(jsonString);
             var methodList = jsonNode.AsArray().Select(p => p.AsObject()["MethodName"]).ToList();
             foreach (var node in jsonNode.AsArray())
@@ -1946,7 +1946,7 @@ namespace Generator.UI.WF
         private List<StaticMethod> ComboBoxStaticMethod()
         {
             var staticMethods = new List<StaticMethod>();
-            var jsonString = File.ReadAllText(@"../../../JsonFiles/StaticMethods.json");
+            var jsonString = File.ReadAllText(@"JsonFiles/StaticMethods.json");
             var jsonNode = JsonNode.Parse(jsonString);
             for (var i = 0; i < DgwComboBoxes.Rows.Count - 1; i++)
                 if (DgwComboBoxes.Rows[i].Cells[6].Value.ToString() == "Static Method")
@@ -2166,7 +2166,7 @@ namespace Generator.UI.WF
 
         private void BtnStaticMethod_Click(object sender, EventArgs e)
         {
-            var jsonString = File.ReadAllText(@"../../../JsonFiles/StaticMethods.json");
+            var jsonString = File.ReadAllText(@"JsonFiles/StaticMethods.json");
             var jsonNode = JsonNode.Parse(jsonString);
 
             foreach (var node in jsonNode.AsArray())

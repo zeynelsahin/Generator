@@ -4,23 +4,24 @@
         <OutputType>WinExe</OutputType>
         <TargetFramework>netcoreapp3.1</TargetFramework>
         <UseWindowsForms>true</UseWindowsForms>
+        <ApplicationIcon>resimler\buyuk.ico</ApplicationIcon>
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Autofac" Version="6.4.0"/>
-        <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="8.0.0"/>
-        <PackageReference Include="Autofac.Extras.DynamicProxy" Version="6.0.1"/>
-        <PackageReference Include="Newtonsoft.Json" Version="13.0.1"/>
-        <PackageReference Include="System.Configuration.ConfigurationManager" Version="6.0.0"/>
+        <PackageReference Include="Autofac" Version="6.4.0" />
+        <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="8.0.0" />
+        <PackageReference Include="Autofac.Extras.DynamicProxy" Version="6.0.1" />
+        <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+        <PackageReference Include="System.Configuration.ConfigurationManager" Version="6.0.0" />
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\Generator.Business\Generator.Business.csproj"/>
-        <ProjectReference Include="..\Generator.Entities\Generator.Entities.csproj"/>
+        <ProjectReference Include="..\Generator.Business\Generator.Business.csproj" />
+        <ProjectReference Include="..\Generator.Entities\Generator.Entities.csproj" />
     </ItemGroup>
 
     <ItemGroup>
-        <Compile Update="FormObjectAddUpdate.cs"/>
+        <Compile Update="FormObjectAddUpdate.cs" />
         <Compile Update="Properties\Resources.Designer.cs">
             <DesignTime>True</DesignTime>
             <AutoGen>True</AutoGen>
@@ -36,8 +37,8 @@
     </ItemGroup>
 
     <ItemGroup>
-        <Folder Include="Enums\"/>
-        <Folder Include="Dependency\"/>
+        <Folder Include="Enums\" />
+        <Folder Include="Dependency\" />
     </ItemGroup>
 
 </Project>

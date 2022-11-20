@@ -1620,7 +1620,8 @@ namespace Generator.UI.WF
             this.GbxResult.Size = new System.Drawing.Size(1518, 636);
             this.GbxResult.TabIndex = 363;
             this.GbxResult.TabStop = false;
-            this.GbxResult.Text = "Result  ComboBox(Ctrl+Z )  UserControl (Ctrl+X) ";
+            this.GbxResult.Text = "Result  ComboBox(Ctrl+Z )  UserControl (Ctrl+X) Viewe Tıklanmazsa Content Generat" +
+    "e Edilmeyecektir ";
             // 
             // TabElement
             // 

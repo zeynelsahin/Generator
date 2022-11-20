@@ -15,13 +15,9 @@ namespace Generator.UI.WF
     {
         private IObjectEntityService _objectEntityService = new ObjectEntityService(new EfObjectEntityDal());
 
-        private readonly Profile _profile;
-
         private bool canFilter;
-
-        public FormObjectAddUpdate(Profile profile)
+        public FormObjectAddUpdate( )
         {
-            _profile = profile;
             InitializeComponent();
         }
 
@@ -45,7 +41,7 @@ namespace Generator.UI.WF
         private void FillProfileId()
         {
             var objectIdList = new List<string>();
-            var profiles = File.ReadAllText(@"../../../JsonFiles/ObjectProfiles.json");
+            var profiles = File.ReadAllText(@"JsonFiles/ObjectProfiles.json");
             objectIdList.AddRange(JsonSerializer.Deserialize<List<string>>(profiles));
             CbxProfileId.DataSource = objectIdList;
         }
@@ -56,7 +52,7 @@ namespace Generator.UI.WF
             {
                 "Hiçbiri"
             };
-            var schemaNames = File.ReadAllText(@"../../../JsonFiles/SchemaNames.json");
+            var schemaNames = File.ReadAllText(@"JsonFiles/SchemaNames.json");
             schemaList.AddRange(JsonSerializer.Deserialize<List<string>>(schemaNames));
 
             CbxSchemaName.DataSource = schemaList;

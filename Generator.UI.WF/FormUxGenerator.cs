@@ -2179,7 +2179,6 @@ namespace Generator.UI.WF
 
                     staticMethod.MethodName = "Fill" + item["MethodName"].ToString().ConvertUtf8() + "List";
                     staticMethod.PropName = TbxPropName.Text;
-                    CbxStaticValueField.Text = " ";
                     if (CbxStaticValueField.Text != " ")
                     {
                         var values = ConvertToList((JsonArray)item[CbxStaticValueField.Text]);

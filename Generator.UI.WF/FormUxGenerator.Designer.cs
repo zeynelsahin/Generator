@@ -215,12 +215,12 @@ namespace Generator.UI.WF
             this.LblHeaderTotal = new System.Windows.Forms.Label();
             this.panel13 = new System.Windows.Forms.Panel();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.groupBox16 = new System.Windows.Forms.GroupBox();
             this.TbxTitle = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.BtnHeaderCreate = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.groupBox15 = new System.Windows.Forms.GroupBox();
             this.BtnList = new System.Windows.Forms.Button();
             this.BtnSave = new System.Windows.Forms.Button();
@@ -2298,8 +2298,8 @@ namespace Generator.UI.WF
             this.groupBox13.Size = new System.Drawing.Size(1528, 318);
             this.groupBox13.TabIndex = 364;
             this.groupBox13.TabStop = false;
-            this.groupBox13.Text = "Result (Buttonlar sağa dayalıdır. Gridin sıralaması soldan sağa doğrudur. En üstt" +
-    "eki en solda bulunacaktır)";
+            this.groupBox13.Text = "Result (Buttonlar sağa dayalıdır. Gridin sıralaması sağdan sola doğrudur. En üstt" +
+    "eki en sağda bulunacaktır)";
             // 
             // DgwHeader
             // 
@@ -2404,8 +2404,8 @@ namespace Generator.UI.WF
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.panel3);
             this.groupBox3.Controls.Add(this.groupBox16);
+            this.groupBox3.Controls.Add(this.panel3);
             this.groupBox3.Controls.Add(this.groupBox15);
             this.groupBox3.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox3.Font = new System.Drawing.Font("Century Gothic", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -2418,15 +2418,6 @@ namespace Generator.UI.WF
             this.groupBox3.TabIndex = 342;
             this.groupBox3.TabStop = false;
             // 
-            // panel3
-            // 
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel3.Location = new System.Drawing.Point(648, 27);
-            this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(10, 159);
-            this.panel3.TabIndex = 377;
-            // 
             // groupBox16
             // 
             this.groupBox16.Controls.Add(this.TbxTitle);
@@ -2436,14 +2427,14 @@ namespace Generator.UI.WF
             this.groupBox16.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox16.Font = new System.Drawing.Font("Century Gothic", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.groupBox16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
-            this.groupBox16.Location = new System.Drawing.Point(648, 27);
+            this.groupBox16.Location = new System.Drawing.Point(658, 27);
             this.groupBox16.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox16.Name = "groupBox16";
             this.groupBox16.Padding = new System.Windows.Forms.Padding(35);
-            this.groupBox16.Size = new System.Drawing.Size(877, 159);
-            this.groupBox16.TabIndex = 376;
+            this.groupBox16.Size = new System.Drawing.Size(867, 159);
+            this.groupBox16.TabIndex = 377;
             this.groupBox16.TabStop = false;
-            this.groupBox16.Text = "Buttons";
+            this.groupBox16.Text = "Utilities";
             // 
             // TbxTitle
             // 
@@ -2465,7 +2456,7 @@ namespace Generator.UI.WF
             this.label6.Enabled = false;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label6.ForeColor = System.Drawing.Color.Silver;
-            this.label6.Location = new System.Drawing.Point(30, 58);
+            this.label6.Location = new System.Drawing.Point(30, 49);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(460, 22);
             this.label6.TabIndex = 355;
@@ -2477,14 +2468,13 @@ namespace Generator.UI.WF
             this.BtnHeaderCreate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnHeaderCreate.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.BtnHeaderCreate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
-            this.BtnHeaderCreate.Location = new System.Drawing.Point(505, 82);
+            this.BtnHeaderCreate.Location = new System.Drawing.Point(526, 73);
             this.BtnHeaderCreate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BtnHeaderCreate.Name = "BtnHeaderCreate";
             this.BtnHeaderCreate.Size = new System.Drawing.Size(203, 45);
             this.BtnHeaderCreate.TabIndex = 351;
             this.BtnHeaderCreate.Text = "Header Create";
             this.BtnHeaderCreate.UseVisualStyleBackColor = true;
-            this.BtnHeaderCreate.Click += new System.EventHandler(this.BtnHeaderCreate_Click);
             // 
             // panel6
             // 
@@ -2494,6 +2484,14 @@ namespace Generator.UI.WF
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(449, 2);
             this.panel6.TabIndex = 354;
+            // 
+            // panel3
+            // 
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel3.Location = new System.Drawing.Point(648, 27);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(10, 159);
+            this.panel3.TabIndex = 376;
             // 
             // groupBox15
             // 
@@ -4743,11 +4741,7 @@ namespace Generator.UI.WF
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.CheckedListBox ClbColumnNames;
         private System.Windows.Forms.Panel PanelDgw;
-        private System.Windows.Forms.Button BtnHeaderCreate;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox TbxTitle;
-        private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.RichTextBox RtbxPrensentation;
         private System.Windows.Forms.TabPage TabContent;
         private System.Windows.Forms.DataGridView DgwObject;
@@ -4857,8 +4851,6 @@ namespace Generator.UI.WF
         private System.Windows.Forms.DataGridViewTextBoxColumn IconCss;
         private System.Windows.Forms.Label LblHeaderTotal;
         private System.Windows.Forms.Panel panel13;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.GroupBox groupBox16;
         private System.Windows.Forms.GroupBox groupBox15;
         private System.Windows.Forms.Button BtnList;
         private System.Windows.Forms.Button BtnSave;
@@ -5030,5 +5022,11 @@ namespace Generator.UI.WF
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
+        private System.Windows.Forms.GroupBox groupBox16;
+        private System.Windows.Forms.TextBox TbxTitle;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button BtnHeaderCreate;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Panel panel3;
     }
 }

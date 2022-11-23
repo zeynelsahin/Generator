@@ -318,9 +318,9 @@ namespace Generator.UI.WF
             this.label1.ForeColor = System.Drawing.Color.Silver;
             this.label1.Location = new System.Drawing.Point(958, 51);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(178, 23);
+            this.label1.Size = new System.Drawing.Size(150, 23);
             this.label1.TabIndex = 334;
-            this.label1.Text = "Parametreleri Find";
+            this.label1.Text = "Parameter Find";
             // 
             // LblSonuc
             // 

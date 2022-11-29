@@ -55,14 +55,14 @@ namespace Generator.UI.WF.Models
                             var propName = ((DateEntry)((Col)col).Element).Id;
 
                             javaScriptDateSet.Add(
-                                $"this.${propName}.SetValue(d.setMonth(d.getMonth() - {dateEntryCount}));");
+                                $"this.$Prop.{propName}.SetValue(d.setMonth(d.getMonth() - {dateEntryCount}));");
                             dateEntryCount++;
                         }
                         else if (colType == typeof(DateTimeEntry))
                         {
                             var propName = ((DateTimeEntry)((Col)col).Element).Id;
                             javaScriptDateSet.Add(
-                                $"this.${propName}.SetValue(d.setMonth(d.getMonth() - {dateEntryCount}));");
+                                $"this.$Prop.{propName}.SetValue(d.setMonth(d.getMonth() - {dateEntryCount}));");
                             dateEntryCount++;
                         }
                     }

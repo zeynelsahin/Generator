@@ -171,12 +171,6 @@ namespace Generator.UI.WF
             return pageHeader;
         }
 
-        private void BtnHeaderCreate_Click(object sender, EventArgs e)
-        {
-            RtbxPrensentation.Text = CreatePageHeader().ToString();
-            Console.WriteLine();
-        }
-
         private void CbxProfileId_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (CbxProfileId.SelectedIndex != 0)
@@ -2568,6 +2562,12 @@ namespace Generator.UI.WF
             }
 
             DgwPageResult.DataSource = pageOption;
+        }
+
+        private void BtnHeaderCreate_Click(object sender, EventArgs e)
+        {
+            RtbxPrensentation.Text = CreatePageHeader().ToString();
+            Console.WriteLine();
         }
     }
 }

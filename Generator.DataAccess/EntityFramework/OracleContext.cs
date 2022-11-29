@@ -77,7 +77,7 @@ namespace Generator.DataAccess.EntityFramework
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseOracle(
-                @"Data Source=(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=OracleServer)(PORT=1521))(CONNECT_DATA=(SID=ORCLSRV19)));User Id=CMS_APP_USER;Password=Panda1881");
+                @"Data Source=(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=OracleServer)(PORT=1521))(CONNECT_DATA=(SID=ORCLSRV19)));User Id=CMS_APP_USER");
         }
     }
 }

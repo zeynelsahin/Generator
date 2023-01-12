@@ -625,7 +625,8 @@ namespace Generator.UI.WF
                 ServiceName = ("create_" + objectId).CamelCaseConfigure(),
                 ParameterName = objectId.NameConfigure(),
                 ObjectType = crudType,
-                ResultName = ("create_" + objectId).NameConfigure()
+                ResultName = ("create_" + objectId).NameConfigure(),
+                ServiceId = GetServiceId(profileId)
             };
             var result = ParameterList(objectId, profileId, objectType);
             var parameters = result.Select(p => p.Name.NameConfigure()).ToList().DarkListRemove();
@@ -641,7 +642,8 @@ namespace Generator.UI.WF
                 ServiceName = ("Modify_" + objectId).CamelCaseConfigure(),
                 ParameterName = objectId.NameConfigure(),
                 ObjectType = crudType,
-                ResultName = ("update" + objectId).NameConfigure()
+                ResultName = ("update" + objectId).NameConfigure(),
+                ServiceId = GetServiceId(profileId)
             };
             var result = ParameterList(objectId, profileId, objectType);
             var parameters = result.Select(p => p.Name.NameConfigure()).ToList().DarkListRemove();
@@ -1186,64 +1188,64 @@ namespace Generator.UI.WF
                 var id = viewRow.Cells[0].Value.ToString();
                 var text = viewRow.Cells[1].Value.ToString();
                 var colSize = viewRow.Cells[3].Value.ToString();
+
+                switch (viewRow.Cells[2].Value)
+                {
+                    case "TextBox":
+                        element = new TextBoxElement
+                        {
+                            Id = id,
+                            Text = text
+                        };
+                        break;
+                    case "DateEntry":
+                        element = new DateEntry
+                        {
+                            Id = id,
+                            Text = text
+                        };
+                        break;
+
+                    case "CheckBox":
+                        element = new CheckBoxElement
+                        {
+                            Checked = "true",
+                            Id = id,
+                            Text = text
+                        };
+                        break;
+                    case "NumberEntry":
+                        element = new NumberEntry
+                        {
+                            NoFormat = "true",
+                            MaxLenght = "10",
+                            Text = text,
+                            Id = id
+                        };
+                        break;
+                    case "MoneyEntry":
+                        element = new MoneyEntry
+                        {
+                            Text = text,
+                            Id = id
+                        };
+                        break;
+                    case "ComboBox":
+                        element = GetComboBoxElement(id);
+                        break;
+                    case "UserControl":
+                        element = GetUserControl(id);
+                        break;
+                    case "DateTimeEntry":
+                        element = new DateTimeEntry
+                        {
+                            Id = id,
+                            Text = text
+                        };
+                        break;
+                }
                 if (size < 12)
                 {
-                    switch (viewRow.Cells[2].Value)
-                    {
-                        case "TextBox":
-                            element = new TextBoxElement
-                            {
-                                Id = id,
-                                Text = text
-                            };
-                            break;
-                        case "DateEntry":
-                            element = new DateEntry
-                            {
-                                Id = id,
-                                Text = text
-                            };
-                            break;
-
-                        case "CheckBox":
-                            element = new CheckBoxElement
-                            {
-                                Checked = "true",
-                                Id = id,
-                                Text = text
-                            };
-                            break;
-                        case "NumberEntry":
-                            element = new NumberEntry
-                            {
-                                NoFormat = "true",
-                                MaxLenght = "10",
-                                Text = text,
-                                Id = id
-                            };
-                            break;
-                        case "MoneyEntry":
-                            element = new MoneyEntry
-                            {
-                                Text = text,
-                                Id = id
-                            };
-                            break;
-                        case "ComboBox":
-                            element = GetComboBoxElement(id);
-                            break;
-                        case "UserControl":
-                            element = GetUserControl(id);
-                            break;
-                        case "DateTimeEntry":
-                            element = new DateTimeEntry
-                            {
-                                Id = id,
-                                Text = text
-                            };
-                            break;
-                    }
-
                     var col = new Col
                     {
                         Size = colSize,
@@ -1257,8 +1259,15 @@ namespace Generator.UI.WF
                 {
                     contentBlock.Rows.Add(row);
                     size = 0;
-                    element = null;
                     row = new Row();
+                    var col = new Col
+                    {
+                        Size = colSize,
+                        Element = element
+                    };
+
+                    row.Elements.Add(col);
+                    size += Convert.ToInt32(viewRow.Cells[3].Value);
                 }
             }
 
@@ -1423,8 +1432,8 @@ namespace Generator.UI.WF
                         method.ServiceName, method.ServiceName,
                         method.ServiceId, "1");
                     DgwAction.Rows.Add("UXLocal", "Development", CbxActionOptionApplicationId.SelectedItem.ToString(),
-                        method.ServiceName, method.ServiceName + "Local",
-                        method.ServiceId, "1");
+                        method.ServiceName, method.ServiceName,
+                        method.ServiceId + "Local", "1");
                 }
 
             if (pageJs.CreateApiMethod != null)
@@ -1433,8 +1442,8 @@ namespace Generator.UI.WF
                     pageJs.CreateApiMethod.ServiceName, pageJs.CreateApiMethod.ServiceName,
                     pageJs.CreateApiMethod.ServiceId, "1");
                 DgwAction.Rows.Add("UXLocal", "Development", CbxActionOptionApplicationId.SelectedItem.ToString(),
-                    pageJs.CreateApiMethod.ServiceName, pageJs.CreateApiMethod.ServiceName + "Local",
-                    pageJs.CreateApiMethod.ServiceId, "1");
+                    pageJs.CreateApiMethod.ServiceName, pageJs.CreateApiMethod.ServiceName,
+                    pageJs.CreateApiMethod.ServiceId + "Local", "1");
             }
 
             if (pageJs.UpdateApiMethod != null)
@@ -1443,8 +1452,8 @@ namespace Generator.UI.WF
                     pageJs.UpdateApiMethod.ServiceName, pageJs.UpdateApiMethod.ServiceName,
                     pageJs.UpdateApiMethod.ServiceId, "1");
                 DgwAction.Rows.Add("UXLocal", "Development", CbxActionOptionApplicationId.SelectedItem.ToString(),
-                    pageJs.UpdateApiMethod.ServiceName, pageJs.UpdateApiMethod.ServiceName + "Local",
-                    pageJs.UpdateApiMethod.ServiceId, "1");
+                    pageJs.UpdateApiMethod.ServiceName, pageJs.UpdateApiMethod.ServiceName,
+                    pageJs.UpdateApiMethod.ServiceId + "Local", "1");
             }
 
             if (pageJs.GetGridApiMethod != null)
@@ -1453,8 +1462,8 @@ namespace Generator.UI.WF
                     pageJs.GetGridApiMethod.ServiceName, pageJs.GetGridApiMethod.ServiceName,
                     pageJs.GetGridApiMethod.ServiceId, "1");
                 DgwAction.Rows.Add("UXLocal", "Development", CbxActionOptionApplicationId.SelectedItem.ToString(),
-                    pageJs.GetGridApiMethod.ServiceName, pageJs.GetGridApiMethod.ServiceName + "Local",
-                    pageJs.GetGridApiMethod.ServiceId, "1");
+                    pageJs.GetGridApiMethod.ServiceName, pageJs.GetGridApiMethod.ServiceName,
+                    pageJs.GetGridApiMethod.ServiceId + "Local", "1");
             }
         }
 
@@ -2273,14 +2282,14 @@ namespace Generator.UI.WF
                 foreach (var item in objectIdList)
                 {
                     var serviceMethods = _serviceMethodService.GetByObjectId(item, CbxService1ProfileId.SelectedItem.ToString());
-                    if (serviceMethods != null) continue;
-                    if (serviceMethods.CreateMethodFlag == '1' )
+                    if (serviceMethods == null) continue;
+                    if (serviceMethods.CreateMethodFlag == '1')
                     {
                         list.Add(item);
                     }
                     else if (serviceMethods.CustomMethodFlag == '1')
                     {
-                        if (item.ToLower().Contains("update")|| item.ToLower().Contains("modify"))
+                        if (item.ToLower().Contains("update") || item.ToLower().Contains("modify"))
                         {
                             list.Add(item);
                         }
@@ -2306,12 +2315,12 @@ namespace Generator.UI.WF
                 foreach (var item in objectIdList)
                 {
                     var serviceMethods = _serviceMethodService.GetByObjectId(item, CbxService2ProfileId.SelectedItem.ToString());
-                    if (serviceMethods != null) continue;
+                    if (serviceMethods == null) continue;
                     if (serviceMethods.ModifyMethodFlag == '1')
                     {
                         list.Add(item);
                     }
-                    else if(serviceMethods.CustomMethodFlag == '1')
+                    else if (serviceMethods.CustomMethodFlag == '1')
                     {
                         if (item.ToLower().Contains("create") || item.ToLower().Contains("add"))
                         {
@@ -2319,6 +2328,7 @@ namespace Generator.UI.WF
                         }
                     }
                 }
+                CbxService2ObjectId.DataSource = list;
 
             }
             else if (CbxService2ProfileId.SelectedIndex == 0)

@@ -12,14 +12,20 @@
             if (LinkButton == null)
             {
                 xml += "\n";
-                xml += $"<col id=\"{Id}\" field-id=\"{FieldId}\" text=\"{Text}\" width=\"{Witdh}\"".Tab(6);
-                if (Alignment != null) xml += $" alignment=\"{Alignment}\"/>";
+                xml += $"<col id=\"{Id}\" field-id=\"{FieldId}\" text=\"{Text}\" width=\"{Witdh}\"".Tab(6); ;
+                if (Alignment != null)
+                    xml += $" alignment=\"{Alignment}\"/>";
+                else
+                    xml += "/>";
                 return xml;
             }
-           
+
             xml += "\n";
-            xml += $"<col id=\"{Id}\" field-id=\"{FieldId}\" text=\"{Text}\" width=\"{Witdh}\"".Tab(6);
-            if (Alignment != null) xml += $" alignment=\"{Alignment}\">";
+            xml += $"<col id=\"{Id}\" field-id=\"{FieldId}\" text=\"{Text}\" width=\"{Witdh}\"".Tab(6); ;
+            if (Alignment != null)
+                xml += $" alignment=\"{Alignment}\">";
+            else
+                xml += "/>";
             xml += LinkButton.ToString();
             xml += "\n";
             xml += "</col>".Tab(6);

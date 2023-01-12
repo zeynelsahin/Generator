@@ -26,7 +26,7 @@ namespace Generator.UI.WF
                             continue;
                         }
 
-                        if (st[j] != Convert.ToChar("_")) yeniSt += st[j];
+                        if (st[j] != Convert.ToChar("_")) yeniSt += st[j].EnglishConfigure();
                     }
 
                 configureName.Add(yeniSt);
@@ -53,7 +53,7 @@ namespace Generator.UI.WF
                         continue;
                     }
 
-                    if (st[j] != Convert.ToChar("_")) yeniSt += st[j];
+                    if (st[j] != Convert.ToChar("_")) yeniSt += st[j].EnglishConfigure();
                 }
 
             return yeniSt;
@@ -73,7 +73,7 @@ namespace Generator.UI.WF
                     if (st[j - 1] == Convert.ToChar("_"))
                         yeniSt += st[j].ToString().ToUpper();
                     else
-                        yeniSt += st[j];
+                        yeniSt += st[j].EnglishConfigure();
                 }
 
             return yeniSt.Replace("_", " ");
@@ -96,7 +96,7 @@ namespace Generator.UI.WF
                         continue;
                     }
 
-                    if (st[j] != Convert.ToChar("_")) yeniSt += st[j];
+                    if (st[j] != Convert.ToChar("_")) yeniSt += st[j].EnglishConfigure();
                 }
 
             return yeniSt;
@@ -119,7 +119,7 @@ namespace Generator.UI.WF
                         continue;
                     }
 
-                    yeniSt += st[j];
+                    yeniSt += st[j].EnglishConfigure();
                 }
 
             return yeniSt;
@@ -227,6 +227,15 @@ namespace Generator.UI.WF
         {
             var dartList = new List<string>(){ "InsertDate","InsertUserId","InsertTokenId","UpdateDate","UpdateUserId","UpdateTokenId" };
             return list.Where(p => !dartList.Contains(p)).ToList();
+        }
+
+        public static char EnglishConfigure(this char text)
+        {
+            if (text =='ı' || text=='I')
+            {
+                return 'i';
+            }
+            return text;
         }
     }
 }

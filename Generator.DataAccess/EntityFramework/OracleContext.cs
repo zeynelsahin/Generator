@@ -38,7 +38,7 @@ namespace Generator.DataAccess.EntityFramework
             modelBuilder.Entity<ActionOption>().Property(s => s.Environment).HasColumnName("ENVIRONMENT");
             modelBuilder.Entity<ActionOption>().Property(s => s.ApplicationId).HasColumnName("APPLICATION_ID");
             modelBuilder.Entity<ActionOption>().Property(s => s.ActionId).HasColumnName("ACTION_ID");
-            modelBuilder.Entity<ActionOption>().Property(s => s.ServiceActionName).HasColumnName("SERVICE_ACTION_NAME");
+            modelBuilder.Entity<ActionOption>().Property(s => s.ServiceActionName).HasColumnName("SERVICE_ACTION_ID");
             modelBuilder.Entity<ActionOption>().Property(s => s.Description).HasColumnName("DESCRIPTION");
             modelBuilder.Entity<ActionOption>().Property(s => s.ValidFlag).HasColumnName("VALID_FLAG");
             modelBuilder.Entity<ActionOption>().Property(s => s.ServiceId).HasColumnName("SERVICE_ID");
@@ -59,7 +59,7 @@ namespace Generator.DataAccess.EntityFramework
             modelBuilder.Entity<MenuOption>().Property(s => s.Icon).HasColumnName("ICON");
             modelBuilder.Entity<MenuOption>().Property(s => s.SortId).HasColumnName("SORT_ID");
             modelBuilder.Entity<MenuOption>().Property(s => s.ValidFlag).HasColumnName("VALID_FLAG");
-            
+
             //PageOption
             modelBuilder.Entity<PageOption>().Property(s => s.DomainId).HasColumnName("DOMAIN_ID");
             modelBuilder.Entity<PageOption>().Property(s => s.Environment).HasColumnName("ENVIRONMENT");

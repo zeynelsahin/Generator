@@ -156,6 +156,20 @@ namespace Generator.Business.Concrete
                 return null;
             }
         }
+        public string GetMSSqlText(string objectId, string profileId, string schemaName)
+        {
+            try
+            {
+                var result = _objectEntityDal.Get(entity =>
+                    entity.ObjectId == objectId && entity.ProfileId == profileId &&
+                    entity.SchemaName == schemaName);
+                return result.Text;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
 
         public List<string> GetColumnsName(string tableName)
         {

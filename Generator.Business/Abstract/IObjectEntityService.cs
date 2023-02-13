@@ -16,7 +16,7 @@ namespace Generator.Business.Abstract
         List<string> GetAllProfileId();
         List<string> GetAllSchemaName();
         string GetOracleText(string objectId, string profileId, string schemaName);
-
+        string GetMSSqlText(string objectId, string profileId, string schemaName);
         List<string> GetColumnsName(string tableName);
         List<OracleColumn> GetOracleColumns(string tableName);
 

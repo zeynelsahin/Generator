@@ -98,13 +98,16 @@ namespace Generator.UI.WF
             comboBoxResult.DataSource = results;
         }
 
-
-        private string GetSqlText()
+        private string GetOracleText()
         {
-            var sqlText = _objectEntityService.GetOracleText(_objectId, _profileId, _schemaName).ToLower();
-            return string.IsNullOrWhiteSpace(sqlText) ? null : sqlText;
+            var sqlText = _objectEntityService.GetOracleText(_objectId, _profileId, _schemaName);
+            return string.IsNullOrWhiteSpace(sqlText) ? null : sqlText.ToLower();
         }
-
+        private string GetMSSqlText()
+        {
+            var sqlText = _objectEntityService.GetMSSqlText(_objectId, _profileId, _schemaName);
+            return string.IsNullOrWhiteSpace(sqlText) ? null : sqlText.ToLower();
+        }
         private string ResultSqlTextFormat(string sqlText)
         {
             sqlText = sqlText.ToLower();
@@ -261,7 +264,12 @@ namespace Generator.UI.WF
 
         private void FindParameters()
         {
-            var sqlText = GetSqlText();
+            var sqlText = GetOracleText();
+
+            if (sqlText==null)
+            {
+                sqlText = GetMSSqlText();
+            }
             if (sqlText == null) return;
 
             var straightSqlText = ParameterSqlTextFormat(sqlText);
@@ -392,6 +400,10 @@ namespace Generator.UI.WF
                         column = column.Substring(5);
                     }
 
+                    if (column.IndexOf(" ") != -1)
+                    {
+                        column = column.Substring(column.IndexOf(" "));
+                    }
                     column = column.Trim();
                     if (!string.IsNullOrWhiteSpace(column)) resultList.Add(column);
                     column = "";
@@ -424,7 +436,12 @@ namespace Generator.UI.WF
 
         private void FindResults()
         {
-            var sqlText = GetSqlText();
+            var sqlText = GetOracleText();
+
+            if (sqlText == null)
+            {
+                sqlText = GetMSSqlText();
+            }
             if (sqlText == null) return;
             var straightSqlText = ResultSqlTextFormat(sqlText);
             var resultList = GetResulList(straightSqlText);

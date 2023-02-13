@@ -98,7 +98,7 @@ namespace Generator.UI.WF
             this.label25.ForeColor = System.Drawing.Color.Silver;
             this.label25.Location = new System.Drawing.Point(900, 52);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(199, 23);
+            this.label25.Size = new System.Drawing.Size(303, 36);
             this.label25.TabIndex = 330;
             this.label25.Text = "Service Method Add";
             // 
@@ -141,7 +141,7 @@ namespace Generator.UI.WF
             this.label24.ForeColor = System.Drawing.Color.Silver;
             this.label24.Location = new System.Drawing.Point(1152, 53);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(253, 23);
+            this.label24.Size = new System.Drawing.Size(383, 36);
             this.label24.TabIndex = 324;
             this.label24.Text = "Parameter And Result Add";
             // 
@@ -170,7 +170,7 @@ namespace Generator.UI.WF
             "Tümü"});
             this.CbxSchemaName.Location = new System.Drawing.Point(788, 60);
             this.CbxSchemaName.Name = "CbxSchemaName";
-            this.CbxSchemaName.Size = new System.Drawing.Size(183, 29);
+            this.CbxSchemaName.Size = new System.Drawing.Size(183, 38);
             this.CbxSchemaName.TabIndex = 321;
             this.CbxSchemaName.SelectedIndexChanged += new System.EventHandler(this.CbxSchemaName_SelectedIndexChanged);
             // 
@@ -183,7 +183,7 @@ namespace Generator.UI.WF
             this.label23.ForeColor = System.Drawing.Color.Silver;
             this.label23.Location = new System.Drawing.Point(788, 34);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(148, 23);
+            this.label23.Size = new System.Drawing.Size(225, 36);
             this.label23.TabIndex = 322;
             this.label23.Text = "Schema Name";
             // 
@@ -198,7 +198,7 @@ namespace Generator.UI.WF
             "Tümü"});
             this.CbxProfileId.Location = new System.Drawing.Point(415, 59);
             this.CbxProfileId.Name = "CbxProfileId";
-            this.CbxProfileId.Size = new System.Drawing.Size(354, 29);
+            this.CbxProfileId.Size = new System.Drawing.Size(354, 38);
             this.CbxProfileId.TabIndex = 319;
             this.CbxProfileId.SelectedIndexChanged += new System.EventHandler(this.CbxProfileId_SelectedIndexChanged);
             // 
@@ -211,7 +211,7 @@ namespace Generator.UI.WF
             this.label20.ForeColor = System.Drawing.Color.Silver;
             this.label20.Location = new System.Drawing.Point(411, 34);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(77, 23);
+            this.label20.Size = new System.Drawing.Size(116, 36);
             this.label20.TabIndex = 320;
             this.label20.Text = "Profil Id";
             // 
@@ -226,7 +226,7 @@ namespace Generator.UI.WF
             "Tümü"});
             this.CbxOjectId.Location = new System.Drawing.Point(25, 59);
             this.CbxOjectId.Name = "CbxOjectId";
-            this.CbxOjectId.Size = new System.Drawing.Size(354, 29);
+            this.CbxOjectId.Size = new System.Drawing.Size(354, 38);
             this.CbxOjectId.TabIndex = 211;
             this.CbxOjectId.SelectedIndexChanged += new System.EventHandler(this.CbxOjectId_SelectedIndexChanged);
             // 
@@ -239,7 +239,7 @@ namespace Generator.UI.WF
             this.label10.ForeColor = System.Drawing.Color.Silver;
             this.label10.Location = new System.Drawing.Point(23, 34);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(97, 23);
+            this.label10.Size = new System.Drawing.Size(148, 36);
             this.label10.TabIndex = 212;
             this.label10.Text = "Object Id";
             // 
@@ -282,6 +282,7 @@ namespace Generator.UI.WF
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.DgwObject.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.DgwObject.RowHeadersWidth = 62;
             this.DgwObject.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DgwObject.Size = new System.Drawing.Size(1396, 186);
             this.DgwObject.TabIndex = 1;
@@ -299,7 +300,7 @@ namespace Generator.UI.WF
             this.label26.ForeColor = System.Drawing.Color.Silver;
             this.label26.Location = new System.Drawing.Point(57, 45);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(135, 23);
+            this.label26.Size = new System.Drawing.Size(206, 36);
             this.label26.TabIndex = 328;
             this.label26.Text = "UX Generator";
             // 
@@ -323,7 +324,7 @@ namespace Generator.UI.WF
             this.label_copadet.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label_copadet.Location = new System.Drawing.Point(1430, 50);
             this.label_copadet.Name = "label_copadet";
-            this.label_copadet.Size = new System.Drawing.Size(0, 24);
+            this.label_copadet.Size = new System.Drawing.Size(0, 39);
             this.label_copadet.TabIndex = 73;
             // 
             // PanelTop
@@ -415,11 +416,14 @@ namespace Generator.UI.WF
             // 
             // dataGridViewImageColumn1
             // 
+            this.dataGridViewImageColumn1.MinimumWidth = 8;
             this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.Width = 150;
             // 
             // dataGridViewImageColumn2
             // 
             this.dataGridViewImageColumn2.HeaderText = "";
+            this.dataGridViewImageColumn2.MinimumWidth = 8;
             this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
             this.dataGridViewImageColumn2.Width = 183;
             // 
@@ -432,7 +436,7 @@ namespace Generator.UI.WF
             this.label2.ForeColor = System.Drawing.Color.Silver;
             this.label2.Location = new System.Drawing.Point(1074, 59);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(67, 23);
+            this.label2.Size = new System.Drawing.Size(102, 36);
             this.label2.TabIndex = 331;
             this.label2.Text = "Yenile";
             // 
@@ -445,7 +449,7 @@ namespace Generator.UI.WF
             this.label7.ForeColor = System.Drawing.Color.Silver;
             this.label7.Location = new System.Drawing.Point(458, 38);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(86, 22);
+            this.label7.Size = new System.Drawing.Size(137, 36);
             this.label7.TabIndex = 361;
             this.label7.Text = "Profile Id";
             // 
@@ -459,7 +463,7 @@ namespace Generator.UI.WF
             this.TbxProfileId.Location = new System.Drawing.Point(461, 69);
             this.TbxProfileId.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TbxProfileId.Name = "TbxProfileId";
-            this.TbxProfileId.Size = new System.Drawing.Size(372, 30);
+            this.TbxProfileId.Size = new System.Drawing.Size(372, 45);
             this.TbxProfileId.TabIndex = 359;
             this.TbxProfileId.WordWrap = false;
             // 
@@ -508,7 +512,7 @@ namespace Generator.UI.WF
             this.label5.ForeColor = System.Drawing.Color.Silver;
             this.label5.Location = new System.Drawing.Point(880, 38);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(146, 22);
+            this.label5.Size = new System.Drawing.Size(229, 36);
             this.label5.TabIndex = 371;
             this.label5.Text = "Schema Name";
             // 
@@ -522,7 +526,7 @@ namespace Generator.UI.WF
             this.TbxSchemaName.Location = new System.Drawing.Point(883, 69);
             this.TbxSchemaName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TbxSchemaName.Name = "TbxSchemaName";
-            this.TbxSchemaName.Size = new System.Drawing.Size(267, 30);
+            this.TbxSchemaName.Size = new System.Drawing.Size(267, 45);
             this.TbxSchemaName.TabIndex = 369;
             this.TbxSchemaName.WordWrap = false;
             // 
@@ -549,7 +553,7 @@ namespace Generator.UI.WF
             "SEQUENCE"});
             this.CbxObjectType.Location = new System.Drawing.Point(1181, 74);
             this.CbxObjectType.Name = "CbxObjectType";
-            this.CbxObjectType.Size = new System.Drawing.Size(221, 29);
+            this.CbxObjectType.Size = new System.Drawing.Size(221, 38);
             this.CbxObjectType.TabIndex = 367;
             // 
             // label4
@@ -561,7 +565,7 @@ namespace Generator.UI.WF
             this.label4.ForeColor = System.Drawing.Color.Silver;
             this.label4.Location = new System.Drawing.Point(1178, 46);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(104, 23);
+            this.label4.Size = new System.Drawing.Size(158, 36);
             this.label4.TabIndex = 368;
             this.label4.Text = "Crud Type";
             // 
@@ -574,7 +578,7 @@ namespace Generator.UI.WF
             this.label3.ForeColor = System.Drawing.Color.Silver;
             this.label3.Location = new System.Drawing.Point(9, 38);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(97, 22);
+            this.label3.Size = new System.Drawing.Size(151, 36);
             this.label3.TabIndex = 366;
             this.label3.Text = "Object Id";
             // 
@@ -588,7 +592,7 @@ namespace Generator.UI.WF
             this.TbxObjectId.Location = new System.Drawing.Point(12, 69);
             this.TbxObjectId.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TbxObjectId.Name = "TbxObjectId";
-            this.TbxObjectId.Size = new System.Drawing.Size(388, 30);
+            this.TbxObjectId.Size = new System.Drawing.Size(388, 45);
             this.TbxObjectId.TabIndex = 364;
             this.TbxObjectId.WordWrap = false;
             // 
@@ -668,7 +672,7 @@ namespace Generator.UI.WF
             this.LblAdet.AutoSize = true;
             this.LblAdet.Location = new System.Drawing.Point(12, 382);
             this.LblAdet.Name = "LblAdet";
-            this.LblAdet.Size = new System.Drawing.Size(60, 24);
+            this.LblAdet.Size = new System.Drawing.Size(91, 37);
             this.LblAdet.TabIndex = 364;
             this.LblAdet.Text = "Adet";
             // 
@@ -714,7 +718,7 @@ namespace Generator.UI.WF
             this.label9.ForeColor = System.Drawing.Color.Silver;
             this.label9.Location = new System.Drawing.Point(2386, 73);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(253, 23);
+            this.label9.Size = new System.Drawing.Size(383, 36);
             this.label9.TabIndex = 324;
             this.label9.Text = "Parameter And Result Add";
             // 
@@ -728,7 +732,7 @@ namespace Generator.UI.WF
             this.label11.ForeColor = System.Drawing.Color.Silver;
             this.label11.Location = new System.Drawing.Point(2134, 72);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(199, 23);
+            this.label11.Size = new System.Drawing.Size(303, 36);
             this.label11.TabIndex = 330;
             this.label11.Text = "Service Method Add";
             // 
@@ -771,7 +775,7 @@ namespace Generator.UI.WF
             // 
             // FormObjectAddUpdate
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 30F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1430, 665);

@@ -455,11 +455,11 @@ namespace Generator.UI.WF
             this.TabGridCreate.Controls.Add(this.groupBox1);
             this.TabGridCreate.Controls.Add(this.PanelDgw);
             this.TabGridCreate.Controls.Add(this.groupBox2);
-            this.TabGridCreate.Location = new System.Drawing.Point(4, 29);
+            this.TabGridCreate.Location = new System.Drawing.Point(4, 36);
             this.TabGridCreate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TabGridCreate.Name = "TabGridCreate";
             this.TabGridCreate.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TabGridCreate.Size = new System.Drawing.Size(1534, 752);
+            this.TabGridCreate.Size = new System.Drawing.Size(1534, 745);
             this.TabGridCreate.TabIndex = 0;
             this.TabGridCreate.Text = "Grid Create";
             this.TabGridCreate.UseVisualStyleBackColor = true;
@@ -472,7 +472,7 @@ namespace Generator.UI.WF
             this.panel8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel8.Name = "panel8";
             this.panel8.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.panel8.Size = new System.Drawing.Size(1234, 263);
+            this.panel8.Size = new System.Drawing.Size(1234, 256);
             this.panel8.TabIndex = 367;
             // 
             // groupBox4
@@ -485,7 +485,7 @@ namespace Generator.UI.WF
             this.groupBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox4.Size = new System.Drawing.Size(1224, 263);
+            this.groupBox4.Size = new System.Drawing.Size(1224, 256);
             this.groupBox4.TabIndex = 363;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Result";
@@ -495,10 +495,10 @@ namespace Generator.UI.WF
             this.RtbxGrid.BackColor = System.Drawing.Color.White;
             this.RtbxGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.RtbxGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.RtbxGrid.Location = new System.Drawing.Point(3, 27);
+            this.RtbxGrid.Location = new System.Drawing.Point(3, 40);
             this.RtbxGrid.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.RtbxGrid.Name = "RtbxGrid";
-            this.RtbxGrid.Size = new System.Drawing.Size(1218, 234);
+            this.RtbxGrid.Size = new System.Drawing.Size(1218, 214);
             this.RtbxGrid.TabIndex = 366;
             this.RtbxGrid.Text = "";
             // 
@@ -554,7 +554,7 @@ namespace Generator.UI.WF
             this.CbxActionCode.Location = new System.Drawing.Point(348, 88);
             this.CbxActionCode.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CbxActionCode.Name = "CbxActionCode";
-            this.CbxActionCode.Size = new System.Drawing.Size(268, 29);
+            this.CbxActionCode.Size = new System.Drawing.Size(268, 38);
             this.CbxActionCode.TabIndex = 372;
             this.CbxActionCode.Text = "List Detail";
             // 
@@ -567,7 +567,7 @@ namespace Generator.UI.WF
             this.label11.ForeColor = System.Drawing.Color.Silver;
             this.label11.Location = new System.Drawing.Point(347, 62);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(127, 23);
+            this.label11.Size = new System.Drawing.Size(195, 36);
             this.label11.TabIndex = 373;
             this.label11.Text = "Action Code";
             // 
@@ -581,7 +581,7 @@ namespace Generator.UI.WF
             this.CbxStatusColor.Location = new System.Drawing.Point(662, 85);
             this.CbxStatusColor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CbxStatusColor.Name = "CbxStatusColor";
-            this.CbxStatusColor.Size = new System.Drawing.Size(268, 29);
+            this.CbxStatusColor.Size = new System.Drawing.Size(268, 38);
             this.CbxStatusColor.TabIndex = 371;
             // 
             // checkBox3
@@ -592,7 +592,7 @@ namespace Generator.UI.WF
             this.checkBox3.Location = new System.Drawing.Point(678, 189);
             this.checkBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(151, 28);
+            this.checkBox3.Size = new System.Drawing.Size(222, 41);
             this.checkBox3.TabIndex = 370;
             this.checkBox3.Text = "Excel Export";
             this.checkBox3.UseVisualStyleBackColor = true;
@@ -605,7 +605,7 @@ namespace Generator.UI.WF
             this.checkBox2.Location = new System.Drawing.Point(977, 189);
             this.checkBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(142, 28);
+            this.checkBox2.Size = new System.Drawing.Size(209, 41);
             this.checkBox2.TabIndex = 369;
             this.checkBox2.Text = "Search Box";
             this.checkBox2.UseVisualStyleBackColor = true;
@@ -619,7 +619,7 @@ namespace Generator.UI.WF
             this.label9.ForeColor = System.Drawing.Color.Silver;
             this.label9.Location = new System.Drawing.Point(660, 59);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(168, 23);
+            this.label9.Size = new System.Drawing.Size(256, 36);
             this.label9.TabIndex = 368;
             this.label9.Text = "Status Color Field";
             // 
@@ -632,7 +632,7 @@ namespace Generator.UI.WF
             this.label8.ForeColor = System.Drawing.Color.Silver;
             this.label8.Location = new System.Drawing.Point(348, 154);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(70, 22);
+            this.label8.Size = new System.Drawing.Size(109, 36);
             this.label8.TabIndex = 366;
             this.label8.Text = "Height";
             // 
@@ -645,7 +645,7 @@ namespace Generator.UI.WF
             this.TbxHeight.Location = new System.Drawing.Point(348, 182);
             this.TbxHeight.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TbxHeight.Name = "TbxHeight";
-            this.TbxHeight.Size = new System.Drawing.Size(267, 30);
+            this.TbxHeight.Size = new System.Drawing.Size(267, 45);
             this.TbxHeight.TabIndex = 364;
             this.TbxHeight.Text = "650";
             this.TbxHeight.WordWrap = false;
@@ -668,7 +668,7 @@ namespace Generator.UI.WF
             this.label7.ForeColor = System.Drawing.Color.Silver;
             this.label7.Location = new System.Drawing.Point(21, 149);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(46, 22);
+            this.label7.Size = new System.Drawing.Size(71, 36);
             this.label7.TabIndex = 358;
             this.label7.Text = "Text";
             // 
@@ -680,7 +680,7 @@ namespace Generator.UI.WF
             this.checkBox1.Location = new System.Drawing.Point(977, 88);
             this.checkBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(205, 28);
+            this.checkBox1.Size = new System.Drawing.Size(302, 41);
             this.checkBox1.TabIndex = 363;
             this.checkBox1.Text = "Date Type Model";
             this.checkBox1.UseVisualStyleBackColor = true;
@@ -694,7 +694,7 @@ namespace Generator.UI.WF
             this.TbxGridName.Location = new System.Drawing.Point(21, 178);
             this.TbxGridName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TbxGridName.Name = "TbxGridName";
-            this.TbxGridName.Size = new System.Drawing.Size(267, 30);
+            this.TbxGridName.Size = new System.Drawing.Size(267, 45);
             this.TbxGridName.TabIndex = 356;
             this.TbxGridName.Text = "PermissinProfile";
             this.TbxGridName.WordWrap = false;
@@ -720,7 +720,7 @@ namespace Generator.UI.WF
             this.CbxLinkButton.Location = new System.Drawing.Point(21, 88);
             this.CbxLinkButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CbxLinkButton.Name = "CbxLinkButton";
-            this.CbxLinkButton.Size = new System.Drawing.Size(268, 29);
+            this.CbxLinkButton.Size = new System.Drawing.Size(268, 38);
             this.CbxLinkButton.TabIndex = 360;
             // 
             // label2
@@ -732,7 +732,7 @@ namespace Generator.UI.WF
             this.label2.ForeColor = System.Drawing.Color.Silver;
             this.label2.Location = new System.Drawing.Point(19, 62);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(107, 23);
+            this.label2.Size = new System.Drawing.Size(165, 36);
             this.label2.TabIndex = 361;
             this.label2.Text = "Link Button";
             // 
@@ -775,7 +775,7 @@ namespace Generator.UI.WF
             this.label12.ForeColor = System.Drawing.Color.Silver;
             this.label12.Location = new System.Drawing.Point(494, 28);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(104, 23);
+            this.label12.Size = new System.Drawing.Size(158, 36);
             this.label12.TabIndex = 365;
             this.label12.Text = "Crud Type";
             // 
@@ -789,7 +789,7 @@ namespace Generator.UI.WF
             this.CbxCrudMethod.Location = new System.Drawing.Point(496, 52);
             this.CbxCrudMethod.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CbxCrudMethod.Name = "CbxCrudMethod";
-            this.CbxCrudMethod.Size = new System.Drawing.Size(354, 29);
+            this.CbxCrudMethod.Size = new System.Drawing.Size(354, 38);
             this.CbxCrudMethod.TabIndex = 364;
             this.CbxCrudMethod.SelectedIndexChanged += new System.EventHandler(this.CbxCrudMethod_SelectedIndexChanged);
             // 
@@ -848,7 +848,7 @@ namespace Generator.UI.WF
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox1.Size = new System.Drawing.Size(294, 636);
+            this.groupBox1.Size = new System.Drawing.Size(294, 629);
             this.groupBox1.TabIndex = 336;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Table Column Names";
@@ -862,10 +862,10 @@ namespace Generator.UI.WF
             this.ClbColumnNames.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
             this.ClbColumnNames.FormattingEnabled = true;
             this.ClbColumnNames.HorizontalScrollbar = true;
-            this.ClbColumnNames.Location = new System.Drawing.Point(3, 27);
+            this.ClbColumnNames.Location = new System.Drawing.Point(3, 40);
             this.ClbColumnNames.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ClbColumnNames.Name = "ClbColumnNames";
-            this.ClbColumnNames.Size = new System.Drawing.Size(288, 607);
+            this.ClbColumnNames.Size = new System.Drawing.Size(288, 587);
             this.ClbColumnNames.TabIndex = 324;
             // 
             // PanelDgw
@@ -915,6 +915,7 @@ namespace Generator.UI.WF
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.DgwObject.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.DgwObject.RowHeadersWidth = 62;
             this.DgwObject.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DgwObject.Size = new System.Drawing.Size(1528, 0);
             this.DgwObject.TabIndex = 2;
@@ -951,7 +952,7 @@ namespace Generator.UI.WF
             this.label3.ForeColor = System.Drawing.Color.Silver;
             this.label3.Location = new System.Drawing.Point(798, 38);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(123, 23);
+            this.label3.Size = new System.Drawing.Size(188, 36);
             this.label3.TabIndex = 326;
             this.label3.Text = "Object Type";
             // 
@@ -1004,7 +1005,7 @@ namespace Generator.UI.WF
             this.CbxObjectType.Location = new System.Drawing.Point(801, 62);
             this.CbxObjectType.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CbxObjectType.Name = "CbxObjectType";
-            this.CbxObjectType.Size = new System.Drawing.Size(354, 29);
+            this.CbxObjectType.Size = new System.Drawing.Size(354, 38);
             this.CbxObjectType.TabIndex = 325;
             // 
             // CbxObjectId
@@ -1019,7 +1020,7 @@ namespace Generator.UI.WF
             this.CbxObjectId.Location = new System.Drawing.Point(410, 62);
             this.CbxObjectId.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CbxObjectId.Name = "CbxObjectId";
-            this.CbxObjectId.Size = new System.Drawing.Size(354, 29);
+            this.CbxObjectId.Size = new System.Drawing.Size(354, 38);
             this.CbxObjectId.TabIndex = 319;
             this.CbxObjectId.SelectedIndexChanged += new System.EventHandler(this.CbxObjectId_SelectedIndexChanged);
             // 
@@ -1032,7 +1033,7 @@ namespace Generator.UI.WF
             this.label10.ForeColor = System.Drawing.Color.Silver;
             this.label10.Location = new System.Drawing.Point(408, 38);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(97, 23);
+            this.label10.Size = new System.Drawing.Size(148, 36);
             this.label10.TabIndex = 320;
             this.label10.Text = "Object Id";
             // 
@@ -1045,7 +1046,7 @@ namespace Generator.UI.WF
             this.label1.ForeColor = System.Drawing.Color.Silver;
             this.label1.Location = new System.Drawing.Point(30, 38);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(89, 23);
+            this.label1.Size = new System.Drawing.Size(135, 36);
             this.label1.TabIndex = 322;
             this.label1.Text = "Profile Id";
             // 
@@ -1059,7 +1060,7 @@ namespace Generator.UI.WF
             this.CbxProfileId.Location = new System.Drawing.Point(31, 62);
             this.CbxProfileId.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CbxProfileId.Name = "CbxProfileId";
-            this.CbxProfileId.Size = new System.Drawing.Size(354, 29);
+            this.CbxProfileId.Size = new System.Drawing.Size(354, 38);
             this.CbxProfileId.TabIndex = 321;
             this.CbxProfileId.SelectedIndexChanged += new System.EventHandler(this.CbxProfileId_SelectedIndexChanged);
             // 
@@ -1068,11 +1069,11 @@ namespace Generator.UI.WF
             this.TabOneService.Controls.Add(this.groupBox8);
             this.TabOneService.Controls.Add(this.groupBox17);
             this.TabOneService.Controls.Add(this.groupBox9);
-            this.TabOneService.Location = new System.Drawing.Point(4, 29);
+            this.TabOneService.Location = new System.Drawing.Point(4, 36);
             this.TabOneService.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TabOneService.Name = "TabOneService";
             this.TabOneService.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TabOneService.Size = new System.Drawing.Size(1534, 752);
+            this.TabOneService.Size = new System.Drawing.Size(1534, 745);
             this.TabOneService.TabIndex = 3;
             this.TabOneService.Text = "One Service";
             this.TabOneService.UseVisualStyleBackColor = true;
@@ -1087,7 +1088,7 @@ namespace Generator.UI.WF
             this.groupBox8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox8.Name = "groupBox8";
             this.groupBox8.Padding = new System.Windows.Forms.Padding(35);
-            this.groupBox8.Size = new System.Drawing.Size(1528, 305);
+            this.groupBox8.Size = new System.Drawing.Size(1528, 298);
             this.groupBox8.TabIndex = 374;
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Result";
@@ -1097,10 +1098,10 @@ namespace Generator.UI.WF
             this.RtbxSingleJavaScript.BackColor = System.Drawing.Color.White;
             this.RtbxSingleJavaScript.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.RtbxSingleJavaScript.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.RtbxSingleJavaScript.Location = new System.Drawing.Point(35, 60);
+            this.RtbxSingleJavaScript.Location = new System.Drawing.Point(35, 73);
             this.RtbxSingleJavaScript.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.RtbxSingleJavaScript.Name = "RtbxSingleJavaScript";
-            this.RtbxSingleJavaScript.Size = new System.Drawing.Size(1458, 210);
+            this.RtbxSingleJavaScript.Size = new System.Drawing.Size(1458, 190);
             this.RtbxSingleJavaScript.TabIndex = 366;
             this.RtbxSingleJavaScript.Text = "";
             // 
@@ -1140,7 +1141,7 @@ namespace Generator.UI.WF
             this.label29.ForeColor = System.Drawing.Color.Silver;
             this.label29.Location = new System.Drawing.Point(393, 110);
             this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(144, 22);
+            this.label29.Size = new System.Drawing.Size(226, 36);
             this.label29.TabIndex = 375;
             this.label29.Text = "Method Name";
             // 
@@ -1153,7 +1154,7 @@ namespace Generator.UI.WF
             this.TbxMethodName.Location = new System.Drawing.Point(393, 138);
             this.TbxMethodName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TbxMethodName.Name = "TbxMethodName";
-            this.TbxMethodName.Size = new System.Drawing.Size(356, 30);
+            this.TbxMethodName.Size = new System.Drawing.Size(356, 45);
             this.TbxMethodName.TabIndex = 373;
             this.TbxMethodName.WordWrap = false;
             // 
@@ -1175,7 +1176,7 @@ namespace Generator.UI.WF
             this.label24.ForeColor = System.Drawing.Color.Silver;
             this.label24.Location = new System.Drawing.Point(13, 110);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(113, 22);
+            this.label24.Size = new System.Drawing.Size(176, 36);
             this.label24.TabIndex = 372;
             this.label24.Text = "Prop Name";
             // 
@@ -1188,7 +1189,7 @@ namespace Generator.UI.WF
             this.TbxStaticPropName.Location = new System.Drawing.Point(13, 138);
             this.TbxStaticPropName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TbxStaticPropName.Name = "TbxStaticPropName";
-            this.TbxStaticPropName.Size = new System.Drawing.Size(356, 30);
+            this.TbxStaticPropName.Size = new System.Drawing.Size(356, 45);
             this.TbxStaticPropName.TabIndex = 370;
             this.TbxStaticPropName.WordWrap = false;
             // 
@@ -1210,7 +1211,7 @@ namespace Generator.UI.WF
             this.label27.ForeColor = System.Drawing.Color.Silver;
             this.label27.Location = new System.Drawing.Point(782, 38);
             this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(113, 23);
+            this.label27.Size = new System.Drawing.Size(171, 36);
             this.label27.TabIndex = 369;
             this.label27.Text = "Value Field";
             // 
@@ -1225,7 +1226,7 @@ namespace Generator.UI.WF
             this.CbxStaticValueField.Location = new System.Drawing.Point(784, 62);
             this.CbxStaticValueField.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CbxStaticValueField.Name = "CbxStaticValueField";
-            this.CbxStaticValueField.Size = new System.Drawing.Size(354, 29);
+            this.CbxStaticValueField.Size = new System.Drawing.Size(354, 38);
             this.CbxStaticValueField.TabIndex = 368;
             // 
             // label28
@@ -1237,7 +1238,7 @@ namespace Generator.UI.WF
             this.label28.ForeColor = System.Drawing.Color.Silver;
             this.label28.Location = new System.Drawing.Point(391, 38);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(94, 23);
+            this.label28.Size = new System.Drawing.Size(143, 36);
             this.label28.TabIndex = 367;
             this.label28.Text = "Key Field";
             // 
@@ -1254,7 +1255,7 @@ namespace Generator.UI.WF
             this.CbxStaticKeyField.Location = new System.Drawing.Point(393, 62);
             this.CbxStaticKeyField.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CbxStaticKeyField.Name = "CbxStaticKeyField";
-            this.CbxStaticKeyField.Size = new System.Drawing.Size(354, 29);
+            this.CbxStaticKeyField.Size = new System.Drawing.Size(354, 38);
             this.CbxStaticKeyField.TabIndex = 366;
             // 
             // BtnStaticMethod
@@ -1282,7 +1283,7 @@ namespace Generator.UI.WF
             this.label31.ForeColor = System.Drawing.Color.Silver;
             this.label31.Location = new System.Drawing.Point(13, 38);
             this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(89, 23);
+            this.label31.Size = new System.Drawing.Size(135, 36);
             this.label31.TabIndex = 322;
             this.label31.Text = "Profile Id";
             // 
@@ -1301,7 +1302,7 @@ namespace Generator.UI.WF
             this.CbxStaticJavaScript.Location = new System.Drawing.Point(14, 62);
             this.CbxStaticJavaScript.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CbxStaticJavaScript.Name = "CbxStaticJavaScript";
-            this.CbxStaticJavaScript.Size = new System.Drawing.Size(354, 29);
+            this.CbxStaticJavaScript.Size = new System.Drawing.Size(354, 38);
             this.CbxStaticJavaScript.TabIndex = 321;
             this.CbxStaticJavaScript.SelectedIndexChanged += new System.EventHandler(this.CbxStaticJavaScript_SelectedIndexChanged);
             // 
@@ -1346,7 +1347,7 @@ namespace Generator.UI.WF
             this.label39.ForeColor = System.Drawing.Color.Silver;
             this.label39.Location = new System.Drawing.Point(1157, 38);
             this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(104, 23);
+            this.label39.Size = new System.Drawing.Size(158, 36);
             this.label39.TabIndex = 376;
             this.label39.Text = "Crud Type";
             // 
@@ -1364,7 +1365,7 @@ namespace Generator.UI.WF
             this.CbxContentJsCrudType.Location = new System.Drawing.Point(1160, 62);
             this.CbxContentJsCrudType.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CbxContentJsCrudType.Name = "CbxContentJsCrudType";
-            this.CbxContentJsCrudType.Size = new System.Drawing.Size(354, 29);
+            this.CbxContentJsCrudType.Size = new System.Drawing.Size(354, 38);
             this.CbxContentJsCrudType.TabIndex = 375;
             // 
             // CbxOneServiceResult
@@ -1375,7 +1376,7 @@ namespace Generator.UI.WF
             this.CbxOneServiceResult.Location = new System.Drawing.Point(1160, 139);
             this.CbxOneServiceResult.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CbxOneServiceResult.Name = "CbxOneServiceResult";
-            this.CbxOneServiceResult.Size = new System.Drawing.Size(287, 28);
+            this.CbxOneServiceResult.Size = new System.Drawing.Size(421, 41);
             this.CbxOneServiceResult.TabIndex = 374;
             this.CbxOneServiceResult.Text = "Result ( Custom SQL İçin )";
             this.CbxOneServiceResult.UseVisualStyleBackColor = true;
@@ -1388,7 +1389,7 @@ namespace Generator.UI.WF
             this.CbxOneServiceParameter.Location = new System.Drawing.Point(1160, 202);
             this.CbxOneServiceParameter.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CbxOneServiceParameter.Name = "CbxOneServiceParameter";
-            this.CbxOneServiceParameter.Size = new System.Drawing.Size(145, 28);
+            this.CbxOneServiceParameter.Size = new System.Drawing.Size(211, 41);
             this.CbxOneServiceParameter.TabIndex = 373;
             this.CbxOneServiceParameter.Text = "Parameters";
             this.CbxOneServiceParameter.UseVisualStyleBackColor = true;
@@ -1402,7 +1403,7 @@ namespace Generator.UI.WF
             this.label22.ForeColor = System.Drawing.Color.Silver;
             this.label22.Location = new System.Drawing.Point(779, 105);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(113, 22);
+            this.label22.Size = new System.Drawing.Size(176, 36);
             this.label22.TabIndex = 372;
             this.label22.Text = "Prop Name";
             // 
@@ -1415,7 +1416,7 @@ namespace Generator.UI.WF
             this.TbxPropName.Location = new System.Drawing.Point(779, 132);
             this.TbxPropName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TbxPropName.Name = "TbxPropName";
-            this.TbxPropName.Size = new System.Drawing.Size(356, 30);
+            this.TbxPropName.Size = new System.Drawing.Size(356, 45);
             this.TbxPropName.TabIndex = 370;
             this.TbxPropName.WordWrap = false;
             // 
@@ -1437,7 +1438,7 @@ namespace Generator.UI.WF
             this.label21.ForeColor = System.Drawing.Color.Silver;
             this.label21.Location = new System.Drawing.Point(389, 112);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(113, 23);
+            this.label21.Size = new System.Drawing.Size(171, 36);
             this.label21.TabIndex = 369;
             this.label21.Text = "Value Field";
             // 
@@ -1451,7 +1452,7 @@ namespace Generator.UI.WF
             this.CbxValueField.Location = new System.Drawing.Point(391, 138);
             this.CbxValueField.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CbxValueField.Name = "CbxValueField";
-            this.CbxValueField.Size = new System.Drawing.Size(354, 29);
+            this.CbxValueField.Size = new System.Drawing.Size(354, 38);
             this.CbxValueField.TabIndex = 368;
             // 
             // label14
@@ -1463,7 +1464,7 @@ namespace Generator.UI.WF
             this.label14.ForeColor = System.Drawing.Color.Silver;
             this.label14.Location = new System.Drawing.Point(14, 112);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(94, 23);
+            this.label14.Size = new System.Drawing.Size(143, 36);
             this.label14.TabIndex = 367;
             this.label14.Text = "Key Field";
             // 
@@ -1477,7 +1478,7 @@ namespace Generator.UI.WF
             this.CbxKeyField.Location = new System.Drawing.Point(12, 138);
             this.CbxKeyField.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CbxKeyField.Name = "CbxKeyField";
-            this.CbxKeyField.Size = new System.Drawing.Size(354, 29);
+            this.CbxKeyField.Size = new System.Drawing.Size(354, 38);
             this.CbxKeyField.TabIndex = 366;
             // 
             // BtnContentJSCreate
@@ -1505,7 +1506,7 @@ namespace Generator.UI.WF
             this.label13.ForeColor = System.Drawing.Color.Silver;
             this.label13.Location = new System.Drawing.Point(779, 38);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(123, 23);
+            this.label13.Size = new System.Drawing.Size(188, 36);
             this.label13.TabIndex = 326;
             this.label13.Text = "Object Type";
             // 
@@ -1524,7 +1525,7 @@ namespace Generator.UI.WF
             this.CbxContentJSObjectType.Location = new System.Drawing.Point(782, 62);
             this.CbxContentJSObjectType.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CbxContentJSObjectType.Name = "CbxContentJSObjectType";
-            this.CbxContentJSObjectType.Size = new System.Drawing.Size(354, 29);
+            this.CbxContentJSObjectType.Size = new System.Drawing.Size(354, 38);
             this.CbxContentJSObjectType.TabIndex = 325;
             // 
             // CbxContentJSObjectId
@@ -1539,7 +1540,7 @@ namespace Generator.UI.WF
             this.CbxContentJSObjectId.Location = new System.Drawing.Point(391, 62);
             this.CbxContentJSObjectId.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CbxContentJSObjectId.Name = "CbxContentJSObjectId";
-            this.CbxContentJSObjectId.Size = new System.Drawing.Size(354, 29);
+            this.CbxContentJSObjectId.Size = new System.Drawing.Size(354, 38);
             this.CbxContentJSObjectId.TabIndex = 319;
             this.CbxContentJSObjectId.SelectedIndexChanged += new System.EventHandler(this.CbxContentJSObjectId_SelectedIndexChanged);
             // 
@@ -1552,7 +1553,7 @@ namespace Generator.UI.WF
             this.label16.ForeColor = System.Drawing.Color.Silver;
             this.label16.Location = new System.Drawing.Point(389, 38);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(97, 23);
+            this.label16.Size = new System.Drawing.Size(148, 36);
             this.label16.TabIndex = 320;
             this.label16.Text = "Object Id";
             // 
@@ -1565,7 +1566,7 @@ namespace Generator.UI.WF
             this.label20.ForeColor = System.Drawing.Color.Silver;
             this.label20.Location = new System.Drawing.Point(14, 38);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(89, 23);
+            this.label20.Size = new System.Drawing.Size(135, 36);
             this.label20.TabIndex = 322;
             this.label20.Text = "Profile Id";
             // 
@@ -1579,7 +1580,7 @@ namespace Generator.UI.WF
             this.CbxContentJSProfileId.Location = new System.Drawing.Point(12, 62);
             this.CbxContentJSProfileId.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CbxContentJSProfileId.Name = "CbxContentJSProfileId";
-            this.CbxContentJSProfileId.Size = new System.Drawing.Size(354, 29);
+            this.CbxContentJSProfileId.Size = new System.Drawing.Size(354, 38);
             this.CbxContentJSProfileId.TabIndex = 321;
             this.CbxContentJSProfileId.SelectedIndexChanged += new System.EventHandler(this.CbxContentJSProfileId_SelectedIndexChanged);
             // 
@@ -1587,11 +1588,11 @@ namespace Generator.UI.WF
             // 
             this.TabContent.Controls.Add(this.panel5);
             this.TabContent.Controls.Add(this.groupBox11);
-            this.TabContent.Location = new System.Drawing.Point(4, 29);
+            this.TabContent.Location = new System.Drawing.Point(4, 36);
             this.TabContent.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TabContent.Name = "TabContent";
             this.TabContent.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TabContent.Size = new System.Drawing.Size(1534, 752);
+            this.TabContent.Size = new System.Drawing.Size(1534, 745);
             this.TabContent.TabIndex = 2;
             this.TabContent.Text = "Content";
             this.TabContent.UseVisualStyleBackColor = true;
@@ -1604,7 +1605,7 @@ namespace Generator.UI.WF
             this.panel5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel5.Name = "panel5";
             this.panel5.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.panel5.Size = new System.Drawing.Size(1528, 636);
+            this.panel5.Size = new System.Drawing.Size(1528, 629);
             this.panel5.TabIndex = 372;
             // 
             // GbxResult
@@ -1617,7 +1618,7 @@ namespace Generator.UI.WF
             this.GbxResult.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.GbxResult.Name = "GbxResult";
             this.GbxResult.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.GbxResult.Size = new System.Drawing.Size(1518, 636);
+            this.GbxResult.Size = new System.Drawing.Size(1518, 629);
             this.GbxResult.TabIndex = 363;
             this.GbxResult.TabStop = false;
             this.GbxResult.Text = "Result  ComboBox(Ctrl+Z )  UserControl (Ctrl+X) Viewe Tıklanmazsa Content Generat" +
@@ -1633,11 +1634,11 @@ namespace Generator.UI.WF
             this.TabElement.Controls.Add(this.TabView);
             this.TabElement.Controls.Add(this.tabPage8);
             this.TabElement.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TabElement.Location = new System.Drawing.Point(3, 27);
+            this.TabElement.Location = new System.Drawing.Point(3, 40);
             this.TabElement.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TabElement.Name = "TabElement";
             this.TabElement.SelectedIndex = 0;
-            this.TabElement.Size = new System.Drawing.Size(1512, 607);
+            this.TabElement.Size = new System.Drawing.Size(1512, 587);
             this.TabElement.TabIndex = 0;
             this.TabElement.SelectedIndexChanged += new System.EventHandler(this.TabElement_SelectedIndexChanged);
             this.TabElement.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TabElement_KeyDown);
@@ -1646,11 +1647,11 @@ namespace Generator.UI.WF
             // 
             this.tabPage5.Controls.Add(this.DgwContent);
             this.tabPage5.Controls.Add(this.LblContextTotal);
-            this.tabPage5.Location = new System.Drawing.Point(4, 32);
+            this.tabPage5.Location = new System.Drawing.Point(4, 46);
             this.tabPage5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage5.Size = new System.Drawing.Size(1504, 571);
+            this.tabPage5.Size = new System.Drawing.Size(1504, 537);
             this.tabPage5.TabIndex = 0;
             this.tabPage5.Text = "Context";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -1694,8 +1695,9 @@ namespace Generator.UI.WF
             dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.DgwContent.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.DgwContent.RowHeadersWidth = 62;
             this.DgwContent.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DgwContent.Size = new System.Drawing.Size(1498, 537);
+            this.DgwContent.Size = new System.Drawing.Size(1498, 490);
             this.DgwContent.TabIndex = 271;
             this.DgwContent.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.DgwContent_RowsAdded);
             this.DgwContent.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.DgwContent_RowsRemoved);
@@ -1705,18 +1707,21 @@ namespace Generator.UI.WF
             // 
             this.Id.DataPropertyName = "Id";
             this.Id.HeaderText = "Id";
+            this.Id.MinimumWidth = 8;
             this.Id.Name = "Id";
             // 
             // TextContent
             // 
             this.TextContent.DataPropertyName = "TextContent";
             this.TextContent.HeaderText = "Text";
+            this.TextContent.MinimumWidth = 8;
             this.TextContent.Name = "TextContent";
             // 
             // ElementType
             // 
             this.ElementType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ElementType.HeaderText = "Element Type";
+            this.ElementType.MinimumWidth = 8;
             this.ElementType.Name = "ElementType";
             // 
             // LblContextTotal
@@ -1725,9 +1730,9 @@ namespace Generator.UI.WF
             this.LblContextTotal.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.LblContextTotal.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.LblContextTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
-            this.LblContextTotal.Location = new System.Drawing.Point(3, 539);
+            this.LblContextTotal.Location = new System.Drawing.Point(3, 492);
             this.LblContextTotal.Name = "LblContextTotal";
-            this.LblContextTotal.Size = new System.Drawing.Size(109, 30);
+            this.LblContextTotal.Size = new System.Drawing.Size(160, 43);
             this.LblContextTotal.TabIndex = 270;
             this.LblContextTotal.Text = "Toplam ";
             // 
@@ -1735,11 +1740,11 @@ namespace Generator.UI.WF
             // 
             this.tabPage6.Controls.Add(this.DgwComboBoxes);
             this.tabPage6.Controls.Add(this.LblComboBoxTotal);
-            this.tabPage6.Location = new System.Drawing.Point(4, 32);
+            this.tabPage6.Location = new System.Drawing.Point(4, 46);
             this.tabPage6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage6.Size = new System.Drawing.Size(1504, 571);
+            this.tabPage6.Size = new System.Drawing.Size(1504, 544);
             this.tabPage6.TabIndex = 1;
             this.tabPage6.Text = "ComboBox";
             this.tabPage6.UseVisualStyleBackColor = true;
@@ -1787,8 +1792,9 @@ namespace Generator.UI.WF
             dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.DgwComboBoxes.RowHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            this.DgwComboBoxes.RowHeadersWidth = 62;
             this.DgwComboBoxes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DgwComboBoxes.Size = new System.Drawing.Size(1498, 537);
+            this.DgwComboBoxes.Size = new System.Drawing.Size(1498, 497);
             this.DgwComboBoxes.TabIndex = 270;
             this.DgwComboBoxes.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgwComboBoxes_CellEndEdit);
             this.DgwComboBoxes.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.DgwComboBoxes_RowsAdded);
@@ -1798,18 +1804,21 @@ namespace Generator.UI.WF
             // 
             this.IdComboBox.DataPropertyName = "IdComboBox";
             this.IdComboBox.HeaderText = "Id";
+            this.IdComboBox.MinimumWidth = 8;
             this.IdComboBox.Name = "IdComboBox";
             // 
             // TextComboBox
             // 
             this.TextComboBox.DataPropertyName = "TextComboBox";
             this.TextComboBox.HeaderText = "Text";
+            this.TextComboBox.MinimumWidth = 8;
             this.TextComboBox.Name = "TextComboBox";
             // 
             // KeyField
             // 
             this.KeyField.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.KeyField.HeaderText = "Key Field";
+            this.KeyField.MinimumWidth = 8;
             this.KeyField.Name = "KeyField";
             this.KeyField.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
@@ -1817,6 +1826,7 @@ namespace Generator.UI.WF
             // 
             this.ValueField.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ValueField.HeaderText = "Value Field";
+            this.ValueField.MinimumWidth = 8;
             this.ValueField.Name = "ValueField";
             this.ValueField.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
@@ -1827,6 +1837,7 @@ namespace Generator.UI.WF
             this.ObjectId.DefaultCellStyle = dataGridViewCellStyle8;
             this.ObjectId.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ObjectId.HeaderText = "Obeject Id";
+            this.ObjectId.MinimumWidth = 8;
             this.ObjectId.Name = "ObjectId";
             // 
             // ProfileIdComboBox
@@ -1834,6 +1845,7 @@ namespace Generator.UI.WF
             this.ProfileIdComboBox.DropDownWidth = 2;
             this.ProfileIdComboBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ProfileIdComboBox.HeaderText = "Profile Id";
+            this.ProfileIdComboBox.MinimumWidth = 8;
             this.ProfileIdComboBox.Name = "ProfileIdComboBox";
             this.ProfileIdComboBox.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
@@ -1841,6 +1853,7 @@ namespace Generator.UI.WF
             // 
             this.MethodType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.MethodType.HeaderText = "Method Type";
+            this.MethodType.MinimumWidth = 8;
             this.MethodType.Name = "MethodType";
             // 
             // LblComboBoxTotal
@@ -1849,9 +1862,9 @@ namespace Generator.UI.WF
             this.LblComboBoxTotal.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.LblComboBoxTotal.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.LblComboBoxTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
-            this.LblComboBoxTotal.Location = new System.Drawing.Point(3, 539);
+            this.LblComboBoxTotal.Location = new System.Drawing.Point(3, 499);
             this.LblComboBoxTotal.Name = "LblComboBoxTotal";
-            this.LblComboBoxTotal.Size = new System.Drawing.Size(109, 30);
+            this.LblComboBoxTotal.Size = new System.Drawing.Size(160, 43);
             this.LblComboBoxTotal.TabIndex = 269;
             this.LblComboBoxTotal.Text = "Toplam ";
             // 
@@ -1859,10 +1872,10 @@ namespace Generator.UI.WF
             // 
             this.tabPage7.Controls.Add(this.DgwUserControl);
             this.tabPage7.Controls.Add(this.label4);
-            this.tabPage7.Location = new System.Drawing.Point(4, 32);
+            this.tabPage7.Location = new System.Drawing.Point(4, 46);
             this.tabPage7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Size = new System.Drawing.Size(1504, 571);
+            this.tabPage7.Size = new System.Drawing.Size(1504, 544);
             this.tabPage7.TabIndex = 3;
             this.tabPage7.Text = "User Control";
             this.tabPage7.UseVisualStyleBackColor = true;
@@ -1908,25 +1921,29 @@ namespace Generator.UI.WF
             dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.DgwUserControl.RowHeadersDefaultCellStyle = dataGridViewCellStyle13;
+            this.DgwUserControl.RowHeadersWidth = 62;
             this.DgwUserControl.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DgwUserControl.Size = new System.Drawing.Size(1504, 541);
+            this.DgwUserControl.Size = new System.Drawing.Size(1504, 501);
             this.DgwUserControl.TabIndex = 273;
             // 
             // IdUserControl
             // 
             this.IdUserControl.DataPropertyName = "IdUserControl";
             this.IdUserControl.HeaderText = "Id";
+            this.IdUserControl.MinimumWidth = 8;
             this.IdUserControl.Name = "IdUserControl";
             // 
             // dataGridViewTextBoxColumn6
             // 
             this.dataGridViewTextBoxColumn6.DataPropertyName = "ControlId";
             this.dataGridViewTextBoxColumn6.HeaderText = "Control Id";
+            this.dataGridViewTextBoxColumn6.MinimumWidth = 8;
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             // 
             // GetActionCode
             // 
             this.GetActionCode.HeaderText = "Get Action Code";
+            this.GetActionCode.MinimumWidth = 8;
             this.GetActionCode.Name = "GetActionCode";
             this.GetActionCode.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.GetActionCode.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
@@ -1934,11 +1951,13 @@ namespace Generator.UI.WF
             // Label
             // 
             this.Label.HeaderText = "Label";
+            this.Label.MinimumWidth = 8;
             this.Label.Name = "Label";
             // 
             // SearchPage
             // 
             this.SearchPage.HeaderText = "Search Page";
+            this.SearchPage.MinimumWidth = 8;
             this.SearchPage.Name = "SearchPage";
             // 
             // label4
@@ -1947,29 +1966,29 @@ namespace Generator.UI.WF
             this.label4.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
-            this.label4.Location = new System.Drawing.Point(0, 541);
+            this.label4.Location = new System.Drawing.Point(0, 501);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(109, 30);
+            this.label4.Size = new System.Drawing.Size(160, 43);
             this.label4.TabIndex = 272;
             this.label4.Text = "Toplam ";
             // 
             // NextPage
             // 
-            this.NextPage.Location = new System.Drawing.Point(4, 32);
+            this.NextPage.Location = new System.Drawing.Point(4, 46);
             this.NextPage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.NextPage.Name = "NextPage";
             this.NextPage.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.NextPage.Size = new System.Drawing.Size(1504, 571);
+            this.NextPage.Size = new System.Drawing.Size(1504, 544);
             this.NextPage.TabIndex = 5;
             this.NextPage.Text = "Next Page";
             this.NextPage.UseVisualStyleBackColor = true;
             // 
             // Modal
             // 
-            this.Modal.Location = new System.Drawing.Point(4, 32);
+            this.Modal.Location = new System.Drawing.Point(4, 46);
             this.Modal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Modal.Name = "Modal";
-            this.Modal.Size = new System.Drawing.Size(1504, 571);
+            this.Modal.Size = new System.Drawing.Size(1504, 544);
             this.Modal.TabIndex = 6;
             this.Modal.Text = "Modal";
             this.Modal.UseVisualStyleBackColor = true;
@@ -1978,11 +1997,11 @@ namespace Generator.UI.WF
             // 
             this.TabView.Controls.Add(this.DgwView);
             this.TabView.Controls.Add(this.LblViewTotal);
-            this.TabView.Location = new System.Drawing.Point(4, 32);
+            this.TabView.Location = new System.Drawing.Point(4, 46);
             this.TabView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TabView.Name = "TabView";
             this.TabView.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TabView.Size = new System.Drawing.Size(1504, 571);
+            this.TabView.Size = new System.Drawing.Size(1504, 544);
             this.TabView.TabIndex = 2;
             this.TabView.Text = "View";
             this.TabView.UseVisualStyleBackColor = true;
@@ -2027,8 +2046,9 @@ namespace Generator.UI.WF
             dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.DgwView.RowHeadersDefaultCellStyle = dataGridViewCellStyle16;
+            this.DgwView.RowHeadersWidth = 62;
             this.DgwView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DgwView.Size = new System.Drawing.Size(1498, 537);
+            this.DgwView.Size = new System.Drawing.Size(1498, 497);
             this.DgwView.TabIndex = 4;
             this.DgwView.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.DgwView_RowsAdded);
             this.DgwView.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.DgwView_RowsRemoved);
@@ -2037,24 +2057,28 @@ namespace Generator.UI.WF
             // 
             this.IdView.DataPropertyName = "IdView";
             this.IdView.HeaderText = "Id";
+            this.IdView.MinimumWidth = 8;
             this.IdView.Name = "IdView";
             // 
             // TextView
             // 
             this.TextView.DataPropertyName = "TextView";
             this.TextView.HeaderText = "Text";
+            this.TextView.MinimumWidth = 8;
             this.TextView.Name = "TextView";
             // 
             // ElementTypeView
             // 
             this.ElementTypeView.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.ElementTypeView.HeaderText = "Element Type";
+            this.ElementTypeView.MinimumWidth = 8;
             this.ElementTypeView.Name = "ElementTypeView";
             // 
             // SizeView
             // 
             this.SizeView.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.SizeView.HeaderText = "Size";
+            this.SizeView.MinimumWidth = 8;
             this.SizeView.Name = "SizeView";
             this.SizeView.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.SizeView.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
@@ -2066,19 +2090,19 @@ namespace Generator.UI.WF
             this.LblViewTotal.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.LblViewTotal.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.LblViewTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
-            this.LblViewTotal.Location = new System.Drawing.Point(3, 539);
+            this.LblViewTotal.Location = new System.Drawing.Point(3, 499);
             this.LblViewTotal.Name = "LblViewTotal";
-            this.LblViewTotal.Size = new System.Drawing.Size(109, 30);
+            this.LblViewTotal.Size = new System.Drawing.Size(160, 43);
             this.LblViewTotal.TabIndex = 270;
             this.LblViewTotal.Text = "Toplam ";
             // 
             // tabPage8
             // 
             this.tabPage8.Controls.Add(this.ResultText);
-            this.tabPage8.Location = new System.Drawing.Point(4, 32);
+            this.tabPage8.Location = new System.Drawing.Point(4, 46);
             this.tabPage8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage8.Name = "tabPage8";
-            this.tabPage8.Size = new System.Drawing.Size(1504, 571);
+            this.tabPage8.Size = new System.Drawing.Size(1504, 544);
             this.tabPage8.TabIndex = 4;
             this.tabPage8.Text = "Result";
             this.tabPage8.UseVisualStyleBackColor = true;
@@ -2090,7 +2114,7 @@ namespace Generator.UI.WF
             this.ResultText.Location = new System.Drawing.Point(0, 0);
             this.ResultText.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ResultText.Name = "ResultText";
-            this.ResultText.Size = new System.Drawing.Size(1504, 571);
+            this.ResultText.Size = new System.Drawing.Size(1504, 544);
             this.ResultText.TabIndex = 0;
             this.ResultText.Text = "";
             // 
@@ -2191,7 +2215,7 @@ namespace Generator.UI.WF
             this.label17.ForeColor = System.Drawing.Color.Silver;
             this.label17.Location = new System.Drawing.Point(798, 38);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(123, 23);
+            this.label17.Size = new System.Drawing.Size(188, 36);
             this.label17.TabIndex = 326;
             this.label17.Text = "Object Type";
             // 
@@ -2210,7 +2234,7 @@ namespace Generator.UI.WF
             this.CbxObjectTypes.Location = new System.Drawing.Point(801, 62);
             this.CbxObjectTypes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CbxObjectTypes.Name = "CbxObjectTypes";
-            this.CbxObjectTypes.Size = new System.Drawing.Size(354, 29);
+            this.CbxObjectTypes.Size = new System.Drawing.Size(354, 38);
             this.CbxObjectTypes.TabIndex = 325;
             // 
             // CbxObject
@@ -2225,7 +2249,7 @@ namespace Generator.UI.WF
             this.CbxObject.Location = new System.Drawing.Point(410, 62);
             this.CbxObject.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CbxObject.Name = "CbxObject";
-            this.CbxObject.Size = new System.Drawing.Size(354, 29);
+            this.CbxObject.Size = new System.Drawing.Size(354, 38);
             this.CbxObject.TabIndex = 319;
             this.CbxObject.SelectedIndexChanged += new System.EventHandler(this.CbxObject_SelectedIndexChanged);
             // 
@@ -2238,7 +2262,7 @@ namespace Generator.UI.WF
             this.label18.ForeColor = System.Drawing.Color.Silver;
             this.label18.Location = new System.Drawing.Point(408, 38);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(97, 23);
+            this.label18.Size = new System.Drawing.Size(148, 36);
             this.label18.TabIndex = 320;
             this.label18.Text = "Object Id";
             // 
@@ -2251,7 +2275,7 @@ namespace Generator.UI.WF
             this.label19.ForeColor = System.Drawing.Color.Silver;
             this.label19.Location = new System.Drawing.Point(30, 38);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(89, 23);
+            this.label19.Size = new System.Drawing.Size(135, 36);
             this.label19.TabIndex = 322;
             this.label19.Text = "Profile Id";
             // 
@@ -2265,7 +2289,7 @@ namespace Generator.UI.WF
             this.CbxProfile.Location = new System.Drawing.Point(31, 62);
             this.CbxProfile.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CbxProfile.Name = "CbxProfile";
-            this.CbxProfile.Size = new System.Drawing.Size(354, 29);
+            this.CbxProfile.Size = new System.Drawing.Size(354, 38);
             this.CbxProfile.TabIndex = 321;
             this.CbxProfile.SelectedIndexChanged += new System.EventHandler(this.CbxProfile_SelectedIndexChanged);
             // 
@@ -2275,11 +2299,11 @@ namespace Generator.UI.WF
             this.TabHeader.Controls.Add(this.panel13);
             this.TabHeader.Controls.Add(this.groupBox3);
             this.TabHeader.Controls.Add(this.groupBox24);
-            this.TabHeader.Location = new System.Drawing.Point(4, 29);
+            this.TabHeader.Location = new System.Drawing.Point(4, 36);
             this.TabHeader.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TabHeader.Name = "TabHeader";
             this.TabHeader.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TabHeader.Size = new System.Drawing.Size(1534, 752);
+            this.TabHeader.Size = new System.Drawing.Size(1534, 745);
             this.TabHeader.TabIndex = 1;
             this.TabHeader.Text = "Header Create";
             this.TabHeader.UseVisualStyleBackColor = true;
@@ -2295,7 +2319,7 @@ namespace Generator.UI.WF
             this.groupBox13.Margin = new System.Windows.Forms.Padding(3, 25, 3, 2);
             this.groupBox13.Name = "groupBox13";
             this.groupBox13.Padding = new System.Windows.Forms.Padding(24, 25, 24, 25);
-            this.groupBox13.Size = new System.Drawing.Size(1528, 318);
+            this.groupBox13.Size = new System.Drawing.Size(1528, 311);
             this.groupBox13.TabIndex = 364;
             this.groupBox13.TabStop = false;
             this.groupBox13.Text = "Result (Buttonlar sağa dayalıdır. Gridin sıralaması sağdan sola doğrudur. En üstt" +
@@ -2332,7 +2356,7 @@ namespace Generator.UI.WF
             dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.DgwHeader.DefaultCellStyle = dataGridViewCellStyle18;
             this.DgwHeader.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DgwHeader.Location = new System.Drawing.Point(24, 50);
+            this.DgwHeader.Location = new System.Drawing.Point(24, 63);
             this.DgwHeader.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DgwHeader.Name = "DgwHeader";
             dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -2343,8 +2367,9 @@ namespace Generator.UI.WF
             dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.DgwHeader.RowHeadersDefaultCellStyle = dataGridViewCellStyle19;
+            this.DgwHeader.RowHeadersWidth = 62;
             this.DgwHeader.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DgwHeader.Size = new System.Drawing.Size(1480, 213);
+            this.DgwHeader.Size = new System.Drawing.Size(1480, 180);
             this.DgwHeader.TabIndex = 273;
             this.DgwHeader.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.DgwHeader_RowsAdded);
             this.DgwHeader.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.DgwHeader_RowsRemoved);
@@ -2353,32 +2378,38 @@ namespace Generator.UI.WF
             // 
             this.dataGridViewTextBoxColumn9.DataPropertyName = "Id";
             this.dataGridViewTextBoxColumn9.HeaderText = "Id";
+            this.dataGridViewTextBoxColumn9.MinimumWidth = 8;
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
             // 
             // dataGridViewTextBoxColumn10
             // 
             this.dataGridViewTextBoxColumn10.DataPropertyName = "Text";
             this.dataGridViewTextBoxColumn10.HeaderText = "Text";
+            this.dataGridViewTextBoxColumn10.MinimumWidth = 8;
             this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
             // 
             // ActionCode
             // 
             this.ActionCode.HeaderText = "Action Code";
+            this.ActionCode.MinimumWidth = 8;
             this.ActionCode.Name = "ActionCode";
             // 
             // TypeCss
             // 
             this.TypeCss.HeaderText = "Type Css";
+            this.TypeCss.MinimumWidth = 8;
             this.TypeCss.Name = "TypeCss";
             // 
             // Alignment
             // 
             this.Alignment.HeaderText = "Alignment";
+            this.Alignment.MinimumWidth = 8;
             this.Alignment.Name = "Alignment";
             // 
             // IconCss
             // 
             this.IconCss.HeaderText = "Icon Css";
+            this.IconCss.MinimumWidth = 8;
             this.IconCss.Name = "IconCss";
             // 
             // LblHeaderTotal
@@ -2387,9 +2418,9 @@ namespace Generator.UI.WF
             this.LblHeaderTotal.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.LblHeaderTotal.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.LblHeaderTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
-            this.LblHeaderTotal.Location = new System.Drawing.Point(24, 263);
+            this.LblHeaderTotal.Location = new System.Drawing.Point(24, 243);
             this.LblHeaderTotal.Name = "LblHeaderTotal";
-            this.LblHeaderTotal.Size = new System.Drawing.Size(109, 30);
+            this.LblHeaderTotal.Size = new System.Drawing.Size(160, 43);
             this.LblHeaderTotal.TabIndex = 272;
             this.LblHeaderTotal.Text = "Toplam ";
             // 
@@ -2427,11 +2458,11 @@ namespace Generator.UI.WF
             this.groupBox16.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox16.Font = new System.Drawing.Font("Century Gothic", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.groupBox16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
-            this.groupBox16.Location = new System.Drawing.Point(658, 27);
+            this.groupBox16.Location = new System.Drawing.Point(658, 40);
             this.groupBox16.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox16.Name = "groupBox16";
             this.groupBox16.Padding = new System.Windows.Forms.Padding(35);
-            this.groupBox16.Size = new System.Drawing.Size(867, 159);
+            this.groupBox16.Size = new System.Drawing.Size(867, 146);
             this.groupBox16.TabIndex = 377;
             this.groupBox16.TabStop = false;
             this.groupBox16.Text = "Utilities";
@@ -2445,7 +2476,7 @@ namespace Generator.UI.WF
             this.TbxTitle.Location = new System.Drawing.Point(30, 85);
             this.TbxTitle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TbxTitle.Name = "TbxTitle";
-            this.TbxTitle.Size = new System.Drawing.Size(449, 30);
+            this.TbxTitle.Size = new System.Drawing.Size(449, 45);
             this.TbxTitle.TabIndex = 353;
             this.TbxTitle.WordWrap = false;
             // 
@@ -2458,7 +2489,7 @@ namespace Generator.UI.WF
             this.label6.ForeColor = System.Drawing.Color.Silver;
             this.label6.Location = new System.Drawing.Point(30, 49);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(460, 22);
+            this.label6.Size = new System.Drawing.Size(736, 36);
             this.label6.TabIndex = 355;
             this.label6.Text = "Title(Sayfa Başlığı: Tüm kelimeler birleşik yazılmalıdır)";
             // 
@@ -2489,9 +2520,9 @@ namespace Generator.UI.WF
             // panel3
             // 
             this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel3.Location = new System.Drawing.Point(648, 27);
+            this.panel3.Location = new System.Drawing.Point(648, 40);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(10, 159);
+            this.panel3.Size = new System.Drawing.Size(10, 146);
             this.panel3.TabIndex = 376;
             // 
             // groupBox15
@@ -2507,11 +2538,11 @@ namespace Generator.UI.WF
             this.groupBox15.Dock = System.Windows.Forms.DockStyle.Left;
             this.groupBox15.Font = new System.Drawing.Font("Century Gothic", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.groupBox15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
-            this.groupBox15.Location = new System.Drawing.Point(3, 27);
+            this.groupBox15.Location = new System.Drawing.Point(3, 40);
             this.groupBox15.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox15.Name = "groupBox15";
             this.groupBox15.Padding = new System.Windows.Forms.Padding(24, 25, 24, 25);
-            this.groupBox15.Size = new System.Drawing.Size(645, 159);
+            this.groupBox15.Size = new System.Drawing.Size(645, 146);
             this.groupBox15.TabIndex = 375;
             this.groupBox15.TabStop = false;
             this.groupBox15.Text = "Buttons";
@@ -2642,7 +2673,7 @@ namespace Generator.UI.WF
             this.groupBox24.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.groupBox24.Font = new System.Drawing.Font("Century Gothic", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.groupBox24.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
-            this.groupBox24.Location = new System.Drawing.Point(3, 522);
+            this.groupBox24.Location = new System.Drawing.Point(3, 515);
             this.groupBox24.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox24.Name = "groupBox24";
             this.groupBox24.Padding = new System.Windows.Forms.Padding(35);
@@ -2656,10 +2687,10 @@ namespace Generator.UI.WF
             this.RtbxPrensentation.BackColor = System.Drawing.Color.White;
             this.RtbxPrensentation.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.RtbxPrensentation.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.RtbxPrensentation.Location = new System.Drawing.Point(35, 60);
+            this.RtbxPrensentation.Location = new System.Drawing.Point(35, 73);
             this.RtbxPrensentation.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.RtbxPrensentation.Name = "RtbxPrensentation";
-            this.RtbxPrensentation.Size = new System.Drawing.Size(1458, 133);
+            this.RtbxPrensentation.Size = new System.Drawing.Size(1458, 120);
             this.RtbxPrensentation.TabIndex = 352;
             this.RtbxPrensentation.Text = "";
             // 
@@ -2691,9 +2722,9 @@ namespace Generator.UI.WF
             this.TabGridService.Controls.Add(this.GpxUpdate);
             this.TabGridService.Controls.Add(this.GpBxCreate);
             this.TabGridService.Controls.Add(this.groupBox28);
-            this.TabGridService.Location = new System.Drawing.Point(4, 29);
+            this.TabGridService.Location = new System.Drawing.Point(4, 36);
             this.TabGridService.Name = "TabGridService";
-            this.TabGridService.Size = new System.Drawing.Size(1534, 752);
+            this.TabGridService.Size = new System.Drawing.Size(1534, 745);
             this.TabGridService.TabIndex = 8;
             this.TabGridService.Text = "Grid Service";
             this.TabGridService.UseVisualStyleBackColor = true;
@@ -2708,7 +2739,7 @@ namespace Generator.UI.WF
             this.groupBox31.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox31.Name = "groupBox31";
             this.groupBox31.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox31.Size = new System.Drawing.Size(1534, 433);
+            this.groupBox31.Size = new System.Drawing.Size(1534, 426);
             this.groupBox31.TabIndex = 367;
             this.groupBox31.TabStop = false;
             this.groupBox31.Text = "Result";
@@ -2718,10 +2749,10 @@ namespace Generator.UI.WF
             this.RtbxGridServiceResult.BackColor = System.Drawing.Color.White;
             this.RtbxGridServiceResult.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.RtbxGridServiceResult.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.RtbxGridServiceResult.Location = new System.Drawing.Point(3, 27);
+            this.RtbxGridServiceResult.Location = new System.Drawing.Point(3, 40);
             this.RtbxGridServiceResult.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.RtbxGridServiceResult.Name = "RtbxGridServiceResult";
-            this.RtbxGridServiceResult.Size = new System.Drawing.Size(1528, 404);
+            this.RtbxGridServiceResult.Size = new System.Drawing.Size(1528, 384);
             this.RtbxGridServiceResult.TabIndex = 366;
             this.RtbxGridServiceResult.Text = "";
             // 
@@ -2757,7 +2788,7 @@ namespace Generator.UI.WF
             this.label35.ForeColor = System.Drawing.Color.Silver;
             this.label35.Location = new System.Drawing.Point(788, 38);
             this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(123, 23);
+            this.label35.Size = new System.Drawing.Size(188, 36);
             this.label35.TabIndex = 326;
             this.label35.Text = "Object Type";
             // 
@@ -2808,7 +2839,7 @@ namespace Generator.UI.WF
             this.CbxService2ObjectType.Location = new System.Drawing.Point(791, 63);
             this.CbxService2ObjectType.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CbxService2ObjectType.Name = "CbxService2ObjectType";
-            this.CbxService2ObjectType.Size = new System.Drawing.Size(354, 29);
+            this.CbxService2ObjectType.Size = new System.Drawing.Size(354, 38);
             this.CbxService2ObjectType.TabIndex = 325;
             // 
             // CbxService2ObjectId
@@ -2823,7 +2854,7 @@ namespace Generator.UI.WF
             this.CbxService2ObjectId.Location = new System.Drawing.Point(400, 63);
             this.CbxService2ObjectId.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CbxService2ObjectId.Name = "CbxService2ObjectId";
-            this.CbxService2ObjectId.Size = new System.Drawing.Size(354, 29);
+            this.CbxService2ObjectId.Size = new System.Drawing.Size(354, 38);
             this.CbxService2ObjectId.TabIndex = 319;
             this.CbxService2ObjectId.SelectedIndexChanged += new System.EventHandler(this.CbxService2ObjectId_SelectedIndexChanged);
             // 
@@ -2836,7 +2867,7 @@ namespace Generator.UI.WF
             this.label36.ForeColor = System.Drawing.Color.Silver;
             this.label36.Location = new System.Drawing.Point(398, 38);
             this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(97, 23);
+            this.label36.Size = new System.Drawing.Size(148, 36);
             this.label36.TabIndex = 320;
             this.label36.Text = "Object Id";
             // 
@@ -2849,7 +2880,7 @@ namespace Generator.UI.WF
             this.label37.ForeColor = System.Drawing.Color.Silver;
             this.label37.Location = new System.Drawing.Point(20, 38);
             this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(89, 23);
+            this.label37.Size = new System.Drawing.Size(135, 36);
             this.label37.TabIndex = 322;
             this.label37.Text = "Profile Id";
             // 
@@ -2863,7 +2894,7 @@ namespace Generator.UI.WF
             this.CbxService2ProfileId.Location = new System.Drawing.Point(21, 63);
             this.CbxService2ProfileId.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CbxService2ProfileId.Name = "CbxService2ProfileId";
-            this.CbxService2ProfileId.Size = new System.Drawing.Size(354, 29);
+            this.CbxService2ProfileId.Size = new System.Drawing.Size(354, 38);
             this.CbxService2ProfileId.TabIndex = 321;
             this.CbxService2ProfileId.SelectedIndexChanged += new System.EventHandler(this.CbxService2ProfileId_SelectedIndexChanged);
             // 
@@ -2899,7 +2930,7 @@ namespace Generator.UI.WF
             this.label32.ForeColor = System.Drawing.Color.Silver;
             this.label32.Location = new System.Drawing.Point(789, 37);
             this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(123, 23);
+            this.label32.Size = new System.Drawing.Size(188, 36);
             this.label32.TabIndex = 326;
             this.label32.Text = "Object Type";
             // 
@@ -2950,7 +2981,7 @@ namespace Generator.UI.WF
             this.CbxService1ObjectType.Location = new System.Drawing.Point(792, 62);
             this.CbxService1ObjectType.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CbxService1ObjectType.Name = "CbxService1ObjectType";
-            this.CbxService1ObjectType.Size = new System.Drawing.Size(354, 29);
+            this.CbxService1ObjectType.Size = new System.Drawing.Size(354, 38);
             this.CbxService1ObjectType.TabIndex = 325;
             // 
             // CbxService1ObjectId
@@ -2965,7 +2996,7 @@ namespace Generator.UI.WF
             this.CbxService1ObjectId.Location = new System.Drawing.Point(401, 62);
             this.CbxService1ObjectId.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CbxService1ObjectId.Name = "CbxService1ObjectId";
-            this.CbxService1ObjectId.Size = new System.Drawing.Size(354, 29);
+            this.CbxService1ObjectId.Size = new System.Drawing.Size(354, 38);
             this.CbxService1ObjectId.TabIndex = 319;
             this.CbxService1ObjectId.SelectedIndexChanged += new System.EventHandler(this.CbxService1ObjectId_SelectedIndexChanged);
             // 
@@ -2978,7 +3009,7 @@ namespace Generator.UI.WF
             this.label33.ForeColor = System.Drawing.Color.Silver;
             this.label33.Location = new System.Drawing.Point(399, 37);
             this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(97, 23);
+            this.label33.Size = new System.Drawing.Size(148, 36);
             this.label33.TabIndex = 320;
             this.label33.Text = "Object Id";
             // 
@@ -2991,7 +3022,7 @@ namespace Generator.UI.WF
             this.label34.ForeColor = System.Drawing.Color.Silver;
             this.label34.Location = new System.Drawing.Point(21, 37);
             this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(89, 23);
+            this.label34.Size = new System.Drawing.Size(135, 36);
             this.label34.TabIndex = 322;
             this.label34.Text = "Profile Id";
             // 
@@ -3005,7 +3036,7 @@ namespace Generator.UI.WF
             this.CbxService1ProfileId.Location = new System.Drawing.Point(22, 62);
             this.CbxService1ProfileId.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CbxService1ProfileId.Name = "CbxService1ProfileId";
-            this.CbxService1ProfileId.Size = new System.Drawing.Size(354, 29);
+            this.CbxService1ProfileId.Size = new System.Drawing.Size(354, 38);
             this.CbxService1ProfileId.TabIndex = 321;
             this.CbxService1ProfileId.SelectedIndexChanged += new System.EventHandler(this.CbxService1ProfileId_SelectedIndexChanged);
             // 
@@ -3062,10 +3093,10 @@ namespace Generator.UI.WF
             this.FileExport.Controls.Add(this.groupBox10);
             this.FileExport.Controls.Add(this.groupBox5);
             this.FileExport.Controls.Add(this.panel9);
-            this.FileExport.Location = new System.Drawing.Point(4, 29);
+            this.FileExport.Location = new System.Drawing.Point(4, 36);
             this.FileExport.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.FileExport.Name = "FileExport";
-            this.FileExport.Size = new System.Drawing.Size(1534, 752);
+            this.FileExport.Size = new System.Drawing.Size(1534, 745);
             this.FileExport.TabIndex = 4;
             this.FileExport.Text = "File Export";
             this.FileExport.UseVisualStyleBackColor = true;
@@ -3080,7 +3111,7 @@ namespace Generator.UI.WF
             this.groupBox36.Margin = new System.Windows.Forms.Padding(20);
             this.groupBox36.Name = "groupBox36";
             this.groupBox36.Padding = new System.Windows.Forms.Padding(15);
-            this.groupBox36.Size = new System.Drawing.Size(1534, 298);
+            this.groupBox36.Size = new System.Drawing.Size(1534, 291);
             this.groupBox36.TabIndex = 367;
             this.groupBox36.TabStop = false;
             this.groupBox36.Text = "Log";
@@ -3090,10 +3121,10 @@ namespace Generator.UI.WF
             this.RtbxFileExportLog.BackColor = System.Drawing.Color.White;
             this.RtbxFileExportLog.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.RtbxFileExportLog.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.RtbxFileExportLog.Location = new System.Drawing.Point(15, 40);
+            this.RtbxFileExportLog.Location = new System.Drawing.Point(15, 53);
             this.RtbxFileExportLog.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.RtbxFileExportLog.Name = "RtbxFileExportLog";
-            this.RtbxFileExportLog.Size = new System.Drawing.Size(1504, 243);
+            this.RtbxFileExportLog.Size = new System.Drawing.Size(1504, 223);
             this.RtbxFileExportLog.TabIndex = 366;
             this.RtbxFileExportLog.Text = "";
             // 
@@ -3136,11 +3167,11 @@ namespace Generator.UI.WF
             this.groupBox14.Dock = System.Windows.Forms.DockStyle.Left;
             this.groupBox14.Font = new System.Drawing.Font("Century Gothic", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.groupBox14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
-            this.groupBox14.Location = new System.Drawing.Point(522, 27);
+            this.groupBox14.Location = new System.Drawing.Point(574, 40);
             this.groupBox14.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox14.Name = "groupBox14";
             this.groupBox14.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox14.Size = new System.Drawing.Size(418, 211);
+            this.groupBox14.Size = new System.Drawing.Size(418, 198);
             this.groupBox14.TabIndex = 378;
             this.groupBox14.TabStop = false;
             this.groupBox14.Text = "Open Folder ";
@@ -3166,9 +3197,9 @@ namespace Generator.UI.WF
             // 
             this.label25.AutoSize = true;
             this.label25.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label25.Location = new System.Drawing.Point(421, 27);
+            this.label25.Location = new System.Drawing.Point(421, 40);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(101, 24);
+            this.label25.Size = new System.Drawing.Size(153, 37);
             this.label25.TabIndex = 377;
             this.label25.Text = "     OR     ";
             // 
@@ -3181,11 +3212,11 @@ namespace Generator.UI.WF
             this.groupBox12.Dock = System.Windows.Forms.DockStyle.Left;
             this.groupBox12.Font = new System.Drawing.Font("Century Gothic", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.groupBox12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
-            this.groupBox12.Location = new System.Drawing.Point(3, 27);
+            this.groupBox12.Location = new System.Drawing.Point(3, 40);
             this.groupBox12.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox12.Name = "groupBox12";
             this.groupBox12.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox12.Size = new System.Drawing.Size(418, 211);
+            this.groupBox12.Size = new System.Drawing.Size(418, 198);
             this.groupBox12.TabIndex = 374;
             this.groupBox12.TabStop = false;
             this.groupBox12.Text = "Application Choose";
@@ -3199,7 +3230,7 @@ namespace Generator.UI.WF
             this.label26.ForeColor = System.Drawing.Color.Silver;
             this.label26.Location = new System.Drawing.Point(18, 118);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(181, 23);
+            this.label26.Size = new System.Drawing.Size(273, 36);
             this.label26.TabIndex = 326;
             this.label26.Text = "Application Folder";
             // 
@@ -3218,7 +3249,7 @@ namespace Generator.UI.WF
             this.CbxFolder.Location = new System.Drawing.Point(21, 142);
             this.CbxFolder.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CbxFolder.Name = "CbxFolder";
-            this.CbxFolder.Size = new System.Drawing.Size(354, 29);
+            this.CbxFolder.Size = new System.Drawing.Size(354, 38);
             this.CbxFolder.TabIndex = 325;
             this.CbxFolder.SelectedIndexChanged += new System.EventHandler(this.CbxFolder_SelectedIndexChanged);
             // 
@@ -3231,7 +3262,7 @@ namespace Generator.UI.WF
             this.label23.ForeColor = System.Drawing.Color.Silver;
             this.label23.Location = new System.Drawing.Point(18, 42);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(119, 23);
+            this.label23.Size = new System.Drawing.Size(178, 36);
             this.label23.TabIndex = 324;
             this.label23.Text = "Application";
             // 
@@ -3250,7 +3281,7 @@ namespace Generator.UI.WF
             this.CbxApplication.Location = new System.Drawing.Point(21, 68);
             this.CbxApplication.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CbxApplication.Name = "CbxApplication";
-            this.CbxApplication.Size = new System.Drawing.Size(354, 29);
+            this.CbxApplication.Size = new System.Drawing.Size(354, 38);
             this.CbxApplication.TabIndex = 323;
             this.CbxApplication.SelectedIndexChanged += new System.EventHandler(this.CbxApplication_SelectedIndexChanged);
             // 
@@ -3286,7 +3317,7 @@ namespace Generator.UI.WF
             this.CbxOverrideWriteFile.Location = new System.Drawing.Point(928, 78);
             this.CbxOverrideWriteFile.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CbxOverrideWriteFile.Name = "CbxOverrideWriteFile";
-            this.CbxOverrideWriteFile.Size = new System.Drawing.Size(210, 28);
+            this.CbxOverrideWriteFile.Size = new System.Drawing.Size(317, 41);
             this.CbxOverrideWriteFile.TabIndex = 374;
             this.CbxOverrideWriteFile.Text = "Override Write File";
             this.CbxOverrideWriteFile.UseVisualStyleBackColor = true;
@@ -3300,7 +3331,7 @@ namespace Generator.UI.WF
             this.label5.ForeColor = System.Drawing.Color.Silver;
             this.label5.Location = new System.Drawing.Point(21, 121);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(53, 22);
+            this.label5.Size = new System.Drawing.Size(80, 36);
             this.label5.TabIndex = 373;
             this.label5.Text = "Path";
             // 
@@ -3314,7 +3345,7 @@ namespace Generator.UI.WF
             this.TbxPath.Location = new System.Drawing.Point(21, 149);
             this.TbxPath.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TbxPath.Name = "TbxPath";
-            this.TbxPath.Size = new System.Drawing.Size(1117, 30);
+            this.TbxPath.Size = new System.Drawing.Size(1117, 45);
             this.TbxPath.TabIndex = 371;
             this.TbxPath.Text = "T:\\BOS\\Everest_V2\\UX\\Main\\UX.Web\\App\\Acquiring";
             this.TbxPath.WordWrap = false;
@@ -3352,7 +3383,7 @@ namespace Generator.UI.WF
             this.CbxJavaScriptExport.Location = new System.Drawing.Point(435, 78);
             this.CbxJavaScriptExport.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CbxJavaScriptExport.Name = "CbxJavaScriptExport";
-            this.CbxJavaScriptExport.Size = new System.Drawing.Size(202, 28);
+            this.CbxJavaScriptExport.Size = new System.Drawing.Size(302, 41);
             this.CbxJavaScriptExport.TabIndex = 370;
             this.CbxJavaScriptExport.Text = "Export JavaScript";
             this.CbxJavaScriptExport.UseVisualStyleBackColor = true;
@@ -3365,7 +3396,7 @@ namespace Generator.UI.WF
             this.CbxExportXML.Location = new System.Drawing.Point(697, 78);
             this.CbxExportXML.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CbxExportXML.Name = "CbxExportXML";
-            this.CbxExportXML.Size = new System.Drawing.Size(153, 28);
+            this.CbxExportXML.Size = new System.Drawing.Size(227, 41);
             this.CbxExportXML.TabIndex = 369;
             this.CbxExportXML.Text = "Expport XML";
             this.CbxExportXML.UseVisualStyleBackColor = true;
@@ -3379,7 +3410,7 @@ namespace Generator.UI.WF
             this.label15.ForeColor = System.Drawing.Color.Silver;
             this.label15.Location = new System.Drawing.Point(21, 42);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(120, 22);
+            this.label15.Size = new System.Drawing.Size(187, 36);
             this.label15.TabIndex = 358;
             this.label15.Text = "Page Name";
             // 
@@ -3392,7 +3423,7 @@ namespace Generator.UI.WF
             this.TbxPageName.Location = new System.Drawing.Point(21, 70);
             this.TbxPageName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TbxPageName.Name = "TbxPageName";
-            this.TbxPageName.Size = new System.Drawing.Size(332, 30);
+            this.TbxPageName.Size = new System.Drawing.Size(332, 45);
             this.TbxPageName.TabIndex = 356;
             this.TbxPageName.WordWrap = false;
             // 
@@ -3420,10 +3451,10 @@ namespace Generator.UI.WF
             this.TabActionOption.Controls.Add(this.groupBox19);
             this.TabActionOption.Controls.Add(this.groupBox18);
             this.TabActionOption.Controls.Add(this.panel15);
-            this.TabActionOption.Location = new System.Drawing.Point(4, 29);
+            this.TabActionOption.Location = new System.Drawing.Point(4, 36);
             this.TabActionOption.Name = "TabActionOption";
             this.TabActionOption.Padding = new System.Windows.Forms.Padding(3);
-            this.TabActionOption.Size = new System.Drawing.Size(1534, 752);
+            this.TabActionOption.Size = new System.Drawing.Size(1534, 745);
             this.TabActionOption.TabIndex = 5;
             this.TabActionOption.Text = "Action Option";
             this.TabActionOption.UseVisualStyleBackColor = true;
@@ -3438,7 +3469,7 @@ namespace Generator.UI.WF
             this.groupBox20.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox20.Name = "groupBox20";
             this.groupBox20.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox20.Size = new System.Drawing.Size(1528, 355);
+            this.groupBox20.Size = new System.Drawing.Size(1528, 348);
             this.groupBox20.TabIndex = 368;
             this.groupBox20.TabStop = false;
             this.groupBox20.Text = "Action List";
@@ -3475,7 +3506,7 @@ namespace Generator.UI.WF
             dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.DgwAction.DefaultCellStyle = dataGridViewCellStyle21;
             this.DgwAction.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DgwAction.Location = new System.Drawing.Point(3, 27);
+            this.DgwAction.Location = new System.Drawing.Point(3, 40);
             this.DgwAction.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DgwAction.Name = "DgwAction";
             dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -3486,8 +3517,9 @@ namespace Generator.UI.WF
             dataGridViewCellStyle22.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.DgwAction.RowHeadersDefaultCellStyle = dataGridViewCellStyle22;
+            this.DgwAction.RowHeadersWidth = 62;
             this.DgwAction.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DgwAction.Size = new System.Drawing.Size(1522, 326);
+            this.DgwAction.Size = new System.Drawing.Size(1522, 306);
             this.DgwAction.TabIndex = 368;
             // 
             // dataGridViewTextBoxColumn3
@@ -3495,12 +3527,14 @@ namespace Generator.UI.WF
             this.dataGridViewTextBoxColumn3.DataPropertyName = "DomainId";
             this.dataGridViewTextBoxColumn3.FillWeight = 90F;
             this.dataGridViewTextBoxColumn3.HeaderText = "DominId";
+            this.dataGridViewTextBoxColumn3.MinimumWidth = 8;
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             // 
             // dataGridViewTextBoxColumn7
             // 
             this.dataGridViewTextBoxColumn7.FillWeight = 113.1134F;
             this.dataGridViewTextBoxColumn7.HeaderText = "Environment";
+            this.dataGridViewTextBoxColumn7.MinimumWidth = 8;
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             // 
             // dataGridViewComboBoxColumn2
@@ -3508,6 +3542,7 @@ namespace Generator.UI.WF
             this.dataGridViewComboBoxColumn2.DataPropertyName = "ApplicationId";
             this.dataGridViewComboBoxColumn2.FillWeight = 113.1134F;
             this.dataGridViewComboBoxColumn2.HeaderText = "ApplicationId";
+            this.dataGridViewComboBoxColumn2.MinimumWidth = 8;
             this.dataGridViewComboBoxColumn2.Name = "dataGridViewComboBoxColumn2";
             this.dataGridViewComboBoxColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
@@ -3515,12 +3550,14 @@ namespace Generator.UI.WF
             // 
             this.dataGridViewTextBoxColumn4.FillWeight = 113.1134F;
             this.dataGridViewTextBoxColumn4.HeaderText = "Action Id";
+            this.dataGridViewTextBoxColumn4.MinimumWidth = 8;
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             // 
             // dataGridViewTextBoxColumn5
             // 
             this.dataGridViewTextBoxColumn5.FillWeight = 113.1134F;
             this.dataGridViewTextBoxColumn5.HeaderText = "Service Action Name";
+            this.dataGridViewTextBoxColumn5.MinimumWidth = 8;
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             // 
             // dataGridViewComboBoxColumn3
@@ -3528,6 +3565,7 @@ namespace Generator.UI.WF
             this.dataGridViewComboBoxColumn3.DataPropertyName = "ServiceId";
             this.dataGridViewComboBoxColumn3.FillWeight = 113.1134F;
             this.dataGridViewComboBoxColumn3.HeaderText = "ServiceId";
+            this.dataGridViewComboBoxColumn3.MinimumWidth = 8;
             this.dataGridViewComboBoxColumn3.Name = "dataGridViewComboBoxColumn3";
             this.dataGridViewComboBoxColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewComboBoxColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
@@ -3536,6 +3574,7 @@ namespace Generator.UI.WF
             // 
             this.ValidFlag.FillWeight = 60F;
             this.ValidFlag.HeaderText = "Valid Flag";
+            this.ValidFlag.MinimumWidth = 8;
             this.ValidFlag.Name = "ValidFlag";
             // 
             // groupBox19
@@ -3544,7 +3583,7 @@ namespace Generator.UI.WF
             this.groupBox19.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.groupBox19.Font = new System.Drawing.Font("Century Gothic", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.groupBox19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
-            this.groupBox19.Location = new System.Drawing.Point(3, 483);
+            this.groupBox19.Location = new System.Drawing.Point(3, 476);
             this.groupBox19.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox19.Name = "groupBox19";
             this.groupBox19.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -3577,7 +3616,7 @@ namespace Generator.UI.WF
             dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.DgwActionResult.DefaultCellStyle = dataGridViewCellStyle24;
             this.DgwActionResult.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DgwActionResult.Location = new System.Drawing.Point(3, 27);
+            this.DgwActionResult.Location = new System.Drawing.Point(3, 40);
             this.DgwActionResult.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DgwActionResult.Name = "DgwActionResult";
             dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -3588,8 +3627,9 @@ namespace Generator.UI.WF
             dataGridViewCellStyle25.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle25.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.DgwActionResult.RowHeadersDefaultCellStyle = dataGridViewCellStyle25;
+            this.DgwActionResult.RowHeadersWidth = 62;
             this.DgwActionResult.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DgwActionResult.Size = new System.Drawing.Size(1522, 237);
+            this.DgwActionResult.Size = new System.Drawing.Size(1522, 224);
             this.DgwActionResult.TabIndex = 368;
             // 
             // groupBox18
@@ -3619,7 +3659,7 @@ namespace Generator.UI.WF
             this.label30.ForeColor = System.Drawing.Color.Silver;
             this.label30.Location = new System.Drawing.Point(14, 42);
             this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(119, 23);
+            this.label30.Size = new System.Drawing.Size(178, 36);
             this.label30.TabIndex = 369;
             this.label30.Text = "Application";
             // 
@@ -3634,7 +3674,7 @@ namespace Generator.UI.WF
             this.CbxActionOptionApplicationId.Location = new System.Drawing.Point(17, 68);
             this.CbxActionOptionApplicationId.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CbxActionOptionApplicationId.Name = "CbxActionOptionApplicationId";
-            this.CbxActionOptionApplicationId.Size = new System.Drawing.Size(354, 29);
+            this.CbxActionOptionApplicationId.Size = new System.Drawing.Size(354, 38);
             this.CbxActionOptionApplicationId.TabIndex = 368;
             // 
             // BtnListAction
@@ -3684,10 +3724,10 @@ namespace Generator.UI.WF
             this.TabStringOption.Controls.Add(this.groupBox22);
             this.TabStringOption.Controls.Add(this.groupBox23);
             this.TabStringOption.Controls.Add(this.panel16);
-            this.TabStringOption.Location = new System.Drawing.Point(4, 29);
+            this.TabStringOption.Location = new System.Drawing.Point(4, 36);
             this.TabStringOption.Name = "TabStringOption";
             this.TabStringOption.Padding = new System.Windows.Forms.Padding(3);
-            this.TabStringOption.Size = new System.Drawing.Size(1534, 752);
+            this.TabStringOption.Size = new System.Drawing.Size(1534, 745);
             this.TabStringOption.TabIndex = 6;
             this.TabStringOption.Text = "String Option";
             this.TabStringOption.UseVisualStyleBackColor = true;
@@ -3702,7 +3742,7 @@ namespace Generator.UI.WF
             this.groupBox21.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox21.Name = "groupBox21";
             this.groupBox21.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox21.Size = new System.Drawing.Size(1528, 368);
+            this.groupBox21.Size = new System.Drawing.Size(1528, 361);
             this.groupBox21.TabIndex = 372;
             this.groupBox21.TabStop = false;
             this.groupBox21.Text = "Action List";
@@ -3735,7 +3775,7 @@ namespace Generator.UI.WF
             dataGridViewCellStyle27.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.DgwString.DefaultCellStyle = dataGridViewCellStyle27;
             this.DgwString.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DgwString.Location = new System.Drawing.Point(3, 27);
+            this.DgwString.Location = new System.Drawing.Point(3, 40);
             this.DgwString.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DgwString.Name = "DgwString";
             dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -3746,20 +3786,23 @@ namespace Generator.UI.WF
             dataGridViewCellStyle28.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle28.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.DgwString.RowHeadersDefaultCellStyle = dataGridViewCellStyle28;
+            this.DgwString.RowHeadersWidth = 62;
             this.DgwString.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DgwString.Size = new System.Drawing.Size(1522, 339);
+            this.DgwString.Size = new System.Drawing.Size(1522, 319);
             this.DgwString.TabIndex = 368;
             // 
             // dataGridViewTextBoxColumn8
             // 
             this.dataGridViewTextBoxColumn8.DataPropertyName = "DomainId";
             this.dataGridViewTextBoxColumn8.HeaderText = "LanguageId";
+            this.dataGridViewTextBoxColumn8.MinimumWidth = 8;
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
             // 
             // dataGridViewComboBoxColumn4
             // 
             this.dataGridViewComboBoxColumn4.DataPropertyName = "ApplicationId";
             this.dataGridViewComboBoxColumn4.HeaderText = "KeyId";
+            this.dataGridViewComboBoxColumn4.MinimumWidth = 8;
             this.dataGridViewComboBoxColumn4.Name = "dataGridViewComboBoxColumn4";
             this.dataGridViewComboBoxColumn4.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
@@ -3767,6 +3810,7 @@ namespace Generator.UI.WF
             // 
             this.dataGridViewComboBoxColumn5.DataPropertyName = "ServiceId";
             this.dataGridViewComboBoxColumn5.HeaderText = "Value";
+            this.dataGridViewComboBoxColumn5.MinimumWidth = 8;
             this.dataGridViewComboBoxColumn5.Name = "dataGridViewComboBoxColumn5";
             this.dataGridViewComboBoxColumn5.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewComboBoxColumn5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
@@ -3777,7 +3821,7 @@ namespace Generator.UI.WF
             this.groupBox22.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.groupBox22.Font = new System.Drawing.Font("Century Gothic", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.groupBox22.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
-            this.groupBox22.Location = new System.Drawing.Point(3, 483);
+            this.groupBox22.Location = new System.Drawing.Point(3, 476);
             this.groupBox22.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox22.Name = "groupBox22";
             this.groupBox22.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -3810,7 +3854,7 @@ namespace Generator.UI.WF
             dataGridViewCellStyle30.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.DgwStringResult.DefaultCellStyle = dataGridViewCellStyle30;
             this.DgwStringResult.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DgwStringResult.Location = new System.Drawing.Point(3, 27);
+            this.DgwStringResult.Location = new System.Drawing.Point(3, 40);
             this.DgwStringResult.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DgwStringResult.Name = "DgwStringResult";
             dataGridViewCellStyle31.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -3821,8 +3865,9 @@ namespace Generator.UI.WF
             dataGridViewCellStyle31.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle31.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.DgwStringResult.RowHeadersDefaultCellStyle = dataGridViewCellStyle31;
+            this.DgwStringResult.RowHeadersWidth = 62;
             this.DgwStringResult.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DgwStringResult.Size = new System.Drawing.Size(1522, 237);
+            this.DgwStringResult.Size = new System.Drawing.Size(1522, 224);
             this.DgwStringResult.TabIndex = 369;
             // 
             // groupBox23
@@ -3888,9 +3933,9 @@ namespace Generator.UI.WF
             this.TabPageOption.Controls.Add(this.PageListResult);
             this.TabPageOption.Controls.Add(this.groupBox29);
             this.TabPageOption.Controls.Add(this.panel20);
-            this.TabPageOption.Location = new System.Drawing.Point(4, 29);
+            this.TabPageOption.Location = new System.Drawing.Point(4, 36);
             this.TabPageOption.Name = "TabPageOption";
-            this.TabPageOption.Size = new System.Drawing.Size(1534, 752);
+            this.TabPageOption.Size = new System.Drawing.Size(1534, 745);
             this.TabPageOption.TabIndex = 9;
             this.TabPageOption.Text = "Page Option";
             this.TabPageOption.UseVisualStyleBackColor = true;
@@ -3905,7 +3950,7 @@ namespace Generator.UI.WF
             this.groupBox30.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox30.Name = "groupBox30";
             this.groupBox30.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox30.Size = new System.Drawing.Size(1534, 371);
+            this.groupBox30.Size = new System.Drawing.Size(1534, 364);
             this.groupBox30.TabIndex = 372;
             this.groupBox30.TabStop = false;
             this.groupBox30.Text = "Page List";
@@ -3940,7 +3985,7 @@ namespace Generator.UI.WF
             dataGridViewCellStyle33.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.DgwPage.DefaultCellStyle = dataGridViewCellStyle33;
             this.DgwPage.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DgwPage.Location = new System.Drawing.Point(3, 27);
+            this.DgwPage.Location = new System.Drawing.Point(3, 40);
             this.DgwPage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DgwPage.Name = "DgwPage";
             dataGridViewCellStyle34.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -3951,8 +3996,9 @@ namespace Generator.UI.WF
             dataGridViewCellStyle34.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle34.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.DgwPage.RowHeadersDefaultCellStyle = dataGridViewCellStyle34;
+            this.DgwPage.RowHeadersWidth = 62;
             this.DgwPage.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DgwPage.Size = new System.Drawing.Size(1528, 342);
+            this.DgwPage.Size = new System.Drawing.Size(1528, 322);
             this.DgwPage.TabIndex = 368;
             // 
             // dataGridViewTextBoxColumn1
@@ -3960,12 +4006,14 @@ namespace Generator.UI.WF
             this.dataGridViewTextBoxColumn1.DataPropertyName = "DomainId";
             this.dataGridViewTextBoxColumn1.FillWeight = 90F;
             this.dataGridViewTextBoxColumn1.HeaderText = "DominId";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 8;
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             // 
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.FillWeight = 113.1134F;
             this.dataGridViewTextBoxColumn2.HeaderText = "Environment";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 8;
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             // 
             // dataGridViewTextBoxColumn11
@@ -3973,6 +4021,7 @@ namespace Generator.UI.WF
             this.dataGridViewTextBoxColumn11.DataPropertyName = "ApplicationId";
             this.dataGridViewTextBoxColumn11.FillWeight = 113.1134F;
             this.dataGridViewTextBoxColumn11.HeaderText = "ApplicationId";
+            this.dataGridViewTextBoxColumn11.MinimumWidth = 8;
             this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
             this.dataGridViewTextBoxColumn11.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
@@ -3980,12 +4029,14 @@ namespace Generator.UI.WF
             // 
             this.dataGridViewTextBoxColumn12.FillWeight = 113.1134F;
             this.dataGridViewTextBoxColumn12.HeaderText = "Page Id";
+            this.dataGridViewTextBoxColumn12.MinimumWidth = 8;
             this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
             // 
             // dataGridViewTextBoxColumn13
             // 
             this.dataGridViewTextBoxColumn13.FillWeight = 113.1134F;
             this.dataGridViewTextBoxColumn13.HeaderText = "Name";
+            this.dataGridViewTextBoxColumn13.MinimumWidth = 8;
             this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
             // 
             // PageListResult
@@ -3994,7 +4045,7 @@ namespace Generator.UI.WF
             this.PageListResult.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.PageListResult.Font = new System.Drawing.Font("Century Gothic", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.PageListResult.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(128)))), ((int)(((byte)(109)))));
-            this.PageListResult.Location = new System.Drawing.Point(0, 486);
+            this.PageListResult.Location = new System.Drawing.Point(0, 479);
             this.PageListResult.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PageListResult.Name = "PageListResult";
             this.PageListResult.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -4027,7 +4078,7 @@ namespace Generator.UI.WF
             dataGridViewCellStyle36.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.DgwPageResult.DefaultCellStyle = dataGridViewCellStyle36;
             this.DgwPageResult.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DgwPageResult.Location = new System.Drawing.Point(3, 27);
+            this.DgwPageResult.Location = new System.Drawing.Point(3, 40);
             this.DgwPageResult.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DgwPageResult.Name = "DgwPageResult";
             dataGridViewCellStyle37.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -4038,8 +4089,9 @@ namespace Generator.UI.WF
             dataGridViewCellStyle37.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle37.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.DgwPageResult.RowHeadersDefaultCellStyle = dataGridViewCellStyle37;
+            this.DgwPageResult.RowHeadersWidth = 62;
             this.DgwPageResult.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DgwPageResult.Size = new System.Drawing.Size(1528, 237);
+            this.DgwPageResult.Size = new System.Drawing.Size(1528, 224);
             this.DgwPageResult.TabIndex = 368;
             // 
             // groupBox29
@@ -4101,7 +4153,7 @@ namespace Generator.UI.WF
             this.label38.ForeColor = System.Drawing.Color.Silver;
             this.label38.Location = new System.Drawing.Point(13, 33);
             this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(119, 23);
+            this.label38.Size = new System.Drawing.Size(178, 36);
             this.label38.TabIndex = 369;
             this.label38.Text = "Application";
             // 
@@ -4116,7 +4168,7 @@ namespace Generator.UI.WF
             this.CbxPageOptionApplication.Location = new System.Drawing.Point(16, 60);
             this.CbxPageOptionApplication.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CbxPageOptionApplication.Name = "CbxPageOptionApplication";
-            this.CbxPageOptionApplication.Size = new System.Drawing.Size(354, 29);
+            this.CbxPageOptionApplication.Size = new System.Drawing.Size(354, 38);
             this.CbxPageOptionApplication.TabIndex = 368;
             // 
             // panel20
@@ -4135,9 +4187,9 @@ namespace Generator.UI.WF
             this.TabMenu.Controls.Add(this.panel22);
             this.TabMenu.Controls.Add(this.groupBox37);
             this.TabMenu.Controls.Add(this.panel21);
-            this.TabMenu.Location = new System.Drawing.Point(4, 29);
+            this.TabMenu.Location = new System.Drawing.Point(4, 36);
             this.TabMenu.Name = "TabMenu";
-            this.TabMenu.Size = new System.Drawing.Size(1534, 752);
+            this.TabMenu.Size = new System.Drawing.Size(1534, 745);
             this.TabMenu.TabIndex = 10;
             this.TabMenu.Text = "Menu Option";
             this.TabMenu.UseVisualStyleBackColor = true;
@@ -4149,7 +4201,7 @@ namespace Generator.UI.WF
             this.panel23.Location = new System.Drawing.Point(366, 121);
             this.panel23.Name = "panel23";
             this.panel23.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.panel23.Size = new System.Drawing.Size(1168, 333);
+            this.panel23.Size = new System.Drawing.Size(1168, 326);
             this.panel23.TabIndex = 386;
             // 
             // groupBox34
@@ -4162,7 +4214,7 @@ namespace Generator.UI.WF
             this.groupBox34.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox34.Name = "groupBox34";
             this.groupBox34.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox34.Size = new System.Drawing.Size(1158, 333);
+            this.groupBox34.Size = new System.Drawing.Size(1158, 326);
             this.groupBox34.TabIndex = 382;
             this.groupBox34.TabStop = false;
             this.groupBox34.Text = "Menu List";
@@ -4199,7 +4251,7 @@ namespace Generator.UI.WF
             dataGridViewCellStyle39.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.DgwMenu.DefaultCellStyle = dataGridViewCellStyle39;
             this.DgwMenu.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DgwMenu.Location = new System.Drawing.Point(3, 27);
+            this.DgwMenu.Location = new System.Drawing.Point(3, 40);
             this.DgwMenu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DgwMenu.Name = "DgwMenu";
             dataGridViewCellStyle40.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -4210,8 +4262,9 @@ namespace Generator.UI.WF
             dataGridViewCellStyle40.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle40.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.DgwMenu.RowHeadersDefaultCellStyle = dataGridViewCellStyle40;
+            this.DgwMenu.RowHeadersWidth = 62;
             this.DgwMenu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DgwMenu.Size = new System.Drawing.Size(1152, 304);
+            this.DgwMenu.Size = new System.Drawing.Size(1152, 284);
             this.DgwMenu.TabIndex = 369;
             // 
             // dataGridViewTextBoxColumn14
@@ -4219,12 +4272,14 @@ namespace Generator.UI.WF
             this.dataGridViewTextBoxColumn14.DataPropertyName = "DomainId";
             this.dataGridViewTextBoxColumn14.FillWeight = 90F;
             this.dataGridViewTextBoxColumn14.HeaderText = "DominId";
+            this.dataGridViewTextBoxColumn14.MinimumWidth = 8;
             this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
             // 
             // dataGridViewTextBoxColumn16
             // 
             this.dataGridViewTextBoxColumn16.FillWeight = 113.1134F;
             this.dataGridViewTextBoxColumn16.HeaderText = "Environment";
+            this.dataGridViewTextBoxColumn16.MinimumWidth = 8;
             this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
             // 
             // dataGridViewTextBoxColumn17
@@ -4232,6 +4287,7 @@ namespace Generator.UI.WF
             this.dataGridViewTextBoxColumn17.DataPropertyName = "ApplicationId";
             this.dataGridViewTextBoxColumn17.FillWeight = 113.1134F;
             this.dataGridViewTextBoxColumn17.HeaderText = "ApplicationId";
+            this.dataGridViewTextBoxColumn17.MinimumWidth = 8;
             this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
             this.dataGridViewTextBoxColumn17.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
@@ -4239,29 +4295,33 @@ namespace Generator.UI.WF
             // 
             this.dataGridViewTextBoxColumn18.FillWeight = 113.1134F;
             this.dataGridViewTextBoxColumn18.HeaderText = "Menu Id";
+            this.dataGridViewTextBoxColumn18.MinimumWidth = 8;
             this.dataGridViewTextBoxColumn18.Name = "dataGridViewTextBoxColumn18";
             // 
             // dataGridViewTextBoxColumn19
             // 
             this.dataGridViewTextBoxColumn19.FillWeight = 113.1134F;
             this.dataGridViewTextBoxColumn19.HeaderText = "Parent Menu Id";
+            this.dataGridViewTextBoxColumn19.MinimumWidth = 8;
             this.dataGridViewTextBoxColumn19.Name = "dataGridViewTextBoxColumn19";
             // 
             // Column1
             // 
             this.Column1.HeaderText = "Page Id";
+            this.Column1.MinimumWidth = 8;
             this.Column1.Name = "Column1";
             // 
             // Column2
             // 
             this.Column2.HeaderText = "Name";
+            this.Column2.MinimumWidth = 8;
             this.Column2.Name = "Column2";
             // 
             // panel24
             // 
             this.panel24.Controls.Add(this.groupBox35);
             this.panel24.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel24.Location = new System.Drawing.Point(366, 454);
+            this.panel24.Location = new System.Drawing.Point(366, 447);
             this.panel24.Name = "panel24";
             this.panel24.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.panel24.Size = new System.Drawing.Size(1168, 298);
@@ -4306,7 +4366,7 @@ namespace Generator.UI.WF
             dataGridViewCellStyle42.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.DgwMenuResult.DefaultCellStyle = dataGridViewCellStyle42;
             this.DgwMenuResult.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DgwMenuResult.Location = new System.Drawing.Point(3, 27);
+            this.DgwMenuResult.Location = new System.Drawing.Point(3, 40);
             this.DgwMenuResult.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DgwMenuResult.Name = "DgwMenuResult";
             dataGridViewCellStyle43.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -4317,8 +4377,9 @@ namespace Generator.UI.WF
             dataGridViewCellStyle43.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle43.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.DgwMenuResult.RowHeadersDefaultCellStyle = dataGridViewCellStyle43;
+            this.DgwMenuResult.RowHeadersWidth = 62;
             this.DgwMenuResult.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DgwMenuResult.Size = new System.Drawing.Size(1152, 269);
+            this.DgwMenuResult.Size = new System.Drawing.Size(1152, 256);
             this.DgwMenuResult.TabIndex = 368;
             // 
             // panel22
@@ -4390,7 +4451,7 @@ namespace Generator.UI.WF
             this.label40.ForeColor = System.Drawing.Color.Silver;
             this.label40.Location = new System.Drawing.Point(6, 32);
             this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(119, 23);
+            this.label40.Size = new System.Drawing.Size(178, 36);
             this.label40.TabIndex = 369;
             this.label40.Text = "Application";
             // 
@@ -4405,7 +4466,7 @@ namespace Generator.UI.WF
             this.CbxMenuOptionApplication.Location = new System.Drawing.Point(16, 60);
             this.CbxMenuOptionApplication.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CbxMenuOptionApplication.Name = "CbxMenuOptionApplication";
-            this.CbxMenuOptionApplication.Size = new System.Drawing.Size(354, 29);
+            this.CbxMenuOptionApplication.Size = new System.Drawing.Size(354, 38);
             this.CbxMenuOptionApplication.TabIndex = 368;
             // 
             // groupBox37
@@ -4418,7 +4479,7 @@ namespace Generator.UI.WF
             this.groupBox37.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox37.Name = "groupBox37";
             this.groupBox37.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox37.Size = new System.Drawing.Size(366, 740);
+            this.groupBox37.Size = new System.Drawing.Size(366, 733);
             this.groupBox37.TabIndex = 384;
             this.groupBox37.TabStop = false;
             this.groupBox37.Text = "Menu List";
@@ -4427,9 +4488,9 @@ namespace Generator.UI.WF
             // 
             this.MenuView.Cursor = System.Windows.Forms.Cursors.Default;
             this.MenuView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MenuView.Location = new System.Drawing.Point(3, 27);
+            this.MenuView.Location = new System.Drawing.Point(3, 40);
             this.MenuView.Name = "MenuView";
-            this.MenuView.Size = new System.Drawing.Size(360, 711);
+            this.MenuView.Size = new System.Drawing.Size(360, 691);
             this.MenuView.TabIndex = 380;
             this.MenuView.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.MenuView_AfterSelect);
             // 
@@ -4445,9 +4506,9 @@ namespace Generator.UI.WF
             // TabEvent
             // 
             this.TabEvent.Controls.Add(this.panel18);
-            this.TabEvent.Location = new System.Drawing.Point(4, 29);
+            this.TabEvent.Location = new System.Drawing.Point(4, 36);
             this.TabEvent.Name = "TabEvent";
-            this.TabEvent.Size = new System.Drawing.Size(1534, 752);
+            this.TabEvent.Size = new System.Drawing.Size(1534, 745);
             this.TabEvent.TabIndex = 7;
             this.TabEvent.Text = "Events";
             this.TabEvent.UseVisualStyleBackColor = true;
@@ -4462,7 +4523,7 @@ namespace Generator.UI.WF
             this.panel18.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel18.Name = "panel18";
             this.panel18.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.panel18.Size = new System.Drawing.Size(1534, 752);
+            this.panel18.Size = new System.Drawing.Size(1534, 745);
             this.panel18.TabIndex = 368;
             // 
             // panel19
@@ -4473,7 +4534,7 @@ namespace Generator.UI.WF
             this.panel19.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel19.Name = "panel19";
             this.panel19.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.panel19.Size = new System.Drawing.Size(1182, 652);
+            this.panel19.Size = new System.Drawing.Size(1182, 645);
             this.panel19.TabIndex = 373;
             // 
             // groupBox26
@@ -4486,7 +4547,7 @@ namespace Generator.UI.WF
             this.groupBox26.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox26.Name = "groupBox26";
             this.groupBox26.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox26.Size = new System.Drawing.Size(1172, 652);
+            this.groupBox26.Size = new System.Drawing.Size(1172, 645);
             this.groupBox26.TabIndex = 363;
             this.groupBox26.TabStop = false;
             this.groupBox26.Text = "Event Content";
@@ -4496,10 +4557,10 @@ namespace Generator.UI.WF
             this.richTextBox1.BackColor = System.Drawing.Color.White;
             this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.richTextBox1.Location = new System.Drawing.Point(3, 27);
+            this.richTextBox1.Location = new System.Drawing.Point(3, 40);
             this.richTextBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(1166, 623);
+            this.richTextBox1.Size = new System.Drawing.Size(1166, 603);
             this.richTextBox1.TabIndex = 366;
             this.richTextBox1.Text = "";
             // 
@@ -4513,7 +4574,7 @@ namespace Generator.UI.WF
             this.groupBox25.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox25.Name = "groupBox25";
             this.groupBox25.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox25.Size = new System.Drawing.Size(342, 652);
+            this.groupBox25.Size = new System.Drawing.Size(342, 645);
             this.groupBox25.TabIndex = 372;
             this.groupBox25.TabStop = false;
             this.groupBox25.Text = "Events";
@@ -4546,7 +4607,7 @@ namespace Generator.UI.WF
             dataGridViewCellStyle45.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.DgwEvent.DefaultCellStyle = dataGridViewCellStyle45;
             this.DgwEvent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DgwEvent.Location = new System.Drawing.Point(3, 27);
+            this.DgwEvent.Location = new System.Drawing.Point(3, 40);
             this.DgwEvent.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DgwEvent.Name = "DgwEvent";
             dataGridViewCellStyle46.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -4557,13 +4618,15 @@ namespace Generator.UI.WF
             dataGridViewCellStyle46.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle46.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.DgwEvent.RowHeadersDefaultCellStyle = dataGridViewCellStyle46;
+            this.DgwEvent.RowHeadersWidth = 62;
             this.DgwEvent.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DgwEvent.Size = new System.Drawing.Size(336, 623);
+            this.DgwEvent.Size = new System.Drawing.Size(336, 603);
             this.DgwEvent.TabIndex = 274;
             // 
             // GridEventName
             // 
             this.GridEventName.HeaderText = "EventName";
+            this.GridEventName.MinimumWidth = 8;
             this.GridEventName.Name = "GridEventName";
             // 
             // groupBox27
@@ -4614,7 +4677,7 @@ namespace Generator.UI.WF
             // 
             // FormUxGenerator
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 27F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1562, 805);

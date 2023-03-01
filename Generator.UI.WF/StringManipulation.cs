@@ -29,7 +29,7 @@ namespace Generator.UI.WF
                         if (st[j] != Convert.ToChar("_")) yeniSt += st[j].EnglishConfigure();
                     }
 
-                configureName.Add(yeniSt);
+                configureName.Add(yeniSt.UpperCaseEnglish());
                 yeniSt = "";
             }
 
@@ -56,7 +56,7 @@ namespace Generator.UI.WF
                     if (st[j] != Convert.ToChar("_")) yeniSt += st[j].EnglishConfigure();
                 }
 
-            return yeniSt;
+            return yeniSt.UpperCaseEnglish();
         }
 
         public static string TextConfigure(this string id)
@@ -76,7 +76,7 @@ namespace Generator.UI.WF
                         yeniSt += st[j].EnglishConfigure();
                 }
 
-            return yeniSt.Replace("_", " ");
+            return yeniSt.Replace("_", " ").UpperCaseEnglish();
         }
 
         public static string CamelCaseConfigure(this string result)
@@ -99,7 +99,7 @@ namespace Generator.UI.WF
                     if (st[j] != Convert.ToChar("_")) yeniSt += st[j].EnglishConfigure();
                 }
 
-            return yeniSt;
+            return yeniSt.UpperCaseEnglish();
         }
 
         public static string SpaceCamelCaseConfigure(this string result)
@@ -122,7 +122,7 @@ namespace Generator.UI.WF
                     yeniSt += st[j].EnglishConfigure();
                 }
 
-            return yeniSt;
+            return yeniSt.UpperCaseEnglish();
         }
 
         public static string UnifiedCaseConfigure(this string result)
@@ -245,6 +245,10 @@ namespace Generator.UI.WF
                 return 'i';
             }
             return text;
+        }
+        public static string UpperCaseEnglish(this string text)
+        {
+            return text.Replace("İ", "I");
         }
     }
 }

@@ -816,7 +816,7 @@ namespace Generator.UI.WF
                 RowTemplate = rowTemplate,
                 Model = model
             };
-            if (CbxStatusColor.SelectedItem != null)
+            if (CbxStatusColor.SelectedItem != null && CbxStatusColor.SelectedIndex != 0)
                 gridView.StatusColorFieldId = CbxStatusColor.SelectedItem.ToString();
 
             return gridView;

@@ -22,6 +22,7 @@ namespace Generator.UI.WF
 
         private readonly List<string> results = new List<string>
         {
+            "VARCHAR",
             "varchar",
             "date",
             "datetime",
@@ -328,7 +329,7 @@ namespace Generator.UI.WF
                     ParameterId = row.Cells[2].Value.ToString(),
                     DataType = row.Cells[3].Value.ToString(),
                     InputOutput = row.Cells[4].Value.ToString(),
-                    NullableFlag = (char)row.Cells[5].Value
+                    NullableFlag = Convert.ToChar(row.Cells[5].Value)
                 });
 
             GetParameterList();
@@ -502,6 +503,11 @@ namespace Generator.UI.WF
 
         private void label9_Click(object sender, EventArgs e)
         {
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

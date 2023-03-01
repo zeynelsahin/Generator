@@ -214,10 +214,19 @@ namespace Generator.UI.WF
         public static string TitleConfig(this string text)
         {
             var textNew = "";
+            var first = true;
             foreach (var c in text)
             {
-                if (c.ToString() == c.ToString().ToUpper()) textNew += " ";
-                textNew += c;
+                if (first && c.ToString() != " ")
+                {
+                    first = false;
+                    textNew += c;
+                }
+                else
+                {
+                    if (c.ToString() == c.ToString().ToUpper() && c.ToString() != " ") textNew += " ";
+                    textNew += c;
+                }
             }
 
             return textNew;
